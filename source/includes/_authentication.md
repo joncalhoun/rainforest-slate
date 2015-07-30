@@ -1,5 +1,7 @@
 # Authentication
 
+> Authenticate by setting your API key
+
 ```ruby
 require 'rainforest'
 Rainforest.api_key = 'your-api-key'

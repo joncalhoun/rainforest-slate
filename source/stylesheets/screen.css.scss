@@ -651,3 +651,23 @@ html, body {
     margin-top: $main-padding;
   }
 }
+
+h1 + pre {
+  margin-top: -90px !important;
+  border-top: 1px solid #555;
+}
+
+h2 + pre {
+  margin-top: -75px !important;
+  border-top: 1px solid #555;
+}
+
+h1 + blockquote {
+  margin-top: -90px !important;
+  border-top: 1px solid #555;
+}
+
+h2 + blockquote {
+  margin-top: -75px !important;
+  border-top: 1px solid #555;
+}

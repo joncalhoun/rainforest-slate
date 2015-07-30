@@ -27,8 +27,9 @@ Attributes |           |
 
 ## Create a Schedule
 
+> Example Request
+
 ```ruby
-EXAMPLE REQUEST
 require 'rainforest'
 Rainforest.api_key = "your-api-key"
 
@@ -47,8 +48,11 @@ schedule = Rainforest::Schedule.create(
     }
   ]
 )
+```
 
-EXAMPLE RESPONSE
+> Example Response
+
+```ruby
 #<Rainforest::Schedule:0x3fd870165f98 id=222> Attributes: {
   "created_at": "2015-07-28T17:01:43Z",
   "filters": {"tags":["www"]},
@@ -71,16 +75,19 @@ Arguments |           |
 
 ## Retrieve a Schedule
 
+> Example Request
+
 ```ruby
-EXAMPLE REQUEST
 require 'rainforest'
 Rainforest.api_key = "your-api-key"
 
 id = 222
 schedule = Rainforest::Schedule.retrieve(id)
+```
 
+> Example Response
 
-EXAMPLE RESPONSE
+```ruby
 #<Rainforest::Schedule:0x3fd870165f98 id=222> Attributes: {
   "created_at": "2015-07-28T17:01:43Z",
   "filters": {"tags":["www"]},
@@ -102,8 +109,9 @@ Arguments |           |
 
 ## Update a Schedule
 
+> Example Request
+
 ```ruby
-EXAMPLE REQUEST
 require 'rainforest'
 Rainforest.api_key = "your-api-key"
 
@@ -114,9 +122,11 @@ schedule = Rainforest::Schedule.update(id, :repeat_rules => repeat_rules)
 schedule = Rainforest::Schedule.retrieve(id)
 schedule.repeat_rules = repeat_rules
 schedule.save
+```
 
+> Example Response
 
-EXAMPLE RESPONSE
+```ruby
 #<Rainforest::Schedule:0x3fd8701bddec id=222> Attributes: {
   "created_at": "2015-07-28T17:01:43Z",
   "filters": {"tags":["www"]},
@@ -138,8 +148,9 @@ Arguments |           |
 
 ## List all Schedules
 
+> Example Request
+
 ```ruby
-EXAMPLE REQUEST
 require 'rainforest'
 Rainforest.api_key = "your-api-key"
 
@@ -152,9 +163,11 @@ end
 
 schedules[0] # The first schedule in the list
 schedules.length # the number of schedules returned
+```
 
+> Example Response
 
-EXAMPLE RESPONSE
+```ruby
 #<Rainforest::ApiList[Rainforest::Schedule]:0x3ff73d57a598> Data: [
   "#<Rainforest::Schedule:0x3ff73d577dac id=905>",
   "#<Rainforest::Schedule:0x3ff73d661bb4 id=906>"
@@ -168,8 +181,9 @@ TODO: Fill this in.
 
 ## Delete a Schedule
 
+> Example Request
+
 ```ruby
-EXAMPLE REQUEST
 require 'rainforest'
 Rainforest.api_key = "your-api-key"
 
@@ -178,9 +192,11 @@ response = Rainforest::Schedule.delete(id)
 # or
 schedule = Rainforest::Schedule.retrieve(id)
 schedule.delete
+```
 
+> Example Response
 
-EXAMPLE RESPONSE
+```ruby
 #<Rainforest::Schedule:0x3ff930ff8930 id=223> Attributes: {
   "created_at": "2015-07-28T17:11:54Z",
   "filters": {"tags":["www"]},

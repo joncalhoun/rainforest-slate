@@ -32,8 +32,9 @@ Attributes |           |
 
 ## Create an Environment
 
+> Example Request
+
 ```ruby
-EXAMPLE REQUEST
 require 'rainforest'
 Rainforest.api_key = "your-api-key"
 
@@ -41,9 +42,11 @@ env = Rainforest::Environment.create(
   :default => false,
   :name => "my testing environment"
 )
+```
 
+> Example Response
 
-EXAMPLE RESPONSE
+```ruby
 #<Rainforest::Environment:0x3ff73d6c9d18 id=13> Attributes: {
   "created_at": "2015-07-22T18:16:25Z",
   "default": false,
@@ -71,16 +74,19 @@ Arguments |           |
 
 ## Retrieve an Environment
 
+> Example Request
+
 ```ruby
-EXAMPLE REQUEST
 require 'rainforest'
 Rainforest.api_key = "your-api-key"
 
 id = 13
 env = Rainforest::Environment.retrieve(id)
+```
 
+> Example Response
 
-EXAMPLE RESPONSE
+```ruby
 #<Rainforest::Environment:0x3ff73d6c9d18 id=13> Attributes: {
   "created_at": "2015-07-22T18:16:25Z",
   "default": false,
@@ -105,8 +111,9 @@ Arguments |           |
 
 ## Update an Environment
 
+> Example Request
+
 ```ruby
-EXAMPLE REQUEST
 require 'rainforest'
 Rainforest.api_key = "your-api-key"
 
@@ -116,9 +123,11 @@ env = Rainforest::Environment.update(id, :name => "new env name")
 env = Rainforest::Environment.retrieve(id)
 env.name = "new env name"
 env.save
+```
 
+> Example Response
 
-EXAMPLE RESPONSE
+```ruby
 #<Rainforest::Environment:0x3ff73d6c9d18 id=13> Attributes: {
   "created_at": "2015-07-22T18:16:25Z",
   "default": false,
@@ -145,8 +154,9 @@ Arguments |           |
 
 ## List all Environments
 
+> Example Request
+
 ```ruby
-EXAMPLE REQUEST
 require 'rainforest'
 Rainforest.api_key = "your-api-key"
 
@@ -159,9 +169,11 @@ end
 
 envs[0] # The first environment in the list
 envs.length # the number of environments returned
+```
 
+> Example Response
 
-EXAMPLE RESPONSE
+```ruby
 #<Rainforest::ApiList[Rainforest::Environment]:0x3ff73d57a598> Data: [
   "#<Rainforest::Environment:0x3ff73d577dac id=13>",
   "#<Rainforest::Environment:0x3ff73d661bb4 id=18>"
@@ -175,8 +187,9 @@ TODO: Fill this in.
 
 ## Delete an Environment
 
+> Example Request
+
 ```ruby
-EXAMPLE REQUEST
 require 'rainforest'
 Rainforest.api_key = "your-api-key"
 
@@ -185,9 +198,11 @@ response = Rainforest::Environment.delete(id)
 # or
 env = Rainforest::Environment.retrieve(id)
 env.delete
+```
 
+> Example Response
 
-EXAMPLE RESPONSE
+```ruby
 {}
 
 ```
@@ -197,8 +212,9 @@ TODO: Fill this in.
 
 ## List an Environment's Runs
 
+> Example Request
+
 ```ruby
-EXAMPLE REQUEST
 require 'rainforest'
 Rainforest.api_key = "your-api-key"
 
@@ -215,9 +231,11 @@ end
 
 runs[0] # The first run in the list
 runs.length # the number of runs
+```
 
+> Example Response
 
-EXAMPLE RESPONSE
+```ruby
 <Rainforest::ApiList[Rainforest::Run]:0x3ff73d6a52ec> Data: [
   "#<Rainforest::Run:0x3ff73d678e90 id=4138>",
   "#<Rainforest::Run:0x3ff73d661bb4 id=4242>"

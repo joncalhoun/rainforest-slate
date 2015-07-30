@@ -70,11 +70,7 @@ Attributes |           |
 
 ## Create a Run
 
-> EXAMPLE REQUEST
-
-> curl uses the -u flag to pass basic auth credentials (adding a colon after your API key will prevent it from asking you for a password).
-
-> A sample test API key has been provided in all the examples on the page, so you can test out any example right away.
+> Example Request
 
 ```ruby
 require 'rainforest'
@@ -90,7 +86,7 @@ run = Rainforest::Run.create(
 )
 ```
 
-> EXAMPLE RESPONSE
+> Example Response
 
 ```ruby
 #<Rainforest::Run:0x3fd87005e244 id=31061> Attributes: {
@@ -145,7 +141,7 @@ Arguments |           |
 
 ## Retrieve a Run
 
-> EXAMPLE REQUEST
+> Example Request
 
 ```ruby
 require 'rainforest'
@@ -155,7 +151,7 @@ id = 31061
 run = Rainforest::Run.retrieve(id)
 ```
 
-> EXAMPLE RESPONSE
+> Example Response
 
 ```ruby
 #<Rainforest::Run:0x3fd87005e244 id=31061> Attributes: {
@@ -209,8 +205,9 @@ Arguments |           |
 
 ## List all Runs
 
+> Example Request
+
 ```ruby
-EXAMPLE REQUEST
 require 'rainforest'
 Rainforest.api_key = "your-api-key"
 
@@ -223,9 +220,11 @@ end
 
 runs[0] # The first run in the list
 runs.length # the number of runs returned
+```
 
+> Example Response
 
-EXAMPLE RESPONSE
+```ruby
 #<Rainforest::ApiList[Rainforest::Run]:0x3ff73d57a598> Data: [
   "#<Rainforest::Run:0x3ff73d577dac id=31061>",
   "#<Rainforest::Run:0x3ff73d661bb4 id=906>"
@@ -239,8 +238,9 @@ TODO: Fill this in.
 
 ## Abort or Delete a Run
 
+> Example Request
+
 ```ruby
-EXAMPLE REQUEST
 require 'rainforest'
 Rainforest.api_key = "your-api-key"
 
@@ -249,9 +249,11 @@ response = Rainforest::Run.abort(id) # or .delete(id)
 # or
 run = Rainforest::Run.retrieve(id)
 run.abort # or .delete
+```
 
+> Example Response
 
-EXAMPLE RESPONSE
+```ruby
 #<Rainforest::Run:0x3fd87006c6dc id=31061> Attributes: {
   "browsers": [
     {"name":"android_phone_landscape","state":"disabled","description":"Android Phone Landscape","category":"phone"},
@@ -296,8 +298,9 @@ TODO: Fill this in.
 
 ## List a Run's Tests
 
+> Example Request
+
 ```ruby
-EXAMPLE REQUEST
 require 'rainforest'
 Rainforest.api_key = "your-api-key"
 
@@ -306,9 +309,11 @@ run = Rainforest::Run.retrieve(id)
 tests = run.tests.all
 # or
 tests = Rainforest::Run.new(id).tests.all
+```
 
+> Example Response
 
-EXAMPLE RESPONSE
+```ruby
 #<Rainforest::ApiList[Rainforest::Test]:0x3fd86fdf11f0> Data: [
   "#<Rainforest::Test:0x3fd86fdf0bc4 id=2181>"
 ]

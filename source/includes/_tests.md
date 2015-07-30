@@ -70,8 +70,9 @@ Attributes |           |
 
 ## Create a Test
 
+> Example Request
+
 ```ruby
-EXAMPLE REQUEST
 require 'rainforest'
 Rainforest.api_key = "your-api-key"
 
@@ -90,8 +91,11 @@ test = Rainforest::Test.create(
     }
   ]
 )
+```
 
-EXAMPLE RESPONSE
+> Example Response
+
+```ruby
 #<Rainforest::Test:0x3ff930d38a74 id=17609> Attributes: {
   "browsers": [
     {"name":"android_phone_landscape","description":"Android Phone Landscape","category":"phone","state":"enabled"},
@@ -143,16 +147,19 @@ Arguments |           |
 
 ## Retrieve a Test
 
+> Example Request
+
 ```ruby
-EXAMPLE REQUEST
 require 'rainforest'
 Rainforest.api_key = "your-api-key"
 
 id = 905
 test = Rainforest::Test.retrieve(id)
+```
 
+> Example Response
 
-EXAMPLE RESPONSE
+```ruby
 #<Rainforest::Test:0x3ff931d22ac0 id=17609> Attributes: {
   "browsers": [
     {"name":"android_phone_landscape","description":"Android Phone Landscape","category":"phone","state":"enabled"},
@@ -206,8 +213,9 @@ Arguments |           |
 
 ## Update a Test
 
+> Example Request
+
 ```ruby
-EXAMPLE REQUEST
 require 'rainforest'
 Rainforest.api_key = "your-api-key"
 
@@ -218,9 +226,11 @@ test = Rainforest::Test.update(id, :title => "New Test Title")
 test = Rainforest::Test.retrieve(id)
 test.title = "New Test Title"
 test.save
+```
 
+> Example Response
 
-EXAMPLE RESPONSE
+```ruby
 #<Rainforest::Test:0x3ff73d6c9d18 id=13> Attributes: {
 }
 ```
@@ -234,8 +244,9 @@ Arguments |           |
 
 ## List all Tests
 
+> Example Request
+
 ```ruby
-EXAMPLE REQUEST
 require 'rainforest'
 Rainforest.api_key = "your-api-key"
 
@@ -248,9 +259,11 @@ end
 
 tests[0] # The first test in the list
 tests.length # the number of tests returned
+```
 
+> Example Response
 
-EXAMPLE RESPONSE
+```ruby
 #<Rainforest::ApiList[Rainforest::Test]:0x3ff73d57a598> Data: [
   "#<Rainforest::Test:0x3ff73d577dac id=905>",
   "#<Rainforest::Test:0x3ff73d661bb4 id=2181>"
@@ -264,19 +277,22 @@ TODO: Fill this in.
 
 ## Delete a Test
 
+> Example Request
+
 ```ruby
-EXAMPLE REQUEST
 require 'rainforest'
 Rainforest.api_key = "your-api-key"
 
-id = 17608
+id = 906
 response = Rainforest::Test.delete(id)
 # or
 test = Rainforest::Test.retrieve(id)
 test.delete
+```
 
+> Example Response
 
-EXAMPLE RESPONSE
+```ruby
 #<Rainforest::Test:0x3fdb6955ba70 id=906> Attributes: {
 }
 
@@ -288,8 +304,9 @@ TODO: Fill this in.
 
 ## List a Test's History
 
+> Example Request
+
 ```ruby
-EXAMPLE REQUEST
 require 'rainforest'
 Rainforest.api_key = "your-api-key"
 
@@ -306,10 +323,12 @@ end
 
 runs[0] # The first run in the list
 runs.length # the number of runs
+```
 
+> Example Response
 
-EXAMPLE RESPONSE
-<Rainforest::ApiList[Rainforest::Run]:0x3ff73d6a52ec> Data: [
+```ruby
+#<Rainforest::ApiList[Rainforest::Run]:0x3ff73d6a52ec> Data: [
   "#<Rainforest::Run:0x3ff73d678e90 id=4138>",
   "#<Rainforest::Run:0x3ff73d661bb4 id=4242>"
 ]

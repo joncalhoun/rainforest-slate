@@ -34,8 +34,9 @@ Attributes |           |
 
 ## Create a Generator
 
+> Example Request
+
 ```ruby
-EXAMPLE REQUEST
 require 'rainforest'
 Rainforest.api_key = "your-api-key"
 
@@ -44,9 +45,11 @@ gen = Rainforest::Generator.create(
   :description => "Credentials used to log into accounts in various states",
   :columns => ["first_name", "last_name", "email", "passwword"]
 )
+```
 
+> Example Response
 
-EXAMPLE RESPONSE
+```ruby
 #<Rainforest::Generator:0x3ff73f514d40 id=906> Attributes: {
   "columns": [
     {"id":6444,"created_at":"2015-07-27T17:00:22Z","name":"first_name"},
@@ -76,16 +79,19 @@ Arguments |           |
 
 ## Retrieve a Generator
 
+> Example Request
+
 ```ruby
-EXAMPLE REQUEST
 require 'rainforest'
 Rainforest.api_key = "your-api-key"
 
 id = 905
 gen = Rainforest::Generator.retrieve(id)
+```
 
+> Example Response
 
-EXAMPLE RESPONSE
+```ruby
 #<Rainforest::Generator:0x3ff73fcbdfb0 id=905> Attributes: {
   "columns": [
     {"id":6440,"created_at":"2015-07-27T16:52:13Z","name":"first_name"},
@@ -113,8 +119,9 @@ Arguments |           |
 
 ## Update a Generator
 
+> Example Request
+
 ```ruby
-EXAMPLE REQUEST
 require 'rainforest'
 Rainforest.api_key = "your-api-key"
 
@@ -127,9 +134,11 @@ gen = Rainforest::Generator.update(id, {
 gen = Rainforest::Generator.retrieve(id)
 gen.name = "new_gen_name"
 gen.save
+```
 
+> Example Response
 
-EXAMPLE RESPONSE
+```ruby
 #<Rainforest::Generator:0x3fdb68e27b8c id=905> Attributes: {
   "columns": [
     {"id":6440,"created_at":"2015-07-27T16:52:13Z","name":"first_name"},
@@ -163,8 +172,9 @@ Editable Attributes |           |
 
 ## List all Generators
 
+> Example Request
+
 ```ruby
-EXAMPLE REQUEST
 require 'rainforest'
 Rainforest.api_key = "your-api-key"
 
@@ -177,9 +187,11 @@ end
 
 gens[0] # The first generator in the list
 gens.length # the number of generators returned
+```
 
+> Example Response
 
-EXAMPLE RESPONSE
+```ruby
 #<Rainforest::ApiList[Rainforest::Generator]:0x3ff73d57a598> Data: [
   "#<Rainforest::Generator:0x3ff73d577dac id=905>",
   "#<Rainforest::Generator:0x3ff73d661bb4 id=906>"
@@ -193,8 +205,9 @@ TODO: Fill this in.
 
 ## Delete a Generator
 
+> Example Request
+
 ```ruby
-EXAMPLE REQUEST
 require 'rainforest'
 Rainforest.api_key = "your-api-key"
 
@@ -203,9 +216,11 @@ response = Rainforest::Generator.delete(id)
 # or
 env = Rainforest::Generator.retrieve(id)
 env.delete
+```
 
+> Example Response
 
-EXAMPLE RESPONSE
+```ruby
 #<Rainforest::Generator:0x3fdb6955ba70 id=906> Attributes: {
   "columns": [
     {"id":6444,"created_at":"2015-07-27T17:00:22Z","name":"first_name"},
@@ -228,8 +243,9 @@ TODO: Fill this in.
 
 ## List a Generator's Rows
 
+> Example Request
+
 ```ruby
-EXAMPLE REQUEST
 require 'rainforest'
 Rainforest.api_key = "your-api-key"
 
@@ -238,9 +254,11 @@ gen = Rainforest::Generator.retrieve(id)
 rows = gen.rows.all
 # or
 rows = Rainforest::Generator.new(id).rows.all
+```
 
+> Example Response
 
-EXAMPLE RESPONSE
+```ruby
 [
   {
     :id => 113914,
@@ -269,8 +287,9 @@ TODO: Fill this in.
 
 ## Create a Generator Row
 
+> Example Request
+
 ```ruby
-EXAMPLE REQUEST
 require 'rainforest'
 Rainforest.api_key = "your-api-key"
 
@@ -293,9 +312,11 @@ row = Rainforest::Generator.new(id).rows.create(
     6443 => "fake_password_123"
   }
 )
+```
 
+> Example Response
 
-EXAMPLE RESPONSE
+```ruby
 {
   :id => 113916,
   :data => {
