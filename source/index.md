@@ -3,6 +3,9 @@ title: API Reference
 
 language_tabs:
   - ruby
+  - python
+  - php
+  - { javascript: "node" }
 
 toc_footers:
   - <a href='https://app.rainforestqa.com/settings/integrations'>Where is my API Key?</a>

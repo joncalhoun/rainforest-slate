@@ -15,6 +15,48 @@
 }
 ```
 
+```php
+#TODO: Add php samples
+#<Rainforest::Schedule:0x3fdcc6185a3c id=4> Attributes: {
+  "created_at": "2015-03-25T00:19:56Z",
+  "filters": {"tests":["all"]},
+  "id": 4,
+  "repeat_rules": [
+    {"id":8,"created_at":"2015-03-25T00:19:56Z","day":"wednesday","time":"01:01"},
+    {"id":7,"created_at":"2015-03-25T00:19:56Z","day":"monday","time":"01:01"},
+    {"id":6,"created_at":"2015-03-25T00:19:56Z","day":"sunday","time":"01:01"}
+  ]
+}
+```
+
+```javascript
+//TODO: Add node samples
+#<Rainforest::Schedule:0x3fdcc6185a3c id=4> Attributes: {
+  "created_at": "2015-03-25T00:19:56Z",
+  "filters": {"tests":["all"]},
+  "id": 4,
+  "repeat_rules": [
+    {"id":8,"created_at":"2015-03-25T00:19:56Z","day":"wednesday","time":"01:01"},
+    {"id":7,"created_at":"2015-03-25T00:19:56Z","day":"monday","time":"01:01"},
+    {"id":6,"created_at":"2015-03-25T00:19:56Z","day":"sunday","time":"01:01"}
+  ]
+}
+```
+
+```python
+#TODO: Add python samples
+#<Rainforest::Schedule:0x3fdcc6185a3c id=4> Attributes: {
+  "created_at": "2015-03-25T00:19:56Z",
+  "filters": {"tests":["all"]},
+  "id": 4,
+  "repeat_rules": [
+    {"id":8,"created_at":"2015-03-25T00:19:56Z","day":"wednesday","time":"01:01"},
+    {"id":7,"created_at":"2015-03-25T00:19:56Z","day":"monday","time":"01:01"},
+    {"id":6,"created_at":"2015-03-25T00:19:56Z","day":"sunday","time":"01:01"}
+  ]
+}
+```
+
 TODO: Fill this in.
 
 Attributes |           |
@@ -50,9 +92,114 @@ schedule = Rainforest::Schedule.create(
 )
 ```
 
+```php
+#TODO: Add php samples
+require 'rainforest'
+Rainforest.api_key = "your-api-key"
+
+schedule = Rainforest::Schedule.create(
+  :filters => {
+    :tags => ["www"]
+  },
+  :repeat_rules => [
+    {
+      :day => "sunday",
+      :time => "01:00"
+    },
+    {
+      :day => "tuesday",
+      :time => "10:00"
+    }
+  ]
+)
+```
+
+```javascript
+//TODO: Add node samples
+var Rainforest = require('rainforest');
+Rainforest.apiKey = "your-api-key"
+
+schedule = Rainforest::Schedule.create(
+  :filters => {
+    :tags => ["www"]
+  },
+  :repeat_rules => [
+    {
+      :day => "sunday",
+      :time => "01:00"
+    },
+    {
+      :day => "tuesday",
+      :time => "10:00"
+    }
+  ]
+)
+```
+
+```python
+#TODO: Add python samples
+require 'rainforest'
+Rainforest.api_key = "your-api-key"
+
+schedule = Rainforest::Schedule.create(
+  :filters => {
+    :tags => ["www"]
+  },
+  :repeat_rules => [
+    {
+      :day => "sunday",
+      :time => "01:00"
+    },
+    {
+      :day => "tuesday",
+      :time => "10:00"
+    }
+  ]
+)
+```
+
 > Example Response
 
 ```ruby
+#<Rainforest::Schedule:0x3fd870165f98 id=222> Attributes: {
+  "created_at": "2015-07-28T17:01:43Z",
+  "filters": {"tags":["www"]},
+  "id": 222,
+  "repeat_rules": [
+    {"id":945,"created_at":"2015-07-28T17:01:43Z","day":"tuesday","time":"10:00"},
+    {"id":944,"created_at":"2015-07-28T17:01:43Z","day":"sunday","time":"01:00"}
+  ]
+}
+```
+
+```php
+#TODO: Add php samples
+#<Rainforest::Schedule:0x3fd870165f98 id=222> Attributes: {
+  "created_at": "2015-07-28T17:01:43Z",
+  "filters": {"tags":["www"]},
+  "id": 222,
+  "repeat_rules": [
+    {"id":945,"created_at":"2015-07-28T17:01:43Z","day":"tuesday","time":"10:00"},
+    {"id":944,"created_at":"2015-07-28T17:01:43Z","day":"sunday","time":"01:00"}
+  ]
+}
+```
+
+```javascript
+//TODO: Add node samples
+#<Rainforest::Schedule:0x3fd870165f98 id=222> Attributes: {
+  "created_at": "2015-07-28T17:01:43Z",
+  "filters": {"tags":["www"]},
+  "id": 222,
+  "repeat_rules": [
+    {"id":945,"created_at":"2015-07-28T17:01:43Z","day":"tuesday","time":"10:00"},
+    {"id":944,"created_at":"2015-07-28T17:01:43Z","day":"sunday","time":"01:00"}
+  ]
+}
+```
+
+```python
+#TODO: Add python samples
 #<Rainforest::Schedule:0x3fd870165f98 id=222> Attributes: {
   "created_at": "2015-07-28T17:01:43Z",
   "filters": {"tags":["www"]},
@@ -85,9 +232,75 @@ id = 222
 schedule = Rainforest::Schedule.retrieve(id)
 ```
 
+```php
+#TODO: Add php samples
+require 'rainforest'
+Rainforest.api_key = "your-api-key"
+
+id = 222
+schedule = Rainforest::Schedule.retrieve(id)
+```
+
+```javascript
+//TODO: Add node samples
+var Rainforest = require('rainforest');
+Rainforest.apiKey = "your-api-key"
+
+id = 222
+schedule = Rainforest::Schedule.retrieve(id)
+```
+
+```python
+#TODO: Add python samples
+require 'rainforest'
+Rainforest.api_key = "your-api-key"
+
+id = 222
+schedule = Rainforest::Schedule.retrieve(id)
+```
+
 > Example Response
 
 ```ruby
+#<Rainforest::Schedule:0x3fd870165f98 id=222> Attributes: {
+  "created_at": "2015-07-28T17:01:43Z",
+  "filters": {"tags":["www"]},
+  "id": 222,
+  "repeat_rules": [
+    {"id":945,"created_at":"2015-07-28T17:01:43Z","day":"tuesday","time":"10:00"},
+    {"id":944,"created_at":"2015-07-28T17:01:43Z","day":"sunday","time":"01:00"}
+  ]
+}
+```
+
+```php
+#TODO: Add php samples
+#<Rainforest::Schedule:0x3fd870165f98 id=222> Attributes: {
+  "created_at": "2015-07-28T17:01:43Z",
+  "filters": {"tags":["www"]},
+  "id": 222,
+  "repeat_rules": [
+    {"id":945,"created_at":"2015-07-28T17:01:43Z","day":"tuesday","time":"10:00"},
+    {"id":944,"created_at":"2015-07-28T17:01:43Z","day":"sunday","time":"01:00"}
+  ]
+}
+```
+
+```javascript
+//TODO: Add node samples
+#<Rainforest::Schedule:0x3fd870165f98 id=222> Attributes: {
+  "created_at": "2015-07-28T17:01:43Z",
+  "filters": {"tags":["www"]},
+  "id": 222,
+  "repeat_rules": [
+    {"id":945,"created_at":"2015-07-28T17:01:43Z","day":"tuesday","time":"10:00"},
+    {"id":944,"created_at":"2015-07-28T17:01:43Z","day":"sunday","time":"01:00"}
+  ]
+}
+```
+
+```python
+#TODO: Add python samples
 #<Rainforest::Schedule:0x3fd870165f98 id=222> Attributes: {
   "created_at": "2015-07-28T17:01:43Z",
   "filters": {"tags":["www"]},
@@ -124,9 +337,87 @@ schedule.repeat_rules = repeat_rules
 schedule.save
 ```
 
+```php
+#TODO: Add php samples
+require 'rainforest'
+Rainforest.api_key = "your-api-key"
+
+id = 222
+repeat_rules = [{:day => "monday", :time => "12:00"}]
+schedule = Rainforest::Schedule.update(id, :repeat_rules => repeat_rules)
+# or
+schedule = Rainforest::Schedule.retrieve(id)
+schedule.repeat_rules = repeat_rules
+schedule.save
+```
+
+```javascript
+//TODO: Add node samples
+var Rainforest = require('rainforest');
+Rainforest.apiKey = "your-api-key"
+
+id = 222
+repeat_rules = [{:day => "monday", :time => "12:00"}]
+schedule = Rainforest::Schedule.update(id, :repeat_rules => repeat_rules)
+# or
+schedule = Rainforest::Schedule.retrieve(id)
+schedule.repeat_rules = repeat_rules
+schedule.save
+```
+
+```python
+#TODO: Add python samples
+require 'rainforest'
+Rainforest.api_key = "your-api-key"
+
+id = 222
+repeat_rules = [{:day => "monday", :time => "12:00"}]
+schedule = Rainforest::Schedule.update(id, :repeat_rules => repeat_rules)
+# or
+schedule = Rainforest::Schedule.retrieve(id)
+schedule.repeat_rules = repeat_rules
+schedule.save
+```
+
 > Example Response
 
 ```ruby
+#<Rainforest::Schedule:0x3fd8701bddec id=222> Attributes: {
+  "created_at": "2015-07-28T17:01:43Z",
+  "filters": {"tags":["www"]},
+  "id": 222,
+  "repeat_rules": [
+    {"id":946,"created_at":"2015-07-28T17:06:08Z","day":"monday","time":"12:00"}
+  ]
+}
+```
+
+```php
+#TODO: Add php samples
+#<Rainforest::Schedule:0x3fd8701bddec id=222> Attributes: {
+  "created_at": "2015-07-28T17:01:43Z",
+  "filters": {"tags":["www"]},
+  "id": 222,
+  "repeat_rules": [
+    {"id":946,"created_at":"2015-07-28T17:06:08Z","day":"monday","time":"12:00"}
+  ]
+}
+```
+
+```javascript
+//TODO: Add node samples
+#<Rainforest::Schedule:0x3fd8701bddec id=222> Attributes: {
+  "created_at": "2015-07-28T17:01:43Z",
+  "filters": {"tags":["www"]},
+  "id": 222,
+  "repeat_rules": [
+    {"id":946,"created_at":"2015-07-28T17:06:08Z","day":"monday","time":"12:00"}
+  ]
+}
+```
+
+```python
+#TODO: Add python samples
 #<Rainforest::Schedule:0x3fd8701bddec id=222> Attributes: {
   "created_at": "2015-07-28T17:01:43Z",
   "filters": {"tags":["www"]},
@@ -165,9 +456,87 @@ schedules[0] # The first schedule in the list
 schedules.length # the number of schedules returned
 ```
 
+```php
+#TODO: Add php samples
+require 'rainforest'
+Rainforest.api_key = "your-api-key"
+
+schedules = Rainforest::Schedule.all
+
+# The list is enumerable and works similarly to a array
+schedules.each do |schedule|
+  # work with a schedule
+end
+
+schedules[0] # The first schedule in the list
+schedules.length # the number of schedules returned
+```
+
+```javascript
+//TODO: Add node samples
+var Rainforest = require('rainforest');
+Rainforest.apiKey = "your-api-key"
+
+schedules = Rainforest::Schedule.all
+
+# The list is enumerable and works similarly to a array
+schedules.each do |schedule|
+  # work with a schedule
+end
+
+schedules[0] # The first schedule in the list
+schedules.length # the number of schedules returned
+```
+
+```python
+#TODO: Add python samples
+require 'rainforest'
+Rainforest.api_key = "your-api-key"
+
+schedules = Rainforest::Schedule.all
+
+# The list is enumerable and works similarly to a array
+schedules.each do |schedule|
+  # work with a schedule
+end
+
+schedules[0] # The first schedule in the list
+schedules.length # the number of schedules returned
+```
+
 > Example Response
 
 ```ruby
+#<Rainforest::ApiList[Rainforest::Schedule]:0x3ff73d57a598> Data: [
+  "#<Rainforest::Schedule:0x3ff73d577dac id=905>",
+  "#<Rainforest::Schedule:0x3ff73d661bb4 id=906>"
+]
+
+
+```
+
+```php
+#TODO: Add php samples
+#<Rainforest::ApiList[Rainforest::Schedule]:0x3ff73d57a598> Data: [
+  "#<Rainforest::Schedule:0x3ff73d577dac id=905>",
+  "#<Rainforest::Schedule:0x3ff73d661bb4 id=906>"
+]
+
+
+```
+
+```javascript
+//TODO: Add node samples
+#<Rainforest::ApiList[Rainforest::Schedule]:0x3ff73d57a598> Data: [
+  "#<Rainforest::Schedule:0x3ff73d577dac id=905>",
+  "#<Rainforest::Schedule:0x3ff73d661bb4 id=906>"
+]
+
+
+```
+
+```python
+#TODO: Add python samples
 #<Rainforest::ApiList[Rainforest::Schedule]:0x3ff73d57a598> Data: [
   "#<Rainforest::Schedule:0x3ff73d577dac id=905>",
   "#<Rainforest::Schedule:0x3ff73d661bb4 id=906>"
@@ -194,9 +563,87 @@ schedule = Rainforest::Schedule.retrieve(id)
 schedule.delete
 ```
 
+```php
+#TODO: Add php samples
+require 'rainforest'
+Rainforest.api_key = "your-api-key"
+
+id = 223
+response = Rainforest::Schedule.delete(id)
+# or
+schedule = Rainforest::Schedule.retrieve(id)
+schedule.delete
+```
+
+```javascript
+//TODO: Add node samples
+var Rainforest = require('rainforest');
+Rainforest.apiKey = "your-api-key"
+
+id = 223
+response = Rainforest::Schedule.delete(id)
+# or
+schedule = Rainforest::Schedule.retrieve(id)
+schedule.delete
+```
+
+```python
+#TODO: Add python samples
+require 'rainforest'
+Rainforest.api_key = "your-api-key"
+
+id = 223
+response = Rainforest::Schedule.delete(id)
+# or
+schedule = Rainforest::Schedule.retrieve(id)
+schedule.delete
+```
+
 > Example Response
 
 ```ruby
+#<Rainforest::Schedule:0x3ff930ff8930 id=223> Attributes: {
+  "created_at": "2015-07-28T17:11:54Z",
+  "filters": {"tags":["www"]},
+  "id": 223,
+  "repeat_rules": [
+    {"id":950,"created_at":"2015-07-28T17:11:54Z","day":"tuesday","time":"10:00"},
+    {"id":949,"created_at":"2015-07-28T17:11:54Z","day":"sunday","time":"01:00"}
+  ]
+}
+
+```
+
+```php
+#TODO: Add php samples
+#<Rainforest::Schedule:0x3ff930ff8930 id=223> Attributes: {
+  "created_at": "2015-07-28T17:11:54Z",
+  "filters": {"tags":["www"]},
+  "id": 223,
+  "repeat_rules": [
+    {"id":950,"created_at":"2015-07-28T17:11:54Z","day":"tuesday","time":"10:00"},
+    {"id":949,"created_at":"2015-07-28T17:11:54Z","day":"sunday","time":"01:00"}
+  ]
+}
+
+```
+
+```javascript
+//TODO: Add node samples
+#<Rainforest::Schedule:0x3ff930ff8930 id=223> Attributes: {
+  "created_at": "2015-07-28T17:11:54Z",
+  "filters": {"tags":["www"]},
+  "id": 223,
+  "repeat_rules": [
+    {"id":950,"created_at":"2015-07-28T17:11:54Z","day":"tuesday","time":"10:00"},
+    {"id":949,"created_at":"2015-07-28T17:11:54Z","day":"sunday","time":"01:00"}
+  ]
+}
+
+```
+
+```python
+#TODO: Add python samples
 #<Rainforest::Schedule:0x3ff930ff8930 id=223> Attributes: {
   "created_at": "2015-07-28T17:11:54Z",
   "filters": {"tags":["www"]},
