@@ -38,21 +38,17 @@
 ```
 
 ```javascript
-//TODO: Add node samples
-#<Rainforest::Generator:0x3ff73f454004 id=905> Attributes: {
-  "columns": [
-    {"id":6440,"created_at":"2015-07-27T16:52:13Z","name":"first_name"},
-    {"id":6441,"created_at":"2015-07-27T16:52:13Z","name":"last_name"},
-    {"id":6442,"created_at":"2015-07-27T16:52:13Z","name":"email"},
-    {"id":6443,"created_at":"2015-07-27T16:52:13Z","name":"passwword"}
-  ],
-  "created_at": "2015-07-27T16:52:13Z",
-  "description": "Credentials used to log into accounts in various states",
-  "generator_type": "tabular",
-  "id": 905,
-  "name": "user_credentials",
-  "row_count": 2
-}
+{ id: 929,
+  created_at: '2015-07-28T15:33:28Z',
+  name: 'user_credentials',
+  description: 'Credentials used to log into accounts in various states',
+  generator_type: 'tabular',
+  columns:
+   [ { id: 6636, created_at: '2015-07-28T15:33:28Z', name: 'email' },
+     { id: 6637,
+       created_at: '2015-07-28T15:33:28Z',
+       name: 'password' } ],
+  row_count: 18 }
 ```
 
 ```python
@@ -114,15 +110,18 @@ gen = Rainforest::Generator.create(
 ```
 
 ```javascript
-//TODO: Add node samples
 var Rainforest = require('rainforest');
 Rainforest.apiKey = "your-api-key"
 
-gen = Rainforest::Generator.create(
-  :name => "user_credentials",
-  :description => "Credentials used to log into accounts in various states",
-  :columns => ["first_name", "last_name", "email", "passwword"]
-)
+Rainforest.Generator.create({
+  name: "user_credentials_43",
+  description: "Credentials used to log into accounts in various states",
+  columns: ["first_name", "last_name", "email", "passwword"]
+}).then(function(gen) {
+  // Use the generator
+}).catch(function(e) {
+  // Handle the error
+});
 ```
 
 ```python
@@ -177,22 +176,17 @@ gen = Rainforest::Generator.create(
 ```
 
 ```javascript
-//TODO: Add node samples
-#<Rainforest::Generator:0x3ff73f514d40 id=906> Attributes: {
-  "columns": [
-    {"id":6444,"created_at":"2015-07-27T17:00:22Z","name":"first_name"},
-    {"id":6445,"created_at":"2015-07-27T17:00:22Z","name":"last_name"},
-    {"id":6446,"created_at":"2015-07-27T17:00:22Z","name":"email"},
-    {"id":6447,"created_at":"2015-07-27T17:00:22Z","name":"passwword"}
-  ],
-  "created_at": "2015-07-27T17:00:22Z",
-  "data": null,
-  "description": "Credentials used to log into accounts in various states",
-  "generator_type": "tabular",
-  "id": 906,
-  "name": "user_credentials_1",
-  "row_count": 0
-}
+{ id: 929,
+  created_at: '2015-07-28T15:33:28Z',
+  name: 'user_credentials',
+  description: 'Credentials used to log into accounts in various states',
+  generator_type: 'tabular',
+  columns:
+   [ { id: 6636, created_at: '2015-07-28T15:33:28Z', name: 'email' },
+     { id: 6637,
+       created_at: '2015-07-28T15:33:28Z',
+       name: 'password' } ],
+  row_count: 18 }
 ```
 
 ```python
@@ -246,12 +240,15 @@ gen = Rainforest::Generator.retrieve(id)
 ```
 
 ```javascript
-//TODO: Add node samples
 var Rainforest = require('rainforest');
 Rainforest.apiKey = "your-api-key"
 
-id = 905
-gen = Rainforest::Generator.retrieve(id)
+var id = 978;
+Rainforest.Generator.retrieve(id).then(function(gen) {
+  // Use the generator
+}).catch(function(e) {
+  // Handle the error
+});
 ```
 
 ```python
@@ -303,22 +300,23 @@ gen = Rainforest::Generator.retrieve(id)
 ```
 
 ```javascript
-//TODO: Add node samples
-#<Rainforest::Generator:0x3ff73fcbdfb0 id=905> Attributes: {
-  "columns": [
-    {"id":6440,"created_at":"2015-07-27T16:52:13Z","name":"first_name"},
-    {"id":6441,"created_at":"2015-07-27T16:52:13Z","name":"last_name"},
-    {"id":6442,"created_at":"2015-07-27T16:52:13Z","name":"email"},
-    {"id":6443,"created_at":"2015-07-27T16:52:13Z","name":"passwword"}
-  ],
-  "created_at": "2015-07-27T16:52:13Z",
-  "data": null,
-  "description": "Credentials used to log into accounts in various states",
-  "generator_type": "tabular",
-  "id": 905,
-  "name": "user_credentials",
-  "row_count": 2
-}
+{ id: 978,
+  created_at: '2015-08-03T18:15:54Z',
+  name: 'user_credentials_43',
+  description: 'Credentials used to log into accounts in various states',
+  generator_type: 'tabular',
+  columns:
+   [ { id: 6796,
+       created_at: '2015-08-03T18:15:54Z',
+       name: 'first_name' },
+     { id: 6797,
+       created_at: '2015-08-03T18:15:54Z',
+       name: 'last_name' },
+     { id: 6798, created_at: '2015-08-03T18:15:54Z', name: 'email' },
+     { id: 6799,
+       created_at: '2015-08-03T18:15:54Z',
+       name: 'passwword' } ],
+  row_count: 0 }
 ```
 
 ```python
@@ -384,19 +382,18 @@ gen.save
 ```
 
 ```javascript
-//TODO: Add node samples
 var Rainforest = require('rainforest');
 Rainforest.apiKey = "your-api-key"
 
-id = 905
-gen = Rainforest::Generator.update(id, {
-  :name => "new_gen_name",
-  :description => "Credentials used to log into accounts in various states"
-})
-# or
-gen = Rainforest::Generator.retrieve(id)
-gen.name = "new_gen_name"
-gen.save
+var id = 978
+Rainforest.Generator.update(id, {
+  name: "new_gen_name",
+  description: "Credentials used to log into accounts in various states"
+}).then(function(gen) {
+  // Use the generator
+}).catch(function(e) {
+  // Handle the error
+});
 ```
 
 ```python
@@ -453,21 +450,23 @@ gen.save
 ```
 
 ```javascript
-//TODO: Add node samples
-#<Rainforest::Generator:0x3fdb68e27b8c id=905> Attributes: {
-  "columns": [
-    {"id":6440,"created_at":"2015-07-27T16:52:13Z","name":"first_name"},
-    {"id":6441,"created_at":"2015-07-27T16:52:13Z","name":"last_name"},
-    {"id":6442,"created_at":"2015-07-27T16:52:13Z","name":"email"},
-    {"id":6443,"created_at":"2015-07-27T16:52:13Z","name":"passwword"}
-  ],
-  "created_at": "2015-07-27T16:52:13Z",
-  "description": "Credentials used to log into accounts in various states",
-  "generator_type": "tabular",
-  "id": 905,
-  "name": "user_creds",
-  "row_count": 2
-}
+{ id: 978,
+  created_at: '2015-08-03T18:15:54Z',
+  name: 'new_gen_name',
+  description: 'Credentials used to log into accounts in various states',
+  generator_type: 'tabular',
+  columns:
+   [ { id: 6796,
+       created_at: '2015-08-03T18:15:54Z',
+       name: 'first_name' },
+     { id: 6797,
+       created_at: '2015-08-03T18:15:54Z',
+       name: 'last_name' },
+     { id: 6798, created_at: '2015-08-03T18:15:54Z', name: 'email' },
+     { id: 6799,
+       created_at: '2015-08-03T18:15:54Z',
+       name: 'passwword' } ],
+  row_count: 0 }
 ```
 
 ```python
@@ -539,19 +538,16 @@ gens.length # the number of generators returned
 ```
 
 ```javascript
-//TODO: Add node samples
 var Rainforest = require('rainforest');
 Rainforest.apiKey = "your-api-key"
 
-gens = Rainforest::Generator.all
-
-# The list is enumerable ad works similarly to a array
-gens.each do |gen|
-  # work with a generator
-end
-
-gens[0] # The first generator in the list
-gens.length # the number of generators returned
+Rainforest.Generator.all().then(function(gens) {
+  _.each(gens.data, function(gen) {
+    // Use each generator
+  });
+}).catch(function(e) {
+  // Handle the error
+});
 ```
 
 ```python
@@ -592,13 +588,20 @@ gens.length # the number of generators returned
 ```
 
 ```javascript
-//TODO: Add node samples
-#<Rainforest::ApiList[Rainforest::Generator]:0x3ff73d57a598> Data: [
-  "#<Rainforest::Generator:0x3ff73d577dac id=905>",
-  "#<Rainforest::Generator:0x3ff73d661bb4 id=906>"
-]
-
-
+{ data:
+   [ { id: 929,
+       created_at: '2015-07-28T15:33:28Z',
+       name: 'user_credentials',
+       description: 'Credentials used to log into accounts in various states',
+       generator_type: 'tabular',
+       columns:
+        [ { id: 6636, created_at: '2015-07-28T15:33:28Z', name: 'email' },
+          { id: 6637,
+            created_at: '2015-07-28T15:33:28Z',
+            name: 'password' } ],
+       row_count: 18 },
+     {...},
+     {...} ] }
 ```
 
 ```python
@@ -642,15 +645,15 @@ env.delete
 ```
 
 ```javascript
-//TODO: Add node samples
 var Rainforest = require('rainforest');
 Rainforest.apiKey = "your-api-key"
 
-id = 906
-response = Rainforest::Generator.delete(id)
-# or
-env = Rainforest::Generator.retrieve(id)
-env.delete
+var id = 929;
+Rainforest.Generator.delete(id).then(function(gen) {
+  // Delete was successful
+}).catch(function(e) {
+  // Handle the error
+});
 ```
 
 ```python
@@ -705,22 +708,23 @@ env.delete
 ```
 
 ```javascript
-//TODO: Add node samples
-#<Rainforest::Generator:0x3fdb6955ba70 id=906> Attributes: {
-  "columns": [
-    {"id":6444,"created_at":"2015-07-27T17:00:22Z","name":"first_name"},
-    {"id":6445,"created_at":"2015-07-27T17:00:22Z","name":"last_name"},
-    {"id":6446,"created_at":"2015-07-27T17:00:22Z","name":"email"},
-    {"id":6447,"created_at":"2015-07-27T17:00:22Z","name":"passwword"}
-  ],
-  "created_at": "2015-07-27T17:00:22Z",
-  "description": "Credentials used to log into accounts in various states",
-  "generator_type": "tabular",
-  "id": 906,
-  "name": "user_credentials_1",
-  "row_count": 0
-}
-
+{ id: 978,
+  created_at: '2015-08-03T18:15:54Z',
+  name: 'user_credentials_43',
+  description: 'Credentials used to log into accounts in various states',
+  generator_type: 'tabular',
+  columns:
+   [ { id: 6796,
+       created_at: '2015-08-03T18:15:54Z',
+       name: 'first_name' },
+     { id: 6797,
+       created_at: '2015-08-03T18:15:54Z',
+       name: 'last_name' },
+     { id: 6798, created_at: '2015-08-03T18:15:54Z', name: 'email' },
+     { id: 6799,
+       created_at: '2015-08-03T18:15:54Z',
+       name: 'passwword' } ],
+  row_count: 0 }
 ```
 
 ```python
@@ -773,15 +777,20 @@ rows = Rainforest::Generator.new(id).rows.all
 ```
 
 ```javascript
-//TODO: Add node samples
 var Rainforest = require('rainforest');
 Rainforest.apiKey = "your-api-key"
 
-id = 905
-gen = Rainforest::Generator.retrieve(id)
-rows = gen.rows.all
-# or
-rows = Rainforest::Generator.new(id).rows.all
+var id = 974;
+Rainforest.Generator.retrieve(id).then(function(gen) {
+  return gen.rows().all();
+}).then(function(rows) {
+  // NOTE: This endpoint does not require you to call rows.data, as this is not an ApiList object.
+  _.each(rows, function(row) {
+    // Do something with each row
+  });
+}).catch(function(e) {
+  // Handle the error
+});
 ```
 
 ```python
@@ -850,29 +859,12 @@ rows = Rainforest::Generator.new(id).rows.all
 ```
 
 ```javascript
-//TODO: Add node samples
-[
-  {
-    :id => 113914,
-    :data => {
-      :"6440" => "Jon",
-      :"6441" => "Calhoun",
-      :"6442" => "sample@apibits.com",
-      :"6443" => "someSUPERs3cr3tPASSword"
-    }
-  },
-  {
-    :id => 113915,
-    :data => {
-      :"6440" => "Pam",
-      :"6441" => "Beesly",
-      :"6442" => "pam@apibits.com",
-      :"6443" => "dundies are great"
-    }
-  }
-]
-
-
+[ { id: 115761,
+    data:
+     { '6780': 'Jon',
+       '6781': 'Calhoun',
+       '6782': 'jon@apibits.com',
+       '6783': 'jonsTopsecretPassword123' } } ]
 ```
 
 ```python
@@ -959,29 +951,25 @@ row = Rainforest::Generator.new(id).rows.create(
 ```
 
 ```javascript
-//TODO: Add node samples
 var Rainforest = require('rainforest');
 Rainforest.apiKey = "your-api-key"
 
-id = 905
-gen = Rainforest::Generator.retrieve(id)
-row = gen.rows.create(
-  :data => {
-    6440 => "Jerry", # 6440 is the column id from gen.columns
-    6441 => "Seinfeld",
-    6442 => "jerry@apibits.com",
-    6443 => "fake_password_123"
-  }
-)
-# or
-row = Rainforest::Generator.new(id).rows.create(
-  :data => {
-    6440 => "Jerry", # 6440 is the column id from gen.columns
-    6441 => "Seinfeld",
-    6442 => "jerry@apibits.com",
-    6443 => "fake_password_123"
-  }
-)
+var id = 974;
+Rainforest.Generator.retrieve(id).then(function(gen) {
+  return gen.rows().create({
+    data: {
+      "6780": "Jon",
+      "6781": "Calhoun",
+      "6782": "jon@apibits.com",
+      "6783": "jonsTopsecretPassword123"
+    }
+  });
+}).then(function(row) {
+  // Row was successfully created and returned in row
+}).catch(function(e) {
+  // Handle the error
+});
+
 ```
 
 ```python
@@ -1042,18 +1030,12 @@ row = Rainforest::Generator.new(id).rows.create(
 ```
 
 ```javascript
-//TODO: Add node samples
-{
-  :id => 113916,
-  :data => {
-    :"6440" => "Jerry",
-    :"6441" => "Seinfeld",
-    :"6442" => "jerry@apibits.com",
-    :"6443" => "fake_password_123"
-  }
-}
-
-
+{ id: 115763,
+  data:
+   { '6780': 'Jon',
+     '6781': 'Calhoun',
+     '6782': 'jon@apibits.com',
+     '6783': 'jonsTopsecretPassword123' } }
 ```
 
 ```python
