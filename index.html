@@ -79,8 +79,8 @@
 
 <span class="n">runs_pg_2</span> <span class="o">=</span> <span class="no">Rainforest</span><span class="o">::</span><span class="no">Run</span><span class="p">.</span><span class="nf">all</span><span class="p">(</span><span class="ss">:page</span> <span class="o">=&gt;</span> <span class="mi">2</span><span class="p">)</span>
 </code></pre>
-<pre class="highlight javascript"><code><span class="nx">require</span> <span class="s1">'rainforest'</span>
-<span class="nx">Rainforest</span><span class="p">.</span><span class="nx">api_key</span> <span class="o">=</span> <span class="s1">'your-api-key'</span>
+<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">Rainforest</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'rainforestqa'</span><span class="p">);</span>
+<span class="nx">Rainforest</span><span class="p">.</span><span class="nx">apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
 
 <span class="nx">Rainforest</span><span class="p">.</span><span class="nx">Run</span><span class="p">.</span><span class="nx">all</span><span class="p">({</span> <span class="na">page</span><span class="p">:</span> <span class="mi">2</span> <span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">runs</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// Use the runs</span>
@@ -95,8 +95,8 @@
 
 <span class="n">runs</span> <span class="o">=</span> <span class="no">Rainforest</span><span class="o">::</span><span class="no">Run</span><span class="p">.</span><span class="nf">all</span><span class="p">(</span><span class="ss">:page_size</span> <span class="o">=&gt;</span> <span class="mi">25</span><span class="p">)</span>
 </code></pre>
-<pre class="highlight javascript"><code><span class="nx">require</span> <span class="s1">'rainforest'</span>
-<span class="nx">Rainforst</span><span class="p">.</span><span class="nx">api_key</span> <span class="o">=</span> <span class="s1">'your-api-key'</span>
+<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">Rainforest</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'rainforestqa'</span><span class="p">);</span>
+<span class="nx">Rainforest</span><span class="p">.</span><span class="nx">apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
 
 <span class="nx">Rainforest</span><span class="p">.</span><span class="nx">Run</span><span class="p">.</span><span class="nx">all</span><span class="p">({</span> <span class="na">page_size</span><span class="p">:</span> <span class="mi">25</span> <span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">runs</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// Handle the runs.</span>
