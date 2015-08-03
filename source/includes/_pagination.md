@@ -12,8 +12,8 @@ runs_pg_2 = Rainforest::Run.all(:page => 2)
 
 
 ```javascript
-require 'rainforest'
-Rainforest.api_key = 'your-api-key'
+var Rainforest = require('rainforestqa');
+Rainforest.apiKey = "your-api-key";
 
 Rainforest.Run.all({ page: 2 }).then(function(runs) {
   // Use the runs
@@ -34,8 +34,8 @@ runs = Rainforest::Run.all(:page_size => 25)
 
 
 ```javascript
-require 'rainforest'
-Rainforst.api_key = 'your-api-key'
+var Rainforest = require('rainforestqa');
+Rainforest.apiKey = "your-api-key";
 
 Rainforest.Run.all({ page_size: 25 }).then(function(runs) {
   // Handle the runs.
