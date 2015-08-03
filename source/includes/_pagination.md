@@ -18,11 +18,12 @@ runs_pg_2 = Rainforest::Run.all(:page => 2)
 ```
 
 ```javascript
-//TODO: Add node samples
 require 'rainforest'
 Rainforest.api_key = 'your-api-key'
 
-runs_pg_2 = Rainforest::Run.all(:page => 2)
+Rainforest.Run.all({ page: 2 }).then(function(runs) {
+  // Use the runs
+});
 ```
 
 ```python
@@ -51,11 +52,12 @@ runs = Rainforest::Run.all(:page_size => 25)
 ```
 
 ```javascript
-//TODO: Add node samples
 require 'rainforest'
 Rainforst.api_key = 'your-api-key'
 
-runs = Rainforest::Run.all(:page_size => 25)
+Rainforest.Run.all({ page_size: 25 }).then(function(runs) {
+  // Handle the runs.
+});
 ```
 
 ```python
