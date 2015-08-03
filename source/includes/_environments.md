@@ -17,21 +17,7 @@
 }
 ```
 
-```php
-#TODO: Add php samples
-#<Rainforest::Environment:0x3ff73d710894 id=1> Attributes: {
-  "created_at": "2015-03-18T01:13:52Z",
-  "default": true,
-  "id": 1,
-  "name": "testing 123",
-  "site_environments": [
-    {"id":17,"created_at":"2015-07-01T01:08:51Z","site_id":10,"environment_id":1,"url":"http://www.test.com"},
-    {"id":1,"created_at":"2015-03-18T01:13:52Z","site_id":1,"environment_id":1,"url":"https://www.apibits-test.com"}
-  ],
-  "webhook": "",
-  "webhook_enabled": null
-}
-```
+
 
 ```javascript
 { id: 4871,
@@ -48,26 +34,9 @@
        url: 'http://www.example.org' } ] }
 ```
 
-```python
-#TODO: Add python samples
-#<Rainforest::Environment:0x3ff73d710894 id=1> Attributes: {
-  "created_at": "2015-03-18T01:13:52Z",
-  "default": true,
-  "id": 1,
-  "name": "testing 123",
-  "site_environments": [
-    {"id":17,"created_at":"2015-07-01T01:08:51Z","site_id":10,"environment_id":1,"url":"http://www.test.com"},
-    {"id":1,"created_at":"2015-03-18T01:13:52Z","site_id":1,"environment_id":1,"url":"https://www.apibits-test.com"}
-  ],
-  "webhook": "",
-  "webhook_enabled": null
-}
-```
 
-```python
-#TODO: Add python samples
-# Testing 123
-```
+
+
 
 TODO: Fill this in.
 
@@ -96,16 +65,7 @@ env = Rainforest::Environment.create(
 )
 ```
 
-```php
-#TODO: Add php samples
-require 'rainforest'
-Rainforest.api_key = "your-api-key"
 
-env = Rainforest::Environment.create(
-  :default => false,
-  :name => "my testing environment"
-)
-```
 
 ```javascript
 var Rainforest = require('rainforest');
@@ -121,16 +81,7 @@ Rainforest.Environment.create({
 });
 ```
 
-```python
-#TODO: Add python samples
-require 'rainforest'
-Rainforest.api_key = "your-api-key"
 
-env = Rainforest::Environment.create(
-  :default => false,
-  :name => "my testing environment"
-)
-```
 
 > Example Response
 
@@ -149,21 +100,7 @@ env = Rainforest::Environment.create(
 }
 ```
 
-```php
-#TODO: Add php samples
-#<Rainforest::Environment:0x3ff73d6c9d18 id=13> Attributes: {
-  "created_at": "2015-07-22T18:16:25Z",
-  "default": false,
-  "id": 13,
-  "name": "my testing environment",
-  "site_environments": [
-    {"id":24,"created_at":"2015-07-22T18:16:25Z","site_id":1,"environment_id":13,"url":"http://www.example.org"},
-    {"id":23,"created_at":"2015-07-22T18:16:25Z","site_id":10,"environment_id":13,"url":"http://www.example.org"}
-  ],
-  "webhook": "",
-  "webhook_enabled": null
-}
-```
+
 
 ```javascript
 { id: 4871,
@@ -180,21 +117,7 @@ env = Rainforest::Environment.create(
        url: 'http://www.example.org' } ] }
 ```
 
-```python
-#TODO: Add python samples
-#<Rainforest::Environment:0x3ff73d6c9d18 id=13> Attributes: {
-  "created_at": "2015-07-22T18:16:25Z",
-  "default": false,
-  "id": 13,
-  "name": "my testing environment",
-  "site_environments": [
-    {"id":24,"created_at":"2015-07-22T18:16:25Z","site_id":1,"environment_id":13,"url":"http://www.example.org"},
-    {"id":23,"created_at":"2015-07-22T18:16:25Z","site_id":10,"environment_id":13,"url":"http://www.example.org"}
-  ],
-  "webhook": "",
-  "webhook_enabled": null
-}
-```
+
 
 TODO: Fill this in.
 
@@ -219,14 +142,7 @@ id = 13
 env = Rainforest::Environment.retrieve(id)
 ```
 
-```php
-#TODO: Add php samples
-require 'rainforest'
-Rainforest.api_key = "your-api-key"
 
-id = 13
-env = Rainforest::Environment.retrieve(id)
-```
 
 ```javascript
 var Rainforest = require('rainforest');
@@ -240,14 +156,7 @@ Rainforest.Environment.retrieve(id).then(function(env) {
 });
 ```
 
-```python
-#TODO: Add python samples
-require 'rainforest'
-Rainforest.api_key = "your-api-key"
 
-id = 13
-env = Rainforest::Environment.retrieve(id)
-```
 
 > Example Response
 
@@ -266,21 +175,7 @@ env = Rainforest::Environment.retrieve(id)
 }
 ```
 
-```php
-#TODO: Add php samples
-#<Rainforest::Environment:0x3ff73d6c9d18 id=13> Attributes: {
-  "created_at": "2015-07-22T18:16:25Z",
-  "default": false,
-  "id": 13,
-  "name": "my testing environment",
-  "site_environments": [
-    {"id":24,"created_at":"2015-07-22T18:16:25Z","site_id":1,"environment_id":13,"url":"http://www.example.org"},
-    {"id":23,"created_at":"2015-07-22T18:16:25Z","site_id":10,"environment_id":13,"url":"http://www.example.org"}
-  ],
-  "webhook": "",
-  "webhook_enabled": null
-}
-```
+
 
 ```javascript
 { id: 4871,
@@ -297,21 +192,7 @@ env = Rainforest::Environment.retrieve(id)
        url: 'http://www.example.org' } ] }
 ```
 
-```python
-#TODO: Add python samples
-#<Rainforest::Environment:0x3ff73d6c9d18 id=13> Attributes: {
-  "created_at": "2015-07-22T18:16:25Z",
-  "default": false,
-  "id": 13,
-  "name": "my testing environment",
-  "site_environments": [
-    {"id":24,"created_at":"2015-07-22T18:16:25Z","site_id":1,"environment_id":13,"url":"http://www.example.org"},
-    {"id":23,"created_at":"2015-07-22T18:16:25Z","site_id":10,"environment_id":13,"url":"http://www.example.org"}
-  ],
-  "webhook": "",
-  "webhook_enabled": null
-}
-```
+
 
 TODO: Fill this in.
 
@@ -337,18 +218,7 @@ env.name = "new env name"
 env.save
 ```
 
-```php
-#TODO: Add php samples
-require 'rainforest'
-Rainforest.api_key = "your-api-key"
 
-id = 13
-env = Rainforest::Environment.update(id, :name => "new env name")
-# or
-env = Rainforest::Environment.retrieve(id)
-env.name = "new env name"
-env.save
-```
 
 ```javascript
 var Rainforest = require('rainforest');
@@ -364,18 +234,7 @@ Rainforest.Environment.update(id, {
 });
 ```
 
-```python
-#TODO: Add python samples
-require 'rainforest'
-Rainforest.api_key = "your-api-key"
 
-id = 13
-env = Rainforest::Environment.update(id, :name => "new env name")
-# or
-env = Rainforest::Environment.retrieve(id)
-env.name = "new env name"
-env.save
-```
 
 > Example Response
 
@@ -394,21 +253,7 @@ env.save
 }
 ```
 
-```php
-#TODO: Add php samples
-#<Rainforest::Environment:0x3ff73d6c9d18 id=13> Attributes: {
-  "created_at": "2015-07-22T18:16:25Z",
-  "default": false,
-  "id": 13,
-  "name": "my testing environment",
-  "site_environments": [
-    {"id":24,"created_at":"2015-07-22T18:16:25Z","site_id":1,"environment_id":13,"url":"http://www.example.org"},
-    {"id":23,"created_at":"2015-07-22T18:16:25Z","site_id":10,"environment_id":13,"url":"http://www.example.org"}
-  ],
-  "webhook": "",
-  "webhook_enabled": null
-}
-```
+
 
 ```javascript
 { id: 4871,
@@ -426,21 +271,7 @@ env.save
 
 ```
 
-```python
-#TODO: Add python samples
-#<Rainforest::Environment:0x3ff73d6c9d18 id=13> Attributes: {
-  "created_at": "2015-07-22T18:16:25Z",
-  "default": false,
-  "id": 13,
-  "name": "my testing environment",
-  "site_environments": [
-    {"id":24,"created_at":"2015-07-22T18:16:25Z","site_id":1,"environment_id":13,"url":"http://www.example.org"},
-    {"id":23,"created_at":"2015-07-22T18:16:25Z","site_id":10,"environment_id":13,"url":"http://www.example.org"}
-  ],
-  "webhook": "",
-  "webhook_enabled": null
-}
-```
+
 
 TODO: Fill this in.
 
@@ -471,21 +302,7 @@ envs[0] # The first environment in the list
 envs.length # the number of environments returned
 ```
 
-```php
-#TODO: Add php samples
-require 'rainforest'
-Rainforest.api_key = "your-api-key"
 
-envs = Rainforest::Environment.all
-
-# The list is enumerable and works similarly to an array
-envs.each do |env|
-  # work with an environment
-end
-
-envs[0] # The first environment in the list
-envs.length # the number of environments returned
-```
 
 ```javascript
 var _ = require('lodash');
@@ -501,21 +318,7 @@ Rainforest.Environment.all().then(function(envs) {
 });
 ```
 
-```python
-#TODO: Add python samples
-require 'rainforest'
-Rainforest.api_key = "your-api-key"
 
-envs = Rainforest::Environment.all
-
-# The list is enumerable and works similarly to an array
-envs.each do |env|
-  # work with an environment
-end
-
-envs[0] # The first environment in the list
-envs.length # the number of environments returned
-```
 
 > Example Response
 
@@ -528,15 +331,7 @@ envs.length # the number of environments returned
 
 ```
 
-```php
-#TODO: Add php samples
-#<Rainforest::ApiList[Rainforest::Environment]:0x3ff73d57a598> Data: [
-  "#<Rainforest::Environment:0x3ff73d577dac id=13>",
-  "#<Rainforest::Environment:0x3ff73d661bb4 id=18>"
-]
 
-
-```
 
 ```javascript
 { data:
@@ -556,15 +351,7 @@ envs.length # the number of environments returned
       {...} ] }
 ```
 
-```python
-#TODO: Add python samples
-#<Rainforest::ApiList[Rainforest::Environment]:0x3ff73d57a598> Data: [
-  "#<Rainforest::Environment:0x3ff73d577dac id=13>",
-  "#<Rainforest::Environment:0x3ff73d661bb4 id=18>"
-]
 
-
-```
 
 TODO: Fill this in.
 
@@ -584,17 +371,7 @@ env = Rainforest::Environment.retrieve(id)
 env.delete
 ```
 
-```php
-#TODO: Add php samples
-require 'rainforest'
-Rainforest.api_key = "your-api-key"
 
-id = 13
-response = Rainforest::Environment.delete(id)
-# or
-env = Rainforest::Environment.retrieve(id)
-env.delete
-```
 
 ```javascript
 var Rainforest = require('rainforest');
@@ -608,17 +385,7 @@ Rainforest.Environment.delete(id).then(function() {
 });
 ```
 
-```python
-#TODO: Add python samples
-require 'rainforest'
-Rainforest.api_key = "your-api-key"
 
-id = 13
-response = Rainforest::Environment.delete(id)
-# or
-env = Rainforest::Environment.retrieve(id)
-env.delete
-```
 
 > Example Response
 
@@ -626,19 +393,13 @@ env.delete
 {}
 ```
 
-```php
-[]
-```
+
 
 ```javascript
 {}
 ```
 
-```python
-#TODO: Add python samples
-{}
 
-```
 
 TODO: Fill this in.
 
@@ -666,25 +427,7 @@ runs[0] # The first run in the list
 runs.length # the number of runs
 ```
 
-```php
-#TODO: Add php samples
-require 'rainforest'
-Rainforest.api_key = "your-api-key"
 
-id = 13
-env = Rainforest::Environment.retrieve(id)
-runs = env.runs.all
-# or
-runs = Rainforest::Environment.new(id).runs.all
-
-# The list is enumerable and works similarly to an array
-runs.each do |run|
-  # work with an run
-end
-
-runs[0] # The first run in the list
-runs.length # the number of runs
-```
 
 ```javascript
 var Rainforest = require('rainforest');
@@ -703,25 +446,7 @@ Rainforest.Environment.retrieve(id).then(function(env) {
 });
 ```
 
-```python
-#TODO: Add python samples
-require 'rainforest'
-Rainforest.api_key = "your-api-key"
 
-id = 13
-env = Rainforest::Environment.retrieve(id)
-runs = env.runs.all
-# or
-runs = Rainforest::Environment.new(id).runs.all
-
-# The list is enumerable and works similarly to an array
-runs.each do |run|
-  # work with an run
-end
-
-runs[0] # The first run in the list
-runs.length # the number of runs
-```
 
 > Example Response
 
@@ -734,15 +459,7 @@ runs.length # the number of runs
 
 ```
 
-```php
-#TODO: Add php samples
-<Rainforest::ApiList[Rainforest::Run]:0x3ff73d6a52ec> Data: [
-  "#<Rainforest::Run:0x3ff73d678e90 id=4138>",
-  "#<Rainforest::Run:0x3ff73d661bb4 id=4242>"
-]
 
-
-```
 
 ```javascript
 { data:
@@ -798,14 +515,6 @@ runs.length # the number of runs
        {...} ] }
 ```
 
-```python
-#TODO: Add python samples
-<Rainforest::ApiList[Rainforest::Run]:0x3ff73d6a52ec> Data: [
-  "#<Rainforest::Run:0x3ff73d678e90 id=4138>",
-  "#<Rainforest::Run:0x3ff73d661bb4 id=4242>"
-]
 
-
-```
 
 TODO: Fill this in.

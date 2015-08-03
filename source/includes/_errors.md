@@ -1,17 +1,5 @@
 # Errors
 
-The Rainforest API uses the following error codes:
-
-Code | Meaning
----- | -------
-400 | Bad Request -- Your request has something wrong with it
-401 | Unauthorized -- Your API key is wrong
-404 | Not Found -- The specified resource could not be found
-405 | Method Not Allowed -- You tried to access a resource with an invalid method
-410 | Gone -- The resource requested has been removed from our servers
-50X | Internal Server Error -- We had a problem with our server. If this persists please contact us.
-
-
 ```ruby
 # Errors can be caught using begin/rescue
 begin
@@ -27,9 +15,9 @@ rescue Rainforest::ApiError => err
 end
 ```
 
-```node
-# The node library uses bluebird for promises. See https://github.com/petkaantonov/bluebird#error-handling for more info.
-Rainforest.Environment.retrieve("invalid-id").then(functoin(env) {
+```javascript
+// The node library uses bluebird for promises. See https://github.com/petkaantonov/bluebird#error-handling for more info.
+Rainforest.Environment.retrieve("invalid-id").then(function(env) {
   // we wont get here with an invalid id
 }).catch(function(err) {
   // Handle the error
@@ -40,3 +28,16 @@ Rainforest.Environment.retrieve("invalid-id").then(functoin(env) {
   console.log(err.apiMethod); // returns the ApiMethod used to execute the API call.
 });
 ```
+
+The Rainforest API uses the following error codes:
+
+Code | Meaning
+---- | -------
+400 | Bad Request -- Your request has something wrong with it
+401 | Unauthorized -- Your API key is wrong
+404 | Not Found -- The specified resource could not be found
+405 | Method Not Allowed -- You tried to access a resource with an invalid method
+410 | Gone -- The resource requested has been removed from our servers
+50X | Internal Server Error -- We had a problem with our server. If this persists please contact us.
+
+

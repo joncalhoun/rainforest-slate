@@ -19,23 +19,7 @@
 }
 ```
 
-```php
-#TODO: Add php samples
-#<Rainforest::Generator:0x3ff73f454004 id=905> Attributes: {
-  "columns": [
-    {"id":6440,"created_at":"2015-07-27T16:52:13Z","name":"first_name"},
-    {"id":6441,"created_at":"2015-07-27T16:52:13Z","name":"last_name"},
-    {"id":6442,"created_at":"2015-07-27T16:52:13Z","name":"email"},
-    {"id":6443,"created_at":"2015-07-27T16:52:13Z","name":"passwword"}
-  ],
-  "created_at": "2015-07-27T16:52:13Z",
-  "description": "Credentials used to log into accounts in various states",
-  "generator_type": "tabular",
-  "id": 905,
-  "name": "user_credentials",
-  "row_count": 2
-}
-```
+
 
 ```javascript
 { id: 929,
@@ -51,23 +35,7 @@
   row_count: 18 }
 ```
 
-```python
-#TODO: Add python samples
-#<Rainforest::Generator:0x3ff73f454004 id=905> Attributes: {
-  "columns": [
-    {"id":6440,"created_at":"2015-07-27T16:52:13Z","name":"first_name"},
-    {"id":6441,"created_at":"2015-07-27T16:52:13Z","name":"last_name"},
-    {"id":6442,"created_at":"2015-07-27T16:52:13Z","name":"email"},
-    {"id":6443,"created_at":"2015-07-27T16:52:13Z","name":"passwword"}
-  ],
-  "created_at": "2015-07-27T16:52:13Z",
-  "description": "Credentials used to log into accounts in various states",
-  "generator_type": "tabular",
-  "id": 905,
-  "name": "user_credentials",
-  "row_count": 2
-}
-```
+
 
 TODO: Fill this in.
 
@@ -97,17 +65,7 @@ gen = Rainforest::Generator.create(
 )
 ```
 
-```php
-#TODO: Add php samples
-require 'rainforest'
-Rainforest.api_key = "your-api-key"
 
-gen = Rainforest::Generator.create(
-  :name => "user_credentials",
-  :description => "Credentials used to log into accounts in various states",
-  :columns => ["first_name", "last_name", "email", "passwword"]
-)
-```
 
 ```javascript
 var Rainforest = require('rainforest');
@@ -124,17 +82,7 @@ Rainforest.Generator.create({
 });
 ```
 
-```python
-#TODO: Add python samples
-require 'rainforest'
-Rainforest.api_key = "your-api-key"
 
-gen = Rainforest::Generator.create(
-  :name => "user_credentials",
-  :description => "Credentials used to log into accounts in various states",
-  :columns => ["first_name", "last_name", "email", "passwword"]
-)
-```
 
 > Example Response
 
@@ -156,24 +104,7 @@ gen = Rainforest::Generator.create(
 }
 ```
 
-```php
-#TODO: Add php samples
-#<Rainforest::Generator:0x3ff73f514d40 id=906> Attributes: {
-  "columns": [
-    {"id":6444,"created_at":"2015-07-27T17:00:22Z","name":"first_name"},
-    {"id":6445,"created_at":"2015-07-27T17:00:22Z","name":"last_name"},
-    {"id":6446,"created_at":"2015-07-27T17:00:22Z","name":"email"},
-    {"id":6447,"created_at":"2015-07-27T17:00:22Z","name":"passwword"}
-  ],
-  "created_at": "2015-07-27T17:00:22Z",
-  "data": null,
-  "description": "Credentials used to log into accounts in various states",
-  "generator_type": "tabular",
-  "id": 906,
-  "name": "user_credentials_1",
-  "row_count": 0
-}
-```
+
 
 ```javascript
 { id: 929,
@@ -189,24 +120,7 @@ gen = Rainforest::Generator.create(
   row_count: 18 }
 ```
 
-```python
-#TODO: Add python samples
-#<Rainforest::Generator:0x3ff73f514d40 id=906> Attributes: {
-  "columns": [
-    {"id":6444,"created_at":"2015-07-27T17:00:22Z","name":"first_name"},
-    {"id":6445,"created_at":"2015-07-27T17:00:22Z","name":"last_name"},
-    {"id":6446,"created_at":"2015-07-27T17:00:22Z","name":"email"},
-    {"id":6447,"created_at":"2015-07-27T17:00:22Z","name":"passwword"}
-  ],
-  "created_at": "2015-07-27T17:00:22Z",
-  "data": null,
-  "description": "Credentials used to log into accounts in various states",
-  "generator_type": "tabular",
-  "id": 906,
-  "name": "user_credentials_1",
-  "row_count": 0
-}
-```
+
 
 TODO: Fill this in.
 
@@ -230,14 +144,7 @@ id = 905
 gen = Rainforest::Generator.retrieve(id)
 ```
 
-```php
-#TODO: Add php samples
-require 'rainforest'
-Rainforest.api_key = "your-api-key"
 
-id = 905
-gen = Rainforest::Generator.retrieve(id)
-```
 
 ```javascript
 var Rainforest = require('rainforest');
@@ -251,14 +158,7 @@ Rainforest.Generator.retrieve(id).then(function(gen) {
 });
 ```
 
-```python
-#TODO: Add python samples
-require 'rainforest'
-Rainforest.api_key = "your-api-key"
 
-id = 905
-gen = Rainforest::Generator.retrieve(id)
-```
 
 > Example Response
 
@@ -280,24 +180,7 @@ gen = Rainforest::Generator.retrieve(id)
 }
 ```
 
-```php
-#TODO: Add php samples
-#<Rainforest::Generator:0x3ff73fcbdfb0 id=905> Attributes: {
-  "columns": [
-    {"id":6440,"created_at":"2015-07-27T16:52:13Z","name":"first_name"},
-    {"id":6441,"created_at":"2015-07-27T16:52:13Z","name":"last_name"},
-    {"id":6442,"created_at":"2015-07-27T16:52:13Z","name":"email"},
-    {"id":6443,"created_at":"2015-07-27T16:52:13Z","name":"passwword"}
-  ],
-  "created_at": "2015-07-27T16:52:13Z",
-  "data": null,
-  "description": "Credentials used to log into accounts in various states",
-  "generator_type": "tabular",
-  "id": 905,
-  "name": "user_credentials",
-  "row_count": 2
-}
-```
+
 
 ```javascript
 { id: 978,
@@ -319,24 +202,7 @@ gen = Rainforest::Generator.retrieve(id)
   row_count: 0 }
 ```
 
-```python
-#TODO: Add python samples
-#<Rainforest::Generator:0x3ff73fcbdfb0 id=905> Attributes: {
-  "columns": [
-    {"id":6440,"created_at":"2015-07-27T16:52:13Z","name":"first_name"},
-    {"id":6441,"created_at":"2015-07-27T16:52:13Z","name":"last_name"},
-    {"id":6442,"created_at":"2015-07-27T16:52:13Z","name":"email"},
-    {"id":6443,"created_at":"2015-07-27T16:52:13Z","name":"passwword"}
-  ],
-  "created_at": "2015-07-27T16:52:13Z",
-  "data": null,
-  "description": "Credentials used to log into accounts in various states",
-  "generator_type": "tabular",
-  "id": 905,
-  "name": "user_credentials",
-  "row_count": 2
-}
-```
+
 
 TODO: Fill this in.
 
@@ -365,21 +231,7 @@ gen.name = "new_gen_name"
 gen.save
 ```
 
-```php
-#TODO: Add php samples
-require 'rainforest'
-Rainforest.api_key = "your-api-key"
 
-id = 905
-gen = Rainforest::Generator.update(id, {
-  :name => "new_gen_name",
-  :description => "Credentials used to log into accounts in various states"
-})
-# or
-gen = Rainforest::Generator.retrieve(id)
-gen.name = "new_gen_name"
-gen.save
-```
 
 ```javascript
 var Rainforest = require('rainforest');
@@ -396,21 +248,7 @@ Rainforest.Generator.update(id, {
 });
 ```
 
-```python
-#TODO: Add python samples
-require 'rainforest'
-Rainforest.api_key = "your-api-key"
 
-id = 905
-gen = Rainforest::Generator.update(id, {
-  :name => "new_gen_name",
-  :description => "Credentials used to log into accounts in various states"
-})
-# or
-gen = Rainforest::Generator.retrieve(id)
-gen.name = "new_gen_name"
-gen.save
-```
 
 > Example Response
 
@@ -431,23 +269,7 @@ gen.save
 }
 ```
 
-```php
-#TODO: Add php samples
-#<Rainforest::Generator:0x3fdb68e27b8c id=905> Attributes: {
-  "columns": [
-    {"id":6440,"created_at":"2015-07-27T16:52:13Z","name":"first_name"},
-    {"id":6441,"created_at":"2015-07-27T16:52:13Z","name":"last_name"},
-    {"id":6442,"created_at":"2015-07-27T16:52:13Z","name":"email"},
-    {"id":6443,"created_at":"2015-07-27T16:52:13Z","name":"passwword"}
-  ],
-  "created_at": "2015-07-27T16:52:13Z",
-  "description": "Credentials used to log into accounts in various states",
-  "generator_type": "tabular",
-  "id": 905,
-  "name": "user_creds",
-  "row_count": 2
-}
-```
+
 
 ```javascript
 { id: 978,
@@ -469,23 +291,7 @@ gen.save
   row_count: 0 }
 ```
 
-```python
-#TODO: Add python samples
-#<Rainforest::Generator:0x3fdb68e27b8c id=905> Attributes: {
-  "columns": [
-    {"id":6440,"created_at":"2015-07-27T16:52:13Z","name":"first_name"},
-    {"id":6441,"created_at":"2015-07-27T16:52:13Z","name":"last_name"},
-    {"id":6442,"created_at":"2015-07-27T16:52:13Z","name":"email"},
-    {"id":6443,"created_at":"2015-07-27T16:52:13Z","name":"passwword"}
-  ],
-  "created_at": "2015-07-27T16:52:13Z",
-  "description": "Credentials used to log into accounts in various states",
-  "generator_type": "tabular",
-  "id": 905,
-  "name": "user_creds",
-  "row_count": 2
-}
-```
+
 
 TODO: Fill this in.
 
@@ -521,21 +327,7 @@ gens[0] # The first generator in the list
 gens.length # the number of generators returned
 ```
 
-```php
-#TODO: Add php samples
-require 'rainforest'
-Rainforest.api_key = "your-api-key"
 
-gens = Rainforest::Generator.all
-
-# The list is enumerable ad works similarly to a array
-gens.each do |gen|
-  # work with a generator
-end
-
-gens[0] # The first generator in the list
-gens.length # the number of generators returned
-```
 
 ```javascript
 var Rainforest = require('rainforest');
@@ -550,21 +342,7 @@ Rainforest.Generator.all().then(function(gens) {
 });
 ```
 
-```python
-#TODO: Add python samples
-require 'rainforest'
-Rainforest.api_key = "your-api-key"
 
-gens = Rainforest::Generator.all
-
-# The list is enumerable ad works similarly to a array
-gens.each do |gen|
-  # work with a generator
-end
-
-gens[0] # The first generator in the list
-gens.length # the number of generators returned
-```
 
 > Example Response
 
@@ -577,15 +355,7 @@ gens.length # the number of generators returned
 
 ```
 
-```php
-#TODO: Add php samples
-#<Rainforest::ApiList[Rainforest::Generator]:0x3ff73d57a598> Data: [
-  "#<Rainforest::Generator:0x3ff73d577dac id=905>",
-  "#<Rainforest::Generator:0x3ff73d661bb4 id=906>"
-]
 
-
-```
 
 ```javascript
 { data:
@@ -604,15 +374,7 @@ gens.length # the number of generators returned
      {...} ] }
 ```
 
-```python
-#TODO: Add python samples
-#<Rainforest::ApiList[Rainforest::Generator]:0x3ff73d57a598> Data: [
-  "#<Rainforest::Generator:0x3ff73d577dac id=905>",
-  "#<Rainforest::Generator:0x3ff73d661bb4 id=906>"
-]
 
-
-```
 
 TODO: Fill this in.
 
@@ -632,17 +394,7 @@ env = Rainforest::Generator.retrieve(id)
 env.delete
 ```
 
-```php
-#TODO: Add php samples
-require 'rainforest'
-Rainforest.api_key = "your-api-key"
 
-id = 906
-response = Rainforest::Generator.delete(id)
-# or
-env = Rainforest::Generator.retrieve(id)
-env.delete
-```
 
 ```javascript
 var Rainforest = require('rainforest');
@@ -656,17 +408,7 @@ Rainforest.Generator.delete(id).then(function(gen) {
 });
 ```
 
-```python
-#TODO: Add python samples
-require 'rainforest'
-Rainforest.api_key = "your-api-key"
 
-id = 906
-response = Rainforest::Generator.delete(id)
-# or
-env = Rainforest::Generator.retrieve(id)
-env.delete
-```
 
 > Example Response
 
@@ -688,24 +430,7 @@ env.delete
 
 ```
 
-```php
-#TODO: Add php samples
-#<Rainforest::Generator:0x3fdb6955ba70 id=906> Attributes: {
-  "columns": [
-    {"id":6444,"created_at":"2015-07-27T17:00:22Z","name":"first_name"},
-    {"id":6445,"created_at":"2015-07-27T17:00:22Z","name":"last_name"},
-    {"id":6446,"created_at":"2015-07-27T17:00:22Z","name":"email"},
-    {"id":6447,"created_at":"2015-07-27T17:00:22Z","name":"passwword"}
-  ],
-  "created_at": "2015-07-27T17:00:22Z",
-  "description": "Credentials used to log into accounts in various states",
-  "generator_type": "tabular",
-  "id": 906,
-  "name": "user_credentials_1",
-  "row_count": 0
-}
 
-```
 
 ```javascript
 { id: 978,
@@ -727,24 +452,7 @@ env.delete
   row_count: 0 }
 ```
 
-```python
-#TODO: Add python samples
-#<Rainforest::Generator:0x3fdb6955ba70 id=906> Attributes: {
-  "columns": [
-    {"id":6444,"created_at":"2015-07-27T17:00:22Z","name":"first_name"},
-    {"id":6445,"created_at":"2015-07-27T17:00:22Z","name":"last_name"},
-    {"id":6446,"created_at":"2015-07-27T17:00:22Z","name":"email"},
-    {"id":6447,"created_at":"2015-07-27T17:00:22Z","name":"passwword"}
-  ],
-  "created_at": "2015-07-27T17:00:22Z",
-  "description": "Credentials used to log into accounts in various states",
-  "generator_type": "tabular",
-  "id": 906,
-  "name": "user_credentials_1",
-  "row_count": 0
-}
 
-```
 
 TODO: Fill this in.
 
@@ -764,17 +472,7 @@ rows = gen.rows.all
 rows = Rainforest::Generator.new(id).rows.all
 ```
 
-```php
-#TODO: Add php samples
-require 'rainforest'
-Rainforest.api_key = "your-api-key"
 
-id = 905
-gen = Rainforest::Generator.retrieve(id)
-rows = gen.rows.all
-# or
-rows = Rainforest::Generator.new(id).rows.all
-```
 
 ```javascript
 var Rainforest = require('rainforest');
@@ -793,17 +491,7 @@ Rainforest.Generator.retrieve(id).then(function(gen) {
 });
 ```
 
-```python
-#TODO: Add python samples
-require 'rainforest'
-Rainforest.api_key = "your-api-key"
 
-id = 905
-gen = Rainforest::Generator.retrieve(id)
-rows = gen.rows.all
-# or
-rows = Rainforest::Generator.new(id).rows.all
-```
 
 > Example Response
 
@@ -832,31 +520,7 @@ rows = Rainforest::Generator.new(id).rows.all
 
 ```
 
-```php
-#TODO: Add php samples
-[
-  {
-    :id => 113914,
-    :data => {
-      :"6440" => "Jon",
-      :"6441" => "Calhoun",
-      :"6442" => "sample@apibits.com",
-      :"6443" => "someSUPERs3cr3tPASSword"
-    }
-  },
-  {
-    :id => 113915,
-    :data => {
-      :"6440" => "Pam",
-      :"6441" => "Beesly",
-      :"6442" => "pam@apibits.com",
-      :"6443" => "dundies are great"
-    }
-  }
-]
 
-
-```
 
 ```javascript
 [ { id: 115761,
@@ -867,31 +531,7 @@ rows = Rainforest::Generator.new(id).rows.all
        '6783': 'jonsTopsecretPassword123' } } ]
 ```
 
-```python
-#TODO: Add python samples
-[
-  {
-    :id => 113914,
-    :data => {
-      :"6440" => "Jon",
-      :"6441" => "Calhoun",
-      :"6442" => "sample@apibits.com",
-      :"6443" => "someSUPERs3cr3tPASSword"
-    }
-  },
-  {
-    :id => 113915,
-    :data => {
-      :"6440" => "Pam",
-      :"6441" => "Beesly",
-      :"6442" => "pam@apibits.com",
-      :"6443" => "dundies are great"
-    }
-  }
-]
 
-
-```
 
 TODO: Fill this in.
 
@@ -924,31 +564,7 @@ row = Rainforest::Generator.new(id).rows.create(
 )
 ```
 
-```php
-#TODO: Add php samples
-require 'rainforest'
-Rainforest.api_key = "your-api-key"
 
-id = 905
-gen = Rainforest::Generator.retrieve(id)
-row = gen.rows.create(
-  :data => {
-    6440 => "Jerry", # 6440 is the column id from gen.columns
-    6441 => "Seinfeld",
-    6442 => "jerry@apibits.com",
-    6443 => "fake_password_123"
-  }
-)
-# or
-row = Rainforest::Generator.new(id).rows.create(
-  :data => {
-    6440 => "Jerry", # 6440 is the column id from gen.columns
-    6441 => "Seinfeld",
-    6442 => "jerry@apibits.com",
-    6443 => "fake_password_123"
-  }
-)
-```
 
 ```javascript
 var Rainforest = require('rainforest');
@@ -972,31 +588,7 @@ Rainforest.Generator.retrieve(id).then(function(gen) {
 
 ```
 
-```python
-#TODO: Add python samples
-require 'rainforest'
-Rainforest.api_key = "your-api-key"
 
-id = 905
-gen = Rainforest::Generator.retrieve(id)
-row = gen.rows.create(
-  :data => {
-    6440 => "Jerry", # 6440 is the column id from gen.columns
-    6441 => "Seinfeld",
-    6442 => "jerry@apibits.com",
-    6443 => "fake_password_123"
-  }
-)
-# or
-row = Rainforest::Generator.new(id).rows.create(
-  :data => {
-    6440 => "Jerry", # 6440 is the column id from gen.columns
-    6441 => "Seinfeld",
-    6442 => "jerry@apibits.com",
-    6443 => "fake_password_123"
-  }
-)
-```
 
 > Example Response
 
@@ -1014,20 +606,7 @@ row = Rainforest::Generator.new(id).rows.create(
 
 ```
 
-```php
-#TODO: Add php samples
-{
-  :id => 113916,
-  :data => {
-    :"6440" => "Jerry",
-    :"6441" => "Seinfeld",
-    :"6442" => "jerry@apibits.com",
-    :"6443" => "fake_password_123"
-  }
-}
 
-
-```
 
 ```javascript
 { id: 115763,
@@ -1038,19 +617,6 @@ row = Rainforest::Generator.new(id).rows.create(
      '6783': 'jonsTopsecretPassword123' } }
 ```
 
-```python
-#TODO: Add python samples
-{
-  :id => 113916,
-  :data => {
-    :"6440" => "Jerry",
-    :"6441" => "Seinfeld",
-    :"6442" => "jerry@apibits.com",
-    :"6443" => "fake_password_123"
-  }
-}
 
-
-```
 
 TODO: Fill this in.

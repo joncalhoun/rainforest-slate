@@ -3,8 +3,6 @@ title: API Reference
 
 language_tabs:
   - ruby
-  - python
-  - php
   - { javascript: "node" }
 
 toc_footers:

@@ -40,44 +40,7 @@
 }
 ```
 
-```php
-#TODO: Add php samples
-#<Rainforest::Test:0x3fd86d602270 id=17790> Attributes: {
-  "browsers": [
-    {"name":"android_phone_landscape","description":"Android Phone Landscape","category":"phone","state":"disabled"},
-    {"name":"android_phone_portrait","description":"Android Phone Portrait","category":"phone","state":"disabled"},
-    {"name":"android_tablet_landscape","description":"Android Tablet Landscape","category":"tablet","state":"disabled"},
-    {"name":"android_tablet_portrait","description":"Android Tablet Portrait","category":"tablet","state":"disabled"},
-    {"name":"chrome","description":"Google Chrome","category":"browser","state":"enabled"},
-    {"name":"firefox","description":"Mozilla Firefox","category":"browser","state":"disabled"},
-    {"name":"ie8","description":"Microsoft Internet Explorer 8","category":"browser","state":"disabled"},
-    {"name":"ie9","description":"Microsoft Internet Explorer 9","category":"browser","state":"disabled"},
-    {"name":"ie10","description":"Microsoft Internet Explorer 10","category":"browser","state":"disabled"},
-    {"name":"ie11","description":"Microsoft Internet Explorer 11","category":"browser","state":"disabled"},
-    {"name":"safari","description":"Apple Safari","category":"browser","state":"disabled"}
-  ],
-  "created_at": "2015-07-28T15:02:00Z",
-  "deletable": true,
-  "deleted": false,
-  "description": "Make sure all customer logos link to their websites correctly.",
-  "dry_run_url": "https://tester.rainforestqa.com/tester/dry_run/vUu916ScjlWRwZbITsVnRg?turkSubmitTo=%2Fthanks",
-  "editable": true,
-  "has_been_dry_run": true,
-  "id": 17790,
-  "last_run": {"id":31459,"created_at":"2015-07-28T15:10:06Z","state":"complete"},
-  "result": "passed",
-  "run_mode": "default",
-  "site_id": 860,
-  "start_uri": "/",
-  "step_count": 1,
-  "tags": [
-    "www"
-  ],
-  "test_id": 17790,
-  "title": "Customer Logos",
-  "quality": "acceptable"
-}
-```
+
 
 ```javascript
 { id: 17793,
@@ -148,44 +111,7 @@
      state: 'aborted' } }
 ```
 
-```python
-#TODO: Add python samples
-#<Rainforest::Test:0x3fd86d602270 id=17790> Attributes: {
-  "browsers": [
-    {"name":"android_phone_landscape","description":"Android Phone Landscape","category":"phone","state":"disabled"},
-    {"name":"android_phone_portrait","description":"Android Phone Portrait","category":"phone","state":"disabled"},
-    {"name":"android_tablet_landscape","description":"Android Tablet Landscape","category":"tablet","state":"disabled"},
-    {"name":"android_tablet_portrait","description":"Android Tablet Portrait","category":"tablet","state":"disabled"},
-    {"name":"chrome","description":"Google Chrome","category":"browser","state":"enabled"},
-    {"name":"firefox","description":"Mozilla Firefox","category":"browser","state":"disabled"},
-    {"name":"ie8","description":"Microsoft Internet Explorer 8","category":"browser","state":"disabled"},
-    {"name":"ie9","description":"Microsoft Internet Explorer 9","category":"browser","state":"disabled"},
-    {"name":"ie10","description":"Microsoft Internet Explorer 10","category":"browser","state":"disabled"},
-    {"name":"ie11","description":"Microsoft Internet Explorer 11","category":"browser","state":"disabled"},
-    {"name":"safari","description":"Apple Safari","category":"browser","state":"disabled"}
-  ],
-  "created_at": "2015-07-28T15:02:00Z",
-  "deletable": true,
-  "deleted": false,
-  "description": "Make sure all customer logos link to their websites correctly.",
-  "dry_run_url": "https://tester.rainforestqa.com/tester/dry_run/vUu916ScjlWRwZbITsVnRg?turkSubmitTo=%2Fthanks",
-  "editable": true,
-  "has_been_dry_run": true,
-  "id": 17790,
-  "last_run": {"id":31459,"created_at":"2015-07-28T15:10:06Z","state":"complete"},
-  "result": "passed",
-  "run_mode": "default",
-  "site_id": 860,
-  "start_uri": "/",
-  "step_count": 1,
-  "tags": [
-    "www"
-  ],
-  "test_id": 17790,
-  "title": "Customer Logos",
-  "quality": "acceptable"
-}
-```
+
 
 TODO: Fill this in.
 
@@ -239,27 +165,7 @@ test = Rainforest::Test.create(
 )
 ```
 
-```php
-#TODO: Add php samples
-require 'rainforest'
-Rainforest.api_key = "your-api-key"
 
-
-test = Rainforest::Test.create(
-  :start_uri => "/login",
-  :title => "Log in to an account",
-  :elements => [
-    {
-      :type => "step",
-      :redirection => true,
-      :element => {
-        :action => "Type 'test@apibits.com' into the email field, and 'password123' into the password field, then hit the log in button.",
-        :response => "Were you redirected to the dashboard?"
-      }
-    }
-  ]
-)
-```
 
 ```javascript
 var Rainforest = require('rainforest');
@@ -285,27 +191,7 @@ Rainforest.Test.create({
 });
 ```
 
-```python
-#TODO: Add python samples
-require 'rainforest'
-Rainforest.api_key = "your-api-key"
 
-
-test = Rainforest::Test.create(
-  :start_uri => "/login",
-  :title => "Log in to an account",
-  :elements => [
-    {
-      :type => "step",
-      :redirection=>true,
-      :element => {
-        :action => "Type 'test@apibits.com' into the email field, and 'password123' into the password field, then hit the log in button.",
-        :response => "Were you redirected to the dashboard?"
-      }
-    }
-  ]
-)
-```
 
 > Example Response
 
@@ -351,48 +237,7 @@ test = Rainforest::Test.create(
 }
 ```
 
-```php
-#TODO: Add php samples
-#<Rainforest::Test:0x3ff930d38a74 id=17609> Attributes: {
-  "browsers": [
-    {"name":"android_phone_landscape","description":"Android Phone Landscape","category":"phone","state":"enabled"},
-    {"name":"android_phone_portrait","description":"Android Phone Portrait","category":"phone","state":"enabled"},
-    {"name":"android_tablet_landscape","description":"Android Tablet Landscape","category":"tablet","state":"enabled"},
-    {"name":"android_tablet_portrait","description":"Android Tablet Portrait","category":"tablet","state":"enabled"},
-    {"name":"chrome","description":"Google Chrome","category":"browser","state":"enabled"},
-    {"name":"firefox","description":"Mozilla Firefox","category":"browser","state":"enabled"},
-    {"name":"ie8","description":"Microsoft Internet Explorer 8","category":"browser","state":"enabled"},
-    {"name":"ie9","description":"Microsoft Internet Explorer 9","category":"browser","state":"enabled"},
-    {"name":"ie10","description":"Microsoft Internet Explorer 10","category":"browser","state":"enabled"},
-    {"name":"ie11","description":"Microsoft Internet Explorer 11","category":"browser","state":"enabled"},
-    {"name":"safari","description":"Apple Safari","category":"browser","state":"disabled"}
-  ],
-  "created_at": "2015-07-28T17:34:38Z",
-  "deletable": true,
-  "deleted": false,
-  "description": null,
-  "dry_run_url": "https://tester.rnfrst.com/tester/dry_run/kcVBInd0jUW_ELLk4NHTYg?turkSubmitTo=%2Fthanks",
-  "editable": true,
-  "has_been_dry_run": false,
-  "id": 17609,
-  "last_run": null,
-  "result": "no_result",
-  "run_mode": "default",
-  "site_id": 860,
-  "start_uri": "/login",
-  "step_count": 1,
-  "tags": [
 
-  ],
-  "test_id": 17609,
-  "title": "Log in to an account",
-  "quality": "no_data",
-  "elements": [
-    {"id":54913,"created_at":"2015-07-28T17:34:39Z","redirection":true,"type":"step","element":{"id":47999,"created_at":"2015-07-28T17:34:39Z","action":"Type 'test@apibits.com' into the email field, and 'password123' into the password field, then hit the log in button.","response":"Were you redirected to the dashboard?","browsers":null}}
-  ],
-  "attached_to": null
-}
-```
 
 ```javascript
 { id: 18036,
@@ -466,48 +311,7 @@ test = Rainforest::Test.create(
   last_run: null }
 ```
 
-```python
-#TODO: Add python samples
-#<Rainforest::Test:0x3ff930d38a74 id=17609> Attributes: {
-  "browsers": [
-    {"name":"android_phone_landscape","description":"Android Phone Landscape","category":"phone","state":"enabled"},
-    {"name":"android_phone_portrait","description":"Android Phone Portrait","category":"phone","state":"enabled"},
-    {"name":"android_tablet_landscape","description":"Android Tablet Landscape","category":"tablet","state":"enabled"},
-    {"name":"android_tablet_portrait","description":"Android Tablet Portrait","category":"tablet","state":"enabled"},
-    {"name":"chrome","description":"Google Chrome","category":"browser","state":"enabled"},
-    {"name":"firefox","description":"Mozilla Firefox","category":"browser","state":"enabled"},
-    {"name":"ie8","description":"Microsoft Internet Explorer 8","category":"browser","state":"enabled"},
-    {"name":"ie9","description":"Microsoft Internet Explorer 9","category":"browser","state":"enabled"},
-    {"name":"ie10","description":"Microsoft Internet Explorer 10","category":"browser","state":"enabled"},
-    {"name":"ie11","description":"Microsoft Internet Explorer 11","category":"browser","state":"enabled"},
-    {"name":"safari","description":"Apple Safari","category":"browser","state":"disabled"}
-  ],
-  "created_at": "2015-07-28T17:34:38Z",
-  "deletable": true,
-  "deleted": false,
-  "description": null,
-  "dry_run_url": "https://tester.rnfrst.com/tester/dry_run/kcVBInd0jUW_ELLk4NHTYg?turkSubmitTo=%2Fthanks",
-  "editable": true,
-  "has_been_dry_run": false,
-  "id": 17609,
-  "last_run": null,
-  "result": "no_result",
-  "run_mode": "default",
-  "site_id": 860,
-  "start_uri": "/login",
-  "step_count": 1,
-  "tags": [
 
-  ],
-  "test_id": 17609,
-  "title": "Log in to an account",
-  "quality": "no_data",
-  "elements": [
-    {"id":54913,"created_at":"2015-07-28T17:34:39Z","redirection":true,"type":"step","element":{"id":47999,"created_at":"2015-07-28T17:34:39Z","action":"Type 'test@apibits.com' into the email field, and 'password123' into the password field, then hit the log in button.","response":"Were you redirected to the dashboard?","browsers":null}}
-  ],
-  "attached_to": null
-}
-```
 
 TODO: Fill this in.
 
@@ -529,14 +333,7 @@ id = 905
 test = Rainforest::Test.retrieve(id)
 ```
 
-```php
-#TODO: Add php samples
-require 'rainforest'
-Rainforest.api_key = "your-api-key"
 
-id = 905
-test = Rainforest::Test.retrieve(id)
-```
 
 ```javascript
 var Rainforest = require('rainforest');
@@ -550,14 +347,7 @@ Rainforest.Test.retrieve(id).then(function(test) {
 });
 ```
 
-```python
-#TODO: Add python samples
-require 'rainforest'
-Rainforest.api_key = "your-api-key"
 
-id = 905
-test = Rainforest::Test.retrieve(id)
-```
 
 > Example Response
 
@@ -605,50 +395,7 @@ test = Rainforest::Test.retrieve(id)
 }
 ```
 
-```php
-#TODO: Add php samples
-#<Rainforest::Test:0x3ff931d22ac0 id=17609> Attributes: {
-  "browsers": [
-    {"name":"android_phone_landscape","description":"Android Phone Landscape","category":"phone","state":"enabled"},
-    {"name":"android_phone_portrait","description":"Android Phone Portrait","category":"phone","state":"enabled"},
-    {"name":"android_tablet_landscape","description":"Android Tablet Landscape","category":"tablet","state":"enabled"},
-    {"name":"android_tablet_portrait","description":"Android Tablet Portrait","category":"tablet","state":"enabled"},
-    {"name":"chrome","description":"Google Chrome","category":"browser","state":"enabled"},
-    {"name":"firefox","description":"Mozilla Firefox","category":"browser","state":"enabled"},
-    {"name":"ie8","description":"Microsoft Internet Explorer 8","category":"browser","state":"enabled"},
-    {"name":"ie9","description":"Microsoft Internet Explorer 9","category":"browser","state":"enabled"},
-    {"name":"ie10","description":"Microsoft Internet Explorer 10","category":"browser","state":"enabled"},
-    {"name":"ie11","description":"Microsoft Internet Explorer 11","category":"browser","state":"enabled"},
-    {"name":"safari","description":"Apple Safari","category":"browser","state":"disabled"}
-  ],
-  "created_at": "2015-07-28T17:34:38Z",
-  "deletable": true,
-  "deleted": false,
-  "description": null,
-  "dry_run_url": "https://tester.rnfrst.com/tester/dry_run/kcVBInd0jUW_ELLk4NHTYg?turkSubmitTo=%2Fthanks",
-  "editable": true,
-  "has_been_dry_run": true,
-  "id": 17609,
-  "last_run": null,
-  "result": "no_result",
-  "run_mode": "default",
-  "site_id": 860,
-  "start_uri": "/login",
-  "step_count": 1,
-  "tags": [
 
-  ],
-  "test_id": 17609,
-  "title": "Log in to an account",
-  "quality": "no_data",
-  "elements": [
-    {"id":54913,"created_at":"2015-07-28T17:34:39Z","redirection":true,"type":"step","element":{"id":47999,"created_at":"2015-07-28T17:34:39Z","action":"Type 'test@apibits.com' into the email field, and 'password123' into the password field, then hit the log in button.","response":"Were you redirected to the dashboard?","browsers":null}}
-  ],
-  "attached_to": [
-
-  ]
-}
-```
 
 ```javascript
 { id: 17793,
@@ -719,50 +466,7 @@ test = Rainforest::Test.retrieve(id)
      state: 'aborted' } }
 ```
 
-```python
-#TODO: Add python samples
-#<Rainforest::Test:0x3ff931d22ac0 id=17609> Attributes: {
-  "browsers": [
-    {"name":"android_phone_landscape","description":"Android Phone Landscape","category":"phone","state":"enabled"},
-    {"name":"android_phone_portrait","description":"Android Phone Portrait","category":"phone","state":"enabled"},
-    {"name":"android_tablet_landscape","description":"Android Tablet Landscape","category":"tablet","state":"enabled"},
-    {"name":"android_tablet_portrait","description":"Android Tablet Portrait","category":"tablet","state":"enabled"},
-    {"name":"chrome","description":"Google Chrome","category":"browser","state":"enabled"},
-    {"name":"firefox","description":"Mozilla Firefox","category":"browser","state":"enabled"},
-    {"name":"ie8","description":"Microsoft Internet Explorer 8","category":"browser","state":"enabled"},
-    {"name":"ie9","description":"Microsoft Internet Explorer 9","category":"browser","state":"enabled"},
-    {"name":"ie10","description":"Microsoft Internet Explorer 10","category":"browser","state":"enabled"},
-    {"name":"ie11","description":"Microsoft Internet Explorer 11","category":"browser","state":"enabled"},
-    {"name":"safari","description":"Apple Safari","category":"browser","state":"disabled"}
-  ],
-  "created_at": "2015-07-28T17:34:38Z",
-  "deletable": true,
-  "deleted": false,
-  "description": null,
-  "dry_run_url": "https://tester.rnfrst.com/tester/dry_run/kcVBInd0jUW_ELLk4NHTYg?turkSubmitTo=%2Fthanks",
-  "editable": true,
-  "has_been_dry_run": true,
-  "id": 17609,
-  "last_run": null,
-  "result": "no_result",
-  "run_mode": "default",
-  "site_id": 860,
-  "start_uri": "/login",
-  "step_count": 1,
-  "tags": [
 
-  ],
-  "test_id": 17609,
-  "title": "Log in to an account",
-  "quality": "no_data",
-  "elements": [
-    {"id":54913,"created_at":"2015-07-28T17:34:39Z","redirection":true,"type":"step","element":{"id":47999,"created_at":"2015-07-28T17:34:39Z","action":"Type 'test@apibits.com' into the email field, and 'password123' into the password field, then hit the log in button.","response":"Were you redirected to the dashboard?","browsers":null}}
-  ],
-  "attached_to": [
-
-  ]
-}
-```
 
 TODO: Fill this in.
 
@@ -789,19 +493,7 @@ test.title = "New Test Title"
 test.save
 ```
 
-```php
-#TODO: Add php samples
-require 'rainforest'
-Rainforest.api_key = "your-api-key"
 
-# TODO: Fill this in
-id = 17609
-test = Rainforest::Test.update(id, :title => "New Test Title")
-# or
-test = Rainforest::Test.retrieve(id)
-test.title = "New Test Title"
-test.save
-```
 
 ```javascript
 var Rainforest = require('rainforest');
@@ -817,19 +509,7 @@ Rainforest.Test.update(id, {
 });
 ```
 
-```python
-#TODO: Add python samples
-require 'rainforest'
-Rainforest.api_key = "your-api-key"
 
-# TODO: Fill this in
-id = 17609
-test = Rainforest::Test.update(id, :title => "New Test Title")
-# or
-test = Rainforest::Test.retrieve(id)
-test.title = "New Test Title"
-test.save
-```
 
 > Example Response
 
@@ -838,11 +518,7 @@ test.save
 }
 ```
 
-```php
-#TODO: Add php samples
-#<Rainforest::Test:0x3ff73d6c9d18 id=13> Attributes: {
-}
-```
+
 
 ```javascript
 { id: 17793,
@@ -924,11 +600,7 @@ test.save
      state: 'aborted' } }
 ```
 
-```python
-#TODO: Add python samples
-#<Rainforest::Test:0x3ff73d6c9d18 id=13> Attributes: {
-}
-```
+
 
 TODO: Fill this in.
 
@@ -956,21 +628,7 @@ tests[0] # The first test in the list
 tests.length # the number of tests returned
 ```
 
-```php
-#TODO: Add php samples
-require 'rainforest'
-Rainforest.api_key = "your-api-key"
 
-tests = Rainforest::Test.all
-
-# The list is enumerable and works similarly to a array
-tests.each do |test|
-  # work with a test
-end
-
-tests[0] # The first test in the list
-tests.length # the number of tests returned
-```
 
 ```javascript
 var Rainforest = require('rainforest');
@@ -985,21 +643,7 @@ Rainforest.Test.all().then(function(tests) {
 });
 ```
 
-```python
-#TODO: Add python samples
-require 'rainforest'
-Rainforest.api_key = "your-api-key"
 
-tests = Rainforest::Test.all
-
-# The list is enumerable and works similarly to a array
-tests.each do |test|
-  # work with a test
-end
-
-tests[0] # The first test in the list
-tests.length # the number of tests returned
-```
 
 > Example Response
 
@@ -1012,15 +656,7 @@ tests.length # the number of tests returned
 
 ```
 
-```php
-#TODO: Add php samples
-#<Rainforest::ApiList[Rainforest::Test]:0x3ff73d57a598> Data: [
-  "#<Rainforest::Test:0x3ff73d577dac id=905>",
-  "#<Rainforest::Test:0x3ff73d661bb4 id=2181>"
-]
 
-
-```
 
 ```javascript
 //TODO: Add node samples
@@ -1032,15 +668,7 @@ tests.length # the number of tests returned
 
 ```
 
-```python
-#TODO: Add python samples
-#<Rainforest::ApiList[Rainforest::Test]:0x3ff73d57a598> Data: [
-  "#<Rainforest::Test:0x3ff73d577dac id=905>",
-  "#<Rainforest::Test:0x3ff73d661bb4 id=2181>"
-]
 
-
-```
 
 TODO: Fill this in.
 
@@ -1060,17 +688,7 @@ test = Rainforest::Test.retrieve(id)
 test.delete
 ```
 
-```php
-#TODO: Add php samples
-require 'rainforest'
-Rainforest.api_key = "your-api-key"
 
-id = 906
-response = Rainforest::Test.delete(id)
-# or
-test = Rainforest::Test.retrieve(id)
-test.delete
-```
 
 ```javascript
 var Rainforest = require('rainforest');
@@ -1084,17 +702,7 @@ Rainforest.Test.delete(id).then(function(test) {
 });
 ```
 
-```python
-#TODO: Add python samples
-require 'rainforest'
-Rainforest.api_key = "your-api-key"
 
-id = 906
-response = Rainforest::Test.delete(id)
-# or
-test = Rainforest::Test.retrieve(id)
-test.delete
-```
 
 > Example Response
 
@@ -1102,17 +710,13 @@ test.delete
 {}
 ```
 
-```php
-[]
-```
+
 
 ```javascript
 {}
 ```
 
-```python
-{}
-```
+
 
 TODO: Fill this in.
 
@@ -1141,25 +745,7 @@ runs[0] # The first run in the list
 runs.length # the number of runs
 ```
 
-```php
-#TODO: Add php samples
-require 'rainforest'
-Rainforest.api_key = "your-api-key"
 
-id = 13
-test = Rainforest::Test.retrieve(id)
-runs = test.history
-# or
-runs = Rainforest::Environment.new(id).history
-
-# The list is enumerable and works similarly to an array
-runs.each do |run|
-  # work with an run
-end
-
-runs[0] # The first run in the list
-runs.length # the number of runs
-```
 
 ```javascript
 var Rainforest = require('rainforest');
@@ -1177,25 +763,7 @@ Rainforest.Test.retrieve(id).then(function(test) {
 });
 ```
 
-```python
-#TODO: Add python samples
-require 'rainforest'
-Rainforest.api_key = "your-api-key"
 
-id = 13
-test = Rainforest::Test.retrieve(id)
-runs = test.history
-# or
-runs = Rainforest::Environment.new(id).history
-
-# The list is enumerable and works similarly to an array
-runs.each do |run|
-  # work with an run
-end
-
-runs[0] # The first run in the list
-runs.length # the number of runs
-```
 
 > Example Response
 
@@ -1208,15 +776,7 @@ runs.length # the number of runs
 
 ```
 
-```php
-#TODO: Add php samples
-#<Rainforest::ApiList[Rainforest::Run]:0x3ff73d6a52ec> Data: [
-  "#<Rainforest::Run:0x3ff73d678e90 id=4138>",
-  "#<Rainforest::Run:0x3ff73d661bb4 id=4242>"
-]
 
-
-```
 
 ```javascript
 { data:
@@ -1233,15 +793,7 @@ runs.length # the number of runs
      {...} ] }
 ```
 
-```python
-#TODO: Add python samples
-#<Rainforest::ApiList[Rainforest::Run]:0x3ff73d6a52ec> Data: [
-  "#<Rainforest::Run:0x3ff73d678e90 id=4138>",
-  "#<Rainforest::Run:0x3ff73d661bb4 id=4242>"
-]
 
-
-```
 
 A test's history is a list of runs associated with that test.
 

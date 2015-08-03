@@ -9,13 +9,7 @@ Rainforest.api_key = 'your-api-key'
 runs_pg_2 = Rainforest::Run.all(:page => 2)
 ```
 
-```php
-#TODO: Add php samples
-require 'rainforest'
-Rainforest.api_key = 'your-api-key'
 
-runs_pg_2 = Rainforest::Run.all(:page => 2)
-```
 
 ```javascript
 require 'rainforest'
@@ -26,13 +20,7 @@ Rainforest.Run.all({ page: 2 }).then(function(runs) {
 });
 ```
 
-```python
-#TODO: Add python samples
-require 'rainforest'
-Rainforest.api_key = 'your-api-key'
 
-runs_pg_2 = Rainforest::Run.all(:page => 2)
-```
 
 > Set the page size
 
@@ -43,13 +31,7 @@ Rainforst.api_key = 'your-api-key'
 runs = Rainforest::Run.all(:page_size => 25)
 ```
 
-```php
-#TODO: Add php samples
-require 'rainforest'
-Rainforst.api_key = 'your-api-key'
 
-runs = Rainforest::Run.all(:page_size => 25)
-```
 
 ```javascript
 require 'rainforest'
@@ -60,13 +42,7 @@ Rainforest.Run.all({ page_size: 25 }).then(function(runs) {
 });
 ```
 
-```python
-#TODO: Add python samples
-require 'rainforest'
-Rainforst.api_key = 'your-api-key'
 
-runs = Rainforest::Run.all(:page_size => 25)
-```
 
 Nearly all API calls used to list a resource support pagination. To specify your page simply pass in the `page` parameter.
 
