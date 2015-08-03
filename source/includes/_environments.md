@@ -68,7 +68,7 @@ env = Rainforest::Environment.create(
 
 
 ```javascript
-var Rainforest = require('rainforest');
+var Rainforest = require('rainforestqa');
 Rainforest.apiKey = "your-api-key"
 
 Rainforest.Environment.create({
@@ -145,7 +145,7 @@ env = Rainforest::Environment.retrieve(id)
 
 
 ```javascript
-var Rainforest = require('rainforest');
+var Rainforest = require('rainforestqa');
 Rainforest.apiKey = "your-api-key"
 
 var id = 4817;
@@ -221,7 +221,7 @@ env.save
 
 
 ```javascript
-var Rainforest = require('rainforest');
+var Rainforest = require('rainforestqa');
 Rainforest.apiKey = "your-api-key"
 
 var id = 4871;
@@ -306,7 +306,7 @@ envs.length # the number of environments returned
 
 ```javascript
 var _ = require('lodash');
-var Rainforest = require('rainforest');
+var Rainforest = require('rainforestqa');
 Rainforest.apiKey = "your-api-key"
 
 Rainforest.Environment.all().then(function(envs) {
@@ -374,7 +374,7 @@ env.delete
 
 
 ```javascript
-var Rainforest = require('rainforest');
+var Rainforest = require('rainforestqa');
 Rainforest.apiKey = "your-api-key"
 
 var id = 13;
@@ -430,7 +430,7 @@ runs.length # the number of runs
 
 
 ```javascript
-var Rainforest = require('rainforest');
+var Rainforest = require('rainforestqa');
 Rainforest.apiKey = "your-api-key"
 
 var id = 4859;

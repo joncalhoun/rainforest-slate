@@ -68,7 +68,7 @@ gen = Rainforest::Generator.create(
 
 
 ```javascript
-var Rainforest = require('rainforest');
+var Rainforest = require('rainforestqa');
 Rainforest.apiKey = "your-api-key"
 
 Rainforest.Generator.create({
@@ -147,7 +147,7 @@ gen = Rainforest::Generator.retrieve(id)
 
 
 ```javascript
-var Rainforest = require('rainforest');
+var Rainforest = require('rainforestqa');
 Rainforest.apiKey = "your-api-key"
 
 var id = 978;
@@ -234,7 +234,7 @@ gen.save
 
 
 ```javascript
-var Rainforest = require('rainforest');
+var Rainforest = require('rainforestqa');
 Rainforest.apiKey = "your-api-key"
 
 var id = 978
@@ -330,7 +330,7 @@ gens.length # the number of generators returned
 
 
 ```javascript
-var Rainforest = require('rainforest');
+var Rainforest = require('rainforestqa');
 Rainforest.apiKey = "your-api-key"
 
 Rainforest.Generator.all().then(function(gens) {
@@ -397,7 +397,7 @@ env.delete
 
 
 ```javascript
-var Rainforest = require('rainforest');
+var Rainforest = require('rainforestqa');
 Rainforest.apiKey = "your-api-key"
 
 var id = 929;
@@ -475,7 +475,7 @@ rows = Rainforest::Generator.new(id).rows.all
 
 
 ```javascript
-var Rainforest = require('rainforest');
+var Rainforest = require('rainforestqa');
 Rainforest.apiKey = "your-api-key"
 
 var id = 974;
@@ -567,7 +567,7 @@ row = Rainforest::Generator.new(id).rows.create(
 
 
 ```javascript
-var Rainforest = require('rainforest');
+var Rainforest = require('rainforestqa');
 Rainforest.apiKey = "your-api-key"
 
 var id = 974;

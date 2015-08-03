@@ -15,7 +15,7 @@ Rainforest.api_key = 'your-api-key'
 
 
 ```javascript
-var Rainforest = require('rainforest');
+var Rainforest = require('rainforestqa');
 Rainforest.apiKey = "your-api-key";
 ```
 

@@ -72,7 +72,7 @@ schedule = Rainforest::Schedule.create(
 
 
 ```javascript
-var Rainforest = require('rainforest');
+var Rainforest = require('rainforestqa');
 Rainforest.apiKey = "your-api-key"
 
 Rainforest.Schedule.create({
@@ -157,7 +157,7 @@ schedule = Rainforest::Schedule.retrieve(id)
 
 ```javascript
 //TODO: Add node samples
-var Rainforest = require('rainforest');
+var Rainforest = require('rainforestqa');
 Rainforest.apiKey = "your-api-key"
 
 var id = 193;
@@ -232,7 +232,7 @@ schedule.save
 
 ```javascript
 //TODO: Add node samples
-var Rainforest = require('rainforest');
+var Rainforest = require('rainforestqa');
 Rainforest.apiKey = "your-api-key"
 
 var id = 193;
@@ -308,7 +308,7 @@ schedules.length # the number of schedules returned
 
 ```javascript
 //TODO: Add node samples
-var Rainforest = require('rainforest');
+var Rainforest = require('rainforestqa');
 Rainforest.apiKey = "your-api-key"
 
 Rainforest.Schedule.all().then(function(schedules) {
@@ -377,7 +377,7 @@ schedule.delete
 
 ```javascript
 //TODO: Add node samples
-var Rainforest = require('rainforest');
+var Rainforest = require('rainforestqa');
 Rainforest.apiKey = "your-api-key"
 
 var id = 193;

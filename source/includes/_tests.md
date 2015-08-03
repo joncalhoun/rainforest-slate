@@ -168,7 +168,7 @@ test = Rainforest::Test.create(
 
 
 ```javascript
-var Rainforest = require('rainforest');
+var Rainforest = require('rainforestqa');
 Rainforest.apiKey = "your-api-key"
 
 Rainforest.Test.create({
@@ -336,7 +336,7 @@ test = Rainforest::Test.retrieve(id)
 
 
 ```javascript
-var Rainforest = require('rainforest');
+var Rainforest = require('rainforestqa');
 Rainforest.apiKey = "your-api-key"
 
 var id = 17793;
@@ -496,7 +496,7 @@ test.save
 
 
 ```javascript
-var Rainforest = require('rainforest');
+var Rainforest = require('rainforestqa');
 Rainforest.apiKey = "your-api-key"
 
 var id = 17793;
@@ -631,7 +631,7 @@ tests.length # the number of tests returned
 
 
 ```javascript
-var Rainforest = require('rainforest');
+var Rainforest = require('rainforestqa');
 Rainforest.apiKey = "your-api-key"
 
 Rainforest.Test.all().then(function(tests) {
@@ -691,7 +691,7 @@ test.delete
 
 
 ```javascript
-var Rainforest = require('rainforest');
+var Rainforest = require('rainforestqa');
 Rainforest.apiKey = "your-api-key"
 
 var id = 18036;
@@ -748,7 +748,7 @@ runs.length # the number of runs
 
 
 ```javascript
-var Rainforest = require('rainforest');
+var Rainforest = require('rainforestqa');
 Rainforest.apiKey = "your-api-key"
 
 var id = 17790;
