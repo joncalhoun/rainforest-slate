@@ -1,6 +1,8 @@
 
-(function (global) {
+$(function (global) {
   'use strict';
+
+  var current_api_key = "your-api-key";
 
   $.urlParam = function(name){
     var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
@@ -12,16 +14,32 @@
     }
   }
 
-  var getApiKey = function() {
+  var getApiKeyUrl = function() {
     return $.urlParam('api_key');
   };
 
-  var updateApiKeys = function() {
-    if ( $(getApiKey) ) {
-      $("body").html($("body").html().replace(/your-api-key/g, getApiKey()));
+  var getApiKeyInput = function() {
+    return $("#input-api-key").val();
+  };
+
+  var updateApiKeys = function(api_key) {
+
+    if ( api_key ) {
+      var regex = new RegExp("(\"|')"+current_api_key+"(\"|')", "g");
+      current_api_key = api_key;
+
+      $.each($('pre'), function(index, value) {
+        $(value).html($(value).html().replace(regex, "'"+api_key+"'"));
+      });
     }
   }
 
-  $(updateApiKeys);
+  // Check url for api key on load
+  $(updateApiKeys(getApiKeyUrl()));
 
-})(window);
+  // Watch api input field for api updates
+  $("#input-api-key").keyup( function(){
+    $(updateApiKeys(getApiKeyInput()));
+  });
+
+});
