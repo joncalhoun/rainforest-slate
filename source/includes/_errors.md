@@ -29,6 +29,23 @@ Rainforest.Environment.retrieve("invalid-id").then(function(env) {
 });
 ```
 
+```php
+#TODO-PHP -> Figure out how this works and if it works.. Pretty sure I still need to extend the ApiError Class here
+<?
+# Errors can be caught using try/catch
+try {
+  # do something that returns an error
+} catch (Exception $e) {
+  # work with the error
+  # Most data from the request can be accessed from the error
+  $e->code # http response code
+  $e->body # http response body (no parsing)
+  $e->json # http response body (parsed as json)
+
+  $e->api_method # returns the Rainforest::ApiMethod used to execute the API call.
+}
+?>
+```
 The Rainforest API uses the following error codes:
 
 Code | Meaning

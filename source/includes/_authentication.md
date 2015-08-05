@@ -19,6 +19,12 @@ var Rainforest = require('rainforestqa');
 Rainforest.apiKey = "your-api-key";
 ```
 
+```php
+<?php
+require_once('/path/to/rainforest-php/init.php');
+\Rainforest\Rainforest::$apiKey = "your-api-key";
+?>
+```
 
 
 > Make sure to replace `your-api-key` with your API key.

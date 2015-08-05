@@ -35,6 +35,64 @@
   row_count: 18 }
 ```
 
+```php
+object(Rainforest\Generator)#13 (12) {
+  ["columns"]=>
+  array(4) {
+    [0]=>
+    array(3) {
+      ["id"]=>
+      int(6452)
+      ["created_at"]=>
+      string(20) "2015-08-05T18:04:23Z"
+      ["name"]=>
+      string(10) "first_name"
+    }
+    [1]=>
+    array(3) {
+      ["id"]=>
+      int(6453)
+      ["created_at"]=>
+      string(20) "2015-08-05T18:04:23Z"
+      ["name"]=>
+      string(9) "last_name"
+    }
+    [2]=>
+    array(3) {
+      ["id"]=>
+      int(6454)
+      ["created_at"]=>
+      string(20) "2015-08-05T18:04:23Z"
+      ["name"]=>
+      string(5) "email"
+    }
+    [3]=>
+    array(3) {
+      ["id"]=>
+      int(6455)
+      ["created_at"]=>
+      string(20) "2015-08-05T18:04:23Z"
+      ["name"]=>
+      string(8) "password"
+    }
+  }
+  ["created_at"]=>
+  string(20) "2015-08-05T18:04:23Z"
+  ["data"]=>
+  NULL
+  ["description"]=>
+  string(55) "Credentials used to log into accounts in various states"
+  ["generator_type"]=>
+  string(7) "tabular"
+  ["id"]=>
+  int(909)
+  ["name"]=>
+  string(16) "user_credentials"
+  ["row_count"]=>
+  int(0)
+  }
+}
+```
 
 
 TODO: Fill this in.
@@ -83,6 +141,19 @@ Rainforest.Generator.create({
 ```
 
 
+```php
+<?php
+require(dirname(__FILE__) . '/../init.php');
+\Rainforest\Rainforest::$apiKey = "your-api-key";
+
+$gen = \Rainforest\Generator::create([
+  "name" => "user_credentials",
+  "description" => "Credentials used to log into accounts in various states",
+  "columns" => ["first_name", "last_name", "email", "password"]
+]);
+?>
+```
+
 
 > Example Response
 
@@ -121,6 +192,64 @@ Rainforest.Generator.create({
 ```
 
 
+```php
+object(Rainforest\Generator)#13 (12) {
+  ["columns"]=>
+  array(4) {
+    [0]=>
+    array(3) {
+      ["id"]=>
+      int(6452)
+      ["created_at"]=>
+      string(20) "2015-08-05T18:04:23Z"
+      ["name"]=>
+      string(10) "first_name"
+    }
+    [1]=>
+    array(3) {
+      ["id"]=>
+      int(6453)
+      ["created_at"]=>
+      string(20) "2015-08-05T18:04:23Z"
+      ["name"]=>
+      string(9) "last_name"
+    }
+    [2]=>
+    array(3) {
+      ["id"]=>
+      int(6454)
+      ["created_at"]=>
+      string(20) "2015-08-05T18:04:23Z"
+      ["name"]=>
+      string(5) "email"
+    }
+    [3]=>
+    array(3) {
+      ["id"]=>
+      int(6455)
+      ["created_at"]=>
+      string(20) "2015-08-05T18:04:23Z"
+      ["name"]=>
+      string(8) "password"
+    }
+  }
+  ["created_at"]=>
+  string(20) "2015-08-05T18:04:23Z"
+  ["data"]=>
+  NULL
+  ["description"]=>
+  string(55) "Credentials used to log into accounts in various states"
+  ["generator_type"]=>
+  string(7) "tabular"
+  ["id"]=>
+  int(909)
+  ["name"]=>
+  string(16) "user_credentials"
+  ["row_count"]=>
+  int(0)
+  }
+}
+```
 
 TODO: Fill this in.
 
@@ -156,6 +285,17 @@ Rainforest.Generator.retrieve(id).then(function(gen) {
 }).catch(function(e) {
   // Handle the error
 });
+```
+
+
+```php
+<?php
+require(dirname(__FILE__) . '/../init.php');
+\Rainforest\Rainforest::$apiKey = "your-api-key";
+
+$id = 909;
+$gen = \Rainforest\Generator::retrieve($id);
+?>
 ```
 
 
@@ -200,6 +340,66 @@ Rainforest.Generator.retrieve(id).then(function(gen) {
        created_at: '2015-08-03T18:15:54Z',
        name: 'passwword' } ],
   row_count: 0 }
+```
+
+
+```php
+object(Rainforest\Generator)#13 (12) {
+  ["columns"]=>
+  array(4) {
+    [0]=>
+    array(3) {
+      ["id"]=>
+      int(6452)
+      ["created_at"]=>
+      string(20) "2015-08-05T18:04:23Z"
+      ["name"]=>
+      string(10) "first_name"
+    }
+    [1]=>
+    array(3) {
+      ["id"]=>
+      int(6453)
+      ["created_at"]=>
+      string(20) "2015-08-05T18:04:23Z"
+      ["name"]=>
+      string(9) "last_name"
+    }
+    [2]=>
+    array(3) {
+      ["id"]=>
+      int(6454)
+      ["created_at"]=>
+      string(20) "2015-08-05T18:04:23Z"
+      ["name"]=>
+      string(5) "email"
+    }
+    [3]=>
+    array(3) {
+      ["id"]=>
+      int(6455)
+      ["created_at"]=>
+      string(20) "2015-08-05T18:04:23Z"
+      ["name"]=>
+      string(8) "password"
+    }
+  }
+  ["created_at"]=>
+  string(20) "2015-08-05T18:04:23Z"
+  ["data"]=>
+  NULL
+  ["description"]=>
+  string(55) "Credentials used to log into accounts in various states"
+  ["generator_type"]=>
+  string(7) "tabular"
+  ["id"]=>
+  int(909)
+  ["name"]=>
+  string(16) "user_credentials"
+  ["row_count"]=>
+  int(0)
+  }
+}
 ```
 
 
@@ -249,6 +449,29 @@ Rainforest.Generator.update(id, {
 ```
 
 
+```php
+<?php
+TODO: Make the save work
+require(dirname(__FILE__) . '/../init.php');
+\Rainforest\Rainforest::$apiKey = "your-api-key";
+
+$id = 909;
+
+$gen = \Rainforest\Generator::update($id, [
+  "name" => "new_gen_name",
+  "description" => "Credentials used to log into accounts in various states"
+]);
+
+# or
+
+$gen = \Rainforest\Generator::retrieve($id);
+$gen->name = "new_gen_name";
+$gen->description = "Credentials used to log into accounts in various states";
+$gen->save();
+?>
+```
+
+
 
 > Example Response
 
@@ -291,6 +514,65 @@ Rainforest.Generator.update(id, {
   row_count: 0 }
 ```
 
+
+```php
+object(Rainforest\Generator)#13 (12) {
+  ["columns"]=>
+  array(4) {
+    [0]=>
+    array(3) {
+      ["id"]=>
+      int(6452)
+      ["created_at"]=>
+      string(20) "2015-08-05T18:04:23Z"
+      ["name"]=>
+      string(10) "first_name"
+    }
+    [1]=>
+    array(3) {
+      ["id"]=>
+      int(6453)
+      ["created_at"]=>
+      string(20) "2015-08-05T18:04:23Z"
+      ["name"]=>
+      string(9) "last_name"
+    }
+    [2]=>
+    array(3) {
+      ["id"]=>
+      int(6454)
+      ["created_at"]=>
+      string(20) "2015-08-05T18:04:23Z"
+      ["name"]=>
+      string(5) "email"
+    }
+    [3]=>
+    array(3) {
+      ["id"]=>
+      int(6455)
+      ["created_at"]=>
+      string(20) "2015-08-05T18:04:23Z"
+      ["name"]=>
+      string(8) "password"
+    }
+  }
+  ["created_at"]=>
+  string(20) "2015-08-05T18:04:23Z"
+  ["data"]=>
+  NULL
+  ["description"]=>
+  string(55) "Credentials used to log into accounts in various states"
+  ["generator_type"]=>
+  string(7) "tabular"
+  ["id"]=>
+  int(909)
+  ["name"]=>
+  string(12) "new_gen_name"
+  ["row_count"]=>
+  int(0)
+  }
+}
+```
 
 
 TODO: Fill this in.
@@ -343,6 +625,24 @@ Rainforest.Generator.all().then(function(gens) {
 ```
 
 
+```php
+<?php
+require(dirname(__FILE__) . '/../init.php');
+\Rainforest\Rainforest::$apiKey = "your-api-key";
+
+$gens = \Rainforest\Generator::all();
+
+# The list is enumerable and works similarly to an array
+foreach( $gens->data as $gen ) {
+  # work with an generator
+}
+
+$gens->data[0]; # The first generator in the list
+count( $gens->data ); # the number of generators returned
+?>
+```
+
+
 
 > Example Response
 
@@ -374,7 +674,153 @@ Rainforest.Generator.all().then(function(gens) {
      {...} ] }
 ```
 
-
+```php
+object(Rainforest\ApiList)#13 (5) {
+  ["data"]=>
+  array(1) {
+    [0]=>
+    object(Rainforest\Generator)#14 (12) {
+      ["columns"]=>
+      array(17) {
+        [0]=>
+        array(2) {
+          ["id"]=>
+          NULL
+          ["name"]=>
+          string(5) "email"
+        }
+        [1]=>
+        array(2) {
+          ["id"]=>
+          NULL
+          ["name"]=>
+          string(5) "inbox"
+        }
+        [2]=>
+        array(2) {
+          ["id"]=>
+          NULL
+          ["name"]=>
+          string(10) "first_name"
+        }
+        [3]=>
+        array(2) {
+          ["id"]=>
+          NULL
+          ["name"]=>
+          string(9) "last_name"
+        }
+        [4]=>
+        array(2) {
+          ["id"]=>
+          NULL
+          ["name"]=>
+          string(9) "full_name"
+        }
+        [5]=>
+        array(2) {
+          ["id"]=>
+          NULL
+          ["name"]=>
+          string(8) "password"
+        }
+        [6]=>
+        array(2) {
+          ["id"]=>
+          NULL
+          ["name"]=>
+          string(5) "image"
+        }
+        [7]=>
+        array(2) {
+          ["id"]=>
+          NULL
+          ["name"]=>
+          string(6) "number"
+        }
+        [8]=>
+        array(2) {
+          ["id"]=>
+          NULL
+          ["name"]=>
+          string(12) "phone_number"
+        }
+        [9]=>
+        array(2) {
+          ["id"]=>
+          NULL
+          ["name"]=>
+          string(13) "address_line1"
+        }
+        [10]=>
+        array(2) {
+          ["id"]=>
+          NULL
+          ["name"]=>
+          string(13) "address_line2"
+        }
+        [11]=>
+        array(2) {
+          ["id"]=>
+          NULL
+          ["name"]=>
+          string(12) "address_city"
+        }
+        [12]=>
+        array(2) {
+          ["id"]=>
+          NULL
+          ["name"]=>
+          string(13) "address_state"
+        }
+        [13]=>
+        array(2) {
+          ["id"]=>
+          NULL
+          ["name"]=>
+          string(11) "address_zip"
+        }
+        [14]=>
+        array(2) {
+          ["id"]=>
+          NULL
+          ["name"]=>
+          string(15) "address_country"
+        }
+        [15]=>
+        array(2) {
+          ["id"]=>
+          NULL
+          ["name"]=>
+          string(3) "ssn"
+        }
+        [16]=>
+        array(2) {
+          ["id"]=>
+          NULL
+          ["name"]=>
+          string(7) "company"
+        }
+      }
+      ["created_at"]=>
+      NULL
+      ["data"]=>
+      NULL
+      ["description"]=>
+      string(58) "Useful randomly generated attributes, like name and email."
+      ["generator_type"]=>
+      string(7) "builtin"
+      ["id"]=>
+      NULL
+      ["name"]=>
+      string(6) "random"
+      ["row_count"]=>
+      int(0)
+      },
+  {...},
+  {...}
+}
+```
 
 TODO: Fill this in.
 

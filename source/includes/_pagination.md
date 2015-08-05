@@ -22,6 +22,16 @@ Rainforest.Run.all({ page: 2 }).then(function(runs) {
 
 
 
+```php
+<?php
+require(dirname(__FILE__) . '/../init.php');
+\Rainforest\Rainforest::$apiKey = "your-api-key";
+
+$runsPg2 = \Rainforest\Run::all(["page" => 2]);
+?>
+```
+
+
 > Set the page size
 
 ```ruby
@@ -43,6 +53,14 @@ Rainforest.Run.all({ page_size: 25 }).then(function(runs) {
 ```
 
 
+```php
+<?php
+require(dirname(__FILE__) . '/../init.php');
+\Rainforest\Rainforest::$apiKey = "your-api-key";
+
+$runsPg2 = \Rainforest\Run::all( ["page_size" => 25] );
+?>
+```
 
 Nearly all API calls used to list a resource support pagination. To specify your page simply pass in the `page` parameter.
 

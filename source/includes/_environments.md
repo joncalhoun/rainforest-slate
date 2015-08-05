@@ -35,6 +35,40 @@
 ```
 
 
+```php
+object(Rainforest\Environment)#13 (10) {
+  ["created_at"]=>
+  string(20) "2015-08-04T19:46:42Z"
+  ["default"]=>
+  bool(true)
+  ["id"]=>
+  int(4904)
+  ["name"]=>
+  string(11) "testing 123"
+  ["site_environments"]=>
+  array(1) {
+    [0]=>
+    array(5) {
+      ["id"]=>
+      int(5652)
+      ["created_at"]=>
+      string(20) "2015-08-04T19:46:42Z"
+      ["site_id"]=>
+      int(860)
+      ["environment_id"]=>
+      int(4904)
+      ["url"]=>
+      string(22) "http://www.example.org"
+    }
+  }
+  ["webhook"]=>
+  string(0) ""
+  ["webhook_enabled"]=>
+  NULL
+}
+```
+
+
 
 
 
@@ -82,6 +116,17 @@ Rainforest.Environment.create({
 ```
 
 
+```php
+<?php
+require(dirname(__FILE__) . '/../init.php');
+\Rainforest\Rainforest::$apiKey = "your-api-key";
+
+$env = \Rainforest\Environment::create([
+  "default" => false,
+  "name" => "my testing environment"
+]);
+?>
+```
 
 > Example Response
 
@@ -117,7 +162,38 @@ Rainforest.Environment.create({
        url: 'http://www.example.org' } ] }
 ```
 
-
+```php
+object(Rainforest\Environment)#13 (10) {
+  ["created_at"]=>
+  string(20) "2015-08-04T19:22:40Z"
+  ["default"]=>
+  bool(false)
+  ["id"]=>
+  int(4903)
+  ["name"]=>
+  string(22) "my testing environment"
+  ["site_environments"]=>
+  array(1) {
+    [0]=>
+    array(5) {
+      ["id"]=>
+      int(5651)
+      ["created_at"]=>
+      string(20) "2015-08-04T19:22:40Z"
+      ["site_id"]=>
+      int(860)
+      ["environment_id"]=>
+      int(4903)
+      ["url"]=>
+      string(22) "http://www.example.org"
+    }
+  }
+  ["webhook"]=>
+  string(0) ""
+  ["webhook_enabled"]=>
+  NULL
+}
+```
 
 TODO: Fill this in.
 
@@ -157,6 +233,16 @@ Rainforest.Environment.retrieve(id).then(function(env) {
 ```
 
 
+```php
+<?php
+require(dirname(__FILE__) . '/../init.php');
+\Rainforest\Rainforest::$apiKey = "your-api-key";
+
+$id = 4904;
+$env = \Rainforest\Environment::retrieve($id);
+?>
+```
+
 
 > Example Response
 
@@ -193,6 +279,39 @@ Rainforest.Environment.retrieve(id).then(function(env) {
 ```
 
 
+
+```php
+object(Rainforest\Environment)#13 (10) {
+  ["created_at"]=>
+  string(20) "2015-08-04T19:46:42Z"
+  ["default"]=>
+  bool(true)
+  ["id"]=>
+  int(4904)
+  ["name"]=>
+  string(11) "testing 123"
+  ["site_environments"]=>
+  array(1) {
+    [0]=>
+    array(5) {
+      ["id"]=>
+      int(5652)
+      ["created_at"]=>
+      string(20) "2015-08-04T19:46:42Z"
+      ["site_id"]=>
+      int(860)
+      ["environment_id"]=>
+      int(4904)
+      ["url"]=>
+      string(22) "http://www.example.org"
+    }
+  }
+  ["webhook"]=>
+  string(0) ""
+  ["webhook_enabled"]=>
+  NULL
+}
+```
 
 TODO: Fill this in.
 
@@ -235,6 +354,23 @@ Rainforest.Environment.update(id, {
 ```
 
 
+```php
+<?php
+require(dirname(__FILE__) . '/../init.php');
+\Rainforest\Rainforest::$apiKey = "your-api-key";
+
+$id = 4904;
+
+$env = \Rainforest\Environment::update($id, ["name" => "new env name"]);
+
+# or
+
+$env = \Rainforest\Environment::retrieve($id);
+$env->name = "new env name";
+$env->save();
+?>
+```
+
 
 > Example Response
 
@@ -272,7 +408,37 @@ Rainforest.Environment.update(id, {
 ```
 
 
-
+```php
+object(Rainforest\Environment)#13 (10) {
+  ["created_at"]=>
+  string(20) "2015-08-04T19:46:42Z"
+  ["default"]=>
+  bool(true)
+  ["id"]=>
+  int(4904)
+  ["name"]=>
+  string(12) "new env name"
+  ["site_environments"]=>
+  array(1) {
+    [0]=>
+    array(5) {
+      ["id"]=>
+      int(5652)
+      ["created_at"]=>
+      string(20) "2015-08-04T19:46:42Z"
+      ["site_id"]=>
+      int(860)
+      ["environment_id"]=>
+      int(4904)
+      ["url"]=>
+      string(22) "http://www.example.org"
+    }
+  }
+  ["webhook"]=>
+  string(0) ""
+  ["webhook_enabled"]=>
+  NULL
+  ```
 TODO: Fill this in.
 
 
@@ -320,6 +486,24 @@ Rainforest.Environment.all().then(function(envs) {
 
 
 
+```php
+<?php
+require(dirname(__FILE__) . '/../init.php');
+\Rainforest\Rainforest::$apiKey = "your-api-key";
+
+$envs = \Rainforest\Environment::all();
+
+# The list is enumerable and works similarly to an array
+foreach( $envs->data as $env ) {
+  # work with an environment
+}
+
+$envs->data[0]; # The first environment in the list
+count( $envs->data ); # the number of environments returned
+?>
+```
+
+
 > Example Response
 
 ```ruby
@@ -352,6 +536,41 @@ Rainforest.Environment.all().then(function(envs) {
 ```
 
 
+```php
+object(Rainforest\ApiList)#13 (5) {
+  ["data"]=>
+  array(2) {
+    [0]=>
+    object(Rainforest\Environment)#14 (11) {
+      ["created_at"]=>
+      string(20) "2013-11-05T02:17:14Z"
+      ["default"]=>
+      bool(true)
+      ["id"]=>
+      int(1144)
+      ["name"]=>
+      string(7) "Staging"
+      ["site_environments"]=>
+      array(1) {
+        [0]=>
+        array(5) {
+          ["id"]=>
+          int(744)
+          ["created_at"]=>
+          string(20) "2013-11-05T02:17:14Z"
+          ["site_id"]=>
+          int(860)
+          ["environment_id"]=>
+          int(1144)
+          ["url"]=>
+          string(25) "http://blog.accordive.com"
+        }
+      }
+       ...},
+      {...},
+      {...}
+    ]}
+```
 
 TODO: Fill this in.
 
@@ -386,6 +605,23 @@ Rainforest.Environment.delete(id).then(function() {
 ```
 
 
+```php
+<?php
+require(dirname(__FILE__) . '/../init.php');
+\Rainforest\Rainforest::$apiKey = "your-api-key";
+
+$id = 4904;
+
+$env = \Rainforest\Environment::delete( $id );
+
+# or
+
+$env = \Rainforest\Environment::retrieve( $id );
+$env->delete();
+?>
+```
+
+
 
 > Example Response
 
@@ -399,7 +635,10 @@ Rainforest.Environment.delete(id).then(function() {
 {}
 ```
 
-
+```php
+array(0) {
+}
+```
 
 TODO: Fill this in.
 
@@ -446,6 +685,9 @@ Rainforest.Environment.retrieve(id).then(function(env) {
 });
 ```
 
+```php
+TODO (Broken)
+```
 
 
 > Example Response
@@ -515,6 +757,8 @@ Rainforest.Environment.retrieve(id).then(function(env) {
        {...} ] }
 ```
 
-
+```php
+TODO (Broken)
+```
 
 TODO: Fill this in.

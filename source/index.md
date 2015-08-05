@@ -4,6 +4,7 @@ title: API Reference
 language_tabs:
   - ruby
   - { javascript: "node" }
+  - php
 
 toc_footers:
   - <a href='https://app.rainforestqa.com/settings/integrations'>Where is my API Key?</a>
@@ -36,6 +37,24 @@ gem install rainforest
 npm install rainforestqa
 ```
 
+```php
+# You can install the bindings via Composer. Add this to your composer.json:
+{
+  "require": {
+    "rainforestapp/rainforest-php": "1.*"
+  }
+}
+
+# Then install via:
+composer install
+
+
+# Manual Installation
+# If you do not wish to use Composer, you can download the latest release. Then, to use the bindings, include the init.php file.
+
+require_once('/path/to/rainforest-php/init.php');
+```
+
 > Check out the source code here at
 
 ```ruby
@@ -44,6 +63,10 @@ https://github.com/rainforestapp/rainforest-ruby
 
 ```javascript
 https://github.com/rainforestapp/rainforest-node
+```
+
+```php
+https://github.com/rainforestapp/rainforest-php
 ```
 
 
