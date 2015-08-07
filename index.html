@@ -13,7 +13,7 @@
 
       <script>
         $(function() {
-          setupLanguages(["ruby","javascript"]);
+          setupLanguages(["ruby","javascript","php"]);
         });
       </script>
   </head>
@@ -32,6 +32,7 @@
         <div class="lang-selector">
               <a href="#" data-language-name="ruby">ruby</a>
               <a href="#" data-language-name="javascript">node</a>
+              <a href="#" data-language-name="php">php</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -60,6 +61,22 @@
 </code></pre>
 <pre class="highlight javascript"><code><span class="nx">npm</span> <span class="nx">install</span> <span class="nx">rainforestqa</span>
 </code></pre>
+<pre class="highlight php"><code># You can install the bindings via Composer. Add this to your composer.json:
+{
+  "require": {
+    "rainforestapp/rainforest-php": "1.*"
+  }
+}
+
+# Then install via:
+composer install
+
+
+# Manual Installation
+# If you do not wish to use Composer, you can download the latest release. Then, to use the bindings, include the init.php file.
+
+require_once('/path/to/rainforest-php/init.php');
+</code></pre>
 
 <blockquote>
 <p>Check out the source code here at</p>
@@ -67,6 +84,8 @@
 <pre class="highlight ruby"><code><span class="n">https</span><span class="ss">:/</span><span class="o">/</span><span class="n">github</span><span class="p">.</span><span class="nf">com</span><span class="o">/</span><span class="n">rainforestapp</span><span class="o">/</span><span class="n">rainforest</span><span class="o">-</span><span class="n">ruby</span>
 </code></pre>
 <pre class="highlight javascript"><code><span class="nx">https</span><span class="err">:</span><span class="c1">//github.com/rainforestapp/rainforest-node</span>
+</code></pre>
+<pre class="highlight php"><code>https://github.com/rainforestapp/rainforest-php
 </code></pre>
 
 <p>Welcome to the Rainforest API. We offer libraries in various languages. Simply click the language you wish to use on the top right of the page and the docs will update to use that language.</p>
@@ -81,6 +100,11 @@
 </code></pre>
 <pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">Rainforest</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'rainforestqa'</span><span class="p">);</span>
 <span class="nx">Rainforest</span><span class="p">.</span><span class="nx">apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
+</code></pre>
+<pre class="highlight php"><code><span class="cp">&lt;?php</span>
+<span class="k">require_once</span><span class="p">(</span><span class="s1">'/path/to/rainforest-php/init.php'</span><span class="p">);</span>
+<span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
+<span class="cp">?&gt;</span>
 </code></pre>
 
 <blockquote>
@@ -106,6 +130,13 @@
   <span class="c1">// Use the runs</span>
 <span class="p">});</span>
 </code></pre>
+<pre class="highlight php"><code><span class="cp">&lt;?php</span>
+<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
+
+<span class="nv">$runsPg2</span> <span class="o">=</span> <span class="nx">\Rainforest\Run</span><span class="o">::</span><span class="na">all</span><span class="p">([</span><span class="s2">"page"</span> <span class="o">=&gt;</span> <span class="mi">2</span><span class="p">]);</span>
+<span class="cp">?&gt;</span>
+</code></pre>
 
 <blockquote>
 <p>Set the page size</p>
@@ -121,6 +152,13 @@
 <span class="nx">Rainforest</span><span class="p">.</span><span class="nx">Run</span><span class="p">.</span><span class="nx">all</span><span class="p">({</span> <span class="na">page_size</span><span class="p">:</span> <span class="mi">25</span> <span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">runs</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// Handle the runs.</span>
 <span class="p">});</span>
+</code></pre>
+<pre class="highlight php"><code><span class="cp">&lt;?php</span>
+<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
+
+<span class="nv">$runsPg2</span> <span class="o">=</span> <span class="nx">\Rainforest\Run</span><span class="o">::</span><span class="na">all</span><span class="p">(</span> <span class="p">[</span><span class="s2">"page_size"</span> <span class="o">=&gt;</span> <span class="mi">25</span><span class="p">]</span> <span class="p">);</span>
+<span class="cp">?&gt;</span>
 </code></pre>
 
 <p>Nearly all API calls used to list a resource support pagination. To specify your page simply pass in the <code class="prettyprint">page</code> parameter.</p>
@@ -152,6 +190,21 @@
 
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">.</span><span class="nx">apiMethod</span><span class="p">);</span> <span class="c1">// returns the ApiMethod used to execute the API call.</span>
 <span class="p">});</span>
+</code></pre>
+<pre class="highlight php"><code><span class="cp">&lt;?</span>
+<span class="c1"># Errors can be caught using try/catch
+</span><span class="k">try</span> <span class="p">{</span>
+  <span class="c1"># do something that returns an error
+</span><span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">\Rainforest\ApiError</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1"># work with the error
+</span>  <span class="c1"># Most data from the request can be accessed from the error
+</span>  <span class="nv">$e</span><span class="o">-&gt;</span><span class="na">code</span><span class="p">();</span> <span class="c1"># http response code
+</span>  <span class="nv">$e</span><span class="o">-&gt;</span><span class="na">body</span><span class="p">();</span> <span class="c1"># http response body (no parsing)
+</span>  <span class="nv">$e</span><span class="o">-&gt;</span><span class="na">json</span><span class="p">();</span> <span class="c1"># http response body (parsed as json)
+</span>
+  <span class="nv">$e</span><span class="o">-&gt;</span><span class="na">apiMethod</span><span class="p">;</span> <span class="c1"># returns the Rainforest::ApiMethod used to execute the API call.
+</span><span class="p">}</span>
+<span class="cp">?&gt;</span>
 </code></pre>
 
 <p>The Rainforest API uses the following error codes:</p>
@@ -217,6 +270,37 @@
        <span class="na">environment_id</span><span class="p">:</span> <span class="mi">4871</span><span class="p">,</span>
        <span class="na">url</span><span class="p">:</span> <span class="s1">'http://www.example.org'</span> <span class="p">}</span> <span class="p">]</span> <span class="p">}</span>
 </code></pre>
+<pre class="highlight php"><code>object(Rainforest\Environment)#13 (10) {
+  ["created_at"]=&gt;
+  string(20) "2015-08-04T19:46:42Z"
+  ["default"]=&gt;
+  bool(true)
+  ["id"]=&gt;
+  int(4904)
+  ["name"]=&gt;
+  string(11) "testing 123"
+  ["site_environments"]=&gt;
+  array(1) {
+    [0]=&gt;
+    array(5) {
+      ["id"]=&gt;
+      int(5652)
+      ["created_at"]=&gt;
+      string(20) "2015-08-04T19:46:42Z"
+      ["site_id"]=&gt;
+      int(860)
+      ["environment_id"]=&gt;
+      int(4904)
+      ["url"]=&gt;
+      string(22) "http://www.example.org"
+    }
+  }
+  ["webhook"]=&gt;
+  string(0) ""
+  ["webhook_enabled"]=&gt;
+  NULL
+}
+</code></pre>
 
 <p>TODO: Fill this in.</p>
 
@@ -281,6 +365,16 @@
   <span class="c1">// Handle the error</span>
 <span class="p">});</span>
 </code></pre>
+<pre class="highlight php"><code><span class="cp">&lt;?php</span>
+<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
+
+<span class="nv">$env</span> <span class="o">=</span> <span class="nx">\Rainforest\Environment</span><span class="o">::</span><span class="na">create</span><span class="p">([</span>
+  <span class="s2">"default"</span> <span class="o">=&gt;</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"name"</span> <span class="o">=&gt;</span> <span class="s2">"my testing environment"</span>
+<span class="p">]);</span>
+<span class="cp">?&gt;</span>
+</code></pre>
 
 <blockquote>
 <p>Example Response</p>
@@ -310,6 +404,37 @@
        <span class="na">site_id</span><span class="p">:</span> <span class="mi">860</span><span class="p">,</span>
        <span class="na">environment_id</span><span class="p">:</span> <span class="mi">4871</span><span class="p">,</span>
        <span class="na">url</span><span class="p">:</span> <span class="s1">'http://www.example.org'</span> <span class="p">}</span> <span class="p">]</span> <span class="p">}</span>
+</code></pre>
+<pre class="highlight php"><code>object(Rainforest\Environment)#13 (10) {
+  ["created_at"]=&gt;
+  string(20) "2015-08-04T19:22:40Z"
+  ["default"]=&gt;
+  bool(false)
+  ["id"]=&gt;
+  int(4903)
+  ["name"]=&gt;
+  string(22) "my testing environment"
+  ["site_environments"]=&gt;
+  array(1) {
+    [0]=&gt;
+    array(5) {
+      ["id"]=&gt;
+      int(5651)
+      ["created_at"]=&gt;
+      string(20) "2015-08-04T19:22:40Z"
+      ["site_id"]=&gt;
+      int(860)
+      ["environment_id"]=&gt;
+      int(4903)
+      ["url"]=&gt;
+      string(22) "http://www.example.org"
+    }
+  }
+  ["webhook"]=&gt;
+  string(0) ""
+  ["webhook_enabled"]=&gt;
+  NULL
+}
 </code></pre>
 
 <p>TODO: Fill this in.</p>
@@ -359,6 +484,14 @@
   <span class="c1">// Handle the error</span>
 <span class="p">});</span>
 </code></pre>
+<pre class="highlight php"><code><span class="cp">&lt;?php</span>
+<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
+
+<span class="nv">$id</span> <span class="o">=</span> <span class="mi">4904</span><span class="p">;</span>
+<span class="nv">$env</span> <span class="o">=</span> <span class="nx">\Rainforest\Environment</span><span class="o">::</span><span class="na">retrieve</span><span class="p">(</span> <span class="nv">$id</span> <span class="p">);</span>
+<span class="cp">?&gt;</span>
+</code></pre>
 
 <blockquote>
 <p>Example Response</p>
@@ -388,6 +521,37 @@
        <span class="na">site_id</span><span class="p">:</span> <span class="mi">860</span><span class="p">,</span>
        <span class="na">environment_id</span><span class="p">:</span> <span class="mi">4871</span><span class="p">,</span>
        <span class="na">url</span><span class="p">:</span> <span class="s1">'http://www.example.org'</span> <span class="p">}</span> <span class="p">]</span> <span class="p">}</span>
+</code></pre>
+<pre class="highlight php"><code>object(Rainforest\Environment)#13 (10) {
+  ["created_at"]=&gt;
+  string(20) "2015-08-04T19:46:42Z"
+  ["default"]=&gt;
+  bool(true)
+  ["id"]=&gt;
+  int(4904)
+  ["name"]=&gt;
+  string(11) "testing 123"
+  ["site_environments"]=&gt;
+  array(1) {
+    [0]=&gt;
+    array(5) {
+      ["id"]=&gt;
+      int(5652)
+      ["created_at"]=&gt;
+      string(20) "2015-08-04T19:46:42Z"
+      ["site_id"]=&gt;
+      int(860)
+      ["environment_id"]=&gt;
+      int(4904)
+      ["url"]=&gt;
+      string(22) "http://www.example.org"
+    }
+  }
+  ["webhook"]=&gt;
+  string(0) ""
+  ["webhook_enabled"]=&gt;
+  NULL
+}
 </code></pre>
 
 <p>TODO: Fill this in.</p>
@@ -431,6 +595,21 @@
   <span class="c1">// Handle the error</span>
 <span class="p">});</span>
 </code></pre>
+<pre class="highlight php"><code><span class="cp">&lt;?php</span>
+<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
+
+<span class="nv">$id</span> <span class="o">=</span> <span class="mi">4904</span><span class="p">;</span>
+
+<span class="nv">$env</span> <span class="o">=</span> <span class="nx">\Rainforest\Environment</span><span class="o">::</span><span class="na">update</span><span class="p">(</span> <span class="nv">$id</span><span class="p">,</span> <span class="p">[</span><span class="s2">"name"</span> <span class="o">=&gt;</span> <span class="s2">"new env name"</span><span class="p">]</span> <span class="p">);</span>
+
+<span class="c1"># or
+</span>
+<span class="nv">$env</span> <span class="o">=</span> <span class="nx">\Rainforest\Environment</span><span class="o">::</span><span class="na">retrieve</span><span class="p">(</span> <span class="nv">$id</span> <span class="p">);</span>
+<span class="nv">$env</span><span class="o">-&gt;</span><span class="na">name</span> <span class="o">=</span> <span class="s2">"new env name"</span><span class="p">;</span>
+<span class="nv">$env</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">();</span>
+<span class="cp">?&gt;</span>
+</code></pre>
 
 <blockquote>
 <p>Example Response</p>
@@ -461,6 +640,37 @@
        <span class="na">environment_id</span><span class="p">:</span> <span class="mi">4871</span><span class="p">,</span>
        <span class="na">url</span><span class="p">:</span> <span class="s1">'http://www.example.org'</span> <span class="p">}</span> <span class="p">]</span> <span class="p">}</span>
 
+</code></pre>
+<pre class="highlight php"><code>object(Rainforest\Environment)#13 (10) {
+  ["created_at"]=&gt;
+  string(20) "2015-08-04T19:46:42Z"
+  ["default"]=&gt;
+  bool(true)
+  ["id"]=&gt;
+  int(4904)
+  ["name"]=&gt;
+  string(12) "new env name"
+  ["site_environments"]=&gt;
+  array(1) {
+    [0]=&gt;
+    array(5) {
+      ["id"]=&gt;
+      int(5652)
+      ["created_at"]=&gt;
+      string(20) "2015-08-04T19:46:42Z"
+      ["site_id"]=&gt;
+      int(860)
+      ["environment_id"]=&gt;
+      int(4904)
+      ["url"]=&gt;
+      string(22) "http://www.example.org"
+    }
+  }
+  ["webhook"]=&gt;
+  string(0) ""
+  ["webhook_enabled"]=&gt;
+  NULL
+}
 </code></pre>
 
 <p>TODO: Fill this in.</p>
@@ -511,6 +721,21 @@
   <span class="c1">// Handle error</span>
 <span class="p">});</span>
 </code></pre>
+<pre class="highlight php"><code><span class="cp">&lt;?php</span>
+<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
+
+<span class="nv">$envs</span> <span class="o">=</span> <span class="nx">\Rainforest\Environment</span><span class="o">::</span><span class="na">all</span><span class="p">();</span>
+
+<span class="c1"># The list is enumerable and works similarly to an array
+</span><span class="k">foreach</span><span class="p">(</span> <span class="nv">$envs</span><span class="o">-&gt;</span><span class="na">data</span> <span class="k">as</span> <span class="nv">$env</span> <span class="p">)</span> <span class="p">{</span>
+  <span class="c1"># work with an environment
+</span><span class="p">}</span>
+
+<span class="nv">$envs</span><span class="o">-&gt;</span><span class="na">data</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span> <span class="c1"># The first environment in the list
+</span><span class="nb">count</span><span class="p">(</span> <span class="nv">$envs</span><span class="o">-&gt;</span><span class="na">data</span> <span class="p">);</span> <span class="c1"># the number of environments returned
+</span><span class="cp">?&gt;</span>
+</code></pre>
 
 <blockquote>
 <p>Example Response</p>
@@ -537,6 +762,40 @@
             <span class="na">url</span><span class="p">:</span> <span class="s1">'http://www.example.org'</span> <span class="p">}</span> <span class="p">]</span> <span class="p">},</span>
       <span class="p">{...},</span>
       <span class="p">{...}</span> <span class="p">]</span> <span class="p">}</span>
+</code></pre>
+<pre class="highlight php"><code>object(Rainforest\ApiList)#13 (5) {
+  ["data"]=&gt;
+  array(2) {
+    [0]=&gt;
+    object(Rainforest\Environment)#14 (11) {
+      ["created_at"]=&gt;
+      string(20) "2013-11-05T02:17:14Z"
+      ["default"]=&gt;
+      bool(true)
+      ["id"]=&gt;
+      int(1144)
+      ["name"]=&gt;
+      string(7) "Staging"
+      ["site_environments"]=&gt;
+      array(1) {
+        [0]=&gt;
+        array(5) {
+          ["id"]=&gt;
+          int(744)
+          ["created_at"]=&gt;
+          string(20) "2013-11-05T02:17:14Z"
+          ["site_id"]=&gt;
+          int(860)
+          ["environment_id"]=&gt;
+          int(1144)
+          ["url"]=&gt;
+          string(25) "http://blog.accordive.com"
+        }
+      }
+       ...},
+      {...},
+      {...}
+    ]}
 </code></pre>
 
 <p>TODO: Fill this in.</p>
@@ -565,6 +824,20 @@
   <span class="c1">// Handle the error</span>
 <span class="p">});</span>
 </code></pre>
+<pre class="highlight php"><code><span class="cp">&lt;?php</span>
+<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
+
+<span class="nv">$id</span> <span class="o">=</span> <span class="mi">4904</span><span class="p">;</span>
+
+<span class="nv">$env</span> <span class="o">=</span> <span class="nx">\Rainforest\Environment</span><span class="o">::</span><span class="na">delete</span><span class="p">(</span> <span class="nv">$id</span> <span class="p">);</span>
+
+<span class="c1"># or
+</span>
+<span class="nv">$env</span> <span class="o">=</span> <span class="nx">\Rainforest\Environment</span><span class="o">::</span><span class="na">retrieve</span><span class="p">(</span> <span class="nv">$id</span> <span class="p">);</span>
+<span class="nv">$env</span><span class="o">-&gt;</span><span class="na">delete</span><span class="p">();</span>
+<span class="cp">?&gt;</span>
+</code></pre>
 
 <blockquote>
 <p>Example Response</p>
@@ -572,6 +845,9 @@
 <pre class="highlight ruby"><code><span class="p">{}</span>
 </code></pre>
 <pre class="highlight javascript"><code><span class="p">{}</span>
+</code></pre>
+<pre class="highlight php"><code>array(0) {
+}
 </code></pre>
 
 <p>TODO: Fill this in.</p>
@@ -612,6 +888,16 @@
 <span class="p">}).</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// Handle the error</span>
 <span class="p">});</span>
+</code></pre>
+<pre class="highlight php"><code><span class="cp">&lt;?php</span>
+<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
+
+<span class="nv">$id</span> <span class="o">=</span> <span class="mi">4904</span><span class="p">;</span>
+
+<span class="nv">$env</span> <span class="o">=</span> <span class="nx">\Rainforest\Environment</span><span class="o">::</span><span class="na">retrieve</span><span class="p">(</span> <span class="nv">$id</span> <span class="p">);</span>
+<span class="nv">$runs</span> <span class="o">=</span> <span class="nv">$env</span><span class="o">-&gt;</span><span class="na">runs</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">all</span><span class="p">();</span>
+<span class="cp">?&gt;</span>
 </code></pre>
 
 <blockquote>
@@ -676,6 +962,132 @@
        <span class="p">{...},</span>
        <span class="p">{...}</span> <span class="p">]</span> <span class="p">}</span>
 </code></pre>
+<pre class="highlight php"><code>object(Rainforest\ApiList)#16 (5) {
+  ["data"]=&gt;
+  array(0) {
+  }
+  ["klass"]=&gt;
+  string(3) "Run"
+  ["client"]=&gt;
+  object(Rainforest\DefaultClient)#1 (12) {
+    ["clientStats"]=&gt;
+    object(Rainforest\ClientStatsEndpoint)#2 (2) {
+      ["client"]=&gt;
+      *RECURSION*
+      ["parent"]=&gt;
+      NULL
+    }
+    ["environments"]=&gt;
+    object(Rainforest\EnvironmentsEndpoint)#3 (2) {
+      ["client"]=&gt;
+      *RECURSION*
+      ["parent"]=&gt;
+      NULL
+    }
+    ["generators"]=&gt;
+    object(Rainforest\GeneratorsEndpoint)#4 (2) {
+      ["client"]=&gt;
+      *RECURSION*
+      ["parent"]=&gt;
+      NULL
+    }
+    ["integrations"]=&gt;
+    object(Rainforest\IntegrationsEndpoint)#5 (2) {
+      ["client"]=&gt;
+      *RECURSION*
+      ["parent"]=&gt;
+      NULL
+    }
+    ["runs"]=&gt;
+    object(Rainforest\RunsEndpoint)#6 (2) {
+      ["client"]=&gt;
+      *RECURSION*
+      ["parent"]=&gt;
+      NULL
+    }
+    ["schedules"]=&gt;
+    object(Rainforest\SchedulesEndpoint)#7 (2) {
+      ["client"]=&gt;
+      *RECURSION*
+      ["parent"]=&gt;
+      NULL
+    }
+    ["siteEnvironments"]=&gt;
+    object(Rainforest\SiteEnvironmentsEndpoint)#8 (2) {
+      ["client"]=&gt;
+      *RECURSION*
+      ["parent"]=&gt;
+      NULL
+    }
+    ["sites"]=&gt;
+    object(Rainforest\SitesEndpoint)#9 (2) {
+      ["client"]=&gt;
+      *RECURSION*
+      ["parent"]=&gt;
+      NULL
+    }
+    ["tests"]=&gt;
+    object(Rainforest\TestsEndpoint)#10 (2) {
+      ["client"]=&gt;
+      *RECURSION*
+      ["parent"]=&gt;
+      NULL
+    }
+    ["users"]=&gt;
+    object(Rainforest\UsersEndpoint)#11 (2) {
+      ["client"]=&gt;
+      *RECURSION*
+      ["parent"]=&gt;
+      NULL
+    }
+    ["headers"]=&gt;
+    array(3) {
+      ["Accept"]=&gt;
+      string(16) "application/json"
+      ["Content-Type"]=&gt;
+      string(16) "application/json"
+      ["CLIENT_TOKEN"]=&gt;
+      string(32) "985de0ba7d0820912a33aa696a77319d"
+    }
+    ["params"]=&gt;
+    array(0) {
+    }
+  }
+  ["apiMethod"]=&gt;
+  object(Rainforest\ApiMethod)#15 (9) {
+    ["path"]=&gt;
+    string(23) "/environments/4901/runs"
+    ["method"]=&gt;
+    string(3) "get"
+    ["params"]=&gt;
+    array(0) {
+    }
+    ["headers"]=&gt;
+    array(5) {
+      ["user_agent"]=&gt;
+      string(73) "Rainforest/{Rainforest::getApiVersion()} Rainforest/{Rainforest::VERSION}"
+      ["Content-Type"]=&gt;
+      string(16) "application/json"
+      ["CLIENT_TOKEN"]=&gt;
+      string(32) "985de0ba7d0820912a33aa696a77319d"
+      ["x_paid_client_user_agent"]=&gt;
+      string(124) "{"bindings_version":"0.0.1","lang":"php","lang_version":"5.4.42","platform":"Unknown","publisher":"paid","uname":"no uname"}"
+      ["Accept"]=&gt;
+      string(16) "application/json"
+    }
+    ["responseBody"]=&gt;
+    string(2) "[]"
+    ["responseCode"]=&gt;
+    int(200)
+    ["error"]=&gt;
+    NULL
+    ["apiKey"]=&gt;
+    NULL
+    ["apiBase"]=&gt;
+    string(29) "https://app.rnfrst.com/api/1/"
+  }
+}
+</code></pre>
 
 <p>TODO: Fill this in.</p>
 
@@ -708,6 +1120,63 @@
        <span class="na">created_at</span><span class="p">:</span> <span class="s1">'2015-07-28T15:33:28Z'</span><span class="p">,</span>
        <span class="na">name</span><span class="p">:</span> <span class="s1">'password'</span> <span class="p">}</span> <span class="p">],</span>
   <span class="nx">row_count</span><span class="err">:</span> <span class="mi">18</span> <span class="p">}</span>
+</code></pre>
+<pre class="highlight php"><code>object(Rainforest\Generator)#13 (12) {
+  ["columns"]=&gt;
+  array(4) {
+    [0]=&gt;
+    array(3) {
+      ["id"]=&gt;
+      int(6452)
+      ["created_at"]=&gt;
+      string(20) "2015-08-05T18:04:23Z"
+      ["name"]=&gt;
+      string(10) "first_name"
+    }
+    [1]=&gt;
+    array(3) {
+      ["id"]=&gt;
+      int(6453)
+      ["created_at"]=&gt;
+      string(20) "2015-08-05T18:04:23Z"
+      ["name"]=&gt;
+      string(9) "last_name"
+    }
+    [2]=&gt;
+    array(3) {
+      ["id"]=&gt;
+      int(6454)
+      ["created_at"]=&gt;
+      string(20) "2015-08-05T18:04:23Z"
+      ["name"]=&gt;
+      string(5) "email"
+    }
+    [3]=&gt;
+    array(3) {
+      ["id"]=&gt;
+      int(6455)
+      ["created_at"]=&gt;
+      string(20) "2015-08-05T18:04:23Z"
+      ["name"]=&gt;
+      string(8) "password"
+    }
+  }
+  ["created_at"]=&gt;
+  string(20) "2015-08-05T18:04:23Z"
+  ["data"]=&gt;
+  NULL
+  ["description"]=&gt;
+  string(55) "Credentials used to log into accounts in various states"
+  ["generator_type"]=&gt;
+  string(7) "tabular"
+  ["id"]=&gt;
+  int(909)
+  ["name"]=&gt;
+  string(16) "user_credentials"
+  ["row_count"]=&gt;
+  int(0)
+  }
+}
 </code></pre>
 
 <p>TODO: Fill this in.</p>
@@ -775,6 +1244,17 @@
   <span class="c1">// Handle the error</span>
 <span class="p">});</span>
 </code></pre>
+<pre class="highlight php"><code><span class="cp">&lt;?php</span>
+<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
+
+<span class="nv">$gen</span> <span class="o">=</span> <span class="nx">\Rainforest\Generator</span><span class="o">::</span><span class="na">create</span><span class="p">([</span>
+  <span class="s2">"name"</span> <span class="o">=&gt;</span> <span class="s2">"user_credentials"</span><span class="p">,</span>
+  <span class="s2">"description"</span> <span class="o">=&gt;</span> <span class="s2">"Credentials used to log into accounts in various states"</span><span class="p">,</span>
+  <span class="s2">"columns"</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"first_name"</span><span class="p">,</span> <span class="s2">"last_name"</span><span class="p">,</span> <span class="s2">"email"</span><span class="p">,</span> <span class="s2">"password"</span><span class="p">]</span>
+<span class="p">]);</span>
+<span class="cp">?&gt;</span>
+</code></pre>
 
 <blockquote>
 <p>Example Response</p>
@@ -806,6 +1286,63 @@
        <span class="na">created_at</span><span class="p">:</span> <span class="s1">'2015-07-28T15:33:28Z'</span><span class="p">,</span>
        <span class="na">name</span><span class="p">:</span> <span class="s1">'password'</span> <span class="p">}</span> <span class="p">],</span>
   <span class="nx">row_count</span><span class="err">:</span> <span class="mi">18</span> <span class="p">}</span>
+</code></pre>
+<pre class="highlight php"><code>object(Rainforest\Generator)#13 (12) {
+  ["columns"]=&gt;
+  array(4) {
+    [0]=&gt;
+    array(3) {
+      ["id"]=&gt;
+      int(6452)
+      ["created_at"]=&gt;
+      string(20) "2015-08-05T18:04:23Z"
+      ["name"]=&gt;
+      string(10) "first_name"
+    }
+    [1]=&gt;
+    array(3) {
+      ["id"]=&gt;
+      int(6453)
+      ["created_at"]=&gt;
+      string(20) "2015-08-05T18:04:23Z"
+      ["name"]=&gt;
+      string(9) "last_name"
+    }
+    [2]=&gt;
+    array(3) {
+      ["id"]=&gt;
+      int(6454)
+      ["created_at"]=&gt;
+      string(20) "2015-08-05T18:04:23Z"
+      ["name"]=&gt;
+      string(5) "email"
+    }
+    [3]=&gt;
+    array(3) {
+      ["id"]=&gt;
+      int(6455)
+      ["created_at"]=&gt;
+      string(20) "2015-08-05T18:04:23Z"
+      ["name"]=&gt;
+      string(8) "password"
+    }
+  }
+  ["created_at"]=&gt;
+  string(20) "2015-08-05T18:04:23Z"
+  ["data"]=&gt;
+  NULL
+  ["description"]=&gt;
+  string(55) "Credentials used to log into accounts in various states"
+  ["generator_type"]=&gt;
+  string(7) "tabular"
+  ["id"]=&gt;
+  int(909)
+  ["name"]=&gt;
+  string(16) "user_credentials"
+  ["row_count"]=&gt;
+  int(0)
+  }
+}
 </code></pre>
 
 <p>TODO: Fill this in.</p>
@@ -851,6 +1388,14 @@
   <span class="c1">// Handle the error</span>
 <span class="p">});</span>
 </code></pre>
+<pre class="highlight php"><code><span class="cp">&lt;?php</span>
+<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
+
+<span class="nv">$id</span> <span class="o">=</span> <span class="mi">909</span><span class="p">;</span>
+<span class="nv">$gen</span> <span class="o">=</span> <span class="nx">\Rainforest\Generator</span><span class="o">::</span><span class="na">retrieve</span><span class="p">(</span><span class="nv">$id</span><span class="p">);</span>
+<span class="cp">?&gt;</span>
+</code></pre>
 
 <blockquote>
 <p>Example Response</p>
@@ -888,6 +1433,63 @@
        <span class="na">created_at</span><span class="p">:</span> <span class="s1">'2015-08-03T18:15:54Z'</span><span class="p">,</span>
        <span class="na">name</span><span class="p">:</span> <span class="s1">'passwword'</span> <span class="p">}</span> <span class="p">],</span>
   <span class="nx">row_count</span><span class="err">:</span> <span class="mi">0</span> <span class="p">}</span>
+</code></pre>
+<pre class="highlight php"><code>object(Rainforest\Generator)#13 (12) {
+  ["columns"]=&gt;
+  array(4) {
+    [0]=&gt;
+    array(3) {
+      ["id"]=&gt;
+      int(6452)
+      ["created_at"]=&gt;
+      string(20) "2015-08-05T18:04:23Z"
+      ["name"]=&gt;
+      string(10) "first_name"
+    }
+    [1]=&gt;
+    array(3) {
+      ["id"]=&gt;
+      int(6453)
+      ["created_at"]=&gt;
+      string(20) "2015-08-05T18:04:23Z"
+      ["name"]=&gt;
+      string(9) "last_name"
+    }
+    [2]=&gt;
+    array(3) {
+      ["id"]=&gt;
+      int(6454)
+      ["created_at"]=&gt;
+      string(20) "2015-08-05T18:04:23Z"
+      ["name"]=&gt;
+      string(5) "email"
+    }
+    [3]=&gt;
+    array(3) {
+      ["id"]=&gt;
+      int(6455)
+      ["created_at"]=&gt;
+      string(20) "2015-08-05T18:04:23Z"
+      ["name"]=&gt;
+      string(8) "password"
+    }
+  }
+  ["created_at"]=&gt;
+  string(20) "2015-08-05T18:04:23Z"
+  ["data"]=&gt;
+  NULL
+  ["description"]=&gt;
+  string(55) "Credentials used to log into accounts in various states"
+  ["generator_type"]=&gt;
+  string(7) "tabular"
+  ["id"]=&gt;
+  int(909)
+  ["name"]=&gt;
+  string(16) "user_credentials"
+  ["row_count"]=&gt;
+  int(0)
+  }
+}
 </code></pre>
 
 <p>TODO: Fill this in.</p>
@@ -935,6 +1537,26 @@
   <span class="c1">// Handle the error</span>
 <span class="p">});</span>
 </code></pre>
+<pre class="highlight php"><code><span class="cp">&lt;?php</span>
+<span class="nx">TODO</span><span class="o">:</span> <span class="nx">Make</span> <span class="nx">the</span> <span class="nx">save</span> <span class="nx">work</span>
+<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
+
+<span class="nv">$id</span> <span class="o">=</span> <span class="mi">909</span><span class="p">;</span>
+
+<span class="nv">$gen</span> <span class="o">=</span> <span class="nx">\Rainforest\Generator</span><span class="o">::</span><span class="na">update</span><span class="p">(</span><span class="nv">$id</span><span class="p">,</span> <span class="p">[</span>
+  <span class="s2">"name"</span> <span class="o">=&gt;</span> <span class="s2">"new_gen_name"</span><span class="p">,</span>
+  <span class="s2">"description"</span> <span class="o">=&gt;</span> <span class="s2">"Credentials used to log into accounts in various states"</span>
+<span class="p">]);</span>
+
+<span class="c1"># or
+</span>
+<span class="nv">$gen</span> <span class="o">=</span> <span class="nx">\Rainforest\Generator</span><span class="o">::</span><span class="na">retrieve</span><span class="p">(</span><span class="nv">$id</span><span class="p">);</span>
+<span class="nv">$gen</span><span class="o">-&gt;</span><span class="na">name</span> <span class="o">=</span> <span class="s2">"new_gen_name"</span><span class="p">;</span>
+<span class="nv">$gen</span><span class="o">-&gt;</span><span class="na">description</span> <span class="o">=</span> <span class="s2">"Credentials used to log into accounts in various states"</span><span class="p">;</span>
+<span class="nv">$gen</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">();</span>
+<span class="cp">?&gt;</span>
+</code></pre>
 
 <blockquote>
 <p>Example Response</p>
@@ -971,6 +1593,63 @@
        <span class="na">created_at</span><span class="p">:</span> <span class="s1">'2015-08-03T18:15:54Z'</span><span class="p">,</span>
        <span class="na">name</span><span class="p">:</span> <span class="s1">'passwword'</span> <span class="p">}</span> <span class="p">],</span>
   <span class="nx">row_count</span><span class="err">:</span> <span class="mi">0</span> <span class="p">}</span>
+</code></pre>
+<pre class="highlight php"><code>object(Rainforest\Generator)#13 (12) {
+  ["columns"]=&gt;
+  array(4) {
+    [0]=&gt;
+    array(3) {
+      ["id"]=&gt;
+      int(6452)
+      ["created_at"]=&gt;
+      string(20) "2015-08-05T18:04:23Z"
+      ["name"]=&gt;
+      string(10) "first_name"
+    }
+    [1]=&gt;
+    array(3) {
+      ["id"]=&gt;
+      int(6453)
+      ["created_at"]=&gt;
+      string(20) "2015-08-05T18:04:23Z"
+      ["name"]=&gt;
+      string(9) "last_name"
+    }
+    [2]=&gt;
+    array(3) {
+      ["id"]=&gt;
+      int(6454)
+      ["created_at"]=&gt;
+      string(20) "2015-08-05T18:04:23Z"
+      ["name"]=&gt;
+      string(5) "email"
+    }
+    [3]=&gt;
+    array(3) {
+      ["id"]=&gt;
+      int(6455)
+      ["created_at"]=&gt;
+      string(20) "2015-08-05T18:04:23Z"
+      ["name"]=&gt;
+      string(8) "password"
+    }
+  }
+  ["created_at"]=&gt;
+  string(20) "2015-08-05T18:04:23Z"
+  ["data"]=&gt;
+  NULL
+  ["description"]=&gt;
+  string(55) "Credentials used to log into accounts in various states"
+  ["generator_type"]=&gt;
+  string(7) "tabular"
+  ["id"]=&gt;
+  int(909)
+  ["name"]=&gt;
+  string(12) "new_gen_name"
+  ["row_count"]=&gt;
+  int(0)
+  }
+}
 </code></pre>
 
 <p>TODO: Fill this in.</p>
@@ -1032,6 +1711,21 @@
   <span class="c1">// Handle the error</span>
 <span class="p">});</span>
 </code></pre>
+<pre class="highlight php"><code><span class="cp">&lt;?php</span>
+<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
+
+<span class="nv">$gens</span> <span class="o">=</span> <span class="nx">\Rainforest\Generator</span><span class="o">::</span><span class="na">all</span><span class="p">();</span>
+
+<span class="c1"># The list is enumerable and works similarly to an array
+</span><span class="k">foreach</span><span class="p">(</span> <span class="nv">$gens</span><span class="o">-&gt;</span><span class="na">data</span> <span class="k">as</span> <span class="nv">$gen</span> <span class="p">)</span> <span class="p">{</span>
+  <span class="c1"># work with an generator
+</span><span class="p">}</span>
+
+<span class="nv">$gens</span><span class="o">-&gt;</span><span class="na">data</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span> <span class="c1"># The first generator in the list
+</span><span class="nb">count</span><span class="p">(</span> <span class="nv">$gens</span><span class="o">-&gt;</span><span class="na">data</span> <span class="p">);</span> <span class="c1"># the number of generators returned
+</span><span class="cp">?&gt;</span>
+</code></pre>
 
 <blockquote>
 <p>Example Response</p>
@@ -1057,6 +1751,152 @@
        <span class="na">row_count</span><span class="p">:</span> <span class="mi">18</span> <span class="p">},</span>
      <span class="p">{...},</span>
      <span class="p">{...}</span> <span class="p">]</span> <span class="p">}</span>
+</code></pre>
+<pre class="highlight php"><code>object(Rainforest\ApiList)#13 (5) {
+  ["data"]=&gt;
+  array(1) {
+    [0]=&gt;
+    object(Rainforest\Generator)#14 (12) {
+      ["columns"]=&gt;
+      array(17) {
+        [0]=&gt;
+        array(2) {
+          ["id"]=&gt;
+          NULL
+          ["name"]=&gt;
+          string(5) "email"
+        }
+        [1]=&gt;
+        array(2) {
+          ["id"]=&gt;
+          NULL
+          ["name"]=&gt;
+          string(5) "inbox"
+        }
+        [2]=&gt;
+        array(2) {
+          ["id"]=&gt;
+          NULL
+          ["name"]=&gt;
+          string(10) "first_name"
+        }
+        [3]=&gt;
+        array(2) {
+          ["id"]=&gt;
+          NULL
+          ["name"]=&gt;
+          string(9) "last_name"
+        }
+        [4]=&gt;
+        array(2) {
+          ["id"]=&gt;
+          NULL
+          ["name"]=&gt;
+          string(9) "full_name"
+        }
+        [5]=&gt;
+        array(2) {
+          ["id"]=&gt;
+          NULL
+          ["name"]=&gt;
+          string(8) "password"
+        }
+        [6]=&gt;
+        array(2) {
+          ["id"]=&gt;
+          NULL
+          ["name"]=&gt;
+          string(5) "image"
+        }
+        [7]=&gt;
+        array(2) {
+          ["id"]=&gt;
+          NULL
+          ["name"]=&gt;
+          string(6) "number"
+        }
+        [8]=&gt;
+        array(2) {
+          ["id"]=&gt;
+          NULL
+          ["name"]=&gt;
+          string(12) "phone_number"
+        }
+        [9]=&gt;
+        array(2) {
+          ["id"]=&gt;
+          NULL
+          ["name"]=&gt;
+          string(13) "address_line1"
+        }
+        [10]=&gt;
+        array(2) {
+          ["id"]=&gt;
+          NULL
+          ["name"]=&gt;
+          string(13) "address_line2"
+        }
+        [11]=&gt;
+        array(2) {
+          ["id"]=&gt;
+          NULL
+          ["name"]=&gt;
+          string(12) "address_city"
+        }
+        [12]=&gt;
+        array(2) {
+          ["id"]=&gt;
+          NULL
+          ["name"]=&gt;
+          string(13) "address_state"
+        }
+        [13]=&gt;
+        array(2) {
+          ["id"]=&gt;
+          NULL
+          ["name"]=&gt;
+          string(11) "address_zip"
+        }
+        [14]=&gt;
+        array(2) {
+          ["id"]=&gt;
+          NULL
+          ["name"]=&gt;
+          string(15) "address_country"
+        }
+        [15]=&gt;
+        array(2) {
+          ["id"]=&gt;
+          NULL
+          ["name"]=&gt;
+          string(3) "ssn"
+        }
+        [16]=&gt;
+        array(2) {
+          ["id"]=&gt;
+          NULL
+          ["name"]=&gt;
+          string(7) "company"
+        }
+      }
+      ["created_at"]=&gt;
+      NULL
+      ["data"]=&gt;
+      NULL
+      ["description"]=&gt;
+      string(58) "Useful randomly generated attributes, like name and email."
+      ["generator_type"]=&gt;
+      string(7) "builtin"
+      ["id"]=&gt;
+      NULL
+      ["name"]=&gt;
+      string(6) "random"
+      ["row_count"]=&gt;
+      int(0)
+      },
+  {...},
+  {...}
+}
 </code></pre>
 
 <p>TODO: Fill this in.</p>
@@ -1084,6 +1924,20 @@
 <span class="p">}).</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// Handle the error</span>
 <span class="p">});</span>
+</code></pre>
+<pre class="highlight php"><code><span class="cp">&lt;?php</span>
+<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
+
+<span class="nv">$id</span> <span class="o">=</span> <span class="mi">909</span><span class="p">;</span>
+
+<span class="nv">$gen</span> <span class="o">=</span> <span class="nx">\Rainforest\Generator</span><span class="o">::</span><span class="na">delete</span><span class="p">(</span> <span class="nv">$id</span> <span class="p">);</span>
+
+<span class="c1"># or
+</span>
+<span class="nv">$gen</span> <span class="o">=</span> <span class="nx">\Rainforest\Generator</span><span class="o">::</span><span class="na">retrieve</span><span class="p">(</span> <span class="nv">$id</span> <span class="p">);</span>
+<span class="nv">$gen</span><span class="o">-&gt;</span><span class="na">delete</span><span class="p">();</span>
+<span class="cp">?&gt;</span>
 </code></pre>
 
 <blockquote>
@@ -1123,6 +1977,63 @@
        <span class="na">name</span><span class="p">:</span> <span class="s1">'passwword'</span> <span class="p">}</span> <span class="p">],</span>
   <span class="nx">row_count</span><span class="err">:</span> <span class="mi">0</span> <span class="p">}</span>
 </code></pre>
+<pre class="highlight php"><code>object(Rainforest\Generator)#13 (11) {
+  ["columns"]=&gt;
+  array(4) {
+    [0]=&gt;
+    array(3) {
+      ["id"]=&gt;
+      int(6456)
+      ["created_at"]=&gt;
+      string(20) "2015-08-06T17:17:23Z"
+      ["name"]=&gt;
+      string(10) "first_name"
+    }
+    [1]=&gt;
+    array(3) {
+      ["id"]=&gt;
+      int(6457)
+      ["created_at"]=&gt;
+      string(20) "2015-08-06T17:17:23Z"
+      ["name"]=&gt;
+      string(9) "last_name"
+    }
+    [2]=&gt;
+    array(3) {
+      ["id"]=&gt;
+      int(6458)
+      ["created_at"]=&gt;
+      string(20) "2015-08-06T17:17:23Z"
+      ["name"]=&gt;
+      string(5) "email"
+    }
+    [3]=&gt;
+    array(3) {
+      ["id"]=&gt;
+      int(6459)
+      ["created_at"]=&gt;
+      string(20) "2015-08-06T17:17:23Z"
+      ["name"]=&gt;
+      string(8) "password"
+    }
+  }
+  ["created_at"]=&gt;
+  string(20) "2015-08-06T17:17:23Z"
+  ["data"]=&gt;
+  NULL
+  ["description"]=&gt;
+  string(55) "Credentials used to log into accounts in various states"
+  ["generator_type"]=&gt;
+  string(7) "tabular"
+  ["id"]=&gt;
+  int(910)
+  ["name"]=&gt;
+  string(16) "user_credentials"
+  ["row_count"]=&gt;
+  int(0)
+  }
+}
+</code></pre>
 
 <p>TODO: Fill this in.</p>
 
@@ -1154,6 +2065,16 @@
 <span class="p">}).</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// Handle the error</span>
 <span class="p">});</span>
+</code></pre>
+<pre class="highlight php"><code><span class="cp">&lt;?php</span>
+<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
+
+<span class="nv">$id</span> <span class="o">=</span> <span class="mi">911</span><span class="p">;</span>
+
+<span class="nv">$gen</span> <span class="o">=</span> <span class="nx">\Rainforest\Generator</span><span class="o">::</span><span class="na">retrieve</span><span class="p">(</span> <span class="nv">$id</span> <span class="p">);</span>
+<span class="nv">$rows</span> <span class="o">=</span> <span class="nv">$gen</span><span class="o">-&gt;</span><span class="na">rows</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">all</span><span class="p">();</span>
+<span class="cp">?&gt;</span>
 </code></pre>
 
 <blockquote>
@@ -1188,6 +2109,25 @@
        <span class="s1">'6781'</span><span class="p">:</span> <span class="s1">'Calhoun'</span><span class="p">,</span>
        <span class="s1">'6782'</span><span class="p">:</span> <span class="s1">'jon@apibits.com'</span><span class="p">,</span>
        <span class="s1">'6783'</span><span class="p">:</span> <span class="s1">'jonsTopsecretPassword123'</span> <span class="p">}</span> <span class="p">}</span> <span class="p">]</span>
+</code></pre>
+<pre class="highlight php"><code>array(1) {
+  [0]=&gt;
+  array(2) {
+    ["id"]=&gt;
+    int(113931)
+    ["data"]=&gt;
+    array(4) {
+      [6460]=&gt;
+      string(5) "Jerry"
+      [6461]=&gt;
+      string(8) "Seinfeld"
+      [6462]=&gt;
+      string(17) "jerry@apibits.com"
+      [6463]=&gt;
+      string(17) "fake_password_123"
+    }
+  }
+}
 </code></pre>
 
 <p>TODO: Fill this in.</p>
@@ -1240,6 +2180,23 @@
 <span class="p">});</span>
 
 </code></pre>
+<pre class="highlight php"><code><span class="cp">&lt;?php</span>
+<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
+
+<span class="nv">$id</span> <span class="o">=</span> <span class="mi">911</span><span class="p">;</span>
+
+<span class="nv">$gen</span> <span class="o">=</span> <span class="nx">\Rainforest\Generator</span><span class="o">::</span><span class="na">retrieve</span><span class="p">(</span> <span class="nv">$id</span> <span class="p">);</span>
+<span class="nv">$row</span> <span class="o">=</span> <span class="nv">$gen</span><span class="o">-&gt;</span><span class="na">rows</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">([</span>
+  <span class="s2">"data"</span> <span class="o">=&gt;</span> <span class="p">[</span>
+    <span class="mi">6460</span> <span class="o">=&gt;</span> <span class="s2">"Jerry"</span><span class="p">,</span> <span class="c1">#6460 is the column id from gen.columns
+</span>    <span class="mi">6461</span> <span class="o">=&gt;</span> <span class="s2">"Seinfeld"</span><span class="p">,</span>
+    <span class="mi">6462</span> <span class="o">=&gt;</span> <span class="s2">"jerry@apibits.com"</span><span class="p">,</span>
+    <span class="mi">6463</span> <span class="o">=&gt;</span> <span class="s2">"fake_password_123"</span>
+  <span class="p">]</span>
+<span class="p">]);</span>
+<span class="cp">?&gt;</span>
+</code></pre>
 
 <blockquote>
 <p>Example Response</p>
@@ -1262,6 +2219,22 @@
      <span class="s1">'6781'</span><span class="err">:</span> <span class="s1">'Calhoun'</span><span class="p">,</span>
      <span class="s1">'6782'</span><span class="err">:</span> <span class="s1">'jon@apibits.com'</span><span class="p">,</span>
      <span class="s1">'6783'</span><span class="err">:</span> <span class="s1">'jonsTopsecretPassword123'</span> <span class="p">}</span> <span class="p">}</span>
+</code></pre>
+<pre class="highlight php"><code>array(2) {
+  ["id"]=&gt;
+  int(113931)
+  ["data"]=&gt;
+  array(4) {
+    [6460]=&gt;
+    string(5) "Jerry"
+    [6461]=&gt;
+    string(8) "Seinfeld"
+    [6462]=&gt;
+    string(17) "jerry@apibits.com"
+    [6463]=&gt;
+    string(17) "fake_password_123"
+  }
+}
 </code></pre>
 
 <p>TODO: Fill this in.</p>
@@ -1392,6 +2365,245 @@
   <span class="nx">total_no_result_tests</span><span class="err">:</span> <span class="mi">0</span><span class="p">,</span>
   <span class="nx">real_cost_to_run</span><span class="err">:</span> <span class="mi">1</span><span class="p">,</span>
   <span class="nx">sample_test_titles</span><span class="err">:</span> <span class="p">[</span> <span class="s1">'Customer Logos'</span> <span class="p">]</span> <span class="p">}</span>
+</code></pre>
+<pre class="highlight php"><code>object(Rainforest\Run)#13 (23) {
+  ["browsers"]=&gt;
+  array(11) {
+    [0]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(23) "android_phone_landscape"
+      ["state"]=&gt;
+      string(8) "disabled"
+      ["description"]=&gt;
+      string(23) "Android Phone Landscape"
+      ["category"]=&gt;
+      string(5) "phone"
+    }
+    [1]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(22) "android_phone_portrait"
+      ["state"]=&gt;
+      string(8) "disabled"
+      ["description"]=&gt;
+      string(22) "Android Phone Portrait"
+      ["category"]=&gt;
+      string(5) "phone"
+    }
+    [2]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(24) "android_tablet_landscape"
+      ["state"]=&gt;
+      string(8) "disabled"
+      ["description"]=&gt;
+      string(24) "Android Tablet Landscape"
+      ["category"]=&gt;
+      string(6) "tablet"
+    }
+    [3]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(23) "android_tablet_portrait"
+      ["state"]=&gt;
+      string(8) "disabled"
+      ["description"]=&gt;
+      string(23) "Android Tablet Portrait"
+      ["category"]=&gt;
+      string(6) "tablet"
+    }
+    [4]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(6) "chrome"
+      ["state"]=&gt;
+      string(8) "disabled"
+      ["description"]=&gt;
+      string(13) "Google Chrome"
+      ["category"]=&gt;
+      string(7) "browser"
+    }
+    [5]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(7) "firefox"
+      ["state"]=&gt;
+      string(8) "disabled"
+      ["description"]=&gt;
+      string(15) "Mozilla Firefox"
+      ["category"]=&gt;
+      string(7) "browser"
+    }
+    [6]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(3) "ie8"
+      ["state"]=&gt;
+      string(8) "disabled"
+      ["description"]=&gt;
+      string(29) "Microsoft Internet Explorer 8"
+      ["category"]=&gt;
+      string(7) "browser"
+    }
+    [7]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(3) "ie9"
+      ["state"]=&gt;
+      string(8) "disabled"
+      ["description"]=&gt;
+      string(29) "Microsoft Internet Explorer 9"
+      ["category"]=&gt;
+      string(7) "browser"
+    }
+    [8]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(4) "ie10"
+      ["state"]=&gt;
+      string(8) "disabled"
+      ["description"]=&gt;
+      string(30) "Microsoft Internet Explorer 10"
+      ["category"]=&gt;
+      string(7) "browser"
+    }
+    [9]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(4) "ie11"
+      ["state"]=&gt;
+      string(8) "disabled"
+      ["description"]=&gt;
+      string(30) "Microsoft Internet Explorer 11"
+      ["category"]=&gt;
+      string(7) "browser"
+    }
+    [10]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(6) "safari"
+      ["state"]=&gt;
+      string(8) "disabled"
+      ["description"]=&gt;
+      string(12) "Apple Safari"
+      ["category"]=&gt;
+      string(7) "browser"
+    }
+  }
+  ["created_at"]=&gt;
+  string(20) "2015-08-07T18:35:42Z"
+  ["current_progress"]=&gt;
+  array(7) {
+    ["percent"]=&gt;
+    int(0)
+    ["total"]=&gt;
+    int(0)
+    ["complete"]=&gt;
+    int(0)
+    ["eta"]=&gt;
+    array(2) {
+      ["seconds"]=&gt;
+      int(1800)
+      ["ts"]=&gt;
+      string(29) "2015-08-07T19:05:42.563+00:00"
+    }
+    ["no_result"]=&gt;
+    int(0)
+    ["passed"]=&gt;
+    int(0)
+    ["failed"]=&gt;
+    int(0)
+  }
+  ["description"]=&gt;
+  NULL
+  ["environment"]=&gt;
+  array(7) {
+    ["id"]=&gt;
+    int(4904)
+    ["created_at"]=&gt;
+    string(20) "2015-08-04T19:46:42Z"
+    ["name"]=&gt;
+    string(12) "new env name"
+    ["default"]=&gt;
+    bool(true)
+    ["webhook"]=&gt;
+    string(0) ""
+    ["webhook_enabled"]=&gt;
+    NULL
+    ["site_environments"]=&gt;
+    array(1) {
+      [0]=&gt;
+      array(5) {
+        ["id"]=&gt;
+        int(5652)
+        ["created_at"]=&gt;
+        string(20) "2015-08-04T19:46:42Z"
+        ["site_id"]=&gt;
+        int(860)
+        ["environment_id"]=&gt;
+        int(4904)
+        ["url"]=&gt;
+        string(22) "http://www.example.org"
+      }
+    }
+  }
+  ["filters"]=&gt;
+  array(1) {
+    ["tests"]=&gt;
+    array(1) {
+      [0]=&gt;
+      int(17793)
+    }
+  }
+  ["frontend_url"]=&gt;
+  string(39) "https://app.rainforestqa.com/runs/32353"
+  ["id"]=&gt;
+  int(32353)
+  ["log_url"]=&gt;
+  string(114) "https://tala.rainforestqa.com/api/v1/logs/32353?expires_at=1438976142<span class="err">&amp;</span>sig=b74537e65925b50cbbf71681f168598f8a86ec08"
+  ["real_cost_to_run"]=&gt;
+  int(0)
+  ["result"]=&gt;
+  string(9) "no_result"
+  ["sample_test_titles"]=&gt;
+  array(0) {
+  }
+  ["state"]=&gt;
+  string(6) "queued"
+  ["state_details"]=&gt;
+  array(2) {
+    ["name"]=&gt;
+    string(6) "queued"
+    ["is_final_state"]=&gt;
+    bool(false)
+  }
+  ["stats"]=&gt;
+  array(4) {
+    ["total_time_for_one_person"]=&gt;
+    float(0)
+    ["total_time_for_rainforest"]=&gt;
+    float(14400)
+    ["total_rainforest_overhead"]=&gt;
+    float(0)
+    ["speed_up"]=&gt;
+    float(0)
+  }
+  ["timestamps"]=&gt;
+  array(1) {
+    ["created_at"]=&gt;
+    string(24) "2015-08-07T18:35:42.530Z"
+  }
+  ["total_failed_tests"]=&gt;
+  int(0)
+  ["total_no_result_tests"]=&gt;
+  int(0)
+  ["total_passed_tests"]=&gt;
+  int(0)
+  ["total_tests"]=&gt;
+  int(0)
+  ...}
+}
 </code></pre>
 
 <p>TODO: Fill this in.</p>
@@ -1524,6 +2736,23 @@
   <span class="c1">// Handle the error</span>
 <span class="p">});</span>
 </code></pre>
+<pre class="highlight php"><code><span class="cp">&lt;?php</span>
+<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
+
+<span class="nv">$run</span> <span class="o">=</span> <span class="nx">\Rainforest\Run</span><span class="o">::</span><span class="na">create</span><span class="p">([</span>
+    <span class="s2">"tags"</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"www"</span><span class="p">,</span> <span class="s2">"api"</span><span class="p">]</span>
+<span class="p">]);</span>
+
+<span class="c1">#or
+</span>
+<span class="nv">$testIds</span> <span class="o">=</span> <span class="p">[</span><span class="mi">17793</span><span class="p">];</span>
+<span class="nv">$run</span> <span class="o">=</span> <span class="nx">\Rainforest\Run</span><span class="o">::</span><span class="na">create</span><span class="p">([</span>
+  <span class="s2">"tests"</span> <span class="o">=&gt;</span> <span class="nv">$testIds</span>
+<span class="p">]);</span>
+
+<span class="cp">?&gt;</span>
+</code></pre>
 
 <blockquote>
 <p>Example Response</p>
@@ -1651,6 +2880,245 @@
   <span class="nx">total_no_result_tests</span><span class="err">:</span> <span class="mi">0</span><span class="p">,</span>
   <span class="nx">real_cost_to_run</span><span class="err">:</span> <span class="mi">0</span><span class="p">,</span>
   <span class="nx">sample_test_titles</span><span class="err">:</span> <span class="p">[]</span> <span class="p">}</span>
+</code></pre>
+<pre class="highlight php"><code>object(Rainforest\Run)#13 (23) {
+  ["browsers"]=&gt;
+  array(11) {
+    [0]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(23) "android_phone_landscape"
+      ["state"]=&gt;
+      string(8) "disabled"
+      ["description"]=&gt;
+      string(23) "Android Phone Landscape"
+      ["category"]=&gt;
+      string(5) "phone"
+    }
+    [1]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(22) "android_phone_portrait"
+      ["state"]=&gt;
+      string(8) "disabled"
+      ["description"]=&gt;
+      string(22) "Android Phone Portrait"
+      ["category"]=&gt;
+      string(5) "phone"
+    }
+    [2]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(24) "android_tablet_landscape"
+      ["state"]=&gt;
+      string(8) "disabled"
+      ["description"]=&gt;
+      string(24) "Android Tablet Landscape"
+      ["category"]=&gt;
+      string(6) "tablet"
+    }
+    [3]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(23) "android_tablet_portrait"
+      ["state"]=&gt;
+      string(8) "disabled"
+      ["description"]=&gt;
+      string(23) "Android Tablet Portrait"
+      ["category"]=&gt;
+      string(6) "tablet"
+    }
+    [4]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(6) "chrome"
+      ["state"]=&gt;
+      string(8) "disabled"
+      ["description"]=&gt;
+      string(13) "Google Chrome"
+      ["category"]=&gt;
+      string(7) "browser"
+    }
+    [5]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(7) "firefox"
+      ["state"]=&gt;
+      string(8) "disabled"
+      ["description"]=&gt;
+      string(15) "Mozilla Firefox"
+      ["category"]=&gt;
+      string(7) "browser"
+    }
+    [6]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(3) "ie8"
+      ["state"]=&gt;
+      string(8) "disabled"
+      ["description"]=&gt;
+      string(29) "Microsoft Internet Explorer 8"
+      ["category"]=&gt;
+      string(7) "browser"
+    }
+    [7]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(3) "ie9"
+      ["state"]=&gt;
+      string(8) "disabled"
+      ["description"]=&gt;
+      string(29) "Microsoft Internet Explorer 9"
+      ["category"]=&gt;
+      string(7) "browser"
+    }
+    [8]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(4) "ie10"
+      ["state"]=&gt;
+      string(8) "disabled"
+      ["description"]=&gt;
+      string(30) "Microsoft Internet Explorer 10"
+      ["category"]=&gt;
+      string(7) "browser"
+    }
+    [9]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(4) "ie11"
+      ["state"]=&gt;
+      string(8) "disabled"
+      ["description"]=&gt;
+      string(30) "Microsoft Internet Explorer 11"
+      ["category"]=&gt;
+      string(7) "browser"
+    }
+    [10]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(6) "safari"
+      ["state"]=&gt;
+      string(8) "disabled"
+      ["description"]=&gt;
+      string(12) "Apple Safari"
+      ["category"]=&gt;
+      string(7) "browser"
+    }
+  }
+  ["created_at"]=&gt;
+  string(20) "2015-08-07T18:35:42Z"
+  ["current_progress"]=&gt;
+  array(7) {
+    ["percent"]=&gt;
+    int(0)
+    ["total"]=&gt;
+    int(0)
+    ["complete"]=&gt;
+    int(0)
+    ["eta"]=&gt;
+    array(2) {
+      ["seconds"]=&gt;
+      int(1800)
+      ["ts"]=&gt;
+      string(29) "2015-08-07T19:05:42.563+00:00"
+    }
+    ["no_result"]=&gt;
+    int(0)
+    ["passed"]=&gt;
+    int(0)
+    ["failed"]=&gt;
+    int(0)
+  }
+  ["description"]=&gt;
+  NULL
+  ["environment"]=&gt;
+  array(7) {
+    ["id"]=&gt;
+    int(4904)
+    ["created_at"]=&gt;
+    string(20) "2015-08-04T19:46:42Z"
+    ["name"]=&gt;
+    string(12) "new env name"
+    ["default"]=&gt;
+    bool(true)
+    ["webhook"]=&gt;
+    string(0) ""
+    ["webhook_enabled"]=&gt;
+    NULL
+    ["site_environments"]=&gt;
+    array(1) {
+      [0]=&gt;
+      array(5) {
+        ["id"]=&gt;
+        int(5652)
+        ["created_at"]=&gt;
+        string(20) "2015-08-04T19:46:42Z"
+        ["site_id"]=&gt;
+        int(860)
+        ["environment_id"]=&gt;
+        int(4904)
+        ["url"]=&gt;
+        string(22) "http://www.example.org"
+      }
+    }
+  }
+  ["filters"]=&gt;
+  array(1) {
+    ["tests"]=&gt;
+    array(1) {
+      [0]=&gt;
+      int(17793)
+    }
+  }
+  ["frontend_url"]=&gt;
+  string(39) "https://app.rainforestqa.com/runs/32353"
+  ["id"]=&gt;
+  int(32353)
+  ["log_url"]=&gt;
+  string(114) "https://tala.rainforestqa.com/api/v1/logs/32353?expires_at=1438976142<span class="err">&amp;</span>sig=b74537e65925b50cbbf71681f168598f8a86ec08"
+  ["real_cost_to_run"]=&gt;
+  int(0)
+  ["result"]=&gt;
+  string(9) "no_result"
+  ["sample_test_titles"]=&gt;
+  array(0) {
+  }
+  ["state"]=&gt;
+  string(6) "queued"
+  ["state_details"]=&gt;
+  array(2) {
+    ["name"]=&gt;
+    string(6) "queued"
+    ["is_final_state"]=&gt;
+    bool(false)
+  }
+  ["stats"]=&gt;
+  array(4) {
+    ["total_time_for_one_person"]=&gt;
+    float(0)
+    ["total_time_for_rainforest"]=&gt;
+    float(14400)
+    ["total_rainforest_overhead"]=&gt;
+    float(0)
+    ["speed_up"]=&gt;
+    float(0)
+  }
+  ["timestamps"]=&gt;
+  array(1) {
+    ["created_at"]=&gt;
+    string(24) "2015-08-07T18:35:42.530Z"
+  }
+  ["total_failed_tests"]=&gt;
+  int(0)
+  ["total_no_result_tests"]=&gt;
+  int(0)
+  ["total_passed_tests"]=&gt;
+  int(0)
+  ["total_tests"]=&gt;
+  int(0)
+  ...}
+}
 </code></pre>
 
 <p>TODO: Fill this in.</p>
@@ -1692,6 +3160,14 @@
   <span class="c1">// Handle the error</span>
 <span class="p">});</span>
 </code></pre>
+<pre class="highlight php"><code><span class="cp">&lt;?php</span>
+<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
+
+<span class="nv">$id</span> <span class="o">=</span> <span class="mi">32353</span><span class="p">;</span>
+<span class="nv">$run</span> <span class="o">=</span> <span class="nx">\Rainforest\Run</span><span class="o">::</span><span class="na">retrieve</span><span class="p">(</span> <span class="nv">$id</span> <span class="p">);</span>
+<span class="cp">?&gt;</span>
+</code></pre>
 
 <blockquote>
 <p>Example Response</p>
@@ -1819,6 +3295,245 @@
   <span class="nx">total_no_result_tests</span><span class="err">:</span> <span class="mi">0</span><span class="p">,</span>
   <span class="nx">real_cost_to_run</span><span class="err">:</span> <span class="mi">0</span><span class="p">,</span>
   <span class="nx">sample_test_titles</span><span class="err">:</span> <span class="p">[]</span> <span class="p">}</span>
+</code></pre>
+<pre class="highlight php"><code>object(Rainforest\Run)#13 (23) {
+  ["browsers"]=&gt;
+  array(11) {
+    [0]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(23) "android_phone_landscape"
+      ["state"]=&gt;
+      string(8) "disabled"
+      ["description"]=&gt;
+      string(23) "Android Phone Landscape"
+      ["category"]=&gt;
+      string(5) "phone"
+    }
+    [1]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(22) "android_phone_portrait"
+      ["state"]=&gt;
+      string(8) "disabled"
+      ["description"]=&gt;
+      string(22) "Android Phone Portrait"
+      ["category"]=&gt;
+      string(5) "phone"
+    }
+    [2]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(24) "android_tablet_landscape"
+      ["state"]=&gt;
+      string(8) "disabled"
+      ["description"]=&gt;
+      string(24) "Android Tablet Landscape"
+      ["category"]=&gt;
+      string(6) "tablet"
+    }
+    [3]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(23) "android_tablet_portrait"
+      ["state"]=&gt;
+      string(8) "disabled"
+      ["description"]=&gt;
+      string(23) "Android Tablet Portrait"
+      ["category"]=&gt;
+      string(6) "tablet"
+    }
+    [4]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(6) "chrome"
+      ["state"]=&gt;
+      string(8) "disabled"
+      ["description"]=&gt;
+      string(13) "Google Chrome"
+      ["category"]=&gt;
+      string(7) "browser"
+    }
+    [5]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(7) "firefox"
+      ["state"]=&gt;
+      string(8) "disabled"
+      ["description"]=&gt;
+      string(15) "Mozilla Firefox"
+      ["category"]=&gt;
+      string(7) "browser"
+    }
+    [6]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(3) "ie8"
+      ["state"]=&gt;
+      string(8) "disabled"
+      ["description"]=&gt;
+      string(29) "Microsoft Internet Explorer 8"
+      ["category"]=&gt;
+      string(7) "browser"
+    }
+    [7]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(3) "ie9"
+      ["state"]=&gt;
+      string(8) "disabled"
+      ["description"]=&gt;
+      string(29) "Microsoft Internet Explorer 9"
+      ["category"]=&gt;
+      string(7) "browser"
+    }
+    [8]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(4) "ie10"
+      ["state"]=&gt;
+      string(8) "disabled"
+      ["description"]=&gt;
+      string(30) "Microsoft Internet Explorer 10"
+      ["category"]=&gt;
+      string(7) "browser"
+    }
+    [9]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(4) "ie11"
+      ["state"]=&gt;
+      string(8) "disabled"
+      ["description"]=&gt;
+      string(30) "Microsoft Internet Explorer 11"
+      ["category"]=&gt;
+      string(7) "browser"
+    }
+    [10]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(6) "safari"
+      ["state"]=&gt;
+      string(8) "disabled"
+      ["description"]=&gt;
+      string(12) "Apple Safari"
+      ["category"]=&gt;
+      string(7) "browser"
+    }
+  }
+  ["created_at"]=&gt;
+  string(20) "2015-08-07T18:35:42Z"
+  ["current_progress"]=&gt;
+  array(7) {
+    ["percent"]=&gt;
+    int(0)
+    ["total"]=&gt;
+    int(0)
+    ["complete"]=&gt;
+    int(0)
+    ["eta"]=&gt;
+    array(2) {
+      ["seconds"]=&gt;
+      int(1800)
+      ["ts"]=&gt;
+      string(29) "2015-08-07T19:05:42.563+00:00"
+    }
+    ["no_result"]=&gt;
+    int(0)
+    ["passed"]=&gt;
+    int(0)
+    ["failed"]=&gt;
+    int(0)
+  }
+  ["description"]=&gt;
+  NULL
+  ["environment"]=&gt;
+  array(7) {
+    ["id"]=&gt;
+    int(4904)
+    ["created_at"]=&gt;
+    string(20) "2015-08-04T19:46:42Z"
+    ["name"]=&gt;
+    string(12) "new env name"
+    ["default"]=&gt;
+    bool(true)
+    ["webhook"]=&gt;
+    string(0) ""
+    ["webhook_enabled"]=&gt;
+    NULL
+    ["site_environments"]=&gt;
+    array(1) {
+      [0]=&gt;
+      array(5) {
+        ["id"]=&gt;
+        int(5652)
+        ["created_at"]=&gt;
+        string(20) "2015-08-04T19:46:42Z"
+        ["site_id"]=&gt;
+        int(860)
+        ["environment_id"]=&gt;
+        int(4904)
+        ["url"]=&gt;
+        string(22) "http://www.example.org"
+      }
+    }
+  }
+  ["filters"]=&gt;
+  array(1) {
+    ["tests"]=&gt;
+    array(1) {
+      [0]=&gt;
+      int(17793)
+    }
+  }
+  ["frontend_url"]=&gt;
+  string(39) "https://app.rainforestqa.com/runs/32353"
+  ["id"]=&gt;
+  int(32353)
+  ["log_url"]=&gt;
+  string(114) "https://tala.rainforestqa.com/api/v1/logs/32353?expires_at=1438976142<span class="err">&amp;</span>sig=b74537e65925b50cbbf71681f168598f8a86ec08"
+  ["real_cost_to_run"]=&gt;
+  int(0)
+  ["result"]=&gt;
+  string(9) "no_result"
+  ["sample_test_titles"]=&gt;
+  array(0) {
+  }
+  ["state"]=&gt;
+  string(6) "queued"
+  ["state_details"]=&gt;
+  array(2) {
+    ["name"]=&gt;
+    string(6) "queued"
+    ["is_final_state"]=&gt;
+    bool(false)
+  }
+  ["stats"]=&gt;
+  array(4) {
+    ["total_time_for_one_person"]=&gt;
+    float(0)
+    ["total_time_for_rainforest"]=&gt;
+    float(14400)
+    ["total_rainforest_overhead"]=&gt;
+    float(0)
+    ["speed_up"]=&gt;
+    float(0)
+  }
+  ["timestamps"]=&gt;
+  array(1) {
+    ["created_at"]=&gt;
+    string(24) "2015-08-07T18:35:42.530Z"
+  }
+  ["total_failed_tests"]=&gt;
+  int(0)
+  ["total_no_result_tests"]=&gt;
+  int(0)
+  ["total_passed_tests"]=&gt;
+  int(0)
+  ["total_tests"]=&gt;
+  int(0)
+  ...}
+}
 </code></pre>
 
 <p>TODO: Fill this in.</p>
@@ -1863,6 +3578,21 @@
 <span class="p">}).</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// Hande the error</span>
 <span class="p">});</span>
+</code></pre>
+<pre class="highlight php"><code><span class="cp">&lt;?php</span>
+<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
+
+<span class="nv">$runs</span> <span class="o">=</span> <span class="nx">\Rainforest\Run</span><span class="o">::</span><span class="na">all</span><span class="p">();</span>
+
+<span class="c1"># The list is enumerable and works similarly to an array
+</span><span class="k">foreach</span><span class="p">(</span> <span class="nv">$runs</span><span class="o">-&gt;</span><span class="na">data</span> <span class="k">as</span> <span class="nv">$run</span> <span class="p">)</span> <span class="p">{</span>
+  <span class="c1"># work with an Run
+</span><span class="p">}</span>
+
+<span class="nv">$runs</span><span class="o">-&gt;</span><span class="na">data</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span> <span class="c1"># The first Run in the list
+</span><span class="nb">count</span><span class="p">(</span> <span class="nv">$runs</span><span class="o">-&gt;</span><span class="na">data</span> <span class="p">);</span> <span class="c1"># the number of Runs returned
+</span><span class="cp">?&gt;</span>
 </code></pre>
 
 <blockquote>
@@ -1922,6 +3652,256 @@
        <span class="na">real_cost_to_run</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
        <span class="na">sample_test_titles</span><span class="p">:</span> <span class="p">[]</span> <span class="p">}</span> <span class="p">]</span> <span class="p">}</span>
 </code></pre>
+<pre class="highlight php"><code>array(1) {
+  [0]=&gt;
+  object(Rainforest\Run)#14 (23) {
+    ["browsers"]=&gt;
+    array(11) {
+      [0]=&gt;
+      array(4) {
+        ["name"]=&gt;
+        string(23) "android_phone_landscape"
+        ["state"]=&gt;
+        string(8) "disabled"
+        ["description"]=&gt;
+        string(23) "Android Phone Landscape"
+        ["category"]=&gt;
+        string(5) "phone"
+      }
+      [1]=&gt;
+      array(4) {
+        ["name"]=&gt;
+        string(22) "android_phone_portrait"
+        ["state"]=&gt;
+        string(8) "disabled"
+        ["description"]=&gt;
+        string(22) "Android Phone Portrait"
+        ["category"]=&gt;
+        string(5) "phone"
+      }
+      [2]=&gt;
+      array(4) {
+        ["name"]=&gt;
+        string(24) "android_tablet_landscape"
+        ["state"]=&gt;
+        string(8) "disabled"
+        ["description"]=&gt;
+        string(24) "Android Tablet Landscape"
+        ["category"]=&gt;
+        string(6) "tablet"
+      }
+      [3]=&gt;
+      array(4) {
+        ["name"]=&gt;
+        string(23) "android_tablet_portrait"
+        ["state"]=&gt;
+        string(8) "disabled"
+        ["description"]=&gt;
+        string(23) "Android Tablet Portrait"
+        ["category"]=&gt;
+        string(6) "tablet"
+      }
+      [4]=&gt;
+      array(4) {
+        ["name"]=&gt;
+        string(6) "chrome"
+        ["state"]=&gt;
+        string(7) "enabled"
+        ["description"]=&gt;
+        string(13) "Google Chrome"
+        ["category"]=&gt;
+        string(7) "browser"
+      }
+      [5]=&gt;
+      array(4) {
+        ["name"]=&gt;
+        string(7) "firefox"
+        ["state"]=&gt;
+        string(8) "disabled"
+        ["description"]=&gt;
+        string(15) "Mozilla Firefox"
+        ["category"]=&gt;
+        string(7) "browser"
+      }
+      [6]=&gt;
+      array(4) {
+        ["name"]=&gt;
+        string(3) "ie8"
+        ["state"]=&gt;
+        string(8) "disabled"
+        ["description"]=&gt;
+        string(29) "Microsoft Internet Explorer 8"
+        ["category"]=&gt;
+        string(7) "browser"
+      }
+      [7]=&gt;
+      array(4) {
+        ["name"]=&gt;
+        string(3) "ie9"
+        ["state"]=&gt;
+        string(8) "disabled"
+        ["description"]=&gt;
+        string(29) "Microsoft Internet Explorer 9"
+        ["category"]=&gt;
+        string(7) "browser"
+      }
+      [8]=&gt;
+      array(4) {
+        ["name"]=&gt;
+        string(4) "ie10"
+        ["state"]=&gt;
+        string(8) "disabled"
+        ["description"]=&gt;
+        string(30) "Microsoft Internet Explorer 10"
+        ["category"]=&gt;
+        string(7) "browser"
+      }
+      [9]=&gt;
+      array(4) {
+        ["name"]=&gt;
+        string(4) "ie11"
+        ["state"]=&gt;
+        string(8) "disabled"
+        ["description"]=&gt;
+        string(30) "Microsoft Internet Explorer 11"
+        ["category"]=&gt;
+        string(7) "browser"
+      }
+      [10]=&gt;
+      array(4) {
+        ["name"]=&gt;
+        string(6) "safari"
+        ["state"]=&gt;
+        string(8) "disabled"
+        ["description"]=&gt;
+        string(12) "Apple Safari"
+        ["category"]=&gt;
+        string(7) "browser"
+      }
+    }
+    ["created_at"]=&gt;
+    string(20) "2015-08-07T18:35:42Z"
+    ["current_progress"]=&gt;
+    array(7) {
+      ["percent"]=&gt;
+      int(100)
+      ["total"]=&gt;
+      int(1)
+      ["complete"]=&gt;
+      int(1)
+      ["eta"]=&gt;
+      array(2) {
+        ["seconds"]=&gt;
+        int(0)
+        ["ts"]=&gt;
+        string(29) "2015-08-07T18:44:38.561+00:00"
+      }
+      ["no_result"]=&gt;
+      int(0)
+      ["passed"]=&gt;
+      int(0)
+      ["failed"]=&gt;
+      int(1)
+    }
+    ["description"]=&gt;
+    NULL
+    ["environment"]=&gt;
+    array(7) {
+      ["id"]=&gt;
+      int(4904)
+      ["created_at"]=&gt;
+      string(20) "2015-08-04T19:46:42Z"
+      ["name"]=&gt;
+      string(12) "new env name"
+      ["default"]=&gt;
+      bool(true)
+      ["webhook"]=&gt;
+      string(0) ""
+      ["webhook_enabled"]=&gt;
+      NULL
+      ["site_environments"]=&gt;
+      array(1) {
+        [0]=&gt;
+        array(5) {
+          ["id"]=&gt;
+          int(5652)
+          ["created_at"]=&gt;
+          string(20) "2015-08-04T19:46:42Z"
+          ["site_id"]=&gt;
+          int(860)
+          ["environment_id"]=&gt;
+          int(4904)
+          ["url"]=&gt;
+          string(22) "http://www.example.org"
+        }
+      }
+    }
+    ["filters"]=&gt;
+    array(1) {
+      ["tests"]=&gt;
+      array(1) {
+        [0]=&gt;
+        int(17793)
+      }
+    }
+    ["frontend_url"]=&gt;
+    string(39) "https://app.rainforestqa.com/runs/32353"
+    ["id"]=&gt;
+    int(32353)
+    ["log_url"]=&gt;
+    string(114) "https://tala.rainforestqa.com/api/v1/logs/32353?expires_at=1438976678<span class="err">&amp;</span>sig=2c516a6ba267af5729b65c1d7e814a8f6b6e7299"
+    ["real_cost_to_run"]=&gt;
+    int(2)
+    ["result"]=&gt;
+    string(6) "failed"
+    ["sample_test_titles"]=&gt;
+    array(1) {
+      [0]=&gt;
+      string(22) "Log in as regular user"
+    }
+    ["state"]=&gt;
+    string(8) "complete"
+    ["state_details"]=&gt;
+    array(2) {
+      ["name"]=&gt;
+      string(8) "complete"
+      ["is_final_state"]=&gt;
+      bool(true)
+    }
+    ["stats"]=&gt;
+    array(4) {
+      ["total_time_for_one_person"]=&gt;
+      float(603)
+      ["total_time_for_rainforest"]=&gt;
+      float(227.470485)
+      ["total_rainforest_overhead"]=&gt;
+      float(0.730798)
+      ["speed_up"]=&gt;
+      float(2.65)
+    }
+    ["timestamps"]=&gt;
+    array(4) {
+      ["complete"]=&gt;
+      string(24) "2015-08-07T18:39:30.006Z"
+      ["in_progress"]=&gt;
+      string(24) "2015-08-07T18:35:43.266Z"
+      ["validating"]=&gt;
+      string(24) "2015-08-07T18:35:42.837Z"
+      ["created_at"]=&gt;
+      string(24) "2015-08-07T18:35:42.530Z"
+    }
+    ["total_failed_tests"]=&gt;
+    int(1)
+    ["total_no_result_tests"]=&gt;
+    int(0)
+    ["total_passed_tests"]=&gt;
+    int(0)
+    ["total_tests"]=&gt;
+    int(1)
+    ...}
+    ...
+  }
+</code></pre>
 
 <p>TODO: Fill this in.</p>
 
@@ -1948,6 +3928,20 @@
 <span class="p">}).</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// Handle the error</span>
 <span class="p">});</span>
+</code></pre>
+<pre class="highlight php"><code><span class="cp">&lt;?php</span>
+<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
+
+<span class="nv">$id</span> <span class="o">=</span> <span class="mi">32353</span><span class="p">;</span>
+
+<span class="nv">$run</span> <span class="o">=</span> <span class="nx">\Rainforest\Run</span><span class="o">::</span><span class="na">abort</span><span class="p">(</span> <span class="nv">$id</span> <span class="p">);</span> <span class="c1"># or ::delete( $id )
+</span>
+<span class="c1"># or
+</span>
+<span class="nv">$run</span> <span class="o">=</span> <span class="nx">\Rainforest\Run</span><span class="o">::</span><span class="na">retrieve</span><span class="p">(</span><span class="nv">$id</span><span class="p">);</span>
+<span class="nv">$run</span><span class="o">-&gt;</span><span class="na">abort</span><span class="p">();</span> <span class="c1">#or -&gt;delete()
+</span><span class="cp">?&gt;</span>
 </code></pre>
 
 <blockquote>
@@ -2037,6 +4031,245 @@
   <span class="nx">real_cost_to_run</span><span class="err">:</span> <span class="mi">0</span><span class="p">,</span>
   <span class="nx">sample_test_titles</span><span class="err">:</span> <span class="p">[]</span> <span class="p">}</span>
 </code></pre>
+<pre class="highlight php"><code>object(Rainforest\Run)#13 (23) {
+  ["browsers"]=&gt;
+  array(11) {
+    [0]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(23) "android_phone_landscape"
+      ["state"]=&gt;
+      string(8) "disabled"
+      ["description"]=&gt;
+      string(23) "Android Phone Landscape"
+      ["category"]=&gt;
+      string(5) "phone"
+    }
+    [1]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(22) "android_phone_portrait"
+      ["state"]=&gt;
+      string(8) "disabled"
+      ["description"]=&gt;
+      string(22) "Android Phone Portrait"
+      ["category"]=&gt;
+      string(5) "phone"
+    }
+    [2]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(24) "android_tablet_landscape"
+      ["state"]=&gt;
+      string(8) "disabled"
+      ["description"]=&gt;
+      string(24) "Android Tablet Landscape"
+      ["category"]=&gt;
+      string(6) "tablet"
+    }
+    [3]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(23) "android_tablet_portrait"
+      ["state"]=&gt;
+      string(8) "disabled"
+      ["description"]=&gt;
+      string(23) "Android Tablet Portrait"
+      ["category"]=&gt;
+      string(6) "tablet"
+    }
+    [4]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(6) "chrome"
+      ["state"]=&gt;
+      string(8) "disabled"
+      ["description"]=&gt;
+      string(13) "Google Chrome"
+      ["category"]=&gt;
+      string(7) "browser"
+    }
+    [5]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(7) "firefox"
+      ["state"]=&gt;
+      string(8) "disabled"
+      ["description"]=&gt;
+      string(15) "Mozilla Firefox"
+      ["category"]=&gt;
+      string(7) "browser"
+    }
+    [6]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(3) "ie8"
+      ["state"]=&gt;
+      string(8) "disabled"
+      ["description"]=&gt;
+      string(29) "Microsoft Internet Explorer 8"
+      ["category"]=&gt;
+      string(7) "browser"
+    }
+    [7]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(3) "ie9"
+      ["state"]=&gt;
+      string(8) "disabled"
+      ["description"]=&gt;
+      string(29) "Microsoft Internet Explorer 9"
+      ["category"]=&gt;
+      string(7) "browser"
+    }
+    [8]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(4) "ie10"
+      ["state"]=&gt;
+      string(8) "disabled"
+      ["description"]=&gt;
+      string(30) "Microsoft Internet Explorer 10"
+      ["category"]=&gt;
+      string(7) "browser"
+    }
+    [9]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(4) "ie11"
+      ["state"]=&gt;
+      string(8) "disabled"
+      ["description"]=&gt;
+      string(30) "Microsoft Internet Explorer 11"
+      ["category"]=&gt;
+      string(7) "browser"
+    }
+    [10]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(6) "safari"
+      ["state"]=&gt;
+      string(8) "disabled"
+      ["description"]=&gt;
+      string(12) "Apple Safari"
+      ["category"]=&gt;
+      string(7) "browser"
+    }
+  }
+  ["created_at"]=&gt;
+  string(20) "2015-08-07T18:35:42Z"
+  ["current_progress"]=&gt;
+  array(7) {
+    ["percent"]=&gt;
+    int(0)
+    ["total"]=&gt;
+    int(0)
+    ["complete"]=&gt;
+    int(0)
+    ["eta"]=&gt;
+    array(2) {
+      ["seconds"]=&gt;
+      int(1800)
+      ["ts"]=&gt;
+      string(29) "2015-08-07T19:05:42.563+00:00"
+    }
+    ["no_result"]=&gt;
+    int(0)
+    ["passed"]=&gt;
+    int(0)
+    ["failed"]=&gt;
+    int(0)
+  }
+  ["description"]=&gt;
+  NULL
+  ["environment"]=&gt;
+  array(7) {
+    ["id"]=&gt;
+    int(4904)
+    ["created_at"]=&gt;
+    string(20) "2015-08-04T19:46:42Z"
+    ["name"]=&gt;
+    string(12) "new env name"
+    ["default"]=&gt;
+    bool(true)
+    ["webhook"]=&gt;
+    string(0) ""
+    ["webhook_enabled"]=&gt;
+    NULL
+    ["site_environments"]=&gt;
+    array(1) {
+      [0]=&gt;
+      array(5) {
+        ["id"]=&gt;
+        int(5652)
+        ["created_at"]=&gt;
+        string(20) "2015-08-04T19:46:42Z"
+        ["site_id"]=&gt;
+        int(860)
+        ["environment_id"]=&gt;
+        int(4904)
+        ["url"]=&gt;
+        string(22) "http://www.example.org"
+      }
+    }
+  }
+  ["filters"]=&gt;
+  array(1) {
+    ["tests"]=&gt;
+    array(1) {
+      [0]=&gt;
+      int(17793)
+    }
+  }
+  ["frontend_url"]=&gt;
+  string(39) "https://app.rainforestqa.com/runs/32353"
+  ["id"]=&gt;
+  int(32353)
+  ["log_url"]=&gt;
+  string(114) "https://tala.rainforestqa.com/api/v1/logs/32353?expires_at=1438976142<span class="err">&amp;</span>sig=b74537e65925b50cbbf71681f168598f8a86ec08"
+  ["real_cost_to_run"]=&gt;
+  int(0)
+  ["result"]=&gt;
+  string(9) "no_result"
+  ["sample_test_titles"]=&gt;
+  array(0) {
+  }
+  ["state"]=&gt;
+  string(6) "queued"
+  ["state_details"]=&gt;
+  array(2) {
+    ["name"]=&gt;
+    string(6) "queued"
+    ["is_final_state"]=&gt;
+    bool(false)
+  }
+  ["stats"]=&gt;
+  array(4) {
+    ["total_time_for_one_person"]=&gt;
+    float(0)
+    ["total_time_for_rainforest"]=&gt;
+    float(14400)
+    ["total_rainforest_overhead"]=&gt;
+    float(0)
+    ["speed_up"]=&gt;
+    float(0)
+  }
+  ["timestamps"]=&gt;
+  array(1) {
+    ["created_at"]=&gt;
+    string(24) "2015-08-07T18:35:42.530Z"
+  }
+  ["total_failed_tests"]=&gt;
+  int(0)
+  ["total_no_result_tests"]=&gt;
+  int(0)
+  ["total_passed_tests"]=&gt;
+  int(0)
+  ["total_tests"]=&gt;
+  int(0)
+  ...}
+}
+</code></pre>
 
 <p>TODO: Fill this in.</p>
 
@@ -2068,6 +4301,24 @@
 <span class="p">}).</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// Handle errors</span>
 <span class="p">});</span>
+</code></pre>
+<pre class="highlight php"><code><span class="cp">&lt;?php</span>
+<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
+
+<span class="nv">$id</span> <span class="o">=</span> <span class="mi">32353</span><span class="p">;</span>
+
+<span class="nv">$run</span> <span class="o">=</span> <span class="nx">\Rainforest\Run</span><span class="o">::</span><span class="na">retrieve</span><span class="p">(</span> <span class="nv">$id</span> <span class="p">);</span>
+<span class="nv">$tests</span> <span class="o">=</span> <span class="nv">$run</span><span class="o">-&gt;</span><span class="na">associatedTests</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">all</span><span class="p">();</span>
+
+<span class="c1"># The list is enumerable and works similarly to an array
+</span><span class="k">foreach</span><span class="p">(</span> <span class="nv">$tests</span><span class="o">-&gt;</span><span class="na">data</span> <span class="k">as</span> <span class="nv">$test</span>  <span class="p">)</span> <span class="p">{</span>
+  <span class="c1"># work with an runs
+</span><span class="p">}</span>
+
+<span class="nv">$tests</span><span class="o">-&gt;</span><span class="na">data</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span> <span class="c1"># The first test in the list
+</span><span class="nb">count</span><span class="p">(</span> <span class="nv">$tests</span><span class="o">-&gt;</span><span class="na">data</span> <span class="p">);</span> <span class="c1"># the number of tests returned
+</span><span class="cp">?&gt;</span>
 </code></pre>
 
 <blockquote>
@@ -2103,6 +4354,70 @@
        <span class="na">step_count</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
        <span class="na">dry_run_url</span><span class="p">:</span> <span class="kc">null</span> <span class="p">}</span>
 </code></pre>
+<pre class="highlight php"><code>array(1) {
+  [0]=&gt;
+  object(Rainforest\Test)#17 (22) {
+    ["browsers"]=&gt;
+    array(1) {
+      [0]=&gt;
+      array(7) {
+        ["id"]=&gt;
+        int(786900)
+        ["created_at"]=&gt;
+        string(20) "2015-08-07T18:35:42Z"
+        ["name"]=&gt;
+        string(6) "chrome"
+        ["description"]=&gt;
+        string(13) "Google Chrome"
+        ["category"]=&gt;
+        string(7) "browser"
+        ["result"]=&gt;
+        string(6) "failed"
+        ["state"]=&gt;
+        string(8) "complete"
+      }
+    }
+    ["created_at"]=&gt;
+    string(20) "2015-08-07T18:35:42Z"
+    ["deletable"]=&gt;
+    NULL
+    ["deleted"]=&gt;
+    NULL
+    ["description"]=&gt;
+    string(0) ""
+    ["dry_run_url"]=&gt;
+    NULL
+    ["editable"]=&gt;
+    bool(false)
+    ["elements"]=&gt;
+    NULL
+    ["has_been_dry_run"]=&gt;
+    NULL
+    ["id"]=&gt;
+    int(17793)
+    ["last_run"]=&gt;
+    NULL
+    ["result"]=&gt;
+    string(6) "failed"
+    ["run_mode"]=&gt;
+    string(7) "default"
+    ["site_id"]=&gt;
+    int(860)
+    ["start_uri"]=&gt;
+    string(1) "/"
+    ["step_count"]=&gt;
+    int(2)
+    ["tags"]=&gt;
+    array(0) {
+    }
+    ["test_id"]=&gt;
+    int(17793)
+    ["title"]=&gt;
+    string(22) "Log in as regular user"
+    }
+  }
+}
+</code></pre>
 
 <p>TODO: Fill this in.</p>
 
@@ -2132,6 +4447,46 @@
        <span class="na">day</span><span class="p">:</span> <span class="s1">'sunday'</span><span class="p">,</span>
        <span class="na">time</span><span class="p">:</span> <span class="s1">'01:00'</span> <span class="p">}</span> <span class="p">],</span>
   <span class="nx">filters</span><span class="err">:</span> <span class="p">{</span> <span class="nl">tags</span><span class="p">:</span> <span class="p">[</span> <span class="s1">'www'</span> <span class="p">]</span> <span class="p">}</span> <span class="p">}</span>
+</code></pre>
+<pre class="highlight php"><code>object(Rainforest\Schedule)#13 (7) {
+  ["created_at"]=&gt;
+  string(20) "2015-08-07T18:06:32Z"
+  ["filters"]=&gt;
+  array(1) {
+    ["tags"]=&gt;
+    array(1) {
+      [0]=&gt;
+      string(3) "www"
+    }
+  }
+  ["id"]=&gt;
+  int(218)
+  ["repeat_rules"]=&gt;
+  array(2) {
+    [0]=&gt;
+    array(4) {
+      ["id"]=&gt;
+      int(955)
+      ["created_at"]=&gt;
+      string(20) "2015-08-07T18:06:32Z"
+      ["day"]=&gt;
+      string(7) "tuesday"
+      ["time"]=&gt;
+      string(5) "10:00"
+    }
+    [1]=&gt;
+    array(4) {
+      ["id"]=&gt;
+      int(954)
+      ["created_at"]=&gt;
+      string(20) "2015-08-07T18:06:32Z"
+      ["day"]=&gt;
+      string(6) "sunday"
+      ["time"]=&gt;
+      string(5) "01:00"
+    }
+  }
+}
 </code></pre>
 
 <p>TODO: Fill this in.</p>
@@ -2208,6 +4563,27 @@
 <span class="p">});</span>
 
 </code></pre>
+<pre class="highlight php"><code><span class="cp">&lt;?php</span>
+<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
+
+<span class="nv">$schedule</span> <span class="o">=</span> <span class="nx">\Rainforest\Schedule</span><span class="o">::</span><span class="na">create</span><span class="p">([</span>
+    <span class="s2">"filters"</span> <span class="o">=&gt;</span> <span class="p">[</span>
+    <span class="s2">"tags"</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"www"</span><span class="p">]</span>
+  <span class="p">],</span>
+  <span class="s2">"repeat_rules"</span> <span class="o">=&gt;</span> <span class="p">[</span>
+    <span class="p">[</span>
+      <span class="s2">"day"</span> <span class="o">=&gt;</span> <span class="s2">"sunday"</span><span class="p">,</span>
+      <span class="s2">"time"</span> <span class="o">=&gt;</span> <span class="s2">"01:00"</span>
+    <span class="p">],</span>
+    <span class="p">[</span>
+      <span class="s2">"day"</span> <span class="o">=&gt;</span> <span class="s2">"tuesday"</span><span class="p">,</span>
+      <span class="s2">"time"</span> <span class="o">=&gt;</span> <span class="s2">"10:00"</span>
+    <span class="p">]</span>
+  <span class="p">]</span>
+<span class="p">]);</span>
+<span class="cp">?&gt;</span>
+</code></pre>
 
 <blockquote>
 <p>Example Response</p>
@@ -2234,6 +4610,46 @@
        <span class="na">day</span><span class="p">:</span> <span class="s1">'sunday'</span><span class="p">,</span>
        <span class="na">time</span><span class="p">:</span> <span class="s1">'01:00'</span> <span class="p">}</span> <span class="p">],</span>
   <span class="nx">filters</span><span class="err">:</span> <span class="p">{</span> <span class="nl">tags</span><span class="p">:</span> <span class="p">[</span> <span class="s1">'www'</span> <span class="p">]</span> <span class="p">}</span> <span class="p">}</span>
+</code></pre>
+<pre class="highlight php"><code>object(Rainforest\Schedule)#13 (7) {
+  ["created_at"]=&gt;
+  string(20) "2015-08-07T18:06:32Z"
+  ["filters"]=&gt;
+  array(1) {
+    ["tags"]=&gt;
+    array(1) {
+      [0]=&gt;
+      string(3) "www"
+    }
+  }
+  ["id"]=&gt;
+  int(218)
+  ["repeat_rules"]=&gt;
+  array(2) {
+    [0]=&gt;
+    array(4) {
+      ["id"]=&gt;
+      int(955)
+      ["created_at"]=&gt;
+      string(20) "2015-08-07T18:06:32Z"
+      ["day"]=&gt;
+      string(7) "tuesday"
+      ["time"]=&gt;
+      string(5) "10:00"
+    }
+    [1]=&gt;
+    array(4) {
+      ["id"]=&gt;
+      int(954)
+      ["created_at"]=&gt;
+      string(20) "2015-08-07T18:06:32Z"
+      ["day"]=&gt;
+      string(6) "sunday"
+      ["time"]=&gt;
+      string(5) "01:00"
+    }
+  }
+}
 </code></pre>
 
 <p>TODO: Fill this in.</p>
@@ -2276,6 +4692,14 @@
   <span class="c1">// Handle errors</span>
 <span class="p">});</span>
 </code></pre>
+<pre class="highlight php"><code><span class="cp">&lt;?php</span>
+<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
+
+<span class="nv">$id</span> <span class="o">=</span> <span class="mi">218</span><span class="p">;</span>
+<span class="nv">$schedule</span> <span class="o">=</span> <span class="nx">\Rainforest\Schedule</span><span class="o">::</span><span class="na">retrieve</span><span class="p">(</span> <span class="nv">$id</span> <span class="p">);</span>
+<span class="cp">?&gt;</span>
+</code></pre>
 
 <blockquote>
 <p>Example Response</p>
@@ -2302,6 +4726,46 @@
        <span class="na">day</span><span class="p">:</span> <span class="s1">'sunday'</span><span class="p">,</span>
        <span class="na">time</span><span class="p">:</span> <span class="s1">'01:00'</span> <span class="p">}</span> <span class="p">],</span>
   <span class="nx">filters</span><span class="err">:</span> <span class="p">{</span> <span class="nl">tags</span><span class="p">:</span> <span class="p">[</span> <span class="s1">'www'</span> <span class="p">]</span> <span class="p">}</span> <span class="p">}</span>
+</code></pre>
+<pre class="highlight php"><code>object(Rainforest\Schedule)#13 (7) {
+  ["created_at"]=&gt;
+  string(20) "2015-08-07T18:06:32Z"
+  ["filters"]=&gt;
+  array(1) {
+    ["tags"]=&gt;
+    array(1) {
+      [0]=&gt;
+      string(3) "www"
+    }
+  }
+  ["id"]=&gt;
+  int(218)
+  ["repeat_rules"]=&gt;
+  array(2) {
+    [0]=&gt;
+    array(4) {
+      ["id"]=&gt;
+      int(955)
+      ["created_at"]=&gt;
+      string(20) "2015-08-07T18:06:32Z"
+      ["day"]=&gt;
+      string(7) "tuesday"
+      ["time"]=&gt;
+      string(5) "10:00"
+    }
+    [1]=&gt;
+    array(4) {
+      ["id"]=&gt;
+      int(954)
+      ["created_at"]=&gt;
+      string(20) "2015-08-07T18:06:32Z"
+      ["day"]=&gt;
+      string(6) "sunday"
+      ["time"]=&gt;
+      string(5) "01:00"
+    }
+  }
+}
 </code></pre>
 
 <p>TODO: Fill this in.</p>
@@ -2348,6 +4812,22 @@
   <span class="c1">// Handle errors</span>
 <span class="p">});</span>
 </code></pre>
+<pre class="highlight php"><code><span class="cp">&lt;?php</span>
+<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
+
+<span class="nv">$id</span> <span class="o">=</span> <span class="mi">218</span><span class="p">;</span>
+<span class="nv">$repeatRules</span> <span class="o">=</span> <span class="p">[[</span><span class="s2">"day"</span> <span class="o">=&gt;</span> <span class="s2">"monday"</span><span class="p">,</span> <span class="s2">"time"</span> <span class="o">=&gt;</span> <span class="s2">"12:00"</span><span class="p">]];</span>
+
+<span class="nv">$schedule</span> <span class="o">=</span> <span class="nx">\Rainforest\Schedule</span><span class="o">::</span><span class="na">update</span><span class="p">(</span><span class="nv">$id</span><span class="p">,</span> <span class="p">[</span><span class="s2">"repeat_rules"</span> <span class="o">=&gt;</span> <span class="nv">$repeatRules</span><span class="p">]);</span>
+
+<span class="c1"># or
+</span>
+<span class="nv">$schedule</span> <span class="o">=</span> <span class="nx">\Rainforest\Schedule</span><span class="o">::</span><span class="na">retrieve</span><span class="p">(</span><span class="nv">$id</span><span class="p">);</span>
+<span class="nv">$schedule</span><span class="o">-&gt;</span><span class="na">repeat_rules</span> <span class="o">=</span> <span class="nv">$repeatRules</span><span class="p">;</span>
+<span class="nv">$schedule</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">();</span>
+<span class="cp">?&gt;</span>
+</code></pre>
 
 <blockquote>
 <p>Example Response</p>
@@ -2369,6 +4849,35 @@
        <span class="na">day</span><span class="p">:</span> <span class="s1">'monday'</span><span class="p">,</span>
        <span class="na">time</span><span class="p">:</span> <span class="s1">'12:00'</span> <span class="p">}</span> <span class="p">],</span>
   <span class="nx">filters</span><span class="err">:</span> <span class="p">{</span> <span class="nl">tags</span><span class="p">:</span> <span class="p">[</span> <span class="s1">'www'</span> <span class="p">]</span> <span class="p">}</span> <span class="p">}</span>
+</code></pre>
+<pre class="highlight php"><code>object(Rainforest\Schedule)#13 (7) {
+  ["created_at"]=&gt;
+  string(20) "2015-08-07T18:06:32Z"
+  ["filters"]=&gt;
+  array(1) {
+    ["tags"]=&gt;
+    array(1) {
+      [0]=&gt;
+      string(3) "www"
+    }
+  }
+  ["id"]=&gt;
+  int(218)
+  ["repeat_rules"]=&gt;
+  array(1) {
+    [0]=&gt;
+    array(4) {
+      ["id"]=&gt;
+      int(957)
+      ["created_at"]=&gt;
+      string(20) "2015-08-07T18:16:52Z"
+      ["day"]=&gt;
+      string(6) "monday"
+      ["time"]=&gt;
+      string(5) "12:00"
+    }
+  }
+}
 </code></pre>
 
 <p>TODO: Fill this in.</p>
@@ -2423,6 +4932,21 @@
   <span class="c1">// Handle errors</span>
 <span class="p">});</span>
 </code></pre>
+<pre class="highlight php"><code><span class="cp">&lt;?php</span>
+<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
+
+<span class="nv">$schedules</span> <span class="o">=</span> <span class="nx">\Rainforest\Schedule</span><span class="o">::</span><span class="na">all</span><span class="p">();</span>
+
+<span class="c1"># The list is enumerable and works similarly to an array
+</span><span class="k">foreach</span><span class="p">(</span> <span class="nv">$schedules</span><span class="o">-&gt;</span><span class="na">data</span> <span class="k">as</span> <span class="nv">$schedule</span> <span class="p">)</span> <span class="p">{</span>
+  <span class="c1"># work with an Schedule
+</span><span class="p">}</span>
+
+<span class="nv">$schedules</span><span class="o">-&gt;</span><span class="na">data</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span> <span class="c1"># The first Schedule in the list
+</span><span class="nb">count</span><span class="p">(</span> <span class="nv">$schedules</span><span class="o">-&gt;</span><span class="na">data</span> <span class="p">);</span> <span class="c1"># the number of Schedules returned
+</span><span class="cp">?&gt;</span>
+</code></pre>
 
 <blockquote>
 <p>Example Response</p>
@@ -2449,6 +4973,39 @@
        <span class="na">filters</span><span class="p">:</span> <span class="p">{</span> <span class="na">tags</span><span class="p">:</span> <span class="p">[</span> <span class="s1">'www'</span> <span class="p">]</span> <span class="p">}</span> <span class="p">},</span>
      <span class="p">{...},</span>
      <span class="p">{...}</span> <span class="p">]</span> <span class="p">}</span>
+</code></pre>
+<pre class="highlight php"><code>array(2) {
+  [0]=&gt;
+  object(Rainforest\Schedule)#14 (7) {
+    ["created_at"]=&gt;
+    string(20) "2015-08-07T18:06:32Z"
+    ["filters"]=&gt;
+    array(1) {
+      ["tags"]=&gt;
+      array(1) {
+        [0]=&gt;
+        string(3) "www"
+      }
+    }
+    ["id"]=&gt;
+    int(218)
+    ["repeat_rules"]=&gt;
+    array(1) {
+      [0]=&gt;
+      array(4) {
+        ["id"]=&gt;
+        int(958)
+        ["created_at"]=&gt;
+        string(20) "2015-08-07T18:17:44Z"
+        ["day"]=&gt;
+        string(6) "monday"
+        ["time"]=&gt;
+        string(5) "12:00"
+      }
+    }
+ ...},
+{...}
+}
 </code></pre>
 
 <p>TODO: Fill this in.</p>
@@ -2480,6 +5037,20 @@
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
 <span class="p">});</span>
 </code></pre>
+<pre class="highlight php"><code><span class="cp">&lt;?php</span>
+<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
+
+<span class="nv">$id</span> <span class="o">=</span> <span class="mi">218</span><span class="p">;</span>
+
+<span class="nv">$schedule</span> <span class="o">=</span> <span class="nx">\Rainforest\Schedule</span><span class="o">::</span><span class="na">delete</span><span class="p">(</span> <span class="nv">$id</span> <span class="p">);</span>
+
+<span class="c1"># or
+</span>
+<span class="nv">$schedule</span> <span class="o">=</span> <span class="nx">\Rainforest\Schedule</span><span class="o">::</span><span class="na">retrieve</span><span class="p">(</span><span class="nv">$id</span><span class="p">);</span>
+<span class="nv">$schedule</span><span class="o">-&gt;</span><span class="na">delete</span><span class="p">();</span>
+<span class="cp">?&gt;</span>
+</code></pre>
 
 <blockquote>
 <p>Example Response</p>
@@ -2503,6 +5074,35 @@
        <span class="na">day</span><span class="p">:</span> <span class="s1">'monday'</span><span class="p">,</span>
        <span class="na">time</span><span class="p">:</span> <span class="s1">'12:00'</span> <span class="p">}</span> <span class="p">],</span>
   <span class="nx">filters</span><span class="err">:</span> <span class="p">{</span> <span class="nl">tags</span><span class="p">:</span> <span class="p">[</span> <span class="s1">'www'</span> <span class="p">]</span> <span class="p">}</span> <span class="p">}</span>
+</code></pre>
+<pre class="highlight php"><code>object(Rainforest\Schedule)#13 (7) {
+  ["created_at"]=&gt;
+  string(20) "2015-08-07T18:06:32Z"
+  ["filters"]=&gt;
+  array(1) {
+    ["tags"]=&gt;
+    array(1) {
+      [0]=&gt;
+      string(3) "www"
+    }
+  }
+  ["id"]=&gt;
+  int(218)
+  ["repeat_rules"]=&gt;
+  array(1) {
+    [0]=&gt;
+    array(4) {
+      ["id"]=&gt;
+      int(958)
+      ["created_at"]=&gt;
+      string(20) "2015-08-07T18:17:44Z"
+      ["day"]=&gt;
+      string(6) "monday"
+      ["time"]=&gt;
+      string(5) "12:00"
+    }
+  }
+}
 </code></pre>
 
 <p>TODO: Fill this in.</p>
@@ -2612,6 +5212,196 @@
    <span class="p">{</span> <span class="nl">id</span><span class="p">:</span> <span class="mi">31921</span><span class="p">,</span>
      <span class="nx">created_at</span><span class="err">:</span> <span class="s1">'2015-08-03T18:47:18Z'</span><span class="p">,</span>
      <span class="nx">state</span><span class="err">:</span> <span class="s1">'aborted'</span> <span class="p">}</span> <span class="p">}</span>
+</code></pre>
+<pre class="highlight php"><code>object(Rainforest\Test)#13 (22) {
+  ["browsers"]=&gt;
+  array(11) {
+    [0]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(23) "android_phone_landscape"
+      ["description"]=&gt;
+      string(23) "Android Phone Landscape"
+      ["category"]=&gt;
+      string(5) "phone"
+      ["state"]=&gt;
+      string(7) "enabled"
+    }
+    [1]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(22) "android_phone_portrait"
+      ["description"]=&gt;
+      string(22) "Android Phone Portrait"
+      ["category"]=&gt;
+      string(5) "phone"
+      ["state"]=&gt;
+      string(7) "enabled"
+    }
+    [2]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(24) "android_tablet_landscape"
+      ["description"]=&gt;
+      string(24) "Android Tablet Landscape"
+      ["category"]=&gt;
+      string(6) "tablet"
+      ["state"]=&gt;
+      string(7) "enabled"
+    }
+    [3]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(23) "android_tablet_portrait"
+      ["description"]=&gt;
+      string(23) "Android Tablet Portrait"
+      ["category"]=&gt;
+      string(6) "tablet"
+      ["state"]=&gt;
+      string(7) "enabled"
+    }
+    [4]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(6) "chrome"
+      ["description"]=&gt;
+      string(13) "Google Chrome"
+      ["category"]=&gt;
+      string(7) "browser"
+      ["state"]=&gt;
+      string(7) "enabled"
+    }
+    [5]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(7) "firefox"
+      ["description"]=&gt;
+      string(15) "Mozilla Firefox"
+      ["category"]=&gt;
+      string(7) "browser"
+      ["state"]=&gt;
+      string(7) "enabled"
+    }
+    [6]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(3) "ie8"
+      ["description"]=&gt;
+      string(29) "Microsoft Internet Explorer 8"
+      ["category"]=&gt;
+      string(7) "browser"
+      ["state"]=&gt;
+      string(7) "enabled"
+    }
+    [7]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(3) "ie9"
+      ["description"]=&gt;
+      string(29) "Microsoft Internet Explorer 9"
+      ["category"]=&gt;
+      string(7) "browser"
+      ["state"]=&gt;
+      string(7) "enabled"
+    }
+    [8]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(4) "ie10"
+      ["description"]=&gt;
+      string(30) "Microsoft Internet Explorer 10"
+      ["category"]=&gt;
+      string(7) "browser"
+      ["state"]=&gt;
+      string(7) "enabled"
+    }
+    [9]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(4) "ie11"
+      ["description"]=&gt;
+      string(30) "Microsoft Internet Explorer 11"
+      ["category"]=&gt;
+      string(7) "browser"
+      ["state"]=&gt;
+      string(7) "enabled"
+    }
+    [10]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(6) "safari"
+      ["description"]=&gt;
+      string(12) "Apple Safari"
+      ["category"]=&gt;
+      string(7) "browser"
+      ["state"]=&gt;
+      string(8) "disabled"
+    }
+  }
+  ["created_at"]=&gt;
+  string(20) "2015-08-06T18:22:58Z"
+  ["deletable"]=&gt;
+  bool(true)
+  ["deleted"]=&gt;
+  bool(false)
+  ["description"]=&gt;
+  NULL
+  ["dry_run_url"]=&gt;
+  string(92) "https://tester.rainforestqa.com/tester/dry_run/EPEPO0ZZb34DbtCxNcMEEQ?turkSubmitTo=%2Fthanks"
+  ["editable"]=&gt;
+  bool(true)
+  ["elements"]=&gt;
+  array(1) {
+    [0]=&gt;
+    array(5) {
+      ["id"]=&gt;
+      int(56324)
+      ["created_at"]=&gt;
+      string(20) "2015-08-06T18:22:58Z"
+      ["redirection"]=&gt;
+      bool(true)
+      ["type"]=&gt;
+      string(4) "step"
+      ["element"]=&gt;
+      array(5) {
+        ["id"]=&gt;
+        int(49208)
+        ["created_at"]=&gt;
+        string(20) "2015-08-06T18:22:58Z"
+        ["action"]=&gt;
+        string(116) "Type 'test@apibits.com' into the email field, and 'password123' into the password field, then hit the log in button."
+        ["response"]=&gt;
+        string(37) "Were you redirected to the dashboard?"
+        ["browsers"]=&gt;
+        NULL
+      }
+    }
+  }
+  ["has_been_dry_run"]=&gt;
+  bool(false)
+  ["id"]=&gt;
+  int(18315)
+  ["last_run"]=&gt;
+  NULL
+  ["result"]=&gt;
+  string(9) "no_result"
+  ["run_mode"]=&gt;
+  string(7) "default"
+  ["site_id"]=&gt;
+  int(860)
+  ["start_uri"]=&gt;
+  string(6) "/login"
+  ["step_count"]=&gt;
+  int(1)
+  ["tags"]=&gt;
+  array(0) {
+  }
+  ["test_id"]=&gt;
+  int(18315)
+  ["title"]=&gt;
+  string(20) "Log in to an account"
+  }
+}
 </code></pre>
 
 <p>TODO: Fill this in.</p>
@@ -2753,6 +5543,26 @@
   <span class="c1">// Handle errors</span>
 <span class="p">});</span>
 </code></pre>
+<pre class="highlight php"><code><span class="cp">&lt;?php</span>
+<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
+
+<span class="nv">$test</span> <span class="o">=</span> <span class="nx">\Rainforest\Test</span><span class="o">::</span><span class="na">create</span><span class="p">([</span>
+    <span class="s2">"start_uri"</span> <span class="o">=&gt;</span> <span class="s2">"/login"</span><span class="p">,</span>
+    <span class="s2">"title"</span> <span class="o">=&gt;</span> <span class="s2">"Log in to an account"</span><span class="p">,</span>
+    <span class="s2">"elements"</span> <span class="o">=&gt;</span> <span class="p">[</span>
+      <span class="p">[</span>
+        <span class="s2">"type"</span> <span class="o">=&gt;</span> <span class="s2">"step"</span><span class="p">,</span>
+        <span class="s2">"redirection"</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="s2">"element"</span> <span class="o">=&gt;</span> <span class="p">[</span>
+          <span class="s2">"action"</span> <span class="o">=&gt;</span> <span class="s2">"Type 'test@apibits.com' into the email field, and 'password123' into the password field, then hit the log in button."</span><span class="p">,</span>
+          <span class="s2">"response"</span> <span class="o">=&gt;</span> <span class="s2">"Were you redirected to the dashboard?"</span>
+        <span class="p">]</span>
+      <span class="p">]</span>
+    <span class="p">]</span>
+<span class="p">]);</span>
+<span class="cp">?&gt;</span>
+</code></pre>
 
 <blockquote>
 <p>Example Response</p>
@@ -2867,6 +5677,196 @@
   <span class="nx">dry_run_url</span><span class="err">:</span> <span class="s1">'https://tester.rainforestqa.com/tester/dry_run/gHUL9tAGqspvqzp9IckGFA?turkSubmitTo=%2Fthanks'</span><span class="p">,</span>
   <span class="nx">last_run</span><span class="err">:</span> <span class="kc">null</span> <span class="p">}</span>
 </code></pre>
+<pre class="highlight php"><code>object(Rainforest\Test)#13 (22) {
+  ["browsers"]=&gt;
+  array(11) {
+    [0]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(23) "android_phone_landscape"
+      ["description"]=&gt;
+      string(23) "Android Phone Landscape"
+      ["category"]=&gt;
+      string(5) "phone"
+      ["state"]=&gt;
+      string(7) "enabled"
+    }
+    [1]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(22) "android_phone_portrait"
+      ["description"]=&gt;
+      string(22) "Android Phone Portrait"
+      ["category"]=&gt;
+      string(5) "phone"
+      ["state"]=&gt;
+      string(7) "enabled"
+    }
+    [2]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(24) "android_tablet_landscape"
+      ["description"]=&gt;
+      string(24) "Android Tablet Landscape"
+      ["category"]=&gt;
+      string(6) "tablet"
+      ["state"]=&gt;
+      string(7) "enabled"
+    }
+    [3]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(23) "android_tablet_portrait"
+      ["description"]=&gt;
+      string(23) "Android Tablet Portrait"
+      ["category"]=&gt;
+      string(6) "tablet"
+      ["state"]=&gt;
+      string(7) "enabled"
+    }
+    [4]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(6) "chrome"
+      ["description"]=&gt;
+      string(13) "Google Chrome"
+      ["category"]=&gt;
+      string(7) "browser"
+      ["state"]=&gt;
+      string(7) "enabled"
+    }
+    [5]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(7) "firefox"
+      ["description"]=&gt;
+      string(15) "Mozilla Firefox"
+      ["category"]=&gt;
+      string(7) "browser"
+      ["state"]=&gt;
+      string(7) "enabled"
+    }
+    [6]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(3) "ie8"
+      ["description"]=&gt;
+      string(29) "Microsoft Internet Explorer 8"
+      ["category"]=&gt;
+      string(7) "browser"
+      ["state"]=&gt;
+      string(7) "enabled"
+    }
+    [7]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(3) "ie9"
+      ["description"]=&gt;
+      string(29) "Microsoft Internet Explorer 9"
+      ["category"]=&gt;
+      string(7) "browser"
+      ["state"]=&gt;
+      string(7) "enabled"
+    }
+    [8]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(4) "ie10"
+      ["description"]=&gt;
+      string(30) "Microsoft Internet Explorer 10"
+      ["category"]=&gt;
+      string(7) "browser"
+      ["state"]=&gt;
+      string(7) "enabled"
+    }
+    [9]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(4) "ie11"
+      ["description"]=&gt;
+      string(30) "Microsoft Internet Explorer 11"
+      ["category"]=&gt;
+      string(7) "browser"
+      ["state"]=&gt;
+      string(7) "enabled"
+    }
+    [10]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(6) "safari"
+      ["description"]=&gt;
+      string(12) "Apple Safari"
+      ["category"]=&gt;
+      string(7) "browser"
+      ["state"]=&gt;
+      string(8) "disabled"
+    }
+  }
+  ["created_at"]=&gt;
+  string(20) "2015-08-06T18:22:58Z"
+  ["deletable"]=&gt;
+  bool(true)
+  ["deleted"]=&gt;
+  bool(false)
+  ["description"]=&gt;
+  NULL
+  ["dry_run_url"]=&gt;
+  string(92) "https://tester.rainforestqa.com/tester/dry_run/EPEPO0ZZb34DbtCxNcMEEQ?turkSubmitTo=%2Fthanks"
+  ["editable"]=&gt;
+  bool(true)
+  ["elements"]=&gt;
+  array(1) {
+    [0]=&gt;
+    array(5) {
+      ["id"]=&gt;
+      int(56324)
+      ["created_at"]=&gt;
+      string(20) "2015-08-06T18:22:58Z"
+      ["redirection"]=&gt;
+      bool(true)
+      ["type"]=&gt;
+      string(4) "step"
+      ["element"]=&gt;
+      array(5) {
+        ["id"]=&gt;
+        int(49208)
+        ["created_at"]=&gt;
+        string(20) "2015-08-06T18:22:58Z"
+        ["action"]=&gt;
+        string(116) "Type 'test@apibits.com' into the email field, and 'password123' into the password field, then hit the log in button."
+        ["response"]=&gt;
+        string(37) "Were you redirected to the dashboard?"
+        ["browsers"]=&gt;
+        NULL
+      }
+    }
+  }
+  ["has_been_dry_run"]=&gt;
+  bool(false)
+  ["id"]=&gt;
+  int(18315)
+  ["last_run"]=&gt;
+  NULL
+  ["result"]=&gt;
+  string(9) "no_result"
+  ["run_mode"]=&gt;
+  string(7) "default"
+  ["site_id"]=&gt;
+  int(860)
+  ["start_uri"]=&gt;
+  string(6) "/login"
+  ["step_count"]=&gt;
+  int(1)
+  ["tags"]=&gt;
+  array(0) {
+  }
+  ["test_id"]=&gt;
+  int(18315)
+  ["title"]=&gt;
+  string(20) "Log in to an account"
+  }
+}
+</code></pre>
 
 <p>TODO: Fill this in.</p>
 
@@ -2902,6 +5902,14 @@
 <span class="p">}).</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// Handle errors</span>
 <span class="p">});</span>
+</code></pre>
+<pre class="highlight php"><code><span class="cp">&lt;?php</span>
+<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
+
+<span class="nv">$id</span> <span class="o">=</span> <span class="mi">18315</span><span class="p">;</span>
+<span class="nv">$test</span> <span class="o">=</span> <span class="nx">\Rainforest\Test</span><span class="o">::</span><span class="na">retrieve</span><span class="p">(</span> <span class="nv">$id</span> <span class="p">);</span>
+<span class="cp">?&gt;</span>
 </code></pre>
 
 <blockquote>
@@ -3016,6 +6024,196 @@
      <span class="nx">created_at</span><span class="err">:</span> <span class="s1">'2015-08-03T18:47:18Z'</span><span class="p">,</span>
      <span class="nx">state</span><span class="err">:</span> <span class="s1">'aborted'</span> <span class="p">}</span> <span class="p">}</span>
 </code></pre>
+<pre class="highlight php"><code>object(Rainforest\Test)#13 (22) {
+  ["browsers"]=&gt;
+  array(11) {
+    [0]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(23) "android_phone_landscape"
+      ["description"]=&gt;
+      string(23) "Android Phone Landscape"
+      ["category"]=&gt;
+      string(5) "phone"
+      ["state"]=&gt;
+      string(7) "enabled"
+    }
+    [1]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(22) "android_phone_portrait"
+      ["description"]=&gt;
+      string(22) "Android Phone Portrait"
+      ["category"]=&gt;
+      string(5) "phone"
+      ["state"]=&gt;
+      string(7) "enabled"
+    }
+    [2]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(24) "android_tablet_landscape"
+      ["description"]=&gt;
+      string(24) "Android Tablet Landscape"
+      ["category"]=&gt;
+      string(6) "tablet"
+      ["state"]=&gt;
+      string(7) "enabled"
+    }
+    [3]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(23) "android_tablet_portrait"
+      ["description"]=&gt;
+      string(23) "Android Tablet Portrait"
+      ["category"]=&gt;
+      string(6) "tablet"
+      ["state"]=&gt;
+      string(7) "enabled"
+    }
+    [4]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(6) "chrome"
+      ["description"]=&gt;
+      string(13) "Google Chrome"
+      ["category"]=&gt;
+      string(7) "browser"
+      ["state"]=&gt;
+      string(7) "enabled"
+    }
+    [5]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(7) "firefox"
+      ["description"]=&gt;
+      string(15) "Mozilla Firefox"
+      ["category"]=&gt;
+      string(7) "browser"
+      ["state"]=&gt;
+      string(7) "enabled"
+    }
+    [6]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(3) "ie8"
+      ["description"]=&gt;
+      string(29) "Microsoft Internet Explorer 8"
+      ["category"]=&gt;
+      string(7) "browser"
+      ["state"]=&gt;
+      string(7) "enabled"
+    }
+    [7]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(3) "ie9"
+      ["description"]=&gt;
+      string(29) "Microsoft Internet Explorer 9"
+      ["category"]=&gt;
+      string(7) "browser"
+      ["state"]=&gt;
+      string(7) "enabled"
+    }
+    [8]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(4) "ie10"
+      ["description"]=&gt;
+      string(30) "Microsoft Internet Explorer 10"
+      ["category"]=&gt;
+      string(7) "browser"
+      ["state"]=&gt;
+      string(7) "enabled"
+    }
+    [9]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(4) "ie11"
+      ["description"]=&gt;
+      string(30) "Microsoft Internet Explorer 11"
+      ["category"]=&gt;
+      string(7) "browser"
+      ["state"]=&gt;
+      string(7) "enabled"
+    }
+    [10]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(6) "safari"
+      ["description"]=&gt;
+      string(12) "Apple Safari"
+      ["category"]=&gt;
+      string(7) "browser"
+      ["state"]=&gt;
+      string(8) "disabled"
+    }
+  }
+  ["created_at"]=&gt;
+  string(20) "2015-08-06T18:22:58Z"
+  ["deletable"]=&gt;
+  bool(true)
+  ["deleted"]=&gt;
+  bool(false)
+  ["description"]=&gt;
+  NULL
+  ["dry_run_url"]=&gt;
+  string(92) "https://tester.rainforestqa.com/tester/dry_run/EPEPO0ZZb34DbtCxNcMEEQ?turkSubmitTo=%2Fthanks"
+  ["editable"]=&gt;
+  bool(true)
+  ["elements"]=&gt;
+  array(1) {
+    [0]=&gt;
+    array(5) {
+      ["id"]=&gt;
+      int(56324)
+      ["created_at"]=&gt;
+      string(20) "2015-08-06T18:22:58Z"
+      ["redirection"]=&gt;
+      bool(true)
+      ["type"]=&gt;
+      string(4) "step"
+      ["element"]=&gt;
+      array(5) {
+        ["id"]=&gt;
+        int(49208)
+        ["created_at"]=&gt;
+        string(20) "2015-08-06T18:22:58Z"
+        ["action"]=&gt;
+        string(116) "Type 'test@apibits.com' into the email field, and 'password123' into the password field, then hit the log in button."
+        ["response"]=&gt;
+        string(37) "Were you redirected to the dashboard?"
+        ["browsers"]=&gt;
+        NULL
+      }
+    }
+  }
+  ["has_been_dry_run"]=&gt;
+  bool(false)
+  ["id"]=&gt;
+  int(18315)
+  ["last_run"]=&gt;
+  NULL
+  ["result"]=&gt;
+  string(9) "no_result"
+  ["run_mode"]=&gt;
+  string(7) "default"
+  ["site_id"]=&gt;
+  int(860)
+  ["start_uri"]=&gt;
+  string(6) "/login"
+  ["step_count"]=&gt;
+  int(1)
+  ["tags"]=&gt;
+  array(0) {
+  }
+  ["test_id"]=&gt;
+  int(18315)
+  ["title"]=&gt;
+  string(20) "Log in to an account"
+  }
+}
+</code></pre>
 
 <p>TODO: Fill this in.</p>
 
@@ -3058,6 +6256,21 @@
 <span class="p">}).</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// Handle errors</span>
 <span class="p">});</span>
+</code></pre>
+<pre class="highlight php"><code><span class="cp">&lt;?php</span>
+<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
+
+<span class="nv">$id</span> <span class="o">=</span> <span class="mi">18315</span><span class="p">;</span>
+
+<span class="nv">$test</span> <span class="o">=</span> <span class="nx">\Rainforest\Test</span><span class="o">::</span><span class="na">update</span><span class="p">(</span><span class="nv">$id</span><span class="p">,</span> <span class="p">[</span><span class="s2">"name"</span> <span class="o">=&gt;</span> <span class="s2">"New Test Title"</span><span class="p">]);</span>
+
+<span class="c1"># or
+</span>
+<span class="nv">$test</span> <span class="o">=</span> <span class="nx">\Rainforest\Test</span><span class="o">::</span><span class="na">retrieve</span><span class="p">(</span><span class="nv">$id</span><span class="p">);</span>
+<span class="nv">$test</span><span class="o">-&gt;</span><span class="na">name</span> <span class="o">=</span> <span class="s2">"New Test Title"</span><span class="p">;</span>
+<span class="nv">$test</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">();</span>
+<span class="cp">?&gt;</span>
 </code></pre>
 
 <blockquote>
@@ -3144,6 +6357,196 @@
      <span class="nx">created_at</span><span class="err">:</span> <span class="s1">'2015-08-03T18:47:18Z'</span><span class="p">,</span>
      <span class="nx">state</span><span class="err">:</span> <span class="s1">'aborted'</span> <span class="p">}</span> <span class="p">}</span>
 </code></pre>
+<pre class="highlight php"><code>object(Rainforest\Test)#13 (23) {
+  ["browsers"]=&gt;
+  array(11) {
+    [0]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(23) "android_phone_landscape"
+      ["description"]=&gt;
+      string(23) "Android Phone Landscape"
+      ["category"]=&gt;
+      string(5) "phone"
+      ["state"]=&gt;
+      string(7) "enabled"
+    }
+    [1]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(22) "android_phone_portrait"
+      ["description"]=&gt;
+      string(22) "Android Phone Portrait"
+      ["category"]=&gt;
+      string(5) "phone"
+      ["state"]=&gt;
+      string(7) "enabled"
+    }
+    [2]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(24) "android_tablet_landscape"
+      ["description"]=&gt;
+      string(24) "Android Tablet Landscape"
+      ["category"]=&gt;
+      string(6) "tablet"
+      ["state"]=&gt;
+      string(7) "enabled"
+    }
+    [3]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(23) "android_tablet_portrait"
+      ["description"]=&gt;
+      string(23) "Android Tablet Portrait"
+      ["category"]=&gt;
+      string(6) "tablet"
+      ["state"]=&gt;
+      string(7) "enabled"
+    }
+    [4]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(6) "chrome"
+      ["description"]=&gt;
+      string(13) "Google Chrome"
+      ["category"]=&gt;
+      string(7) "browser"
+      ["state"]=&gt;
+      string(7) "enabled"
+    }
+    [5]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(7) "firefox"
+      ["description"]=&gt;
+      string(15) "Mozilla Firefox"
+      ["category"]=&gt;
+      string(7) "browser"
+      ["state"]=&gt;
+      string(7) "enabled"
+    }
+    [6]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(3) "ie8"
+      ["description"]=&gt;
+      string(29) "Microsoft Internet Explorer 8"
+      ["category"]=&gt;
+      string(7) "browser"
+      ["state"]=&gt;
+      string(7) "enabled"
+    }
+    [7]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(3) "ie9"
+      ["description"]=&gt;
+      string(29) "Microsoft Internet Explorer 9"
+      ["category"]=&gt;
+      string(7) "browser"
+      ["state"]=&gt;
+      string(7) "enabled"
+    }
+    [8]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(4) "ie10"
+      ["description"]=&gt;
+      string(30) "Microsoft Internet Explorer 10"
+      ["category"]=&gt;
+      string(7) "browser"
+      ["state"]=&gt;
+      string(7) "enabled"
+    }
+    [9]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(4) "ie11"
+      ["description"]=&gt;
+      string(30) "Microsoft Internet Explorer 11"
+      ["category"]=&gt;
+      string(7) "browser"
+      ["state"]=&gt;
+      string(7) "enabled"
+    }
+    [10]=&gt;
+    array(4) {
+      ["name"]=&gt;
+      string(6) "safari"
+      ["description"]=&gt;
+      string(12) "Apple Safari"
+      ["category"]=&gt;
+      string(7) "browser"
+      ["state"]=&gt;
+      string(8) "disabled"
+    }
+  }
+  ["created_at"]=&gt;
+  string(20) "2015-08-06T18:22:58Z"
+  ["deletable"]=&gt;
+  bool(true)
+  ["deleted"]=&gt;
+  bool(false)
+  ["description"]=&gt;
+  NULL
+  ["dry_run_url"]=&gt;
+  string(92) "https://tester.rainforestqa.com/tester/dry_run/EPEPO0ZZb34DbtCxNcMEEQ?turkSubmitTo=%2Fthanks"
+  ["editable"]=&gt;
+  bool(true)
+  ["elements"]=&gt;
+  array(1) {
+    [0]=&gt;
+    array(5) {
+      ["id"]=&gt;
+      int(56324)
+      ["created_at"]=&gt;
+      string(20) "2015-08-06T18:22:58Z"
+      ["redirection"]=&gt;
+      bool(true)
+      ["type"]=&gt;
+      string(4) "step"
+      ["element"]=&gt;
+      array(5) {
+        ["id"]=&gt;
+        int(49208)
+        ["created_at"]=&gt;
+        string(20) "2015-08-06T18:22:58Z"
+        ["action"]=&gt;
+        string(116) "Type 'test@apibits.com' into the email field, and 'password123' into the password field, then hit the log in button."
+        ["response"]=&gt;
+        string(37) "Were you redirected to the dashboard?"
+        ["browsers"]=&gt;
+        NULL
+      }
+    }
+  }
+  ["has_been_dry_run"]=&gt;
+  bool(false)
+  ["id"]=&gt;
+  int(18315)
+  ["last_run"]=&gt;
+  NULL
+  ["result"]=&gt;
+  string(9) "no_result"
+  ["run_mode"]=&gt;
+  string(7) "default"
+  ["site_id"]=&gt;
+  int(860)
+  ["start_uri"]=&gt;
+  string(6) "/login"
+  ["step_count"]=&gt;
+  int(1)
+  ["tags"]=&gt;
+  array(0) {
+  }
+  ["test_id"]=&gt;
+  int(18315)
+  ["title"]=&gt;
+  string(20) "Log in to an account"
+  }
+}
+</code></pre>
 
 <p>TODO: Fill this in.</p>
 
@@ -3188,6 +6591,21 @@
   <span class="c1">// Handle errors</span>
 <span class="p">});</span>
 </code></pre>
+<pre class="highlight php"><code><span class="cp">&lt;?php</span>
+<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
+
+<span class="nv">$tests</span> <span class="o">=</span> <span class="nx">\Rainforest\Test</span><span class="o">::</span><span class="na">all</span><span class="p">();</span>
+
+<span class="c1"># The list is enumerable and works similarly to an array
+</span><span class="k">foreach</span><span class="p">(</span> <span class="nv">$tests</span><span class="o">-&gt;</span><span class="na">data</span> <span class="k">as</span> <span class="nv">$test</span> <span class="p">)</span> <span class="p">{</span>
+  <span class="c1"># work with an Test
+</span><span class="p">}</span>
+
+<span class="nv">$tests</span><span class="o">-&gt;</span><span class="na">data</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span> <span class="c1"># The first Test in the list
+</span><span class="nb">count</span><span class="p">(</span> <span class="nv">$tests</span><span class="o">-&gt;</span><span class="na">data</span> <span class="p">);</span> <span class="c1"># the number of Tests returned
+</span><span class="cp">?&gt;</span>
+</code></pre>
 
 <blockquote>
 <p>Example Response</p>
@@ -3206,6 +6624,174 @@
 <span class="p">]</span>
 
 
+</code></pre>
+<pre class="highlight php"><code>array(2) {
+  [0]=&gt;
+  object(Rainforest\Test)#14 (22) {
+    ["browsers"]=&gt;
+    array(11) {
+      [0]=&gt;
+      array(4) {
+        ["name"]=&gt;
+        string(23) "android_phone_landscape"
+        ["description"]=&gt;
+        string(23) "Android Phone Landscape"
+        ["category"]=&gt;
+        string(5) "phone"
+        ["state"]=&gt;
+        string(7) "enabled"
+      }
+      [1]=&gt;
+      array(4) {
+        ["name"]=&gt;
+        string(22) "android_phone_portrait"
+        ["description"]=&gt;
+        string(22) "Android Phone Portrait"
+        ["category"]=&gt;
+        string(5) "phone"
+        ["state"]=&gt;
+        string(7) "enabled"
+      }
+      [2]=&gt;
+      array(4) {
+        ["name"]=&gt;
+        string(24) "android_tablet_landscape"
+        ["description"]=&gt;
+        string(24) "Android Tablet Landscape"
+        ["category"]=&gt;
+        string(6) "tablet"
+        ["state"]=&gt;
+        string(7) "enabled"
+      }
+      [3]=&gt;
+      array(4) {
+        ["name"]=&gt;
+        string(23) "android_tablet_portrait"
+        ["description"]=&gt;
+        string(23) "Android Tablet Portrait"
+        ["category"]=&gt;
+        string(6) "tablet"
+        ["state"]=&gt;
+        string(7) "enabled"
+      }
+      [4]=&gt;
+      array(4) {
+        ["name"]=&gt;
+        string(6) "chrome"
+        ["description"]=&gt;
+        string(13) "Google Chrome"
+        ["category"]=&gt;
+        string(7) "browser"
+        ["state"]=&gt;
+        string(7) "enabled"
+      }
+      [5]=&gt;
+      array(4) {
+        ["name"]=&gt;
+        string(7) "firefox"
+        ["description"]=&gt;
+        string(15) "Mozilla Firefox"
+        ["category"]=&gt;
+        string(7) "browser"
+        ["state"]=&gt;
+        string(7) "enabled"
+      }
+      [6]=&gt;
+      array(4) {
+        ["name"]=&gt;
+        string(3) "ie8"
+        ["description"]=&gt;
+        string(29) "Microsoft Internet Explorer 8"
+        ["category"]=&gt;
+        string(7) "browser"
+        ["state"]=&gt;
+        string(7) "enabled"
+      }
+      [7]=&gt;
+      array(4) {
+        ["name"]=&gt;
+        string(3) "ie9"
+        ["description"]=&gt;
+        string(29) "Microsoft Internet Explorer 9"
+        ["category"]=&gt;
+        string(7) "browser"
+        ["state"]=&gt;
+        string(7) "enabled"
+      }
+      [8]=&gt;
+      array(4) {
+        ["name"]=&gt;
+        string(4) "ie10"
+        ["description"]=&gt;
+        string(30) "Microsoft Internet Explorer 10"
+        ["category"]=&gt;
+        string(7) "browser"
+        ["state"]=&gt;
+        string(7) "enabled"
+      }
+      [9]=&gt;
+      array(4) {
+        ["name"]=&gt;
+        string(4) "ie11"
+        ["description"]=&gt;
+        string(30) "Microsoft Internet Explorer 11"
+        ["category"]=&gt;
+        string(7) "browser"
+        ["state"]=&gt;
+        string(7) "enabled"
+      }
+      [10]=&gt;
+      array(4) {
+        ["name"]=&gt;
+        string(6) "safari"
+        ["description"]=&gt;
+        string(12) "Apple Safari"
+        ["category"]=&gt;
+        string(7) "browser"
+        ["state"]=&gt;
+        string(8) "disabled"
+      }
+    }
+    ["created_at"]=&gt;
+    string(20) "2015-07-28T15:44:47Z"
+    ["deletable"]=&gt;
+    bool(true)
+    ["deleted"]=&gt;
+    bool(false)
+    ["description"]=&gt;
+    NULL
+    ["dry_run_url"]=&gt;
+    string(92) "https://tester.rainforestqa.com/tester/dry_run/MrjvNbeT6SILCphmsKLE7Q?turkSubmitTo=%2Fthanks"
+    ["editable"]=&gt;
+    bool(true)
+    ["elements"]=&gt;
+    NULL
+    ["has_been_dry_run"]=&gt;
+    bool(false)
+    ["id"]=&gt;
+    int(17795)
+    ["last_run"]=&gt;
+    NULL
+    ["result"]=&gt;
+    string(9) "no_result"
+    ["run_mode"]=&gt;
+    string(7) "default"
+    ["site_id"]=&gt;
+    int(860)
+    ["start_uri"]=&gt;
+    string(1) "/"
+    ["step_count"]=&gt;
+    int(3)
+    ["tags"]=&gt;
+    array(0) {
+    }
+    ["test_id"]=&gt;
+    int(17795)
+    ["title"]=&gt;
+    string(13) "Create a test"
+  ...},
+  {...}
+}
 </code></pre>
 
 <p>TODO: Fill this in.</p>
@@ -3234,6 +6820,20 @@
   <span class="c1">// Handle the error</span>
 <span class="p">});</span>
 </code></pre>
+<pre class="highlight php"><code><span class="cp">&lt;?php</span>
+<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
+
+<span class="nv">$id</span> <span class="o">=</span> <span class="mi">18315</span><span class="p">;</span>
+
+<span class="nv">$test</span> <span class="o">=</span> <span class="nx">\Rainforest\Test</span><span class="o">::</span><span class="na">delete</span><span class="p">(</span> <span class="nv">$id</span> <span class="p">);</span>
+
+<span class="c1"># or
+</span>
+<span class="nv">$test</span> <span class="o">=</span> <span class="nx">\Rainforest\Test</span><span class="o">::</span><span class="na">retrieve</span><span class="p">(</span><span class="nv">$id</span><span class="p">);</span>
+<span class="nv">$test</span><span class="o">-&gt;</span><span class="na">delete</span><span class="p">();</span>
+<span class="cp">?&gt;</span>
+</code></pre>
 
 <blockquote>
 <p>Example Response</p>
@@ -3241,6 +6841,9 @@
 <pre class="highlight ruby"><code><span class="p">{}</span>
 </code></pre>
 <pre class="highlight javascript"><code><span class="p">{}</span>
+</code></pre>
+<pre class="highlight php"><code>array(0) {
+}
 </code></pre>
 
 <p>TODO: Fill this in.</p>
@@ -3281,6 +6884,24 @@
   <span class="c1">// Handle the error</span>
 <span class="p">});</span>
 </code></pre>
+<pre class="highlight php"><code><span class="cp">&lt;?php</span>
+<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
+
+<span class="nv">$id</span> <span class="o">=</span> <span class="mi">18315</span><span class="p">;</span>
+
+<span class="nv">$test</span> <span class="o">=</span> <span class="nx">\Rainforest\Test</span><span class="o">::</span><span class="na">retrieve</span><span class="p">(</span> <span class="nv">$id</span> <span class="p">);</span>
+<span class="nv">$runs</span> <span class="o">=</span> <span class="nv">$test</span><span class="o">-&gt;</span><span class="na">history</span><span class="p">();</span>
+
+<span class="c1"># The list is enumerable and works similarly to an array
+</span><span class="k">foreach</span><span class="p">(</span> <span class="nv">$runs</span><span class="o">-&gt;</span><span class="na">data</span> <span class="k">as</span> <span class="nv">$run</span> <span class="p">)</span> <span class="p">{</span>
+  <span class="c1"># work with an runs
+</span><span class="p">}</span>
+
+<span class="nv">$runs</span><span class="o">-&gt;</span><span class="na">data</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span> <span class="c1"># The first run in the list
+</span><span class="nb">count</span><span class="p">(</span> <span class="nv">$runs</span><span class="o">-&gt;</span><span class="na">data</span> <span class="p">);</span> <span class="c1"># the number of runs returned
+</span><span class="cp">?&gt;</span>
+</code></pre>
 
 <blockquote>
 <p>Example Response</p>
@@ -3305,6 +6926,67 @@
      <span class="p">{...},</span>
      <span class="p">{...}</span> <span class="p">]</span> <span class="p">}</span>
 </code></pre>
+<pre class="highlight php"><code>array(2) {
+  [0]=&gt;
+  object(Rainforest\Run)#16 (23) {
+    ["browsers"]=&gt;
+    array(1) {
+      [0]=&gt;
+      array(5) {
+        ["id"]=&gt;
+        int(779162)
+        ["created_at"]=&gt;
+        string(20) "2015-08-03T18:47:18Z"
+        ["name"]=&gt;
+        string(6) "chrome"
+        ["result"]=&gt;
+        string(6) "passed"
+        ["state"]=&gt;
+        string(8) "complete"
+      }
+    }
+    ["created_at"]=&gt;
+    string(20) "2015-08-03T18:47:18Z"
+    ["current_progress"]=&gt;
+    NULL
+    ["description"]=&gt;
+    NULL
+    ["environment"]=&gt;
+    NULL
+    ["filters"]=&gt;
+    NULL
+    ["frontend_url"]=&gt;
+    NULL
+    ["id"]=&gt;
+    int(319318)
+    ["log_url"]=&gt;
+    NULL
+    ["real_cost_to_run"]=&gt;
+    NULL
+    ["result"]=&gt;
+    NULL
+    ["sample_test_titles"]=&gt;
+    NULL
+    ["state"]=&gt;
+    NULL
+    ["state_details"]=&gt;
+    NULL
+    ["stats"]=&gt;
+    NULL
+    ["timestamps"]=&gt;
+    NULL
+    ["total_failed_tests"]=&gt;
+    NULL
+    ["total_no_result_tests"]=&gt;
+    NULL
+    ["total_passed_tests"]=&gt;
+    NULL
+    ["total_tests"]=&gt;
+    NULL
+    ...},
+    {...}
+  }
+</code></pre>
 
 <p>A test&rsquo;s history is a list of runs associated with that test.</p>
 
@@ -3315,6 +6997,7 @@
           <div class="lang-selector">
                 <a href="#" data-language-name="ruby">ruby</a>
                 <a href="#" data-language-name="javascript">node</a>
+                <a href="#" data-language-name="php">php</a>
           </div>
       </div>
     </div>
