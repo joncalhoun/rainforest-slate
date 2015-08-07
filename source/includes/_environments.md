@@ -239,7 +239,7 @@ require(dirname(__FILE__) . '/../init.php');
 \Rainforest\Rainforest::$apiKey = "your-api-key";
 
 $id = 4904;
-$env = \Rainforest\Environment::retrieve($id);
+$env = \Rainforest\Environment::retrieve( $id );
 ?>
 ```
 
@@ -361,11 +361,11 @@ require(dirname(__FILE__) . '/../init.php');
 
 $id = 4904;
 
-$env = \Rainforest\Environment::update($id, ["name" => "new env name"]);
+$env = \Rainforest\Environment::update( $id, ["name" => "new env name"] );
 
 # or
 
-$env = \Rainforest\Environment::retrieve($id);
+$env = \Rainforest\Environment::retrieve( $id );
 $env->name = "new env name";
 $env->save();
 ?>
@@ -438,6 +438,7 @@ object(Rainforest\Environment)#13 (10) {
   string(0) ""
   ["webhook_enabled"]=>
   NULL
+}
   ```
 TODO: Fill this in.
 
@@ -686,7 +687,15 @@ Rainforest.Environment.retrieve(id).then(function(env) {
 ```
 
 ```php
-TODO (Broken)
+<?php
+require(dirname(__FILE__) . '/../init.php');
+\Rainforest\Rainforest::$apiKey = "your-api-key";
+
+$id = 4904;
+
+$env = \Rainforest\Environment::retrieve( $id );
+$runs = $env->runs()->all();
+?>
 ```
 
 
@@ -758,7 +767,131 @@ TODO (Broken)
 ```
 
 ```php
-TODO (Broken)
+object(Rainforest\ApiList)#16 (5) {
+  ["data"]=>
+  array(0) {
+  }
+  ["klass"]=>
+  string(3) "Run"
+  ["client"]=>
+  object(Rainforest\DefaultClient)#1 (12) {
+    ["clientStats"]=>
+    object(Rainforest\ClientStatsEndpoint)#2 (2) {
+      ["client"]=>
+      *RECURSION*
+      ["parent"]=>
+      NULL
+    }
+    ["environments"]=>
+    object(Rainforest\EnvironmentsEndpoint)#3 (2) {
+      ["client"]=>
+      *RECURSION*
+      ["parent"]=>
+      NULL
+    }
+    ["generators"]=>
+    object(Rainforest\GeneratorsEndpoint)#4 (2) {
+      ["client"]=>
+      *RECURSION*
+      ["parent"]=>
+      NULL
+    }
+    ["integrations"]=>
+    object(Rainforest\IntegrationsEndpoint)#5 (2) {
+      ["client"]=>
+      *RECURSION*
+      ["parent"]=>
+      NULL
+    }
+    ["runs"]=>
+    object(Rainforest\RunsEndpoint)#6 (2) {
+      ["client"]=>
+      *RECURSION*
+      ["parent"]=>
+      NULL
+    }
+    ["schedules"]=>
+    object(Rainforest\SchedulesEndpoint)#7 (2) {
+      ["client"]=>
+      *RECURSION*
+      ["parent"]=>
+      NULL
+    }
+    ["siteEnvironments"]=>
+    object(Rainforest\SiteEnvironmentsEndpoint)#8 (2) {
+      ["client"]=>
+      *RECURSION*
+      ["parent"]=>
+      NULL
+    }
+    ["sites"]=>
+    object(Rainforest\SitesEndpoint)#9 (2) {
+      ["client"]=>
+      *RECURSION*
+      ["parent"]=>
+      NULL
+    }
+    ["tests"]=>
+    object(Rainforest\TestsEndpoint)#10 (2) {
+      ["client"]=>
+      *RECURSION*
+      ["parent"]=>
+      NULL
+    }
+    ["users"]=>
+    object(Rainforest\UsersEndpoint)#11 (2) {
+      ["client"]=>
+      *RECURSION*
+      ["parent"]=>
+      NULL
+    }
+    ["headers"]=>
+    array(3) {
+      ["Accept"]=>
+      string(16) "application/json"
+      ["Content-Type"]=>
+      string(16) "application/json"
+      ["CLIENT_TOKEN"]=>
+      string(32) "985de0ba7d0820912a33aa696a77319d"
+    }
+    ["params"]=>
+    array(0) {
+    }
+  }
+  ["apiMethod"]=>
+  object(Rainforest\ApiMethod)#15 (9) {
+    ["path"]=>
+    string(23) "/environments/4901/runs"
+    ["method"]=>
+    string(3) "get"
+    ["params"]=>
+    array(0) {
+    }
+    ["headers"]=>
+    array(5) {
+      ["user_agent"]=>
+      string(73) "Rainforest/{Rainforest::getApiVersion()} Rainforest/{Rainforest::VERSION}"
+      ["Content-Type"]=>
+      string(16) "application/json"
+      ["CLIENT_TOKEN"]=>
+      string(32) "985de0ba7d0820912a33aa696a77319d"
+      ["x_paid_client_user_agent"]=>
+      string(124) "{"bindings_version":"0.0.1","lang":"php","lang_version":"5.4.42","platform":"Unknown","publisher":"paid","uname":"no uname"}"
+      ["Accept"]=>
+      string(16) "application/json"
+    }
+    ["responseBody"]=>
+    string(2) "[]"
+    ["responseCode"]=>
+    int(200)
+    ["error"]=>
+    NULL
+    ["apiKey"]=>
+    NULL
+    ["apiBase"]=>
+    string(29) "https://app.rnfrst.com/api/1/"
+  }
+}
 ```
 
 TODO: Fill this in.

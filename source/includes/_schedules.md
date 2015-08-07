@@ -32,7 +32,47 @@
   filters: { tags: [ 'www' ] } }
 ```
 
-
+```php
+object(Rainforest\Schedule)#13 (7) {
+  ["created_at"]=>
+  string(20) "2015-08-07T18:06:32Z"
+  ["filters"]=>
+  array(1) {
+    ["tags"]=>
+    array(1) {
+      [0]=>
+      string(3) "www"
+    }
+  }
+  ["id"]=>
+  int(218)
+  ["repeat_rules"]=>
+  array(2) {
+    [0]=>
+    array(4) {
+      ["id"]=>
+      int(955)
+      ["created_at"]=>
+      string(20) "2015-08-07T18:06:32Z"
+      ["day"]=>
+      string(7) "tuesday"
+      ["time"]=>
+      string(5) "10:00"
+    }
+    [1]=>
+    array(4) {
+      ["id"]=>
+      int(954)
+      ["created_at"]=>
+      string(20) "2015-08-07T18:06:32Z"
+      ["day"]=>
+      string(6) "sunday"
+      ["time"]=>
+      string(5) "01:00"
+    }
+  }
+}
+```
 
 TODO: Fill this in.
 
@@ -98,6 +138,28 @@ Rainforest.Schedule.create({
 ```
 
 
+```php
+<?php
+require(dirname(__FILE__) . '/../init.php');
+\Rainforest\Rainforest::$apiKey = "your-api-key";
+
+$schedule = \Rainforest\Schedule::create([
+    "filters" => [
+    "tags" => ["www"]
+  ],
+  "repeat_rules" => [
+    [
+      "day" => "sunday",
+      "time" => "01:00"
+    ],
+    [
+      "day" => "tuesday",
+      "time" => "10:00"
+    ]
+  ]
+]);
+?>
+```
 
 > Example Response
 
@@ -130,7 +192,47 @@ Rainforest.Schedule.create({
   filters: { tags: [ 'www' ] } }
 ```
 
-
+```php
+object(Rainforest\Schedule)#13 (7) {
+  ["created_at"]=>
+  string(20) "2015-08-07T18:06:32Z"
+  ["filters"]=>
+  array(1) {
+    ["tags"]=>
+    array(1) {
+      [0]=>
+      string(3) "www"
+    }
+  }
+  ["id"]=>
+  int(218)
+  ["repeat_rules"]=>
+  array(2) {
+    [0]=>
+    array(4) {
+      ["id"]=>
+      int(955)
+      ["created_at"]=>
+      string(20) "2015-08-07T18:06:32Z"
+      ["day"]=>
+      string(7) "tuesday"
+      ["time"]=>
+      string(5) "10:00"
+    }
+    [1]=>
+    array(4) {
+      ["id"]=>
+      int(954)
+      ["created_at"]=>
+      string(20) "2015-08-07T18:06:32Z"
+      ["day"]=>
+      string(6) "sunday"
+      ["time"]=>
+      string(5) "01:00"
+    }
+  }
+}
+```
 
 TODO: Fill this in.
 
@@ -169,6 +271,15 @@ Rainforest.Schedule.retrieve(id).then(function(schedule) {
 ```
 
 
+```php
+<?php
+require(dirname(__FILE__) . '/../init.php');
+\Rainforest\Rainforest::$apiKey = "your-api-key";
+
+$id = 218;
+$schedule = \Rainforest\Schedule::retrieve( $id );
+?>
+```
 
 > Example Response
 
@@ -201,6 +312,47 @@ Rainforest.Schedule.retrieve(id).then(function(schedule) {
   filters: { tags: [ 'www' ] } }
 ```
 
+```php
+object(Rainforest\Schedule)#13 (7) {
+  ["created_at"]=>
+  string(20) "2015-08-07T18:06:32Z"
+  ["filters"]=>
+  array(1) {
+    ["tags"]=>
+    array(1) {
+      [0]=>
+      string(3) "www"
+    }
+  }
+  ["id"]=>
+  int(218)
+  ["repeat_rules"]=>
+  array(2) {
+    [0]=>
+    array(4) {
+      ["id"]=>
+      int(955)
+      ["created_at"]=>
+      string(20) "2015-08-07T18:06:32Z"
+      ["day"]=>
+      string(7) "tuesday"
+      ["time"]=>
+      string(5) "10:00"
+    }
+    [1]=>
+    array(4) {
+      ["id"]=>
+      int(954)
+      ["created_at"]=>
+      string(20) "2015-08-07T18:06:32Z"
+      ["day"]=>
+      string(6) "sunday"
+      ["time"]=>
+      string(5) "01:00"
+    }
+  }
+}
+```
 
 
 TODO: Fill this in.
@@ -247,6 +399,24 @@ Rainforest.Schedule.update(id, {
 ```
 
 
+```php
+<?php
+require(dirname(__FILE__) . '/../init.php');
+\Rainforest\Rainforest::$apiKey = "your-api-key";
+
+$id = 218;
+$repeatRules = [["day" => "monday", "time" => "12:00"]];
+
+$schedule = \Rainforest\Schedule::update($id, ["repeat_rules" => $repeatRules]);
+
+# or
+
+$schedule = \Rainforest\Schedule::retrieve($id);
+$schedule->repeat_rules = $repeatRules;
+$schedule->save();
+?>
+```
+
 
 > Example Response
 
@@ -274,7 +444,36 @@ Rainforest.Schedule.update(id, {
   filters: { tags: [ 'www' ] } }
 ```
 
-
+```php
+object(Rainforest\Schedule)#13 (7) {
+  ["created_at"]=>
+  string(20) "2015-08-07T18:06:32Z"
+  ["filters"]=>
+  array(1) {
+    ["tags"]=>
+    array(1) {
+      [0]=>
+      string(3) "www"
+    }
+  }
+  ["id"]=>
+  int(218)
+  ["repeat_rules"]=>
+  array(1) {
+    [0]=>
+    array(4) {
+      ["id"]=>
+      int(957)
+      ["created_at"]=>
+      string(20) "2015-08-07T18:16:52Z"
+      ["day"]=>
+      string(6) "monday"
+      ["time"]=>
+      string(5) "12:00"
+    }
+  }
+}
+```
 
 TODO: Fill this in.
 
@@ -322,6 +521,23 @@ Rainforest.Schedule.all().then(function(schedules) {
 
 
 
+```php
+<?php
+require(dirname(__FILE__) . '/../init.php');
+\Rainforest\Rainforest::$apiKey = "your-api-key";
+
+$schedules = \Rainforest\Schedule::all();
+
+# The list is enumerable and works similarly to an array
+foreach( $schedules->data as $schedule ) {
+  # work with an Schedule
+}
+
+$schedules->data[0]; # The first Schedule in the list
+count( $schedules->data ); # the number of Schedules returned
+?>
+```
+
 > Example Response
 
 ```ruby
@@ -353,7 +569,40 @@ Rainforest.Schedule.all().then(function(schedules) {
      {...} ] }
 ```
 
-
+```php
+array(2) {
+  [0]=>
+  object(Rainforest\Schedule)#14 (7) {
+    ["created_at"]=>
+    string(20) "2015-08-07T18:06:32Z"
+    ["filters"]=>
+    array(1) {
+      ["tags"]=>
+      array(1) {
+        [0]=>
+        string(3) "www"
+      }
+    }
+    ["id"]=>
+    int(218)
+    ["repeat_rules"]=>
+    array(1) {
+      [0]=>
+      array(4) {
+        ["id"]=>
+        int(958)
+        ["created_at"]=>
+        string(20) "2015-08-07T18:17:44Z"
+        ["day"]=>
+        string(6) "monday"
+        ["time"]=>
+        string(5) "12:00"
+      }
+    }
+ ...},
+{...}
+}
+```
 
 TODO: Fill this in.
 
@@ -392,6 +641,23 @@ Rainforest.Schedule.delete(id).then(function(schedule) {
 
 
 
+```php
+<?php
+require(dirname(__FILE__) . '/../init.php');
+\Rainforest\Rainforest::$apiKey = "your-api-key";
+
+$id = 218;
+
+$schedule = \Rainforest\Schedule::delete( $id );
+
+# or
+
+$schedule = \Rainforest\Schedule::retrieve($id);
+$schedule->delete();
+?>
+```
+
+
 > Example Response
 
 ```ruby
@@ -421,6 +687,36 @@ Rainforest.Schedule.delete(id).then(function(schedule) {
 ```
 
 
+```php
+object(Rainforest\Schedule)#13 (7) {
+  ["created_at"]=>
+  string(20) "2015-08-07T18:06:32Z"
+  ["filters"]=>
+  array(1) {
+    ["tags"]=>
+    array(1) {
+      [0]=>
+      string(3) "www"
+    }
+  }
+  ["id"]=>
+  int(218)
+  ["repeat_rules"]=>
+  array(1) {
+    [0]=>
+    array(4) {
+      ["id"]=>
+      int(958)
+      ["created_at"]=>
+      string(20) "2015-08-07T18:17:44Z"
+      ["day"]=>
+      string(6) "monday"
+      ["time"]=>
+      string(5) "12:00"
+    }
+  }
+}
+```
 
 TODO: Fill this in.
 

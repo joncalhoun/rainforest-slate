@@ -132,6 +132,246 @@
   sample_test_titles: [ 'Customer Logos' ] }
 ```
 
+```php
+object(Rainforest\Run)#13 (23) {
+  ["browsers"]=>
+  array(11) {
+    [0]=>
+    array(4) {
+      ["name"]=>
+      string(23) "android_phone_landscape"
+      ["state"]=>
+      string(8) "disabled"
+      ["description"]=>
+      string(23) "Android Phone Landscape"
+      ["category"]=>
+      string(5) "phone"
+    }
+    [1]=>
+    array(4) {
+      ["name"]=>
+      string(22) "android_phone_portrait"
+      ["state"]=>
+      string(8) "disabled"
+      ["description"]=>
+      string(22) "Android Phone Portrait"
+      ["category"]=>
+      string(5) "phone"
+    }
+    [2]=>
+    array(4) {
+      ["name"]=>
+      string(24) "android_tablet_landscape"
+      ["state"]=>
+      string(8) "disabled"
+      ["description"]=>
+      string(24) "Android Tablet Landscape"
+      ["category"]=>
+      string(6) "tablet"
+    }
+    [3]=>
+    array(4) {
+      ["name"]=>
+      string(23) "android_tablet_portrait"
+      ["state"]=>
+      string(8) "disabled"
+      ["description"]=>
+      string(23) "Android Tablet Portrait"
+      ["category"]=>
+      string(6) "tablet"
+    }
+    [4]=>
+    array(4) {
+      ["name"]=>
+      string(6) "chrome"
+      ["state"]=>
+      string(8) "disabled"
+      ["description"]=>
+      string(13) "Google Chrome"
+      ["category"]=>
+      string(7) "browser"
+    }
+    [5]=>
+    array(4) {
+      ["name"]=>
+      string(7) "firefox"
+      ["state"]=>
+      string(8) "disabled"
+      ["description"]=>
+      string(15) "Mozilla Firefox"
+      ["category"]=>
+      string(7) "browser"
+    }
+    [6]=>
+    array(4) {
+      ["name"]=>
+      string(3) "ie8"
+      ["state"]=>
+      string(8) "disabled"
+      ["description"]=>
+      string(29) "Microsoft Internet Explorer 8"
+      ["category"]=>
+      string(7) "browser"
+    }
+    [7]=>
+    array(4) {
+      ["name"]=>
+      string(3) "ie9"
+      ["state"]=>
+      string(8) "disabled"
+      ["description"]=>
+      string(29) "Microsoft Internet Explorer 9"
+      ["category"]=>
+      string(7) "browser"
+    }
+    [8]=>
+    array(4) {
+      ["name"]=>
+      string(4) "ie10"
+      ["state"]=>
+      string(8) "disabled"
+      ["description"]=>
+      string(30) "Microsoft Internet Explorer 10"
+      ["category"]=>
+      string(7) "browser"
+    }
+    [9]=>
+    array(4) {
+      ["name"]=>
+      string(4) "ie11"
+      ["state"]=>
+      string(8) "disabled"
+      ["description"]=>
+      string(30) "Microsoft Internet Explorer 11"
+      ["category"]=>
+      string(7) "browser"
+    }
+    [10]=>
+    array(4) {
+      ["name"]=>
+      string(6) "safari"
+      ["state"]=>
+      string(8) "disabled"
+      ["description"]=>
+      string(12) "Apple Safari"
+      ["category"]=>
+      string(7) "browser"
+    }
+  }
+  ["created_at"]=>
+  string(20) "2015-08-07T18:35:42Z"
+  ["current_progress"]=>
+  array(7) {
+    ["percent"]=>
+    int(0)
+    ["total"]=>
+    int(0)
+    ["complete"]=>
+    int(0)
+    ["eta"]=>
+    array(2) {
+      ["seconds"]=>
+      int(1800)
+      ["ts"]=>
+      string(29) "2015-08-07T19:05:42.563+00:00"
+    }
+    ["no_result"]=>
+    int(0)
+    ["passed"]=>
+    int(0)
+    ["failed"]=>
+    int(0)
+  }
+  ["description"]=>
+  NULL
+  ["environment"]=>
+  array(7) {
+    ["id"]=>
+    int(4904)
+    ["created_at"]=>
+    string(20) "2015-08-04T19:46:42Z"
+    ["name"]=>
+    string(12) "new env name"
+    ["default"]=>
+    bool(true)
+    ["webhook"]=>
+    string(0) ""
+    ["webhook_enabled"]=>
+    NULL
+    ["site_environments"]=>
+    array(1) {
+      [0]=>
+      array(5) {
+        ["id"]=>
+        int(5652)
+        ["created_at"]=>
+        string(20) "2015-08-04T19:46:42Z"
+        ["site_id"]=>
+        int(860)
+        ["environment_id"]=>
+        int(4904)
+        ["url"]=>
+        string(22) "http://www.example.org"
+      }
+    }
+  }
+  ["filters"]=>
+  array(1) {
+    ["tests"]=>
+    array(1) {
+      [0]=>
+      int(17793)
+    }
+  }
+  ["frontend_url"]=>
+  string(39) "https://app.rainforestqa.com/runs/32353"
+  ["id"]=>
+  int(32353)
+  ["log_url"]=>
+  string(114) "https://tala.rainforestqa.com/api/v1/logs/32353?expires_at=1438976142&sig=b74537e65925b50cbbf71681f168598f8a86ec08"
+  ["real_cost_to_run"]=>
+  int(0)
+  ["result"]=>
+  string(9) "no_result"
+  ["sample_test_titles"]=>
+  array(0) {
+  }
+  ["state"]=>
+  string(6) "queued"
+  ["state_details"]=>
+  array(2) {
+    ["name"]=>
+    string(6) "queued"
+    ["is_final_state"]=>
+    bool(false)
+  }
+  ["stats"]=>
+  array(4) {
+    ["total_time_for_one_person"]=>
+    float(0)
+    ["total_time_for_rainforest"]=>
+    float(14400)
+    ["total_rainforest_overhead"]=>
+    float(0)
+    ["speed_up"]=>
+    float(0)
+  }
+  ["timestamps"]=>
+  array(1) {
+    ["created_at"]=>
+    string(24) "2015-08-07T18:35:42.530Z"
+  }
+  ["total_failed_tests"]=>
+  int(0)
+  ["total_no_result_tests"]=>
+  int(0)
+  ["total_passed_tests"]=>
+  int(0)
+  ["total_tests"]=>
+  int(0)
+  ...}
+}
+```
 
 
 TODO: Fill this in.
@@ -206,7 +446,24 @@ Rainforest.Run.create({
 });
 ```
 
+```php
+<?php
+require(dirname(__FILE__) . '/../init.php');
+\Rainforest\Rainforest::$apiKey = "your-api-key";
 
+$run = \Rainforest\Run::create([
+    "tags" => ["www", "api"]
+]);
+
+#or
+
+$testIds = [17793];
+$run = \Rainforest\Run::create([
+  "tests" => $testIds
+]);
+
+?>
+```
 
 > Example Response
 
@@ -340,6 +597,246 @@ Rainforest.Run.create({
   sample_test_titles: [] }
 ```
 
+```php
+object(Rainforest\Run)#13 (23) {
+  ["browsers"]=>
+  array(11) {
+    [0]=>
+    array(4) {
+      ["name"]=>
+      string(23) "android_phone_landscape"
+      ["state"]=>
+      string(8) "disabled"
+      ["description"]=>
+      string(23) "Android Phone Landscape"
+      ["category"]=>
+      string(5) "phone"
+    }
+    [1]=>
+    array(4) {
+      ["name"]=>
+      string(22) "android_phone_portrait"
+      ["state"]=>
+      string(8) "disabled"
+      ["description"]=>
+      string(22) "Android Phone Portrait"
+      ["category"]=>
+      string(5) "phone"
+    }
+    [2]=>
+    array(4) {
+      ["name"]=>
+      string(24) "android_tablet_landscape"
+      ["state"]=>
+      string(8) "disabled"
+      ["description"]=>
+      string(24) "Android Tablet Landscape"
+      ["category"]=>
+      string(6) "tablet"
+    }
+    [3]=>
+    array(4) {
+      ["name"]=>
+      string(23) "android_tablet_portrait"
+      ["state"]=>
+      string(8) "disabled"
+      ["description"]=>
+      string(23) "Android Tablet Portrait"
+      ["category"]=>
+      string(6) "tablet"
+    }
+    [4]=>
+    array(4) {
+      ["name"]=>
+      string(6) "chrome"
+      ["state"]=>
+      string(8) "disabled"
+      ["description"]=>
+      string(13) "Google Chrome"
+      ["category"]=>
+      string(7) "browser"
+    }
+    [5]=>
+    array(4) {
+      ["name"]=>
+      string(7) "firefox"
+      ["state"]=>
+      string(8) "disabled"
+      ["description"]=>
+      string(15) "Mozilla Firefox"
+      ["category"]=>
+      string(7) "browser"
+    }
+    [6]=>
+    array(4) {
+      ["name"]=>
+      string(3) "ie8"
+      ["state"]=>
+      string(8) "disabled"
+      ["description"]=>
+      string(29) "Microsoft Internet Explorer 8"
+      ["category"]=>
+      string(7) "browser"
+    }
+    [7]=>
+    array(4) {
+      ["name"]=>
+      string(3) "ie9"
+      ["state"]=>
+      string(8) "disabled"
+      ["description"]=>
+      string(29) "Microsoft Internet Explorer 9"
+      ["category"]=>
+      string(7) "browser"
+    }
+    [8]=>
+    array(4) {
+      ["name"]=>
+      string(4) "ie10"
+      ["state"]=>
+      string(8) "disabled"
+      ["description"]=>
+      string(30) "Microsoft Internet Explorer 10"
+      ["category"]=>
+      string(7) "browser"
+    }
+    [9]=>
+    array(4) {
+      ["name"]=>
+      string(4) "ie11"
+      ["state"]=>
+      string(8) "disabled"
+      ["description"]=>
+      string(30) "Microsoft Internet Explorer 11"
+      ["category"]=>
+      string(7) "browser"
+    }
+    [10]=>
+    array(4) {
+      ["name"]=>
+      string(6) "safari"
+      ["state"]=>
+      string(8) "disabled"
+      ["description"]=>
+      string(12) "Apple Safari"
+      ["category"]=>
+      string(7) "browser"
+    }
+  }
+  ["created_at"]=>
+  string(20) "2015-08-07T18:35:42Z"
+  ["current_progress"]=>
+  array(7) {
+    ["percent"]=>
+    int(0)
+    ["total"]=>
+    int(0)
+    ["complete"]=>
+    int(0)
+    ["eta"]=>
+    array(2) {
+      ["seconds"]=>
+      int(1800)
+      ["ts"]=>
+      string(29) "2015-08-07T19:05:42.563+00:00"
+    }
+    ["no_result"]=>
+    int(0)
+    ["passed"]=>
+    int(0)
+    ["failed"]=>
+    int(0)
+  }
+  ["description"]=>
+  NULL
+  ["environment"]=>
+  array(7) {
+    ["id"]=>
+    int(4904)
+    ["created_at"]=>
+    string(20) "2015-08-04T19:46:42Z"
+    ["name"]=>
+    string(12) "new env name"
+    ["default"]=>
+    bool(true)
+    ["webhook"]=>
+    string(0) ""
+    ["webhook_enabled"]=>
+    NULL
+    ["site_environments"]=>
+    array(1) {
+      [0]=>
+      array(5) {
+        ["id"]=>
+        int(5652)
+        ["created_at"]=>
+        string(20) "2015-08-04T19:46:42Z"
+        ["site_id"]=>
+        int(860)
+        ["environment_id"]=>
+        int(4904)
+        ["url"]=>
+        string(22) "http://www.example.org"
+      }
+    }
+  }
+  ["filters"]=>
+  array(1) {
+    ["tests"]=>
+    array(1) {
+      [0]=>
+      int(17793)
+    }
+  }
+  ["frontend_url"]=>
+  string(39) "https://app.rainforestqa.com/runs/32353"
+  ["id"]=>
+  int(32353)
+  ["log_url"]=>
+  string(114) "https://tala.rainforestqa.com/api/v1/logs/32353?expires_at=1438976142&sig=b74537e65925b50cbbf71681f168598f8a86ec08"
+  ["real_cost_to_run"]=>
+  int(0)
+  ["result"]=>
+  string(9) "no_result"
+  ["sample_test_titles"]=>
+  array(0) {
+  }
+  ["state"]=>
+  string(6) "queued"
+  ["state_details"]=>
+  array(2) {
+    ["name"]=>
+    string(6) "queued"
+    ["is_final_state"]=>
+    bool(false)
+  }
+  ["stats"]=>
+  array(4) {
+    ["total_time_for_one_person"]=>
+    float(0)
+    ["total_time_for_rainforest"]=>
+    float(14400)
+    ["total_rainforest_overhead"]=>
+    float(0)
+    ["speed_up"]=>
+    float(0)
+  }
+  ["timestamps"]=>
+  array(1) {
+    ["created_at"]=>
+    string(24) "2015-08-07T18:35:42.530Z"
+  }
+  ["total_failed_tests"]=>
+  int(0)
+  ["total_no_result_tests"]=>
+  int(0)
+  ["total_passed_tests"]=>
+  int(0)
+  ["total_tests"]=>
+  int(0)
+  ...}
+}
+```
 
 
 TODO: Fill this in.
@@ -378,6 +875,15 @@ Rainforest.Run.retrieve(id).then(function(run) {
 ```
 
 
+```php
+<?php
+require(dirname(__FILE__) . '/../init.php');
+\Rainforest\Rainforest::$apiKey = "your-api-key";
+
+$id = 32353;
+$run = \Rainforest\Run::retrieve( $id );
+?>
+```
 
 > Example Response
 
@@ -511,6 +1017,247 @@ Rainforest.Run.retrieve(id).then(function(run) {
   sample_test_titles: [] }
 ```
 
+
+```php
+object(Rainforest\Run)#13 (23) {
+  ["browsers"]=>
+  array(11) {
+    [0]=>
+    array(4) {
+      ["name"]=>
+      string(23) "android_phone_landscape"
+      ["state"]=>
+      string(8) "disabled"
+      ["description"]=>
+      string(23) "Android Phone Landscape"
+      ["category"]=>
+      string(5) "phone"
+    }
+    [1]=>
+    array(4) {
+      ["name"]=>
+      string(22) "android_phone_portrait"
+      ["state"]=>
+      string(8) "disabled"
+      ["description"]=>
+      string(22) "Android Phone Portrait"
+      ["category"]=>
+      string(5) "phone"
+    }
+    [2]=>
+    array(4) {
+      ["name"]=>
+      string(24) "android_tablet_landscape"
+      ["state"]=>
+      string(8) "disabled"
+      ["description"]=>
+      string(24) "Android Tablet Landscape"
+      ["category"]=>
+      string(6) "tablet"
+    }
+    [3]=>
+    array(4) {
+      ["name"]=>
+      string(23) "android_tablet_portrait"
+      ["state"]=>
+      string(8) "disabled"
+      ["description"]=>
+      string(23) "Android Tablet Portrait"
+      ["category"]=>
+      string(6) "tablet"
+    }
+    [4]=>
+    array(4) {
+      ["name"]=>
+      string(6) "chrome"
+      ["state"]=>
+      string(8) "disabled"
+      ["description"]=>
+      string(13) "Google Chrome"
+      ["category"]=>
+      string(7) "browser"
+    }
+    [5]=>
+    array(4) {
+      ["name"]=>
+      string(7) "firefox"
+      ["state"]=>
+      string(8) "disabled"
+      ["description"]=>
+      string(15) "Mozilla Firefox"
+      ["category"]=>
+      string(7) "browser"
+    }
+    [6]=>
+    array(4) {
+      ["name"]=>
+      string(3) "ie8"
+      ["state"]=>
+      string(8) "disabled"
+      ["description"]=>
+      string(29) "Microsoft Internet Explorer 8"
+      ["category"]=>
+      string(7) "browser"
+    }
+    [7]=>
+    array(4) {
+      ["name"]=>
+      string(3) "ie9"
+      ["state"]=>
+      string(8) "disabled"
+      ["description"]=>
+      string(29) "Microsoft Internet Explorer 9"
+      ["category"]=>
+      string(7) "browser"
+    }
+    [8]=>
+    array(4) {
+      ["name"]=>
+      string(4) "ie10"
+      ["state"]=>
+      string(8) "disabled"
+      ["description"]=>
+      string(30) "Microsoft Internet Explorer 10"
+      ["category"]=>
+      string(7) "browser"
+    }
+    [9]=>
+    array(4) {
+      ["name"]=>
+      string(4) "ie11"
+      ["state"]=>
+      string(8) "disabled"
+      ["description"]=>
+      string(30) "Microsoft Internet Explorer 11"
+      ["category"]=>
+      string(7) "browser"
+    }
+    [10]=>
+    array(4) {
+      ["name"]=>
+      string(6) "safari"
+      ["state"]=>
+      string(8) "disabled"
+      ["description"]=>
+      string(12) "Apple Safari"
+      ["category"]=>
+      string(7) "browser"
+    }
+  }
+  ["created_at"]=>
+  string(20) "2015-08-07T18:35:42Z"
+  ["current_progress"]=>
+  array(7) {
+    ["percent"]=>
+    int(0)
+    ["total"]=>
+    int(0)
+    ["complete"]=>
+    int(0)
+    ["eta"]=>
+    array(2) {
+      ["seconds"]=>
+      int(1800)
+      ["ts"]=>
+      string(29) "2015-08-07T19:05:42.563+00:00"
+    }
+    ["no_result"]=>
+    int(0)
+    ["passed"]=>
+    int(0)
+    ["failed"]=>
+    int(0)
+  }
+  ["description"]=>
+  NULL
+  ["environment"]=>
+  array(7) {
+    ["id"]=>
+    int(4904)
+    ["created_at"]=>
+    string(20) "2015-08-04T19:46:42Z"
+    ["name"]=>
+    string(12) "new env name"
+    ["default"]=>
+    bool(true)
+    ["webhook"]=>
+    string(0) ""
+    ["webhook_enabled"]=>
+    NULL
+    ["site_environments"]=>
+    array(1) {
+      [0]=>
+      array(5) {
+        ["id"]=>
+        int(5652)
+        ["created_at"]=>
+        string(20) "2015-08-04T19:46:42Z"
+        ["site_id"]=>
+        int(860)
+        ["environment_id"]=>
+        int(4904)
+        ["url"]=>
+        string(22) "http://www.example.org"
+      }
+    }
+  }
+  ["filters"]=>
+  array(1) {
+    ["tests"]=>
+    array(1) {
+      [0]=>
+      int(17793)
+    }
+  }
+  ["frontend_url"]=>
+  string(39) "https://app.rainforestqa.com/runs/32353"
+  ["id"]=>
+  int(32353)
+  ["log_url"]=>
+  string(114) "https://tala.rainforestqa.com/api/v1/logs/32353?expires_at=1438976142&sig=b74537e65925b50cbbf71681f168598f8a86ec08"
+  ["real_cost_to_run"]=>
+  int(0)
+  ["result"]=>
+  string(9) "no_result"
+  ["sample_test_titles"]=>
+  array(0) {
+  }
+  ["state"]=>
+  string(6) "queued"
+  ["state_details"]=>
+  array(2) {
+    ["name"]=>
+    string(6) "queued"
+    ["is_final_state"]=>
+    bool(false)
+  }
+  ["stats"]=>
+  array(4) {
+    ["total_time_for_one_person"]=>
+    float(0)
+    ["total_time_for_rainforest"]=>
+    float(14400)
+    ["total_rainforest_overhead"]=>
+    float(0)
+    ["speed_up"]=>
+    float(0)
+  }
+  ["timestamps"]=>
+  array(1) {
+    ["created_at"]=>
+    string(24) "2015-08-07T18:35:42.530Z"
+  }
+  ["total_failed_tests"]=>
+  int(0)
+  ["total_no_result_tests"]=>
+  int(0)
+  ["total_passed_tests"]=>
+  int(0)
+  ["total_tests"]=>
+  int(0)
+  ...}
+}
+```
 
 
 TODO: Fill this in.
@@ -556,6 +1303,22 @@ Rainforest.Run.all().then(function(runs) {
 ```
 
 
+```php
+<?php
+require(dirname(__FILE__) . '/../init.php');
+\Rainforest\Rainforest::$apiKey = "your-api-key";
+
+$runs = \Rainforest\Run::all();
+
+# The list is enumerable and works similarly to an array
+foreach( $runs->data as $run ) {
+  # work with an Run
+}
+
+$runs->data[0]; # The first Run in the list
+count( $runs->data ); # the number of Runs returned
+?>
+```
 
 > Example Response
 
@@ -619,7 +1382,257 @@ Rainforest.Run.all().then(function(runs) {
        sample_test_titles: [] } ] }
 ```
 
-
+```php
+array(1) {
+  [0]=>
+  object(Rainforest\Run)#14 (23) {
+    ["browsers"]=>
+    array(11) {
+      [0]=>
+      array(4) {
+        ["name"]=>
+        string(23) "android_phone_landscape"
+        ["state"]=>
+        string(8) "disabled"
+        ["description"]=>
+        string(23) "Android Phone Landscape"
+        ["category"]=>
+        string(5) "phone"
+      }
+      [1]=>
+      array(4) {
+        ["name"]=>
+        string(22) "android_phone_portrait"
+        ["state"]=>
+        string(8) "disabled"
+        ["description"]=>
+        string(22) "Android Phone Portrait"
+        ["category"]=>
+        string(5) "phone"
+      }
+      [2]=>
+      array(4) {
+        ["name"]=>
+        string(24) "android_tablet_landscape"
+        ["state"]=>
+        string(8) "disabled"
+        ["description"]=>
+        string(24) "Android Tablet Landscape"
+        ["category"]=>
+        string(6) "tablet"
+      }
+      [3]=>
+      array(4) {
+        ["name"]=>
+        string(23) "android_tablet_portrait"
+        ["state"]=>
+        string(8) "disabled"
+        ["description"]=>
+        string(23) "Android Tablet Portrait"
+        ["category"]=>
+        string(6) "tablet"
+      }
+      [4]=>
+      array(4) {
+        ["name"]=>
+        string(6) "chrome"
+        ["state"]=>
+        string(7) "enabled"
+        ["description"]=>
+        string(13) "Google Chrome"
+        ["category"]=>
+        string(7) "browser"
+      }
+      [5]=>
+      array(4) {
+        ["name"]=>
+        string(7) "firefox"
+        ["state"]=>
+        string(8) "disabled"
+        ["description"]=>
+        string(15) "Mozilla Firefox"
+        ["category"]=>
+        string(7) "browser"
+      }
+      [6]=>
+      array(4) {
+        ["name"]=>
+        string(3) "ie8"
+        ["state"]=>
+        string(8) "disabled"
+        ["description"]=>
+        string(29) "Microsoft Internet Explorer 8"
+        ["category"]=>
+        string(7) "browser"
+      }
+      [7]=>
+      array(4) {
+        ["name"]=>
+        string(3) "ie9"
+        ["state"]=>
+        string(8) "disabled"
+        ["description"]=>
+        string(29) "Microsoft Internet Explorer 9"
+        ["category"]=>
+        string(7) "browser"
+      }
+      [8]=>
+      array(4) {
+        ["name"]=>
+        string(4) "ie10"
+        ["state"]=>
+        string(8) "disabled"
+        ["description"]=>
+        string(30) "Microsoft Internet Explorer 10"
+        ["category"]=>
+        string(7) "browser"
+      }
+      [9]=>
+      array(4) {
+        ["name"]=>
+        string(4) "ie11"
+        ["state"]=>
+        string(8) "disabled"
+        ["description"]=>
+        string(30) "Microsoft Internet Explorer 11"
+        ["category"]=>
+        string(7) "browser"
+      }
+      [10]=>
+      array(4) {
+        ["name"]=>
+        string(6) "safari"
+        ["state"]=>
+        string(8) "disabled"
+        ["description"]=>
+        string(12) "Apple Safari"
+        ["category"]=>
+        string(7) "browser"
+      }
+    }
+    ["created_at"]=>
+    string(20) "2015-08-07T18:35:42Z"
+    ["current_progress"]=>
+    array(7) {
+      ["percent"]=>
+      int(100)
+      ["total"]=>
+      int(1)
+      ["complete"]=>
+      int(1)
+      ["eta"]=>
+      array(2) {
+        ["seconds"]=>
+        int(0)
+        ["ts"]=>
+        string(29) "2015-08-07T18:44:38.561+00:00"
+      }
+      ["no_result"]=>
+      int(0)
+      ["passed"]=>
+      int(0)
+      ["failed"]=>
+      int(1)
+    }
+    ["description"]=>
+    NULL
+    ["environment"]=>
+    array(7) {
+      ["id"]=>
+      int(4904)
+      ["created_at"]=>
+      string(20) "2015-08-04T19:46:42Z"
+      ["name"]=>
+      string(12) "new env name"
+      ["default"]=>
+      bool(true)
+      ["webhook"]=>
+      string(0) ""
+      ["webhook_enabled"]=>
+      NULL
+      ["site_environments"]=>
+      array(1) {
+        [0]=>
+        array(5) {
+          ["id"]=>
+          int(5652)
+          ["created_at"]=>
+          string(20) "2015-08-04T19:46:42Z"
+          ["site_id"]=>
+          int(860)
+          ["environment_id"]=>
+          int(4904)
+          ["url"]=>
+          string(22) "http://www.example.org"
+        }
+      }
+    }
+    ["filters"]=>
+    array(1) {
+      ["tests"]=>
+      array(1) {
+        [0]=>
+        int(17793)
+      }
+    }
+    ["frontend_url"]=>
+    string(39) "https://app.rainforestqa.com/runs/32353"
+    ["id"]=>
+    int(32353)
+    ["log_url"]=>
+    string(114) "https://tala.rainforestqa.com/api/v1/logs/32353?expires_at=1438976678&sig=2c516a6ba267af5729b65c1d7e814a8f6b6e7299"
+    ["real_cost_to_run"]=>
+    int(2)
+    ["result"]=>
+    string(6) "failed"
+    ["sample_test_titles"]=>
+    array(1) {
+      [0]=>
+      string(22) "Log in as regular user"
+    }
+    ["state"]=>
+    string(8) "complete"
+    ["state_details"]=>
+    array(2) {
+      ["name"]=>
+      string(8) "complete"
+      ["is_final_state"]=>
+      bool(true)
+    }
+    ["stats"]=>
+    array(4) {
+      ["total_time_for_one_person"]=>
+      float(603)
+      ["total_time_for_rainforest"]=>
+      float(227.470485)
+      ["total_rainforest_overhead"]=>
+      float(0.730798)
+      ["speed_up"]=>
+      float(2.65)
+    }
+    ["timestamps"]=>
+    array(4) {
+      ["complete"]=>
+      string(24) "2015-08-07T18:39:30.006Z"
+      ["in_progress"]=>
+      string(24) "2015-08-07T18:35:43.266Z"
+      ["validating"]=>
+      string(24) "2015-08-07T18:35:42.837Z"
+      ["created_at"]=>
+      string(24) "2015-08-07T18:35:42.530Z"
+    }
+    ["total_failed_tests"]=>
+    int(1)
+    ["total_no_result_tests"]=>
+    int(0)
+    ["total_passed_tests"]=>
+    int(0)
+    ["total_tests"]=>
+    int(1)
+    ...}
+    ...
+  }
+  ```
 
 TODO: Fill this in.
 
@@ -653,6 +1666,22 @@ Rainforest.Run.abort(id).then(function(run) {
 });
 ```
 
+
+```php
+<?php
+require(dirname(__FILE__) . '/../init.php');
+\Rainforest\Rainforest::$apiKey = "your-api-key";
+
+$id = 32353;
+
+$run = \Rainforest\Run::abort( $id ); # or ::delete( $id )
+
+# or
+
+$run = \Rainforest\Run::retrieve($id);
+$run->abort(); #or ->delete()
+?>
+```
 
 
 > Example Response
@@ -747,7 +1776,246 @@ Rainforest.Run.abort(id).then(function(run) {
   sample_test_titles: [] }
 ```
 
-
+```php
+object(Rainforest\Run)#13 (23) {
+  ["browsers"]=>
+  array(11) {
+    [0]=>
+    array(4) {
+      ["name"]=>
+      string(23) "android_phone_landscape"
+      ["state"]=>
+      string(8) "disabled"
+      ["description"]=>
+      string(23) "Android Phone Landscape"
+      ["category"]=>
+      string(5) "phone"
+    }
+    [1]=>
+    array(4) {
+      ["name"]=>
+      string(22) "android_phone_portrait"
+      ["state"]=>
+      string(8) "disabled"
+      ["description"]=>
+      string(22) "Android Phone Portrait"
+      ["category"]=>
+      string(5) "phone"
+    }
+    [2]=>
+    array(4) {
+      ["name"]=>
+      string(24) "android_tablet_landscape"
+      ["state"]=>
+      string(8) "disabled"
+      ["description"]=>
+      string(24) "Android Tablet Landscape"
+      ["category"]=>
+      string(6) "tablet"
+    }
+    [3]=>
+    array(4) {
+      ["name"]=>
+      string(23) "android_tablet_portrait"
+      ["state"]=>
+      string(8) "disabled"
+      ["description"]=>
+      string(23) "Android Tablet Portrait"
+      ["category"]=>
+      string(6) "tablet"
+    }
+    [4]=>
+    array(4) {
+      ["name"]=>
+      string(6) "chrome"
+      ["state"]=>
+      string(8) "disabled"
+      ["description"]=>
+      string(13) "Google Chrome"
+      ["category"]=>
+      string(7) "browser"
+    }
+    [5]=>
+    array(4) {
+      ["name"]=>
+      string(7) "firefox"
+      ["state"]=>
+      string(8) "disabled"
+      ["description"]=>
+      string(15) "Mozilla Firefox"
+      ["category"]=>
+      string(7) "browser"
+    }
+    [6]=>
+    array(4) {
+      ["name"]=>
+      string(3) "ie8"
+      ["state"]=>
+      string(8) "disabled"
+      ["description"]=>
+      string(29) "Microsoft Internet Explorer 8"
+      ["category"]=>
+      string(7) "browser"
+    }
+    [7]=>
+    array(4) {
+      ["name"]=>
+      string(3) "ie9"
+      ["state"]=>
+      string(8) "disabled"
+      ["description"]=>
+      string(29) "Microsoft Internet Explorer 9"
+      ["category"]=>
+      string(7) "browser"
+    }
+    [8]=>
+    array(4) {
+      ["name"]=>
+      string(4) "ie10"
+      ["state"]=>
+      string(8) "disabled"
+      ["description"]=>
+      string(30) "Microsoft Internet Explorer 10"
+      ["category"]=>
+      string(7) "browser"
+    }
+    [9]=>
+    array(4) {
+      ["name"]=>
+      string(4) "ie11"
+      ["state"]=>
+      string(8) "disabled"
+      ["description"]=>
+      string(30) "Microsoft Internet Explorer 11"
+      ["category"]=>
+      string(7) "browser"
+    }
+    [10]=>
+    array(4) {
+      ["name"]=>
+      string(6) "safari"
+      ["state"]=>
+      string(8) "disabled"
+      ["description"]=>
+      string(12) "Apple Safari"
+      ["category"]=>
+      string(7) "browser"
+    }
+  }
+  ["created_at"]=>
+  string(20) "2015-08-07T18:35:42Z"
+  ["current_progress"]=>
+  array(7) {
+    ["percent"]=>
+    int(0)
+    ["total"]=>
+    int(0)
+    ["complete"]=>
+    int(0)
+    ["eta"]=>
+    array(2) {
+      ["seconds"]=>
+      int(1800)
+      ["ts"]=>
+      string(29) "2015-08-07T19:05:42.563+00:00"
+    }
+    ["no_result"]=>
+    int(0)
+    ["passed"]=>
+    int(0)
+    ["failed"]=>
+    int(0)
+  }
+  ["description"]=>
+  NULL
+  ["environment"]=>
+  array(7) {
+    ["id"]=>
+    int(4904)
+    ["created_at"]=>
+    string(20) "2015-08-04T19:46:42Z"
+    ["name"]=>
+    string(12) "new env name"
+    ["default"]=>
+    bool(true)
+    ["webhook"]=>
+    string(0) ""
+    ["webhook_enabled"]=>
+    NULL
+    ["site_environments"]=>
+    array(1) {
+      [0]=>
+      array(5) {
+        ["id"]=>
+        int(5652)
+        ["created_at"]=>
+        string(20) "2015-08-04T19:46:42Z"
+        ["site_id"]=>
+        int(860)
+        ["environment_id"]=>
+        int(4904)
+        ["url"]=>
+        string(22) "http://www.example.org"
+      }
+    }
+  }
+  ["filters"]=>
+  array(1) {
+    ["tests"]=>
+    array(1) {
+      [0]=>
+      int(17793)
+    }
+  }
+  ["frontend_url"]=>
+  string(39) "https://app.rainforestqa.com/runs/32353"
+  ["id"]=>
+  int(32353)
+  ["log_url"]=>
+  string(114) "https://tala.rainforestqa.com/api/v1/logs/32353?expires_at=1438976142&sig=b74537e65925b50cbbf71681f168598f8a86ec08"
+  ["real_cost_to_run"]=>
+  int(0)
+  ["result"]=>
+  string(9) "no_result"
+  ["sample_test_titles"]=>
+  array(0) {
+  }
+  ["state"]=>
+  string(6) "queued"
+  ["state_details"]=>
+  array(2) {
+    ["name"]=>
+    string(6) "queued"
+    ["is_final_state"]=>
+    bool(false)
+  }
+  ["stats"]=>
+  array(4) {
+    ["total_time_for_one_person"]=>
+    float(0)
+    ["total_time_for_rainforest"]=>
+    float(14400)
+    ["total_rainforest_overhead"]=>
+    float(0)
+    ["speed_up"]=>
+    float(0)
+  }
+  ["timestamps"]=>
+  array(1) {
+    ["created_at"]=>
+    string(24) "2015-08-07T18:35:42.530Z"
+  }
+  ["total_failed_tests"]=>
+  int(0)
+  ["total_no_result_tests"]=>
+  int(0)
+  ["total_passed_tests"]=>
+  int(0)
+  ["total_tests"]=>
+  int(0)
+  ...}
+}
+```
 
 TODO: Fill this in.
 
@@ -786,6 +2054,26 @@ Rainforest.Run.retrieve(id).then(function(run) {
 });
 ```
 
+
+```php
+<?php
+require(dirname(__FILE__) . '/../init.php');
+\Rainforest\Rainforest::$apiKey = "your-api-key";
+
+$id = 32353;
+
+$run = \Rainforest\Run::retrieve( $id );
+$tests = $run->associatedTests()->all();
+
+# The list is enumerable and works similarly to an array
+foreach( $tests->data as $test  ) {
+  # work with an runs
+}
+
+$tests->data[0]; # The first test in the list
+count( $tests->data ); # the number of tests returned
+?>
+```
 
 
 > Example Response
@@ -826,6 +2114,70 @@ Rainforest.Run.retrieve(id).then(function(run) {
        dry_run_url: null }
 ```
 
-
+```php
+array(1) {
+  [0]=>
+  object(Rainforest\Test)#17 (22) {
+    ["browsers"]=>
+    array(1) {
+      [0]=>
+      array(7) {
+        ["id"]=>
+        int(786900)
+        ["created_at"]=>
+        string(20) "2015-08-07T18:35:42Z"
+        ["name"]=>
+        string(6) "chrome"
+        ["description"]=>
+        string(13) "Google Chrome"
+        ["category"]=>
+        string(7) "browser"
+        ["result"]=>
+        string(6) "failed"
+        ["state"]=>
+        string(8) "complete"
+      }
+    }
+    ["created_at"]=>
+    string(20) "2015-08-07T18:35:42Z"
+    ["deletable"]=>
+    NULL
+    ["deleted"]=>
+    NULL
+    ["description"]=>
+    string(0) ""
+    ["dry_run_url"]=>
+    NULL
+    ["editable"]=>
+    bool(false)
+    ["elements"]=>
+    NULL
+    ["has_been_dry_run"]=>
+    NULL
+    ["id"]=>
+    int(17793)
+    ["last_run"]=>
+    NULL
+    ["result"]=>
+    string(6) "failed"
+    ["run_mode"]=>
+    string(7) "default"
+    ["site_id"]=>
+    int(860)
+    ["start_uri"]=>
+    string(1) "/"
+    ["step_count"]=>
+    int(2)
+    ["tags"]=>
+    array(0) {
+    }
+    ["test_id"]=>
+    int(17793)
+    ["title"]=>
+    string(22) "Log in as regular user"
+    }
+  }
+}
+```
 
 TODO: Fill this in.

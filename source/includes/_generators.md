@@ -854,7 +854,21 @@ Rainforest.Generator.delete(id).then(function(gen) {
 });
 ```
 
+```php
+<?php
+require(dirname(__FILE__) . '/../init.php');
+\Rainforest\Rainforest::$apiKey = "your-api-key";
 
+$id = 909;
+
+$gen = \Rainforest\Generator::delete( $id );
+
+# or
+
+$gen = \Rainforest\Generator::retrieve( $id );
+$gen->delete();
+?>
+```
 
 > Example Response
 
@@ -898,8 +912,64 @@ Rainforest.Generator.delete(id).then(function(gen) {
   row_count: 0 }
 ```
 
-
-
+```php
+object(Rainforest\Generator)#13 (11) {
+  ["columns"]=>
+  array(4) {
+    [0]=>
+    array(3) {
+      ["id"]=>
+      int(6456)
+      ["created_at"]=>
+      string(20) "2015-08-06T17:17:23Z"
+      ["name"]=>
+      string(10) "first_name"
+    }
+    [1]=>
+    array(3) {
+      ["id"]=>
+      int(6457)
+      ["created_at"]=>
+      string(20) "2015-08-06T17:17:23Z"
+      ["name"]=>
+      string(9) "last_name"
+    }
+    [2]=>
+    array(3) {
+      ["id"]=>
+      int(6458)
+      ["created_at"]=>
+      string(20) "2015-08-06T17:17:23Z"
+      ["name"]=>
+      string(5) "email"
+    }
+    [3]=>
+    array(3) {
+      ["id"]=>
+      int(6459)
+      ["created_at"]=>
+      string(20) "2015-08-06T17:17:23Z"
+      ["name"]=>
+      string(8) "password"
+    }
+  }
+  ["created_at"]=>
+  string(20) "2015-08-06T17:17:23Z"
+  ["data"]=>
+  NULL
+  ["description"]=>
+  string(55) "Credentials used to log into accounts in various states"
+  ["generator_type"]=>
+  string(7) "tabular"
+  ["id"]=>
+  int(910)
+  ["name"]=>
+  string(16) "user_credentials"
+  ["row_count"]=>
+  int(0)
+  }
+}
+```
 TODO: Fill this in.
 
 
@@ -937,6 +1007,18 @@ Rainforest.Generator.retrieve(id).then(function(gen) {
 });
 ```
 
+
+```php
+<?php
+require(dirname(__FILE__) . '/../init.php');
+\Rainforest\Rainforest::$apiKey = "your-api-key";
+
+$id = 911;
+
+$gen = \Rainforest\Generator::retrieve( $id );
+$rows = $gen->rows()->all();
+?>
+```
 
 
 > Example Response
@@ -977,6 +1059,27 @@ Rainforest.Generator.retrieve(id).then(function(gen) {
        '6783': 'jonsTopsecretPassword123' } } ]
 ```
 
+
+```php
+array(1) {
+  [0]=>
+  array(2) {
+    ["id"]=>
+    int(113931)
+    ["data"]=>
+    array(4) {
+      [6460]=>
+      string(5) "Jerry"
+      [6461]=>
+      string(8) "Seinfeld"
+      [6462]=>
+      string(17) "jerry@apibits.com"
+      [6463]=>
+      string(17) "fake_password_123"
+    }
+  }
+}
+```
 
 
 TODO: Fill this in.
@@ -1035,6 +1138,25 @@ Rainforest.Generator.retrieve(id).then(function(gen) {
 ```
 
 
+```php
+<?php
+require(dirname(__FILE__) . '/../init.php');
+\Rainforest\Rainforest::$apiKey = "your-api-key";
+
+$id = 911;
+
+$gen = \Rainforest\Generator::retrieve( $id );
+$row = $gen->rows()->create([
+  "data" => [
+    6460 => "Jerry", #6460 is the column id from gen.columns
+    6461 => "Seinfeld",
+    6462 => "jerry@apibits.com",
+    6463 => "fake_password_123"
+  ]
+]);
+?>
+```
+
 
 > Example Response
 
@@ -1063,6 +1185,25 @@ Rainforest.Generator.retrieve(id).then(function(gen) {
      '6783': 'jonsTopsecretPassword123' } }
 ```
 
+
+
+```php
+array(2) {
+  ["id"]=>
+  int(113931)
+  ["data"]=>
+  array(4) {
+    [6460]=>
+    string(5) "Jerry"
+    [6461]=>
+    string(8) "Seinfeld"
+    [6462]=>
+    string(17) "jerry@apibits.com"
+    [6463]=>
+    string(17) "fake_password_123"
+  }
+}
+```
 
 
 TODO: Fill this in.
