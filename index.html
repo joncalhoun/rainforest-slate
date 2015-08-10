@@ -131,7 +131,7 @@ require_once('/path/to/rainforest-php/init.php');
 <span class="p">});</span>
 </code></pre>
 <pre class="highlight php"><code><span class="cp">&lt;?php</span>
-<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="k">require_once</span><span class="p">(</span><span class="s1">'/path/to/rainforest-php/init.php'</span><span class="p">);</span>
 <span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
 
 <span class="nv">$runsPg2</span> <span class="o">=</span> <span class="nx">\Rainforest\Run</span><span class="o">::</span><span class="na">all</span><span class="p">([</span><span class="s2">"page"</span> <span class="o">=&gt;</span> <span class="mi">2</span><span class="p">]);</span>
@@ -154,7 +154,7 @@ require_once('/path/to/rainforest-php/init.php');
 <span class="p">});</span>
 </code></pre>
 <pre class="highlight php"><code><span class="cp">&lt;?php</span>
-<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="k">require_once</span><span class="p">(</span><span class="s1">'/path/to/rainforest-php/init.php'</span><span class="p">);</span>
 <span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
 
 <span class="nv">$runsPg2</span> <span class="o">=</span> <span class="nx">\Rainforest\Run</span><span class="o">::</span><span class="na">all</span><span class="p">(</span> <span class="p">[</span><span class="s2">"page_size"</span> <span class="o">=&gt;</span> <span class="mi">25</span><span class="p">]</span> <span class="p">);</span>
@@ -366,7 +366,7 @@ require_once('/path/to/rainforest-php/init.php');
 <span class="p">});</span>
 </code></pre>
 <pre class="highlight php"><code><span class="cp">&lt;?php</span>
-<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="k">require_once</span><span class="p">(</span><span class="s1">'/path/to/rainforest-php/init.php'</span><span class="p">);</span>
 <span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
 
 <span class="nv">$env</span> <span class="o">=</span> <span class="nx">\Rainforest\Environment</span><span class="o">::</span><span class="na">create</span><span class="p">([</span>
@@ -485,7 +485,7 @@ require_once('/path/to/rainforest-php/init.php');
 <span class="p">});</span>
 </code></pre>
 <pre class="highlight php"><code><span class="cp">&lt;?php</span>
-<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="k">require_once</span><span class="p">(</span><span class="s1">'/path/to/rainforest-php/init.php'</span><span class="p">);</span>
 <span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
 
 <span class="nv">$id</span> <span class="o">=</span> <span class="mi">4904</span><span class="p">;</span>
@@ -596,7 +596,7 @@ require_once('/path/to/rainforest-php/init.php');
 <span class="p">});</span>
 </code></pre>
 <pre class="highlight php"><code><span class="cp">&lt;?php</span>
-<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="k">require_once</span><span class="p">(</span><span class="s1">'/path/to/rainforest-php/init.php'</span><span class="p">);</span>
 <span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
 
 <span class="nv">$id</span> <span class="o">=</span> <span class="mi">4904</span><span class="p">;</span>
@@ -722,7 +722,7 @@ require_once('/path/to/rainforest-php/init.php');
 <span class="p">});</span>
 </code></pre>
 <pre class="highlight php"><code><span class="cp">&lt;?php</span>
-<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="k">require_once</span><span class="p">(</span><span class="s1">'/path/to/rainforest-php/init.php'</span><span class="p">);</span>
 <span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
 
 <span class="nv">$envs</span> <span class="o">=</span> <span class="nx">\Rainforest\Environment</span><span class="o">::</span><span class="na">all</span><span class="p">();</span>
@@ -825,7 +825,7 @@ require_once('/path/to/rainforest-php/init.php');
 <span class="p">});</span>
 </code></pre>
 <pre class="highlight php"><code><span class="cp">&lt;?php</span>
-<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="k">require_once</span><span class="p">(</span><span class="s1">'/path/to/rainforest-php/init.php'</span><span class="p">);</span>
 <span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
 
 <span class="nv">$id</span> <span class="o">=</span> <span class="mi">4904</span><span class="p">;</span>
@@ -890,7 +890,7 @@ require_once('/path/to/rainforest-php/init.php');
 <span class="p">});</span>
 </code></pre>
 <pre class="highlight php"><code><span class="cp">&lt;?php</span>
-<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="k">require_once</span><span class="p">(</span><span class="s1">'/path/to/rainforest-php/init.php'</span><span class="p">);</span>
 <span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
 
 <span class="nv">$id</span> <span class="o">=</span> <span class="mi">4904</span><span class="p">;</span>
@@ -1245,7 +1245,7 @@ require_once('/path/to/rainforest-php/init.php');
 <span class="p">});</span>
 </code></pre>
 <pre class="highlight php"><code><span class="cp">&lt;?php</span>
-<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="k">require_once</span><span class="p">(</span><span class="s1">'/path/to/rainforest-php/init.php'</span><span class="p">);</span>
 <span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
 
 <span class="nv">$gen</span> <span class="o">=</span> <span class="nx">\Rainforest\Generator</span><span class="o">::</span><span class="na">create</span><span class="p">([</span>
@@ -1389,7 +1389,7 @@ require_once('/path/to/rainforest-php/init.php');
 <span class="p">});</span>
 </code></pre>
 <pre class="highlight php"><code><span class="cp">&lt;?php</span>
-<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="k">require_once</span><span class="p">(</span><span class="s1">'/path/to/rainforest-php/init.php'</span><span class="p">);</span>
 <span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
 
 <span class="nv">$id</span> <span class="o">=</span> <span class="mi">909</span><span class="p">;</span>
@@ -1539,7 +1539,7 @@ require_once('/path/to/rainforest-php/init.php');
 </code></pre>
 <pre class="highlight php"><code><span class="cp">&lt;?php</span>
 <span class="nx">TODO</span><span class="o">:</span> <span class="nx">Make</span> <span class="nx">the</span> <span class="nx">save</span> <span class="nx">work</span>
-<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="k">require_once</span><span class="p">(</span><span class="s1">'/path/to/rainforest-php/init.php'</span><span class="p">);</span>
 <span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
 
 <span class="nv">$id</span> <span class="o">=</span> <span class="mi">909</span><span class="p">;</span>
@@ -1712,7 +1712,7 @@ require_once('/path/to/rainforest-php/init.php');
 <span class="p">});</span>
 </code></pre>
 <pre class="highlight php"><code><span class="cp">&lt;?php</span>
-<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="k">require_once</span><span class="p">(</span><span class="s1">'/path/to/rainforest-php/init.php'</span><span class="p">);</span>
 <span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
 
 <span class="nv">$gens</span> <span class="o">=</span> <span class="nx">\Rainforest\Generator</span><span class="o">::</span><span class="na">all</span><span class="p">();</span>
@@ -1926,7 +1926,7 @@ require_once('/path/to/rainforest-php/init.php');
 <span class="p">});</span>
 </code></pre>
 <pre class="highlight php"><code><span class="cp">&lt;?php</span>
-<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="k">require_once</span><span class="p">(</span><span class="s1">'/path/to/rainforest-php/init.php'</span><span class="p">);</span>
 <span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
 
 <span class="nv">$id</span> <span class="o">=</span> <span class="mi">909</span><span class="p">;</span>
@@ -2067,7 +2067,7 @@ require_once('/path/to/rainforest-php/init.php');
 <span class="p">});</span>
 </code></pre>
 <pre class="highlight php"><code><span class="cp">&lt;?php</span>
-<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="k">require_once</span><span class="p">(</span><span class="s1">'/path/to/rainforest-php/init.php'</span><span class="p">);</span>
 <span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
 
 <span class="nv">$id</span> <span class="o">=</span> <span class="mi">911</span><span class="p">;</span>
@@ -2181,7 +2181,7 @@ require_once('/path/to/rainforest-php/init.php');
 
 </code></pre>
 <pre class="highlight php"><code><span class="cp">&lt;?php</span>
-<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="k">require_once</span><span class="p">(</span><span class="s1">'/path/to/rainforest-php/init.php'</span><span class="p">);</span>
 <span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
 
 <span class="nv">$id</span> <span class="o">=</span> <span class="mi">911</span><span class="p">;</span>
@@ -2737,7 +2737,7 @@ require_once('/path/to/rainforest-php/init.php');
 <span class="p">});</span>
 </code></pre>
 <pre class="highlight php"><code><span class="cp">&lt;?php</span>
-<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="k">require_once</span><span class="p">(</span><span class="s1">'/path/to/rainforest-php/init.php'</span><span class="p">);</span>
 <span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
 
 <span class="nv">$run</span> <span class="o">=</span> <span class="nx">\Rainforest\Run</span><span class="o">::</span><span class="na">create</span><span class="p">([</span>
@@ -3161,7 +3161,7 @@ require_once('/path/to/rainforest-php/init.php');
 <span class="p">});</span>
 </code></pre>
 <pre class="highlight php"><code><span class="cp">&lt;?php</span>
-<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="k">require_once</span><span class="p">(</span><span class="s1">'/path/to/rainforest-php/init.php'</span><span class="p">);</span>
 <span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
 
 <span class="nv">$id</span> <span class="o">=</span> <span class="mi">32353</span><span class="p">;</span>
@@ -3580,7 +3580,7 @@ require_once('/path/to/rainforest-php/init.php');
 <span class="p">});</span>
 </code></pre>
 <pre class="highlight php"><code><span class="cp">&lt;?php</span>
-<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="k">require_once</span><span class="p">(</span><span class="s1">'/path/to/rainforest-php/init.php'</span><span class="p">);</span>
 <span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
 
 <span class="nv">$runs</span> <span class="o">=</span> <span class="nx">\Rainforest\Run</span><span class="o">::</span><span class="na">all</span><span class="p">();</span>
@@ -3930,7 +3930,7 @@ require_once('/path/to/rainforest-php/init.php');
 <span class="p">});</span>
 </code></pre>
 <pre class="highlight php"><code><span class="cp">&lt;?php</span>
-<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="k">require_once</span><span class="p">(</span><span class="s1">'/path/to/rainforest-php/init.php'</span><span class="p">);</span>
 <span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
 
 <span class="nv">$id</span> <span class="o">=</span> <span class="mi">32353</span><span class="p">;</span>
@@ -4303,7 +4303,7 @@ require_once('/path/to/rainforest-php/init.php');
 <span class="p">});</span>
 </code></pre>
 <pre class="highlight php"><code><span class="cp">&lt;?php</span>
-<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="k">require_once</span><span class="p">(</span><span class="s1">'/path/to/rainforest-php/init.php'</span><span class="p">);</span>
 <span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
 
 <span class="nv">$id</span> <span class="o">=</span> <span class="mi">32353</span><span class="p">;</span>
@@ -4564,7 +4564,7 @@ require_once('/path/to/rainforest-php/init.php');
 
 </code></pre>
 <pre class="highlight php"><code><span class="cp">&lt;?php</span>
-<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="k">require_once</span><span class="p">(</span><span class="s1">'/path/to/rainforest-php/init.php'</span><span class="p">);</span>
 <span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
 
 <span class="nv">$schedule</span> <span class="o">=</span> <span class="nx">\Rainforest\Schedule</span><span class="o">::</span><span class="na">create</span><span class="p">([</span>
@@ -4693,7 +4693,7 @@ require_once('/path/to/rainforest-php/init.php');
 <span class="p">});</span>
 </code></pre>
 <pre class="highlight php"><code><span class="cp">&lt;?php</span>
-<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="k">require_once</span><span class="p">(</span><span class="s1">'/path/to/rainforest-php/init.php'</span><span class="p">);</span>
 <span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
 
 <span class="nv">$id</span> <span class="o">=</span> <span class="mi">218</span><span class="p">;</span>
@@ -4813,7 +4813,7 @@ require_once('/path/to/rainforest-php/init.php');
 <span class="p">});</span>
 </code></pre>
 <pre class="highlight php"><code><span class="cp">&lt;?php</span>
-<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="k">require_once</span><span class="p">(</span><span class="s1">'/path/to/rainforest-php/init.php'</span><span class="p">);</span>
 <span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
 
 <span class="nv">$id</span> <span class="o">=</span> <span class="mi">218</span><span class="p">;</span>
@@ -4933,7 +4933,7 @@ require_once('/path/to/rainforest-php/init.php');
 <span class="p">});</span>
 </code></pre>
 <pre class="highlight php"><code><span class="cp">&lt;?php</span>
-<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="k">require_once</span><span class="p">(</span><span class="s1">'/path/to/rainforest-php/init.php'</span><span class="p">);</span>
 <span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
 
 <span class="nv">$schedules</span> <span class="o">=</span> <span class="nx">\Rainforest\Schedule</span><span class="o">::</span><span class="na">all</span><span class="p">();</span>
@@ -5038,7 +5038,7 @@ require_once('/path/to/rainforest-php/init.php');
 <span class="p">});</span>
 </code></pre>
 <pre class="highlight php"><code><span class="cp">&lt;?php</span>
-<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="k">require_once</span><span class="p">(</span><span class="s1">'/path/to/rainforest-php/init.php'</span><span class="p">);</span>
 <span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
 
 <span class="nv">$id</span> <span class="o">=</span> <span class="mi">218</span><span class="p">;</span>
@@ -5544,7 +5544,7 @@ require_once('/path/to/rainforest-php/init.php');
 <span class="p">});</span>
 </code></pre>
 <pre class="highlight php"><code><span class="cp">&lt;?php</span>
-<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="k">require_once</span><span class="p">(</span><span class="s1">'/path/to/rainforest-php/init.php'</span><span class="p">);</span>
 <span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
 
 <span class="nv">$test</span> <span class="o">=</span> <span class="nx">\Rainforest\Test</span><span class="o">::</span><span class="na">create</span><span class="p">([</span>
@@ -5904,7 +5904,7 @@ require_once('/path/to/rainforest-php/init.php');
 <span class="p">});</span>
 </code></pre>
 <pre class="highlight php"><code><span class="cp">&lt;?php</span>
-<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="k">require_once</span><span class="p">(</span><span class="s1">'/path/to/rainforest-php/init.php'</span><span class="p">);</span>
 <span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
 
 <span class="nv">$id</span> <span class="o">=</span> <span class="mi">18315</span><span class="p">;</span>
@@ -6258,7 +6258,7 @@ require_once('/path/to/rainforest-php/init.php');
 <span class="p">});</span>
 </code></pre>
 <pre class="highlight php"><code><span class="cp">&lt;?php</span>
-<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="k">require_once</span><span class="p">(</span><span class="s1">'/path/to/rainforest-php/init.php'</span><span class="p">);</span>
 <span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
 
 <span class="nv">$id</span> <span class="o">=</span> <span class="mi">18315</span><span class="p">;</span>
@@ -6592,7 +6592,7 @@ require_once('/path/to/rainforest-php/init.php');
 <span class="p">});</span>
 </code></pre>
 <pre class="highlight php"><code><span class="cp">&lt;?php</span>
-<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="k">require_once</span><span class="p">(</span><span class="s1">'/path/to/rainforest-php/init.php'</span><span class="p">);</span>
 <span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
 
 <span class="nv">$tests</span> <span class="o">=</span> <span class="nx">\Rainforest\Test</span><span class="o">::</span><span class="na">all</span><span class="p">();</span>
@@ -6821,7 +6821,7 @@ require_once('/path/to/rainforest-php/init.php');
 <span class="p">});</span>
 </code></pre>
 <pre class="highlight php"><code><span class="cp">&lt;?php</span>
-<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="k">require_once</span><span class="p">(</span><span class="s1">'/path/to/rainforest-php/init.php'</span><span class="p">);</span>
 <span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
 
 <span class="nv">$id</span> <span class="o">=</span> <span class="mi">18315</span><span class="p">;</span>
@@ -6885,7 +6885,7 @@ require_once('/path/to/rainforest-php/init.php');
 <span class="p">});</span>
 </code></pre>
 <pre class="highlight php"><code><span class="cp">&lt;?php</span>
-<span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/../init.php'</span><span class="p">);</span>
+<span class="k">require_once</span><span class="p">(</span><span class="s1">'/path/to/rainforest-php/init.php'</span><span class="p">);</span>
 <span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
 
 <span class="nv">$id</span> <span class="o">=</span> <span class="mi">18315</span><span class="p">;</span>
