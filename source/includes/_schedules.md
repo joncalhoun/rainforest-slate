@@ -140,7 +140,7 @@ Rainforest.Schedule.create({
 
 ```php
 <?php
-require(dirname(__FILE__) . '/../init.php');
+require_once('/path/to/rainforest-php/init.php');
 \Rainforest\Rainforest::$apiKey = "your-api-key";
 
 $schedule = \Rainforest\Schedule::create([
@@ -273,7 +273,7 @@ Rainforest.Schedule.retrieve(id).then(function(schedule) {
 
 ```php
 <?php
-require(dirname(__FILE__) . '/../init.php');
+require_once('/path/to/rainforest-php/init.php');
 \Rainforest\Rainforest::$apiKey = "your-api-key";
 
 $id = 218;
@@ -401,7 +401,7 @@ Rainforest.Schedule.update(id, {
 
 ```php
 <?php
-require(dirname(__FILE__) . '/../init.php');
+require_once('/path/to/rainforest-php/init.php');
 \Rainforest\Rainforest::$apiKey = "your-api-key";
 
 $id = 218;
@@ -523,7 +523,7 @@ Rainforest.Schedule.all().then(function(schedules) {
 
 ```php
 <?php
-require(dirname(__FILE__) . '/../init.php');
+require_once('/path/to/rainforest-php/init.php');
 \Rainforest\Rainforest::$apiKey = "your-api-key";
 
 $schedules = \Rainforest\Schedule::all();
@@ -643,7 +643,7 @@ Rainforest.Schedule.delete(id).then(function(schedule) {
 
 ```php
 <?php
-require(dirname(__FILE__) . '/../init.php');
+require_once('/path/to/rainforest-php/init.php');
 \Rainforest\Rainforest::$apiKey = "your-api-key";
 
 $id = 218;

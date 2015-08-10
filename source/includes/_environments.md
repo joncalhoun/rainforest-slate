@@ -118,7 +118,7 @@ Rainforest.Environment.create({
 
 ```php
 <?php
-require(dirname(__FILE__) . '/../init.php');
+require_once('/path/to/rainforest-php/init.php');
 \Rainforest\Rainforest::$apiKey = "your-api-key";
 
 $env = \Rainforest\Environment::create([
@@ -235,7 +235,7 @@ Rainforest.Environment.retrieve(id).then(function(env) {
 
 ```php
 <?php
-require(dirname(__FILE__) . '/../init.php');
+require_once('/path/to/rainforest-php/init.php');
 \Rainforest\Rainforest::$apiKey = "your-api-key";
 
 $id = 4904;
@@ -356,7 +356,7 @@ Rainforest.Environment.update(id, {
 
 ```php
 <?php
-require(dirname(__FILE__) . '/../init.php');
+require_once('/path/to/rainforest-php/init.php');
 \Rainforest\Rainforest::$apiKey = "your-api-key";
 
 $id = 4904;
@@ -489,7 +489,7 @@ Rainforest.Environment.all().then(function(envs) {
 
 ```php
 <?php
-require(dirname(__FILE__) . '/../init.php');
+require_once('/path/to/rainforest-php/init.php');
 \Rainforest\Rainforest::$apiKey = "your-api-key";
 
 $envs = \Rainforest\Environment::all();
@@ -608,7 +608,7 @@ Rainforest.Environment.delete(id).then(function() {
 
 ```php
 <?php
-require(dirname(__FILE__) . '/../init.php');
+require_once('/path/to/rainforest-php/init.php');
 \Rainforest\Rainforest::$apiKey = "your-api-key";
 
 $id = 4904;
@@ -688,7 +688,7 @@ Rainforest.Environment.retrieve(id).then(function(env) {
 
 ```php
 <?php
-require(dirname(__FILE__) . '/../init.php');
+require_once('/path/to/rainforest-php/init.php');
 \Rainforest\Rainforest::$apiKey = "your-api-key";
 
 $id = 4904;

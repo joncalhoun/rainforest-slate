@@ -24,7 +24,7 @@ Rainforest.Run.all({ page: 2 }).then(function(runs) {
 
 ```php
 <?php
-require(dirname(__FILE__) . '/../init.php');
+require_once('/path/to/rainforest-php/init.php');
 \Rainforest\Rainforest::$apiKey = "your-api-key";
 
 $runsPg2 = \Rainforest\Run::all(["page" => 2]);
@@ -55,7 +55,7 @@ Rainforest.Run.all({ page_size: 25 }).then(function(runs) {
 
 ```php
 <?php
-require(dirname(__FILE__) . '/../init.php');
+require_once('/path/to/rainforest-php/init.php');
 \Rainforest\Rainforest::$apiKey = "your-api-key";
 
 $runsPg2 = \Rainforest\Run::all( ["page_size" => 25] );

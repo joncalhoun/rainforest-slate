@@ -143,7 +143,7 @@ Rainforest.Generator.create({
 
 ```php
 <?php
-require(dirname(__FILE__) . '/../init.php');
+require_once('/path/to/rainforest-php/init.php');
 \Rainforest\Rainforest::$apiKey = "your-api-key";
 
 $gen = \Rainforest\Generator::create([
@@ -290,7 +290,7 @@ Rainforest.Generator.retrieve(id).then(function(gen) {
 
 ```php
 <?php
-require(dirname(__FILE__) . '/../init.php');
+require_once('/path/to/rainforest-php/init.php');
 \Rainforest\Rainforest::$apiKey = "your-api-key";
 
 $id = 909;
@@ -452,7 +452,7 @@ Rainforest.Generator.update(id, {
 ```php
 <?php
 TODO: Make the save work
-require(dirname(__FILE__) . '/../init.php');
+require_once('/path/to/rainforest-php/init.php');
 \Rainforest\Rainforest::$apiKey = "your-api-key";
 
 $id = 909;
@@ -627,7 +627,7 @@ Rainforest.Generator.all().then(function(gens) {
 
 ```php
 <?php
-require(dirname(__FILE__) . '/../init.php');
+require_once('/path/to/rainforest-php/init.php');
 \Rainforest\Rainforest::$apiKey = "your-api-key";
 
 $gens = \Rainforest\Generator::all();
@@ -856,7 +856,7 @@ Rainforest.Generator.delete(id).then(function(gen) {
 
 ```php
 <?php
-require(dirname(__FILE__) . '/../init.php');
+require_once('/path/to/rainforest-php/init.php');
 \Rainforest\Rainforest::$apiKey = "your-api-key";
 
 $id = 909;
@@ -1010,7 +1010,7 @@ Rainforest.Generator.retrieve(id).then(function(gen) {
 
 ```php
 <?php
-require(dirname(__FILE__) . '/../init.php');
+require_once('/path/to/rainforest-php/init.php');
 \Rainforest\Rainforest::$apiKey = "your-api-key";
 
 $id = 911;
@@ -1140,7 +1140,7 @@ Rainforest.Generator.retrieve(id).then(function(gen) {
 
 ```php
 <?php
-require(dirname(__FILE__) . '/../init.php');
+require_once('/path/to/rainforest-php/init.php');
 \Rainforest\Rainforest::$apiKey = "your-api-key";
 
 $id = 911;
