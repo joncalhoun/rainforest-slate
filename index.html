@@ -830,10 +830,6 @@ require_once('/path/to/rainforest-php/init.php');
 
 <span class="nv">$id</span> <span class="o">=</span> <span class="mi">4904</span><span class="p">;</span>
 
-<span class="nv">$env</span> <span class="o">=</span> <span class="nx">\Rainforest\Environment</span><span class="o">::</span><span class="na">delete</span><span class="p">(</span> <span class="nv">$id</span> <span class="p">);</span>
-
-<span class="c1"># or
-</span>
 <span class="nv">$env</span> <span class="o">=</span> <span class="nx">\Rainforest\Environment</span><span class="o">::</span><span class="na">retrieve</span><span class="p">(</span> <span class="nv">$id</span> <span class="p">);</span>
 <span class="nv">$env</span><span class="o">-&gt;</span><span class="na">delete</span><span class="p">();</span>
 <span class="cp">?&gt;</span>
@@ -1930,8 +1926,6 @@ require_once('/path/to/rainforest-php/init.php');
 <span class="nx">\Rainforest\Rainforest</span><span class="o">::</span><span class="nv">$apiKey</span> <span class="o">=</span> <span class="s2">"your-api-key"</span><span class="p">;</span>
 
 <span class="nv">$id</span> <span class="o">=</span> <span class="mi">909</span><span class="p">;</span>
-
-<span class="nv">$gen</span> <span class="o">=</span> <span class="nx">\Rainforest\Generator</span><span class="o">::</span><span class="na">delete</span><span class="p">(</span> <span class="nv">$id</span> <span class="p">);</span>
 
 <span class="c1"># or
 </span>
@@ -3935,10 +3929,6 @@ require_once('/path/to/rainforest-php/init.php');
 
 <span class="nv">$id</span> <span class="o">=</span> <span class="mi">32353</span><span class="p">;</span>
 
-<span class="nv">$run</span> <span class="o">=</span> <span class="nx">\Rainforest\Run</span><span class="o">::</span><span class="na">abort</span><span class="p">(</span> <span class="nv">$id</span> <span class="p">);</span> <span class="c1"># or ::delete( $id )
-</span>
-<span class="c1"># or
-</span>
 <span class="nv">$run</span> <span class="o">=</span> <span class="nx">\Rainforest\Run</span><span class="o">::</span><span class="na">retrieve</span><span class="p">(</span><span class="nv">$id</span><span class="p">);</span>
 <span class="nv">$run</span><span class="o">-&gt;</span><span class="na">abort</span><span class="p">();</span> <span class="c1">#or -&gt;delete()
 </span><span class="cp">?&gt;</span>
@@ -5043,10 +5033,6 @@ require_once('/path/to/rainforest-php/init.php');
 
 <span class="nv">$id</span> <span class="o">=</span> <span class="mi">218</span><span class="p">;</span>
 
-<span class="nv">$schedule</span> <span class="o">=</span> <span class="nx">\Rainforest\Schedule</span><span class="o">::</span><span class="na">delete</span><span class="p">(</span> <span class="nv">$id</span> <span class="p">);</span>
-
-<span class="c1"># or
-</span>
 <span class="nv">$schedule</span> <span class="o">=</span> <span class="nx">\Rainforest\Schedule</span><span class="o">::</span><span class="na">retrieve</span><span class="p">(</span><span class="nv">$id</span><span class="p">);</span>
 <span class="nv">$schedule</span><span class="o">-&gt;</span><span class="na">delete</span><span class="p">();</span>
 <span class="cp">?&gt;</span>
@@ -6826,10 +6812,6 @@ require_once('/path/to/rainforest-php/init.php');
 
 <span class="nv">$id</span> <span class="o">=</span> <span class="mi">18315</span><span class="p">;</span>
 
-<span class="nv">$test</span> <span class="o">=</span> <span class="nx">\Rainforest\Test</span><span class="o">::</span><span class="na">delete</span><span class="p">(</span> <span class="nv">$id</span> <span class="p">);</span>
-
-<span class="c1"># or
-</span>
 <span class="nv">$test</span> <span class="o">=</span> <span class="nx">\Rainforest\Test</span><span class="o">::</span><span class="na">retrieve</span><span class="p">(</span><span class="nv">$id</span><span class="p">);</span>
 <span class="nv">$test</span><span class="o">-&gt;</span><span class="na">delete</span><span class="p">();</span>
 <span class="cp">?&gt;</span>
