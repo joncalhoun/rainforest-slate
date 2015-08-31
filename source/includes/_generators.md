@@ -861,8 +861,6 @@ require_once('/path/to/rainforest-php/init.php');
 
 $id = 909;
 
-$gen = \Rainforest\Generator::delete( $id );
-
 # or
 
 $gen = \Rainforest\Generator::retrieve( $id );

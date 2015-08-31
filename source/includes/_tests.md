@@ -1701,10 +1701,6 @@ require_once('/path/to/rainforest-php/init.php');
 
 $id = 18315;
 
-$test = \Rainforest\Test::delete( $id );
-
-# or
-
 $test = \Rainforest\Test::retrieve($id);
 $test->delete();
 ?>

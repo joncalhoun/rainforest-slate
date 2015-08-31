@@ -1674,10 +1674,6 @@ require_once('/path/to/rainforest-php/init.php');
 
 $id = 32353;
 
-$run = \Rainforest\Run::abort( $id ); # or ::delete( $id )
-
-# or
-
 $run = \Rainforest\Run::retrieve($id);
 $run->abort(); #or ->delete()
 ?>

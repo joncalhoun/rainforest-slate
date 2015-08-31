@@ -648,10 +648,6 @@ require_once('/path/to/rainforest-php/init.php');
 
 $id = 218;
 
-$schedule = \Rainforest\Schedule::delete( $id );
-
-# or
-
 $schedule = \Rainforest\Schedule::retrieve($id);
 $schedule->delete();
 ?>

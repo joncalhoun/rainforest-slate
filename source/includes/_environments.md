@@ -613,10 +613,6 @@ require_once('/path/to/rainforest-php/init.php');
 
 $id = 4904;
 
-$env = \Rainforest\Environment::delete( $id );
-
-# or
-
 $env = \Rainforest\Environment::retrieve( $id );
 $env->delete();
 ?>
