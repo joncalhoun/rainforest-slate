@@ -15,6 +15,22 @@ rescue Rainforest::ApiError => err
 end
 ```
 
+
+```python
+# Errors can be caught using try/except
+try:
+    # do something that returns an error
+except rainforest.ApiError as err:
+    # work with the error
+    # most request data can be accessed from the error
+    err.code # http response code
+    err.body # http response body (raw)
+    err.json # h ttp response body (parsed as json)
+
+    err.api_method # returns the rainforest.ApiMethod used to execute the API call
+```
+
+
 ```javascript
 // The node library uses bluebird for promises. See https://github.com/petkaantonov/bluebird#error-handling for more info.
 Rainforest.Environment.retrieve("invalid-id").then(function(env) {

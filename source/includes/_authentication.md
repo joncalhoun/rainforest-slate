@@ -12,7 +12,10 @@ require 'rainforest'
 Rainforest.api_key = 'your-api-key'
 ```
 
-
+```python
+import rainforest
+rainforest.API_KEY = "your-api-key"
+```
 
 ```javascript
 var Rainforest = require('rainforestqa');
