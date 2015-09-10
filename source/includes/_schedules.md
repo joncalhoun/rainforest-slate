@@ -16,6 +16,10 @@
 ```
 
 
+```python
+<rainforest.Schedule object: {'repeat_rules': [{u'created_at': u'2015-09-10T00:39:19Z', u'time': u'10:00', u'id': 1170, u'day': u'tuesday'}, {u'created_at': u'2015-09-10T00:39:19Z', u'time': u'01:00', u'id': 1169, u'day': u'sunday'}], 'created_at': u'2015-09-10T00:39:19Z', 'id': 225, 'filters': {u'tags': [u'www']}}>
+```
+
 
 ```javascript
 { id: 193,
@@ -110,6 +114,24 @@ schedule = Rainforest::Schedule.create(
 ```
 
 
+```python
+import rainforest
+rainforest.API_KEY = "your-api-key"
+
+schedule = rainforest.Schedule.create(params={
+    'filters': {
+        'tags': ["www"]
+    },
+    'repeat_rules': [{
+        'day': "sunday",
+        'time': "01:00"
+    }, {
+        'day': "tuesday",
+        'time': "10:00"
+    }]
+})
+```
+
 
 ```javascript
 var Rainforest = require('rainforestqa');
@@ -175,6 +197,10 @@ $schedule = \Rainforest\Schedule::create([
 }
 ```
 
+
+```python
+<rainforest.Schedule object: {'repeat_rules': [{u'created_at': u'2015-09-10T00:39:19Z', u'time': u'10:00', u'id': 1170, u'day': u'tuesday'}, {u'created_at': u'2015-09-10T00:39:19Z', u'time': u'01:00', u'id': 1169, u'day': u'sunday'}], 'created_at': u'2015-09-10T00:39:19Z', 'id': 225, 'filters': {u'tags': [u'www']}}>
+```
 
 
 ```javascript
@@ -256,6 +282,15 @@ schedule = Rainforest::Schedule.retrieve(id)
 ```
 
 
+```python
+import rainforest
+rainforest.API_KEY = "your-api-key"
+
+id = 225
+schedule = rainforest.Schedule.retrieve(id)
+```
+
+
 
 ```javascript
 //TODO: Add node samples
@@ -295,6 +330,9 @@ $schedule = \Rainforest\Schedule::retrieve( $id );
 }
 ```
 
+```python
+<rainforest.Schedule object: {'repeat_rules': [{u'created_at': u'2015-09-10T00:39:19Z', u'time': u'10:00', u'id': 1170, u'day': u'tuesday'}, {u'created_at': u'2015-09-10T00:39:19Z', u'time': u'01:00', u'id': 1169, u'day': u'sunday'}], 'created_at': u'2015-09-10T00:39:19Z', 'id': 225, 'filters': {u'tags': [u'www']}}>
+```
 
 
 ```javascript
@@ -381,6 +419,15 @@ schedule.save
 ```
 
 
+```python
+import rainforest
+rainforest.API_KEY = "your-api-key"
+
+id = 225
+repeat_rules = [{'day': "monday", 'time': "12:00"}]
+schedule = rainforest.Schedule.update(id, params={'repeat_rules': repeat_rules})
+```
+
 
 ```javascript
 //TODO: Add node samples
@@ -431,6 +478,10 @@ $schedule->save();
 }
 ```
 
+
+```python
+<rainforest.Schedule object: {'repeat_rules': [{u'created_at': u'2015-09-10T00:42:16Z', u'time': u'12:00', u'id': 1171, u'day': u'monday'}], 'created_at': u'2015-09-10T00:39:19Z', 'id': 225, 'filters': {u'tags': [u'www']}}>
+```
 
 
 ```javascript
@@ -503,6 +554,17 @@ schedules[0] # The first schedule in the list
 schedules.length # the number of schedules returned
 ```
 
+```python
+import rainforest
+rainforest.API_KEY = "your-api-key"
+
+schedules = rainforest.Schedule.all()
+for schedule in schedules:
+    # work with a schedule
+
+schedules[0] # the first schedule in the list
+len(schedules) # the number of schedules returned
+```
 
 
 ```javascript
@@ -546,9 +608,12 @@ count( $schedules->data ); # the number of Schedules returned
   "#<Rainforest::Schedule:0x3ff73d661bb4 id=906>"
 ]
 
-
 ```
 
+
+```python
+<rainforest.apibits.ApiList object (class Schedule): [<rainforest.Schedule object: {'repeat_rules': [{u'created_at': u'2015-09-10T00:42:16Z', u'time': u'12:00', u'id': 1171, u'day': u'monday'}], 'created_at': u'2015-09-10T00:39:19Z', 'id': 225, 'filters': {u'tags': [u'www']}}>]>
+````
 
 
 ```javascript
@@ -623,6 +688,16 @@ schedule.delete
 ```
 
 
+```python
+import rainforest
+rainforest.API_KEY = "your-api-key"
+
+id = 225
+schedule = rainforest.Schedule.retrieve(id)
+schedule.delete()
+```
+
+
 
 ```javascript
 //TODO: Add node samples
@@ -669,6 +744,10 @@ $schedule->delete();
 
 ```
 
+
+```python
+<rainforest.Schedule object: {'repeat_rules': [{u'created_at': u'2015-09-10T00:42:16Z', u'time': u'12:00', u'id': 1171, u'day': u'monday'}], 'created_at': u'2015-09-10T00:39:19Z', 'id': 225, 'filters': {u'tags': [u'www']}}>
+```
 
 
 ```javascript

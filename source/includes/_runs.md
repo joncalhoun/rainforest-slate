@@ -42,6 +42,10 @@
 ```
 
 
+```python
+<rainforest.Run object: {'browsers': [{u'category': u'phone', u'state': u'disabled', u'name': u'android_phone_landscape', u'description': u'Android Phone Landscape'}, {u'category': u'phone', u'state': u'disabled', u'name': u'android_phone_portrait', u'description': u'Android Phone Portrait'}, {u'category': u'tablet', u'state': u'disabled', u'name': u'android_tablet_landscape', u'description': u'Android Tablet Landscape'}, {u'category': u'tablet', u'state': u'disabled', u'name': u'android_tablet_portrait', u'description': u'Android Tablet Portrait'}, {u'category': u'browser', u'state': u'enabled', u'name': u'chrome', u'description': u'Google Chrome'}, {u'category': u'browser', u'state': u'enabled', u'name': u'firefox', u'description': u'Mozilla Firefox'}, {u'category': u'browser', u'state': u'enabled', u'name': u'ie8', u'description': u'Microsoft Internet Explorer 8'}, {u'category': u'browser', u'state': u'enabled', u'name': u'ie9', u'description': u'Microsoft Internet Explorer 9'}, {u'category': u'browser', u'state': u'disabled', u'name': u'ie10', u'description': u'Microsoft Internet Explorer 10'}, {u'category': u'browser', u'state': u'disabled', u'name': u'ie11', u'description': u'Microsoft Internet Explorer 11'}, {u'category': u'browser', u'state': u'enabled', u'name': u'safari', u'description': u'Apple Safari'}], 'total_passed_tests': 0, 'sample_test_titles': [u'shit works'], 'stats': {u'speed_up': 1.79, u'total_time_for_one_person': 4675.0, u'total_time_for_rainforest': 2610.763738, u'total_rainforest_overhead': 13.591364}, 'description': None, 'log_url': u'https://tala.rainforestqa.com/api/v1/logs/4268?expires_at=1441848065&sig=7187859ce4ed838be6e3e5ec67b12fa8070803a1', 'created_at': u'2013-11-14T04:52:14Z', 'current_progress': {u'complete': 5, u'no_result': 0, u'percent': 100, u'failed': 1, u'eta': {u'seconds': 0, u'ts': u'2015-09-10T00:21:05.252+00:00'}, u'passed': 0, u'total': 5}, 'total_no_result_tests': 0, 'environment': {u'name': u'Staging', u'default': False, u'created_at': u'2013-11-05T02:17:14Z', u'webhook': None, u'site_environments': [{u'url': u'http://blog.accordive.com', u'created_at': u'2013-11-05T02:17:14Z', u'environment_id': 1144, u'site_id': 860, u'id': 744}], u'webhook_enabled': None, u'id': 1144}, 'state_details': {u'is_final_state': True, u'name': u'complete'}, 'state': u'complete', 'total_tests': 1, 'result': u'failed', 'filters': None, 'id': 4268, 'timestamps': {u'created_at': u'2013-11-14T04:52:14.252Z', u'validating': u'2013-11-14T04:52:28.003Z', u'in_progress': u'2013-11-14T04:52:27.847Z', u'complete': u'2013-11-14T05:35:45.022Z'}, 'frontend_url': u'https://app.rainforestqa.com/runs/4268', 'total_failed_tests': 1, 'real_cost_to_run': 5}>
+```
+
 
 ```javascript
 { id: 31459,
@@ -419,6 +423,20 @@ run = Rainforest::Run.create(
 )
 ```
 
+```python
+import rainforest
+rainforest.API_KEY = "your-api-key"
+
+run = rainforest.Run.create(params={
+    'tags': ["www", "api"]
+})
+# or
+test_ids = [2818]
+run = rainforest.Run.create(params={
+    'tests': test_ids
+})
+```
+
 
 
 ```javascript
@@ -509,6 +527,10 @@ $run = \Rainforest\Run::create([
 }
 ```
 
+
+```python
+TODO: REPL
+```
 
 
 ```javascript
@@ -861,6 +883,14 @@ run = Rainforest::Run.retrieve(id)
 ```
 
 
+```python
+import rainforest
+rainforest.API_KEY = "your-api-key"
+
+id = 31921
+run = rainforest.Run.retrieve(id)
+```
+
 
 ```javascript
 var Rainforest = require('rainforestqa');
@@ -929,6 +959,10 @@ $run = \Rainforest\Run::retrieve( $id );
 }
 ```
 
+
+```python
+<rainforest.Run object: {'browsers': [{u'category': u'phone', u'state': u'enabled', u'name': u'android_phone_landscape', u'description': u'Android Phone Landscape'}, {u'category': u'phone', u'state': u'enabled', u'name': u'android_phone_portrait', u'description': u'Android Phone Portrait'}, {u'category': u'tablet', u'state': u'enabled', u'name': u'android_tablet_landscape', u'description': u'Android Tablet Landscape'}, {u'category': u'tablet', u'state': u'enabled', u'name': u'android_tablet_portrait', u'description': u'Android Tablet Portrait'}, {u'category': u'browser', u'state': u'enabled', u'name': u'chrome', u'description': u'Google Chrome'}, {u'category': u'browser', u'state': u'enabled', u'name': u'firefox', u'description': u'Mozilla Firefox'}, {u'category': u'browser', u'state': u'enabled', u'name': u'ie8', u'description': u'Microsoft Internet Explorer 8'}, {u'category': u'browser', u'state': u'enabled', u'name': u'ie9', u'description': u'Microsoft Internet Explorer 9'}, {u'category': u'browser', u'state': u'enabled', u'name': u'ie10', u'description': u'Microsoft Internet Explorer 10'}, {u'category': u'browser', u'state': u'enabled', u'name': u'ie11', u'description': u'Microsoft Internet Explorer 11'}, {u'category': u'browser', u'state': u'disabled', u'name': u'safari', u'description': u'Apple Safari'}], 'total_passed_tests': 1, 'sample_test_titles': [u'Log in', u'Customer Logos'], 'stats': {u'speed_up': 1.18, u'total_time_for_one_person': 346.0, u'total_time_for_rainforest': 294.272295, u'total_rainforest_overhead': 6.201886}, 'description': None, 'log_url': u'https://tala.rainforestqa.com/api/v1/logs/31921?expires_at=1441848345&sig=c05f255a34300bea267b9d13604d01eba2a2d3c2', 'created_at': u'2015-08-03T18:47:18Z', 'current_progress': {u'complete': 1, u'no_result': 1, u'percent': 9, u'failed': 0, u'eta': {u'seconds': 32171071, u'ts': u'2016-09-16T08:50:17.245+00:00'}, u'passed': 1, u'total': 11}, 'total_no_result_tests': 1, 'environment': {u'name': u'Production', u'default': False, u'created_at': u'2015-07-28T14:58:34Z', u'webhook': u'', u'site_environments': [{u'url': u'http://apibits.com', u'created_at': u'2015-07-28T14:58:34Z', u'environment_id': 4859, u'site_id': 860, u'id': 5590}], u'webhook_enabled': None, u'id': 4859}, 'state_details': {u'is_final_state': False, u'name': u'aborted'}, 'state': u'aborted', 'total_tests': 2, 'result': u'no_result', 'filters': {u'tags': [u'www']}, 'id': 31921, 'timestamps': {u'validating': u'2015-08-03T18:47:18.497Z', u'in_progress': u'2015-08-03T18:47:24.294Z', u'created_at': u'2015-08-03T18:47:18.087Z', u'aborted': u'2015-08-03T18:52:12.364Z'}, 'frontend_url': u'https://app.rainforestqa.com/runs/31921', 'total_failed_tests': 0, 'real_cost_to_run': 1}>
+```
 
 
 ```javascript
@@ -1288,6 +1322,17 @@ runs.length # the number of runs returned
 ```
 
 
+```python
+import rainforest
+rainforest.API_KEY = "your-api-key"
+
+runs = rainforest.Run.all()
+for run in runs:
+    # work with a run
+
+runs[0] # the first run in the list
+len(runs) # the number of runs returned
+
 
 ```javascript
 var Rainforest = require('rainforestqa');
@@ -1328,7 +1373,10 @@ count( $runs->data ); # the number of Runs returned
   "#<Rainforest::Run:0x3ff73d661bb4 id=906>"
 ]
 
+```
 
+```python
+<rainforest.apibits.ApiList object (class Run): [<rainforest.Run object: {'browsers': [{u'category': u'phone', u'state': u'disabled', u'name': u'android_phone_landscape', u'description': u'Android Phone Landscape'}, {u'category': u'phone', u'state': u'disabled', u'name': u'android_phone_portrait', u'description': u'Android Phone Portrait'}, {u'category': u'tablet', u'state': u'disabled', u'name': u'android_tablet_landscape', u'description': u'Android Tablet Landscape'}, {u'category': u'tablet', u'state': u'disabled', u'name': u'android_tablet_portrait', u'description': u'Android Tablet Portrait'}, {u'category': u'browser', u'state': u'enabled', u'name': u'chrome', u'description': u'Google Chrome'}, {u'category': u'browser', u'state': u'disabled', u'name': u'firefox', u'description': u'Mozilla Firefox'}, {u'category': u'browser', u'state': u'disabled', u'name': u'ie8', u'description': u'Microsoft Internet Explorer 8'}, {u'category': u'browser', u'state': u'disabled', u'name': u'ie9', u'description': u'Microsoft Internet Explorer 9'}, {u'category': u'browser', u'state': u'disabled', u'name': u'ie10', u'description': u'Microsoft Internet Explorer 10'}, {u'category': u'browser', u'state': u'disabled', u'name': u'ie11', u'description': u'Microsoft Internet Explorer 11'}, {u'category': u'browser', u'state': u'disabled', u'name': u'safari', u'description': u'Apple Safari'}], 'total_passed_tests': 0, 'sample_test_titles': [u'Customer Logos'], 'stats': {u'speed_up': 0.0, u'total_time_for_one_person': 0.0, u'total_time_for_rainforest': 49.890136, u'total_rainforest_overhead': 1.278764}, 'description': None, 'log_url': u'https://tala.rainforestqa.com/api/v1/logs/34370?expires_at=1441848318&sig=345ad68005184476b459f9edd94224bcbb4d6c56', 'created_at': u'2015-08-31T17:26:34Z', 'current_progress': {u'complete': 0, u'no_result': 1, u'percent': 0, u'failed': 0, u'eta': {u'seconds': 1800, u'ts': u'2015-09-10T00:55:18.659+00:00'}, u'passed': 0, u'total': 1}, 'total_no_result_tests': 1, 'environment': {u'name': u'new env name', u'default': True, u'created_at': u'2015-08-04T19:46:42Z', u'webhook': u'', u'site_environments': [{u'url': u'http://www.example.org', u'created_at': u'2015-08-04T19:46:42Z', u'environment_id': 4904, u'site_id': 860, u'id': 5652}], u'webhook_enabled': None, u'id': 4904}, 'state_details': {u'is_final_state': False, u'name': u'aborted'}, 'state': u'aborted', 'total_tests': 1, 'result': u'no_result', 'filters': {u'tags': [u'www']}, 'id': 34370, 'timestamps': {u'created_at': u'2015-08-31T17:26:34.920Z', u'validating': u'2015-08-31T17:26:35.340Z', u'aborting': u'2015-08-31T17:27:24.435Z', u'in_progress': u'2015-08-31T17:26:36.207Z', u'aborted': u'2015-08-31T17:27:24.815Z'}, 'frontend_url': u'https://app.rainforestqa.com/runs/34370', 'total_failed_tests': 0, 'real_cost_to_run': 0}>]>
 ```
 
 
@@ -1653,6 +1701,15 @@ run.abort # or .delete
 ```
 
 
+```python
+import rainforest
+rainforest.API_KEY = "your-api-key"
+
+id = 31921
+run = rainforest.Run.retrieve(id)
+run.abort() # or .delete()
+```
+
 
 ```javascript
 var Rainforest = require('rainforestqa');
@@ -1722,6 +1779,10 @@ $run->abort(); #or ->delete()
 }
 ```
 
+
+```python
+<rainforest.Run object: {'browsers': [{u'category': u'phone', u'state': u'enabled', u'name': u'android_phone_landscape', u'description': u'Android Phone Landscape'}, {u'category': u'phone', u'state': u'enabled', u'name': u'android_phone_portrait', u'description': u'Android Phone Portrait'}, {u'category': u'tablet', u'state': u'enabled', u'name': u'android_tablet_landscape', u'description': u'Android Tablet Landscape'}, {u'category': u'tablet', u'state': u'enabled', u'name': u'android_tablet_portrait', u'description': u'Android Tablet Portrait'}, {u'category': u'browser', u'state': u'enabled', u'name': u'chrome', u'description': u'Google Chrome'}, {u'category': u'browser', u'state': u'enabled', u'name': u'firefox', u'description': u'Mozilla Firefox'}, {u'category': u'browser', u'state': u'enabled', u'name': u'ie8', u'description': u'Microsoft Internet Explorer 8'}, {u'category': u'browser', u'state': u'enabled', u'name': u'ie9', u'description': u'Microsoft Internet Explorer 9'}, {u'category': u'browser', u'state': u'enabled', u'name': u'ie10', u'description': u'Microsoft Internet Explorer 10'}, {u'category': u'browser', u'state': u'enabled', u'name': u'ie11', u'description': u'Microsoft Internet Explorer 11'}, {u'category': u'browser', u'state': u'disabled', u'name': u'safari', u'description': u'Apple Safari'}], 'total_passed_tests': 1, 'sample_test_titles': [u'Log in', u'Customer Logos'], 'stats': {u'speed_up': 1.18, u'total_time_for_one_person': 346.0, u'total_time_for_rainforest': 294.272295, u'total_rainforest_overhead': 6.201886}, 'description': None, 'log_url': u'https://tala.rainforestqa.com/api/v1/logs/31921?expires_at=1441848345&sig=c05f255a34300bea267b9d13604d01eba2a2d3c2', 'created_at': u'2015-08-03T18:47:18Z', 'current_progress': {u'complete': 1, u'no_result': 1, u'percent': 9, u'failed': 0, u'eta': {u'seconds': 32171071, u'ts': u'2016-09-16T08:50:17.245+00:00'}, u'passed': 1, u'total': 11}, 'total_no_result_tests': 1, 'environment': {u'name': u'Production', u'default': False, u'created_at': u'2015-07-28T14:58:34Z', u'webhook': u'', u'site_environments': [{u'url': u'http://apibits.com', u'created_at': u'2015-07-28T14:58:34Z', u'environment_id': 4859, u'site_id': 860, u'id': 5590}], u'webhook_enabled': None, u'id': 4859}, 'state_details': {u'is_final_state': False, u'name': u'aborted'}, 'state': u'aborted', 'total_tests': 2, 'result': u'no_result', 'filters': {u'tags': [u'www']}, 'id': 31921, 'timestamps': {u'validating': u'2015-08-03T18:47:18.497Z', u'in_progress': u'2015-08-03T18:47:24.294Z', u'created_at': u'2015-08-03T18:47:18.087Z', u'aborted': u'2015-08-03T18:52:12.364Z'}, 'frontend_url': u'https://app.rainforestqa.com/runs/31921', 'total_failed_tests': 0, 'real_cost_to_run': 1}>
+```
 
 
 ```javascript
@@ -2032,6 +2093,15 @@ tests = Rainforest::Run.new(id).associated_tests.all
 ```
 
 
+```python
+import rainforest
+rainforest.API_KEY = "your-api-key"
+
+id = 31921
+run = rainforest.Run.retrieve(id)
+tests = run.associated_tests().all()
+```
+
 
 ```javascript
 var Rainforest = require('rainforestqa');
@@ -2081,6 +2151,10 @@ count( $tests->data ); # the number of tests returned
 
 ```
 
+
+```python
+<rainforest.apibits.ApiList object (class Test): [<rainforest.Test object: {'step_count': 1, 'has_been_dry_run': None, 'elements': None, 'description': u'Make sure all customer logos link to their websites correctly.', 'tags': [u'www'], 'deleted': None, 'editable': False, 'created_at': u'2015-08-03T18:47:18Z', 'title': u'Customer Logos', 'site_id': 860, 'last_run': None, 'run_mode': u'default', 'start_uri': u'/', 'browsers': [{u'category': u'browser', u'description': u'Google Chrome', u'created_at': u'2015-08-03T18:47:18Z', u'state': u'complete', u'result': u'passed', u'id': 779162, u'name': u'chrome'}], 'dry_run_url': None, 'result': u'passed', 'test_id': 17790, 'id': 17790, 'deletable': None}>, <rainforest.Test object: {'step_count': 2, 'has_been_dry_run': None, 'elements': None, 'description': u'', 'tags': [u'www'], 'deleted': None, 'editable': False, 'created_at': u'2015-08-03T18:47:18Z', 'title': u'Log in', 'site_id': 860, 'last_run': None, 'run_mode': u'default', 'start_uri': u'/', 'browsers': [{u'category': u'phone', u'description': u'Android Phone Landscape', u'created_at': u'2015-08-03T18:47:18Z', u'state': u'aborted', u'result': u'no_result', u'id': 779163, u'name': u'android_phone_landscape'}, {u'category': u'phone', u'description': u'Android Phone Portrait', u'created_at': u'2015-08-03T18:47:19Z', u'state': u'aborted', u'result': u'no_result', u'id': 779164, u'name': u'android_phone_portrait'}, {u'category': u'tablet', u'description': u'Android Tablet Landscape', u'created_at': u'2015-08-03T18:47:20Z', u'state': u'aborted', u'result': u'no_result', u'id': 779165, u'name': u'android_tablet_landscape'}, {u'category': u'tablet', u'description': u'Android Tablet Portrait', u'created_at': u'2015-08-03T18:47:20Z', u'state': u'aborted', u'result': u'no_result', u'id': 779166, u'name': u'android_tablet_portrait'}, {u'category': u'browser', u'description': u'Google Chrome', u'created_at': u'2015-08-03T18:47:21Z', u'state': u'aborted', u'result': u'no_result', u'id': 779167, u'name': u'chrome'}, {u'category': u'browser', u'description': u'Mozilla Firefox', u'created_at': u'2015-08-03T18:47:21Z', u'state': u'aborted', u'result': u'no_result', u'id': 779168, u'name': u'firefox'}, {u'category': u'browser', u'description': u'Microsoft Internet Explorer 8', u'created_at': u'2015-08-03T18:47:22Z', u'state': u'aborted', u'result': u'no_result', u'id': 779169, u'name': u'ie8'}, {u'category': u'browser', u'description': u'Microsoft Internet Explorer 9', u'created_at': u'2015-08-03T18:47:22Z', u'state': u'aborted', u'result': u'no_result', u'id': 779170, u'name': u'ie9'}, {u'category': u'browser', u'description': u'Microsoft Internet Explorer 10', u'created_at': u'2015-08-03T18:47:23Z', u'state': u'aborted', u'result': u'no_result', u'id': 779171, u'name': u'ie10'}, {u'category': u'browser', u'description': u'Microsoft Internet Explorer 11', u'created_at': u'2015-08-03T18:47:23Z', u'state': u'aborted', u'result': u'no_result', u'id': 779172, u'name': u'ie11'}], 'dry_run_url': None, 'result': u'no_result', 'test_id': 17793, 'id': 17793, 'deletable': None}>]
+```
 
 
 ```javascript

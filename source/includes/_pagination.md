@@ -10,6 +10,15 @@ runs_pg_2 = Rainforest::Run.all(:page => 2)
 ```
 
 
+```python
+import rainforest
+rainforest.API_KEY = "your-api-key"
+
+runs_pg_2 = rainforest.Run.all(params={
+    'page': 2
+})
+```
+
 
 ```javascript
 var Rainforest = require('rainforestqa');
@@ -41,6 +50,15 @@ Rainforst.api_key = 'your-api-key'
 runs = Rainforest::Run.all(:page_size => 25)
 ```
 
+
+```python
+import rainforest
+rainforest.API_KEY = "your-api-key"
+
+runs = rainforest.Run.all(params={
+    'page_size': 25
+})
+```
 
 
 ```javascript

@@ -18,6 +18,10 @@
 ```
 
 
+```python
+<rainforest.Environment object: {'name': u'my testing environment', 'default': False, 'created_at': u'2015-09-09T22:00:10Z', 'webhook': u'', 'site_environments': [{u'url': u'http://www.example.org', u'created_at': u'2015-09-09T22:00:10Z', u'environment_id': 4957, u'site_id': 860, u'id': 5810}], 'webhook_enabled': None, 'id': 4957}>
+```
+
 
 ```javascript
 { id: 4871,
@@ -100,6 +104,16 @@ env = Rainforest::Environment.create(
 ```
 
 
+```python
+import rainforest
+rainforest.API_KEY = "your-api-key"
+
+env = rainforest.Environment.create(params={
+    'default': False,
+    'name': "my testing environment"
+})
+```
+
 
 ```javascript
 var Rainforest = require('rainforestqa');
@@ -145,6 +159,10 @@ $env = \Rainforest\Environment::create([
 }
 ```
 
+
+```python
+<rainforest.Environment object: {'name': u'my testing environment', 'default': False, 'created_at': u'2015-09-09T22:00:10Z', 'webhook': u'', 'site_environments': [{u'url': u'http://www.example.org', u'created_at': u'2015-09-09T22:00:10Z', u'environment_id': 4957, u'site_id': 860, u'id': 5810}], 'webhook_enabled': None, 'id': 4957}>
+```
 
 
 ```javascript
@@ -219,6 +237,14 @@ env = Rainforest::Environment.retrieve(id)
 ```
 
 
+```python
+import rainforest
+rainforest.API_KEY = "your-api-key"
+
+id = 13
+env = rainforest.Environment.retrieve(id)
+```
+
 
 ```javascript
 var Rainforest = require('rainforestqa');
@@ -261,6 +287,10 @@ $env = \Rainforest\Environment::retrieve( $id );
 }
 ```
 
+
+```python
+<rainforest.Environment object: {'name': u'my testing environment', 'default': False, 'created_at': u'2015-09-09T22:00:10Z', 'webhook': u'', 'site_environments': [{u'url': u'http://www.example.org', u'created_at': u'2015-09-09T22:00:10Z', u'environment_id': 4957, u'site_id': 860, u'id': 5810}], 'webhook_enabled': None, 'id': 13}>
+```
 
 
 ```javascript
@@ -338,6 +368,16 @@ env.save
 ```
 
 
+```python
+import rainforest
+rainforest.API_KEY = "your-api-key"
+
+id = 13
+env = rainforest.Environment.update(id, params={
+    'name': "new env name"
+})
+```
+
 
 ```javascript
 var Rainforest = require('rainforestqa');
@@ -389,6 +429,10 @@ $env->save();
 }
 ```
 
+
+```python
+<rainforest.Environment object: {'name': u'new env name', 'default': False, 'created_at': u'2015-09-09T22:00:10Z', 'webhook': u'', 'site_environments': [{u'url': u'http://www.example.org', u'created_at': u'2015-09-09T22:00:10Z', u'environment_id': 4957, u'site_id': 860, u'id': 5810}], 'webhook_enabled': None, 'id': 13}>
+```
 
 
 ```javascript
@@ -470,6 +514,18 @@ envs.length # the number of environments returned
 ```
 
 
+```python
+import rainforest
+rainforest.API_KEY = "your-api-key"
+
+envs = rainforest.Environment.all()
+for env in envs:
+    # work with an environment
+
+envs[0] # the first environment in the list
+len(envs) # the number of environments returned
+```
+
 
 ```javascript
 var _ = require('lodash');
@@ -512,10 +568,12 @@ count( $envs->data ); # the number of environments returned
   "#<Rainforest::Environment:0x3ff73d577dac id=13>",
   "#<Rainforest::Environment:0x3ff73d661bb4 id=18>"
 ]
-
-
 ```
 
+
+```python
+<rainforest.apibits.ApiList object (class Environment): [<rainforest.Environment object: {'name': u'new env name', 'default': True, 'created_at': u'2015-08-04T19:46:42Z', 'webhook': u'', 'site_environments': [{u'url': u'http://www.example.org', u'created_at': u'2015-08-04T19:46:42Z', u'environment_id': 4904, u'site_id': 860, u'id': 5652}], 'webhook_enabled': None, 'id': 4904}>, <rainforest.Environment object: {'name': u'my baller testing environment', 'default': False, 'created_at': u'2015-08-04T19:22:12Z', 'webhook': u'', 'site_environments': [{u'url': u'http://www.example.org', u'created_at': u'2015-08-04T19:22:12Z', u'environment_id': 4902, u'site_id': 860, u'id': 5650}], 'webhook_enabled': None, 'id': 4902}>]>
+```
 
 
 ```javascript
@@ -592,6 +650,15 @@ env.delete
 ```
 
 
+```python
+import rainforest
+rainforest.API_KEY = "your-api-key"
+
+id = 13
+env = rainforest.Environment.retrieve(id)
+env.delete()
+```
+
 
 ```javascript
 var Rainforest = require('rainforestqa');
@@ -626,6 +693,9 @@ $env->delete();
 {}
 ```
 
+```python
+{}
+```
 
 
 ```javascript
@@ -663,6 +733,21 @@ runs[0] # The first run in the list
 runs.length # the number of runs
 ```
 
+
+```python
+import rainforest
+rainforest.API_KEY = "your-api-key"
+
+id = 13
+env = rainforest.Environment.retrieve(id)
+runs = env.runs().all()
+
+for run in runs:
+    # work with a run
+
+runs[0] # the first run in the list
+len(runs) # the number of runs
+```
 
 
 ```javascript
@@ -706,6 +791,10 @@ $runs = $env->runs()->all();
 
 ```
 
+
+```python
+<rainforest.apibits.ApiList object (class Run): []>
+```
 
 
 ```javascript

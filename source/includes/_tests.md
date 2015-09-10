@@ -41,6 +41,10 @@
 ```
 
 
+```python
+<rainforest.Test object: {'step_count': 1, 'has_been_dry_run': False, 'elements': [{u'redirection': True, u'created_at': u'2015-09-10T00:49:36Z', u'type': u'step', u'id': 61688, u'element': {u'action': u"Type 'test@apibits.com' into the email field, and 'password123' into the password field, then hit the log in button.", u'created_at': u'2015-09-10T00:49:36Z', u'browsers': None, u'id': 53265, u'response': u'Were you redirected to the dashboard?'}}], 'description': None, 'tags': [], 'deleted': False, 'editable': True, 'created_at': u'2015-09-10T00:49:36Z', 'title': u'Login into an account', 'site_id': 860, 'last_run': None, 'run_mode': u'default', 'start_uri': u'/login', 'browsers': [{u'category': u'phone', u'state': u'enabled', u'name': u'android_phone_landscape', u'description': u'Android Phone Landscape'}, {u'category': u'phone', u'state': u'enabled', u'name': u'android_phone_portrait', u'description': u'Android Phone Portrait'}, {u'category': u'tablet', u'state': u'enabled', u'name': u'android_tablet_landscape', u'description': u'Android Tablet Landscape'}, {u'category': u'tablet', u'state': u'enabled', u'name': u'android_tablet_portrait', u'description': u'Android Tablet Portrait'}, {u'category': u'browser', u'state': u'enabled', u'name': u'chrome', u'description': u'Google Chrome'}, {u'category': u'browser', u'state': u'enabled', u'name': u'firefox', u'description': u'Mozilla Firefox'}, {u'category': u'browser', u'state': u'enabled', u'name': u'ie8', u'description': u'Microsoft Internet Explorer 8'}, {u'category': u'browser', u'state': u'enabled', u'name': u'ie9', u'description': u'Microsoft Internet Explorer 9'}, {u'category': u'browser', u'state': u'enabled', u'name': u'ie10', u'description': u'Microsoft Internet Explorer 10'}, {u'category': u'browser', u'state': u'enabled', u'name': u'ie11', u'description': u'Microsoft Internet Explorer 11'}, {u'category': u'browser', u'state': u'disabled', u'name': u'safari', u'description': u'Apple Safari'}], 'dry_run_url': u'https://tester.rainforestqa.com/tester/dry_run/M31F-V3mF8M8U7rBLCEhMg?turkSubmitTo=%2Fthanks', 'result': u'no_result', 'test_id': 20091, 'id': 20091, 'deletable': True}>
+```
+
 
 ```javascript
 { id: 17793,
@@ -356,6 +360,24 @@ test = Rainforest::Test.create(
 ```
 
 
+```python
+import rainforest
+rainforest.API_KEY = "your-api-key"
+
+test = rainforest.Test.create(params={
+    'start_uri': "/login",
+    'title': "Login into an account",
+    'elements': [{
+        'type': "step",
+        'redirection': True,
+        'element': {
+            'action': "Type 'test@apibits.com' into the email field, and 'password123' into the password field, then hit the log in button.",
+            'response': "Were you redirected to the dashboard?"
+        }
+    }]
+})
+```
+
 
 ```javascript
 var Rainforest = require('rainforestqa');
@@ -448,6 +470,10 @@ $test = \Rainforest\Test::create([
 }
 ```
 
+
+```python
+<rainforest.Test object: {'step_count': 1, 'has_been_dry_run': False, 'elements': [{u'redirection': True, u'created_at': u'2015-09-10T00:49:36Z', u'type': u'step', u'id': 61688, u'element': {u'action': u"Type 'test@apibits.com' into the email field, and 'password123' into the password field, then hit the log in button.", u'created_at': u'2015-09-10T00:49:36Z', u'browsers': None, u'id': 53265, u'response': u'Were you redirected to the dashboard?'}}], 'description': None, 'tags': [], 'deleted': False, 'editable': True, 'created_at': u'2015-09-10T00:49:36Z', 'title': u'Login into an account', 'site_id': 860, 'last_run': None, 'run_mode': u'default', 'start_uri': u'/login', 'browsers': [{u'category': u'phone', u'state': u'enabled', u'name': u'android_phone_landscape', u'description': u'Android Phone Landscape'}, {u'category': u'phone', u'state': u'enabled', u'name': u'android_phone_portrait', u'description': u'Android Phone Portrait'}, {u'category': u'tablet', u'state': u'enabled', u'name': u'android_tablet_landscape', u'description': u'Android Tablet Landscape'}, {u'category': u'tablet', u'state': u'enabled', u'name': u'android_tablet_portrait', u'description': u'Android Tablet Portrait'}, {u'category': u'browser', u'state': u'enabled', u'name': u'chrome', u'description': u'Google Chrome'}, {u'category': u'browser', u'state': u'enabled', u'name': u'firefox', u'description': u'Mozilla Firefox'}, {u'category': u'browser', u'state': u'enabled', u'name': u'ie8', u'description': u'Microsoft Internet Explorer 8'}, {u'category': u'browser', u'state': u'enabled', u'name': u'ie9', u'description': u'Microsoft Internet Explorer 9'}, {u'category': u'browser', u'state': u'enabled', u'name': u'ie10', u'description': u'Microsoft Internet Explorer 10'}, {u'category': u'browser', u'state': u'enabled', u'name': u'ie11', u'description': u'Microsoft Internet Explorer 11'}, {u'category': u'browser', u'state': u'disabled', u'name': u'safari', u'description': u'Apple Safari'}], 'dry_run_url': u'https://tester.rainforestqa.com/tester/dry_run/M31F-V3mF8M8U7rBLCEhMg?turkSubmitTo=%2Fthanks', 'result': u'no_result', 'test_id': 20091, 'id': 20091, 'deletable': True}>
+```
 
 
 ```javascript
@@ -736,6 +762,14 @@ test = Rainforest::Test.retrieve(id)
 ```
 
 
+```python
+import rainforest
+rainforest.API_KEY = "your-api-key"
+
+id = 20091
+test = rainforest.Test.retrieve(id)
+```
+
 
 ```javascript
 var Rainforest = require('rainforestqa');
@@ -805,6 +839,10 @@ $test = \Rainforest\Test::retrieve( $id );
 }
 ```
 
+
+```python
+<rainforest.Test object: {'step_count': 1, 'has_been_dry_run': False, 'elements': [{u'redirection': True, u'created_at': u'2015-09-10T00:49:36Z', u'type': u'step', u'id': 61688, u'element': {u'action': u"Type 'test@apibits.com' into the email field, and 'password123' into the password field, then hit the log in button.", u'created_at': u'2015-09-10T00:49:36Z', u'browsers': None, u'id': 53265, u'response': u'Were you redirected to the dashboard?'}}], 'description': None, 'tags': [], 'deleted': False, 'editable': True, 'created_at': u'2015-09-10T00:49:36Z', 'title': u'Login into an account', 'site_id': 860, 'last_run': None, 'run_mode': u'default', 'start_uri': u'/login', 'browsers': [{u'category': u'phone', u'state': u'enabled', u'name': u'android_phone_landscape', u'description': u'Android Phone Landscape'}, {u'category': u'phone', u'state': u'enabled', u'name': u'android_phone_portrait', u'description': u'Android Phone Portrait'}, {u'category': u'tablet', u'state': u'enabled', u'name': u'android_tablet_landscape', u'description': u'Android Tablet Landscape'}, {u'category': u'tablet', u'state': u'enabled', u'name': u'android_tablet_portrait', u'description': u'Android Tablet Portrait'}, {u'category': u'browser', u'state': u'enabled', u'name': u'chrome', u'description': u'Google Chrome'}, {u'category': u'browser', u'state': u'enabled', u'name': u'firefox', u'description': u'Mozilla Firefox'}, {u'category': u'browser', u'state': u'enabled', u'name': u'ie8', u'description': u'Microsoft Internet Explorer 8'}, {u'category': u'browser', u'state': u'enabled', u'name': u'ie9', u'description': u'Microsoft Internet Explorer 9'}, {u'category': u'browser', u'state': u'enabled', u'name': u'ie10', u'description': u'Microsoft Internet Explorer 10'}, {u'category': u'browser', u'state': u'enabled', u'name': u'ie11', u'description': u'Microsoft Internet Explorer 11'}, {u'category': u'browser', u'state': u'disabled', u'name': u'safari', u'description': u'Apple Safari'}], 'dry_run_url': u'https://tester.rainforestqa.com/tester/dry_run/M31F-V3mF8M8U7rBLCEhMg?turkSubmitTo=%2Fthanks', 'result': u'no_result', 'test_id': 20091, 'id': 20091, 'deletable': True}>
+```
 
 
 ```javascript
@@ -1094,6 +1132,14 @@ test.save
 ```
 
 
+```python
+import rainforest
+rainforest.API_KEY = "your-api-key"
+
+id = 20091
+test = rainforest.Test.update(id, params={'title': "New test title"})
+```
+
 
 ```javascript
 var Rainforest = require('rainforestqa');
@@ -1134,6 +1180,10 @@ $test->save();
 }
 ```
 
+
+```python
+<rainforest.Test object: {'step_count': 1, 'has_been_dry_run': False, 'elements': [{u'redirection': True, u'created_at': u'2015-09-10T00:49:36Z', u'type': u'step', u'id': 61688, u'element': {u'action': u"Type 'test@apibits.com' into the email field, and 'password123' into the password field, then hit the log in button.", u'created_at': u'2015-09-10T00:49:36Z', u'browsers': None, u'id': 53265, u'response': u'Were you redirected to the dashboard?'}}], 'description': None, 'tags': [], 'deleted': False, 'editable': True, 'created_at': u'2015-09-10T00:49:36Z', 'title': u'New test title', 'site_id': 860, 'last_run': None, 'run_mode': u'default', 'start_uri': u'/login', 'browsers': [{u'category': u'phone', u'state': u'enabled', u'name': u'android_phone_landscape', u'description': u'Android Phone Landscape'}, {u'category': u'phone', u'state': u'enabled', u'name': u'android_phone_portrait', u'description': u'Android Phone Portrait'}, {u'category': u'tablet', u'state': u'enabled', u'name': u'android_tablet_landscape', u'description': u'Android Tablet Landscape'}, {u'category': u'tablet', u'state': u'enabled', u'name': u'android_tablet_portrait', u'description': u'Android Tablet Portrait'}, {u'category': u'browser', u'state': u'enabled', u'name': u'chrome', u'description': u'Google Chrome'}, {u'category': u'browser', u'state': u'enabled', u'name': u'firefox', u'description': u'Mozilla Firefox'}, {u'category': u'browser', u'state': u'enabled', u'name': u'ie8', u'description': u'Microsoft Internet Explorer 8'}, {u'category': u'browser', u'state': u'enabled', u'name': u'ie9', u'description': u'Microsoft Internet Explorer 9'}, {u'category': u'browser', u'state': u'enabled', u'name': u'ie10', u'description': u'Microsoft Internet Explorer 10'}, {u'category': u'browser', u'state': u'enabled', u'name': u'ie11', u'description': u'Microsoft Internet Explorer 11'}, {u'category': u'browser', u'state': u'disabled', u'name': u'safari', u'description': u'Apple Safari'}], 'dry_run_url': u'https://tester.rainforestqa.com/tester/dry_run/M31F-V3mF8M8U7rBLCEhMg?turkSubmitTo=%2Fthanks', 'result': u'no_result', 'test_id': 20091, 'id': 20091, 'deletable': True}>
+```
 
 
 ```javascript
@@ -1435,6 +1485,18 @@ tests.length # the number of tests returned
 ```
 
 
+```python
+import rainforest
+rainforest.API_KEY = "your-api-key"
+
+tests = rainforest.Test.all()
+for test in tests:
+    # work with a test
+
+tests[0] # the first test in the list
+len(tests) # the number of tests returned
+```
+
 
 ```javascript
 var Rainforest = require('rainforestqa');
@@ -1478,6 +1540,10 @@ count( $tests->data ); # the number of Tests returned
 
 ```
 
+
+```python
+<rainforest.apibits.ApiList object (class Test): [<rainforest.Test object: {'step_count': 1, 'has_been_dry_run': True, 'elements': None, 'description': u'Make sure all customer logos link to their websites correctly.', 'tags': [u'www'], 'deleted': False, 'editable': True, 'created_at': u'2015-07-28T15:02:00Z', 'title': u'Customer Logos', 'site_id': 860, 'last_run': {u'created_at': u'2015-08-31T17:26:34Z', u'id': 34370, u'state': u'aborted'}, 'run_mode': u'default', 'start_uri': u'/', 'browsers': [{u'category': u'phone', u'state': u'disabled', u'name': u'android_phone_landscape', u'description': u'Android Phone Landscape'}, {u'category': u'phone', u'state': u'disabled', u'name': u'android_phone_portrait', u'description': u'Android Phone Portrait'}, {u'category': u'tablet', u'state': u'disabled', u'name': u'android_tablet_landscape', u'description': u'Android Tablet Landscape'}, {u'category': u'tablet', u'state': u'disabled', u'name': u'android_tablet_portrait', u'description': u'Android Tablet Portrait'}, {u'category': u'browser', u'state': u'enabled', u'name': u'chrome', u'description': u'Google Chrome'}, {u'category': u'browser', u'state': u'disabled', u'name': u'firefox', u'description': u'Mozilla Firefox'}, {u'category': u'browser', u'state': u'disabled', u'name': u'ie8', u'description': u'Microsoft Internet Explorer 8'}, {u'category': u'browser', u'state': u'disabled', u'name': u'ie9', u'description': u'Microsoft Internet Explorer 9'}, {u'category': u'browser', u'state': u'disabled', u'name': u'ie10', u'description': u'Microsoft Internet Explorer 10'}, {u'category': u'browser', u'state': u'disabled', u'name': u'ie11', u'description': u'Microsoft Internet Explorer 11'}, {u'category': u'browser', u'state': u'disabled', u'name': u'safari', u'description': u'Apple Safari'}], 'dry_run_url': u'https://tester.rainforestqa.com/tester/dry_run/vUu916ScjlWRwZbITsVnRg?turkSubmitTo=%2Fthanks', 'result': u'no_result', 'test_id': 17790, 'id': 17790, 'deletable': True}>, <rainforest.Test object: {'step_count': 2, 'has_been_dry_run': False, 'elements': None, 'description': u'', 'tags': [], 'deleted': False, 'editable': True, 'created_at': u'2015-07-28T15:40:19Z', 'title': u'Log in as regular user', 'site_id': 860, 'last_run': {u'created_at': u'2015-08-07T18:35:42Z', u'id': 32353, u'state': u'complete'}, 'run_mode': u'default', 'start_uri': u'/', 'browsers': [{u'category': u'phone', u'state': u'disabled', u'name': u'android_phone_landscape', u'description': u'Android Phone Landscape'}, {u'category': u'phone', u'state': u'disabled', u'name': u'android_phone_portrait', u'description': u'Android Phone Portrait'}, {u'category': u'tablet', u'state': u'disabled', u'name': u'android_tablet_landscape', u'description': u'Android Tablet Landscape'}, {u'category': u'tablet', u'state': u'disabled', u'name': u'android_tablet_portrait', u'description': u'Android Tablet Portrait'}, {u'category': u'browser', u'state': u'enabled', u'name': u'chrome', u'description': u'Google Chrome'}, {u'category': u'browser', u'state': u'disabled', u'name': u'firefox', u'description': u'Mozilla Firefox'}, {u'category': u'browser', u'state': u'disabled', u'name': u'ie8', u'description': u'Microsoft Internet Explorer 8'}, {u'category': u'browser', u'state': u'disabled', u'name': u'ie9', u'description': u'Microsoft Internet Explorer 9'}, {u'category': u'browser', u'state': u'disabled', u'name': u'ie10', u'description': u'Microsoft Internet Explorer 10'}, {u'category': u'browser', u'state': u'disabled', u'name': u'ie11', u'description': u'Microsoft Internet Explorer 11'}, {u'category': u'browser', u'state': u'disabled', u'name': u'safari', u'description': u'Apple Safari'}], 'dry_run_url': u'https://tester.rainforestqa.com/tester/dry_run/RtCylRPOCee0oVMjl1KW4Q?turkSubmitTo=%2Fthanks', 'result': u'failed', 'test_id': 17793, 'id': 17793, 'deletable': True}>]>
+```
 
 
 ```javascript
@@ -1680,6 +1746,15 @@ test.delete
 ```
 
 
+```python
+import rainforest
+rainforest.API_KEY = "your-api-key"
+
+id = 20091
+test = rainforest.Test.retrieve(id)
+test.delete()
+```
+
 
 ```javascript
 var Rainforest = require('rainforestqa');
@@ -1712,6 +1787,10 @@ $test->delete();
 {}
 ```
 
+
+```python
+{}
+```
 
 
 ```javascript

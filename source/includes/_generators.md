@@ -20,6 +20,10 @@
 ```
 
 
+```python
+<rainforest.Generator object: {'description': u'Credentials used to log into accounts in various states', 'created_at': u'2015-09-10T00:07:53Z', 'generator_type': u'tabular', 'row_count': 0, 'data': None, 'id': 905, 'columns': [{u'created_at': u'2015-09-10T00:07:53Z', u'id': 7346, u'name': u'first_name'}, {u'created_at': u'2015-09-10T00:07:53Z', u'id': 7347, u'name': u'last_name'}, {u'created_at': u'2015-09-10T00:07:53Z', u'id': 7348, u'name': u'email'}, {u'created_at': u'2015-09-10T00:07:53Z', u'id': 7349, u'name': u'password'}], 'name': u'user_credentials'}>
+```
+
 
 ```javascript
 { id: 929,
@@ -123,6 +127,16 @@ gen = Rainforest::Generator.create(
 )
 ```
 
+```python
+import rainforest
+rainforest.API_KEY = "your-api-key"
+
+gen = rainforest.Generator.create(params={
+    'name': "user_credentials",
+    'description': "Credentials used to log into accounts in various states",
+    'columns': ["first_name", "last_name", "email", "password"]
+})
+```
 
 
 ```javascript
@@ -175,6 +189,10 @@ $gen = \Rainforest\Generator::create([
 }
 ```
 
+
+```python
+<rainforest.Generator object: {'description': u'Credentials used to log into accounts in various states', 'created_at': u'2015-09-10T00:07:53Z', 'generator_type': u'tabular', 'row_count': 0, 'data': None, 'id': 905, 'columns': [{u'created_at': u'2015-09-10T00:07:53Z', u'id': 7346, u'name': u'first_name'}, {u'created_at': u'2015-09-10T00:07:53Z', u'id': 7347, u'name': u'last_name'}, {u'created_at': u'2015-09-10T00:07:53Z', u'id': 7348, u'name': u'email'}, {u'created_at': u'2015-09-10T00:07:53Z', u'id': 7349, u'name': u'password'}], 'name': u'user_credentials'}>
+```
 
 
 ```javascript
@@ -273,6 +291,13 @@ id = 905
 gen = Rainforest::Generator.retrieve(id)
 ```
 
+```python
+import rainforest
+rainforest.API_KEY = "your-api-key"
+
+id = 905
+gen = rainforest.Generator.retrieve(id)
+```
 
 
 ```javascript
@@ -320,6 +345,10 @@ $gen = \Rainforest\Generator::retrieve($id);
 }
 ```
 
+
+```python
+<rainforest.Generator object: {'description': u'Credentials used to log into accounts in various states', 'created_at': u'2015-09-10T00:07:53Z', 'generator_type': u'tabular', 'row_count': 0, 'data': None, 'id': 905, 'columns': [{u'created_at': u'2015-09-10T00:07:53Z', u'id': 7346, u'name': u'first_name'}, {u'created_at': u'2015-09-10T00:07:53Z', u'id': 7347, u'name': u'last_name'}, {u'created_at': u'2015-09-10T00:07:53Z', u'id': 7348, u'name': u'email'}, {u'created_at': u'2015-09-10T00:07:53Z', u'id': 7349, u'name': u'password'}], 'name': u'user_credentials'}>
+```
 
 
 ```javascript
@@ -432,6 +461,17 @@ gen.save
 ```
 
 
+```python
+import rainforest
+rainforest.API_KEY = "your-api-key"
+
+id = 905
+gen = rainforest.Generator.update(id, params={
+    'name': "new_gen_name",
+    'description': "Credentials used to log into accounts in various states"
+})
+```
+
 
 ```javascript
 var Rainforest = require('rainforestqa');
@@ -492,6 +532,10 @@ $gen->save();
 }
 ```
 
+
+```python
+<rainforest.Generator object: {'description': u'Credentials used to log into accounts in various states', 'created_at': u'2015-09-10T00:07:53Z', 'generator_type': u'tabular', 'row_count': 0, 'data': None, 'id': 905, 'columns': [{u'created_at': u'2015-09-10T00:07:53Z', u'id': 7346, u'name': u'first_name'}, {u'created_at': u'2015-09-10T00:07:53Z', u'id': 7347, u'name': u'last_name'}, {u'created_at': u'2015-09-10T00:07:53Z', u'id': 7348, u'name': u'email'}, {u'created_at': u'2015-09-10T00:07:53Z', u'id': 7349, u'name': u'password'}], 'name': u'new_gen_name'}>
+```
 
 
 ```javascript
@@ -610,6 +654,18 @@ gens.length # the number of generators returned
 ```
 
 
+```python
+import rainforest
+rainforest.API_KEY = "your-api-key"
+
+gens = rainforest.Generator.all()
+for gen in gens:
+    # work with a generator
+
+gens[0] # the first generator in the list
+len(gens) # the number of generators returned
+```
+
 
 ```javascript
 var Rainforest = require('rainforestqa');
@@ -652,9 +708,12 @@ count( $gens->data ); # the number of generators returned
   "#<Rainforest::Generator:0x3ff73d661bb4 id=906>"
 ]
 
-
 ```
 
+
+```python
+<rainforest.apibits.ApiList object (class Generator): [<rainforest.Generator object: {'description': u'Useful randomly generated attributes, like name and email.', 'created_at': None, 'generator_type': u'builtin', 'row_count': 0, 'data': None, 'id': None, 'columns': [{u'id': None, u'name': u'email'}, {u'id': None, u'name': u'inbox'}, {u'id': None, u'name': u'first_name'}, {u'id': None, u'name': u'last_name'}, {u'id': None, u'name': u'full_name'}, {u'id': None, u'name': u'password'}, {u'id': None, u'name': u'image'}, {u'id': None, u'name': u'number'}, {u'id': None, u'name': u'phone_number'}, {u'id': None, u'name': u'address_line1'}, {u'id': None, u'name': u'address_line2'}, {u'id': None, u'name': u'address_city'}, {u'id': None, u'name': u'address_state'}, {u'id': None, u'name': u'address_zip'}, {u'id': None, u'name': u'address_country'}, {u'id': None, u'name': u'ssn'}, {u'id': None, u'name': u'company'}], 'name': u'random'}>]>
+```
 
 
 ```javascript
@@ -840,6 +899,14 @@ env = Rainforest::Generator.retrieve(id)
 env.delete
 ```
 
+```python
+import rainforest
+rainforest.API_KEY = "your-api-key"
+
+id = 905
+gen = rainforest.Generator.retrieve(id)
+gen.delete()
+```
 
 
 ```javascript
@@ -888,6 +955,10 @@ $gen->delete();
 
 ```
 
+
+```python
+<rainforest.Generator object: {'description': u'Credentials used to log into accounts in various states', 'created_at': u'2015-09-10T00:07:53Z', 'generator_type': u'tabular', 'row_count': 0, 'data': None, 'id': 905, 'columns': [{u'created_at': u'2015-09-10T00:07:53Z', u'id': 7346, u'name': u'first_name'}, {u'created_at': u'2015-09-10T00:07:53Z', u'id': 7347, u'name': u'last_name'}, {u'created_at': u'2015-09-10T00:07:53Z', u'id': 7348, u'name': u'email'}, {u'created_at': u'2015-09-10T00:07:53Z', u'id': 7349, u'name': u'password'}], 'name': u'new_gen_name'}>
+```
 
 
 ```javascript
@@ -987,6 +1058,15 @@ rows = Rainforest::Generator.new(id).rows.all
 ```
 
 
+```python
+import rainforest
+rainforest.API_KEY = "your-api-key"
+
+id = 905
+gen = rainforest.Generator.retrieve(id)
+rows = gen.rows().all()
+```
+
 
 ```javascript
 var Rainforest = require('rainforestqa');
@@ -1046,6 +1126,10 @@ $rows = $gen->rows()->all();
 
 ```
 
+
+```python
+[{u'data': {u'7351': u'Jerry', u'7353': u'jerry@apibits.com', u'7352': u'Seinfeld'}, u'id': 120789}]
+```
 
 
 ```javascript
@@ -1112,6 +1196,21 @@ row = Rainforest::Generator.new(id).rows.create(
 ```
 
 
+```python
+import rainforest
+rainforest.API_KEY = "your-api-key"
+
+id = 905
+gen = rainforest.Generator.retrieve(id)
+row = gen.rows().create(params={
+    'data': {
+        7351: "Jerry", # 7350 is the column id from gen.columns
+        7352: "Seinfeld",
+        7353: "jerry@apibits.com"
+    }
+})
+```
+
 
 ```javascript
 var Rainforest = require('rainforestqa');
@@ -1169,9 +1268,12 @@ $row = $gen->rows()->create([
   }
 }
 
-
 ```
 
+
+```python
+{u'data': {u'7351': u'Jerry', u'7353': u'jerry@apibits.com', u'7352': u'Seinfeld'}, u'id': 120789}
+```
 
 
 ```javascript
