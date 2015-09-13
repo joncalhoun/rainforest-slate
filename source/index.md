@@ -2,9 +2,10 @@
 title: API Reference
 
 language_tabs:
-  - ruby
-  - { javascript: "node" }
-  - php
+  - { ruby: "Ruby" }
+  - { python: "Python" }
+  - { javascript: "Node" }
+  - { php: "PHP" }
 
 toc_footers:
   - <a href='https://app.rainforestqa.com/settings/integrations'>Where is my API Key?</a>
@@ -33,6 +34,10 @@ search: true
 gem install rainforest
 ```
 
+```python
+pip install --upgrade rainforest
+```
+
 ```javascript
 npm install rainforestqa
 ```
@@ -59,6 +64,10 @@ require_once('/path/to/rainforest-php/init.php');
 
 ```ruby
 https://github.com/rainforestapp/rainforest-ruby
+```
+
+```ruby
+https://github.com/rainforestapp/rainforest-python
 ```
 
 ```javascript
